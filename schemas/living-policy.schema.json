@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASN Pemda Living Policy",
+  "type": "object",
+  "required": [
+    "id",
+    "slug",
+    "title",
+    "status",
+    "datePublished",
+    "dateModified",
+    "lastVerified",
+    "materiality",
+    "sources",
+    "asnImpact",
+    "pemdaImpact",
+    "actionRequired"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 10
+    },
+    "status": {
+      "enum": [
+        "RUMOR",
+        "WACANA_RESMI",
+        "RANCANGAN",
+        "TERBIT",
+        "BERLAKU",
+        "DIUBAH",
+        "DICABUT"
+      ]
+    },
+    "datePublished": {
+      "type": "string",
+      "format": "date"
+    },
+    "dateModified": {
+      "type": "string",
+      "format": "date"
+    },
+    "lastVerified": {
+      "type": "string",
+      "format": "date"
+    },
+    "materiality": {
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL"
+      ]
+    },
+    "asnImpact": {
+      "type": "string"
+    },
+    "pemdaImpact": {
+      "type": "string"
+    },
+    "actionRequired": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "url",
+          "sourceType",
+          "isPrimary"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "sourceType": {
+            "enum": [
+              "REGULATION",
+              "JDIH",
+              "OFFICIAL_NEWS",
+              "OFFICIAL_STATEMENT",
+              "SECONDARY_DISCOVERY"
+            ]
+          },
+          "isPrimary": {
+            "type": "boolean"
+          },
+          "publishedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          }
+        }
+      }
+    },
+    "revisionHistory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "date",
+          "summary"
+        ],
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "summary": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

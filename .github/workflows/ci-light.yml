@@ -26,4 +26,5 @@ jobs:
           python scripts/test_evidence_intake.py
           python scripts/test_editorial_gate.py
           python scripts/test_publication_approval.py
+          python scripts/test_tax_decision.py
           python scripts/security_gate.py

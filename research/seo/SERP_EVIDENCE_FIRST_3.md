@@ -25,3 +25,10 @@
 - Tax prototype collects inputs only in the browser and does **not** calculate or prescribe a tax rate.
 - Checklist is generic; it must not imply legal sufficiency or government endorsement.
 - Before GO: confirm latest primary legal texts, record review date, verify three live top-10 SERPs, test accessibility/mobile, run light CI and manual heavy validation, obtain explicit human approval.
+
+## Evidence update — 8 October 2026
+- Official DJP PPh 22 government procurement page confirms a threshold and exceptions, but the page alone does **not** resolve all scenarios (KKPD, marketplace, VAT base, supplier status). Source: https://pajak.go.id/index.php/id/pemungutan-pajak-penghasilan-pasal-22-instansi-pemerintah
+- **New October 2026 development:** DJP press release says marketplace PPh 22 collection by designated PMSE operators began on 1 October 2026. This is a **different collection context** from ordinary government-bendahara PPh 22. Do not combine the two rates, responsibilities, or exemptions. Source: https://www.pajak.go.id/id/siaran-pers/pemungutan-pph-pasal-22-melalui-marketplace-mulai-dilaksanakan-1-oktober-2026
+- The 2019 DJP food explainer explicitly identifies itself as the author's personal opinion, not an institutional position; classify it as historical editorial guidance only. Correct canonical reference: https://pajak.go.id/en/node/37509
+- JDIH BPK records Permendagri 77/2020 as **Berlaku**, but a generic SPJ checklist is not a complete local Sisdur. Source: https://peraturan.bpk.go.id/Details/162792/permendagri-no-77-tahun2020
+- Full ranked top-10 SERP evidence is still missing; do not describe this update as a completed ranking audit.

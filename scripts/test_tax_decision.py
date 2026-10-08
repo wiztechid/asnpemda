@@ -42,5 +42,18 @@ class TaxDecisionTests(unittest.TestCase):
   matrix["rules"][2]["enabled"]=True
   with tempfile.TemporaryDirectory() as tmp:
    p=pathlib.Path(tmp)/"matrix.json";p.write_text(json.dumps(matrix))
-   with self.assertRaisesRegex(ValueError,"UNSAFE_ENABLED_STATE"):m.decide(BASE,p)
+   with self.assertRaisesRegex(ValueError,"UNSAFE_RULE_CONFIGURATION"):m.decide(BASE,p)
+ def test_rule_set_mutations_fail_closed(self):
+  original=json.loads(m.MATRIX.read_text())
+  for mutation in ("remove","duplicate","rename","enable_ready","change_state"):
+   with self.subTest(mutation=mutation):
+    matrix=json.loads(json.dumps(original))
+    if mutation=="remove":matrix["rules"].pop()
+    elif mutation=="duplicate":matrix["rules"].append(dict(matrix["rules"][0]))
+    elif mutation=="rename":matrix["rules"][0]["id"]="UNKNOWN"
+    elif mutation=="enable_ready":matrix["rules"][3]["enabled"]=True
+    elif mutation=="change_state":matrix["rules"][0]["state"]="DAPAT_DIHITUNG"
+    with tempfile.TemporaryDirectory() as tmp:
+     p=pathlib.Path(tmp)/"matrix.json";p.write_text(json.dumps(matrix))
+     with self.assertRaises(ValueError):m.decide(BASE,p)
 if __name__=="__main__":unittest.main()

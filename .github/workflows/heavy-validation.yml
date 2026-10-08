@@ -12,13 +12,15 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Foundation and editorial audit
+      - name: Full deterministic audit
         run: |
           set -euo pipefail
           python scripts/validate.py
           python scripts/site_audit.py
+          python scripts/test_pipeline.py
           python scripts/delta_check.py
+          python scripts/build.py
           test -f docs/MVP_RELEASE_GATE.md
-          test -f docs/CONTENT_MODEL.md
+          test -f docs/RELEASE_DECISION.md
           grep -q 'noindex,follow' artikel/gaji-asn-melalui-koperasi.html
-          echo "Foundation audit PASS; NOT a publication approval"
+          echo "AUDIT PASS; RELEASE GATE REMAINS HOLD"

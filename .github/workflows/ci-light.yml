@@ -1,10 +1,10 @@
 name: CI Light
 on:
   pull_request:
-    paths: ['data/**','schemas/**','scripts/**','.github/workflows/**','**/*.html','assets/**','robots.txt']
+    paths: ['data/**','schemas/**','scripts/**','.github/workflows/**','**/*.html','assets/**','robots.txt','site-config.json']
   push:
     branches: [main]
-    paths: ['data/**','schemas/**','scripts/**','.github/workflows/**','**/*.html','assets/**','robots.txt']
+    paths: ['data/**','schemas/**','scripts/**','.github/workflows/**','**/*.html','assets/**','robots.txt','site-config.json']
 permissions:
   contents: read
 concurrency:
@@ -16,7 +16,8 @@ jobs:
     timeout-minutes: 3
     steps:
       - uses: actions/checkout@v4
-      - name: Validate data and local links
+      - name: Validate data, links and unit tests
         run: |
           python scripts/validate.py
           python scripts/site_audit.py
+          python scripts/test_pipeline.py

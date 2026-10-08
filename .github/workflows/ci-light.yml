@@ -22,4 +22,5 @@ jobs:
           python scripts/site_audit.py
           python scripts/test_pipeline.py
           python scripts/test_security.py
+          python scripts/test_secure_fetch.py
           python scripts/security_gate.py

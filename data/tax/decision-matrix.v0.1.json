@@ -1,0 +1,51 @@
+{
+  "version": "2026-10-08-review-1",
+  "status": "PRE_RELEASE_NOT_AUTHORIZED",
+  "states": [
+    "DAPAT_DIHITUNG",
+    "PERLU_VERIFIKASI",
+    "TIDAK_BERLAKU"
+  ],
+  "rules": [
+    {
+      "id": "SPJ-GENERAL",
+      "when": {
+        "channel": "UP/GU|LS|KKPD|Lainnya"
+      },
+      "state": "PERLU_VERIFIKASI",
+      "reason": "Klasifikasi objek, status penyedia, dokumen pengecualian dan peraturan terbaru belum diputuskan oleh mesin.",
+      "source": "https://peraturan.bpk.go.id/Details/215497/pmk-no-59pmk032022",
+      "autoCalculation": false
+    },
+    {
+      "id": "MARKETPLACE-2026",
+      "when": {
+        "channel": "Marketplace"
+      },
+      "state": "PERLU_VERIFIKASI",
+      "reason": "Bedakan pemungutan PPh 22 atas penghasilan pedagang oleh PMSE yang ditunjuk dari kewajiban instansi pemerintah; cek tanggal, platform, dokumen, dan bukti pemungutan.",
+      "source": "https://www.pajak.go.id/id/siaran-pers/pemungutan-pph-pasal-22-melalui-marketplace-mulai-dilaksanakan-1-oktober-2026",
+      "autoCalculation": false
+    },
+    {
+      "id": "NON-APPLICABLE",
+      "when": {
+        "verifiedException": true
+      },
+      "state": "TIDAK_BERLAKU",
+      "reason": "Hanya dapat diputuskan setelah jenis pajak spesifik dan dasar pengecualian terverifikasi oleh reviewer; jangan diputuskan otomatis.",
+      "autoCalculation": false,
+      "enabled": false
+    },
+    {
+      "id": "READY",
+      "when": {
+        "verifiedLegalMatrix": true
+      },
+      "state": "DAPAT_DIHITUNG",
+      "reason": "Reserved state, disabled until effective rules, tests and explicit authorization.",
+      "autoCalculation": false,
+      "enabled": false
+    }
+  ]
+}

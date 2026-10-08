@@ -1,0 +1,32 @@
+[
+  {
+    "id": "bkn",
+    "name": "BKN",
+    "url": "https://www.bkn.go.id/",
+    "type": "OFFICIAL_NEWS"
+  },
+  {
+    "id": "kemendagri",
+    "name": "Kemendagri",
+    "url": "https://www.kemendagri.go.id/",
+    "type": "OFFICIAL_NEWS"
+  },
+  {
+    "id": "djpk",
+    "name": "DJPK Kemenkeu",
+    "url": "https://djpk.kemenkeu.go.id/",
+    "type": "OFFICIAL_NEWS"
+  },
+  {
+    "id": "jdih-kemendagri",
+    "name": "JDIH Kemendagri",
+    "url": "https://jdih.kemendagri.go.id/",
+    "type": "JDIH"
+  },
+  {
+    "id": "lkpp",
+    "name": "LKPP",
+    "url": "https://www.lkpp.go.id/",
+    "type": "OFFICIAL_NEWS"
+  }
+]

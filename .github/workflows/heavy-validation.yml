@@ -1,28 +1,24 @@
 name: Heavy Validation
-
 on:
   workflow_dispatch:
-
 permissions:
   contents: read
-
 concurrency:
   group: heavy-validation
   cancel-in-progress: true
-
 jobs:
-  full-audit:
+  audit:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Foundation audit
-        shell: bash
+      - name: Full foundation and editorial audit
         run: |
           set -euo pipefail
-          test -f README.md
+          python scripts/validate.py
+          python scripts/delta_check.py
           test -f docs/EDITORIAL_CONTRACT.md
           test -f docs/AUTOMATION_POLICY.md
-          test -f schemas/living-policy.schema.json
-          python -m json.tool schemas/living-policy.schema.json >/dev/null
-          echo "Foundation audit PASS"
+          test -f docs/SOURCE_PIPELINE.md
+          grep -q 'noindex,follow' artikel/gaji-asn-melalui-koperasi.html
+          echo "Full foundation audit PASS"

@@ -1,27 +1,24 @@
 name: CI Light
-
 on:
   pull_request:
+    paths: ['data/**','schemas/**','scripts/**','.github/workflows/**','index.html','artikel/**','assets/**']
   push:
     branches: [main]
-
+    paths: ['data/**','schemas/**','scripts/**','.github/workflows/**','index.html','artikel/**','assets/**']
+permissions:
+  contents: read
 concurrency:
   group: ci-light-${{ github.ref }}
   cancel-in-progress: true
-
-permissions:
-  contents: read
-
 jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
       - uses: actions/checkout@v4
+      - name: Validate source registry and article records
+        run: python scripts/validate.py
       - name: Validate JSON syntax
-        shell: bash
         run: |
-          set -euo pipefail
-          find schemas data -type f -name '*.json' -print0 | while IFS= read -r -d '' file; do
-            python -m json.tool "$file" >/dev/null
-          done
+          python -m json.tool schemas/living-policy.schema.json >/dev/null
+          python -m json.tool data/sources.json >/dev/null

@@ -20,7 +20,7 @@ jobs:
           python scripts/test_pipeline.py
           python scripts/test_security.py
           python scripts/test_secure_fetch.py
-          python scripts/test_manual_intake.py
+          python scripts/test_evidence_intake.py
           python scripts/security_gate.py
           python scripts/delta_check.py
           python scripts/build.py

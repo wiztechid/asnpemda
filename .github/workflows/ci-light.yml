@@ -1,10 +1,10 @@
 name: CI Light
 on:
   pull_request:
-    paths: ['data/**','schemas/**','scripts/**','.github/workflows/**','index.html','artikel/**','assets/**']
+    paths: ['data/**','schemas/**','scripts/**','.github/workflows/**','**/*.html','assets/**','robots.txt']
   push:
     branches: [main]
-    paths: ['data/**','schemas/**','scripts/**','.github/workflows/**','index.html','artikel/**','assets/**']
+    paths: ['data/**','schemas/**','scripts/**','.github/workflows/**','**/*.html','assets/**','robots.txt']
 permissions:
   contents: read
 concurrency:
@@ -16,9 +16,7 @@ jobs:
     timeout-minutes: 3
     steps:
       - uses: actions/checkout@v4
-      - name: Validate source registry and article records
-        run: python scripts/validate.py
-      - name: Validate JSON syntax
+      - name: Validate data and local links
         run: |
-          python -m json.tool schemas/living-policy.schema.json >/dev/null
-          python -m json.tool data/sources.json >/dev/null
+          python scripts/validate.py
+          python scripts/site_audit.py

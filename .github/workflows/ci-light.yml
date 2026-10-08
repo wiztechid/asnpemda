@@ -24,4 +24,5 @@ jobs:
           python scripts/test_security.py
           python scripts/test_secure_fetch.py
           python scripts/test_evidence_intake.py
+          python scripts/test_editorial_gate.py
           python scripts/security_gate.py

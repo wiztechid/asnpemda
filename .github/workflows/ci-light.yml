@@ -16,8 +16,10 @@ jobs:
     timeout-minutes: 3
     steps:
       - uses: actions/checkout@v4
-      - name: Validate data, links and unit tests
+      - name: Validate data, links and safety
         run: |
           python scripts/validate.py
           python scripts/site_audit.py
           python scripts/test_pipeline.py
+          python scripts/test_security.py
+          python scripts/security_gate.py

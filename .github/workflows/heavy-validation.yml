@@ -18,9 +18,11 @@ jobs:
           python scripts/validate.py
           python scripts/site_audit.py
           python scripts/test_pipeline.py
+          python scripts/test_security.py
+          python scripts/security_gate.py
           python scripts/delta_check.py
           python scripts/build.py
-          test -f docs/MVP_RELEASE_GATE.md
-          test -f docs/RELEASE_DECISION.md
+          test -f docs/SECURITY_REVIEW.md
+          test -f docs/RELEASE_CHECKLIST.md
           grep -q 'noindex,follow' artikel/gaji-asn-melalui-koperasi.html
           echo "AUDIT PASS; RELEASE GATE REMAINS HOLD"

@@ -12,9 +12,16 @@ def decide(payload, matrix_path=MATRIX):
     if matrix.get("status")!="PRE_RELEASE_NOT_AUTHORIZED":
         raise ValueError("UNEXPECTED_MATRIX_STATUS")
     rules=matrix.get("rules",[])
-    if (not isinstance(rules,list) or len(rules)!=4 or\n        any(not isinstance(r,dict) or r.get("autoCalculation") is not False for r in rules)):
+    if (not isinstance(rules,list) or len(rules)!=4 or
+        any(not isinstance(r,dict) or r.get("autoCalculation") is not False for r in rules)):
         raise ValueError("UNSAFE_MATRIX")
-    expected={"SPJ-GENERAL":("PERLU_VERIFIKASI",True),"MARKETPLACE-2026":("PERLU_VERIFIKASI",True),"NON-APPLICABLE":("TIDAK_BERLAKU",False),"READY":("DAPAT_DIHITUNG",False)}\n    ids=[r.get("id") for r in rules]\n    if len(set(ids))!=4 or set(ids)!=set(expected):\n        raise ValueError("UNEXPECTED_RULE_SET")\n    if any((r.get("state"),r.get("enabled",True))!=expected[r["id"]] for r in rules):\n        raise ValueError("UNSAFE_RULE_CONFIGURATION")\n    if any(r.get("enabled",True) and r.get("state")!="PERLU_VERIFIKASI" for r in rules):
+    expected={"SPJ-GENERAL":("PERLU_VERIFIKASI",True),"MARKETPLACE-2026":("PERLU_VERIFIKASI",True),"NON-APPLICABLE":("TIDAK_BERLAKU",False),"READY":("DAPAT_DIHITUNG",False)}
+    ids=[r.get("id") for r in rules]
+    if len(set(ids))!=4 or set(ids)!=set(expected):
+        raise ValueError("UNEXPECTED_RULE_SET")
+    if any((r.get("state"),r.get("enabled",True))!=expected[r["id"]] for r in rules):
+        raise ValueError("UNSAFE_RULE_CONFIGURATION")
+    if any(r.get("enabled",True) and r.get("state")!="PERLU_VERIFIKASI" for r in rules):
         raise ValueError("UNSAFE_ENABLED_STATE")
     if not isinstance(payload,dict):
         return {"state":"INPUT_ERROR","reason":"Payload must be an object."}

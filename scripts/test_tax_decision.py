@@ -24,6 +24,22 @@ class TaxDecisionTests(unittest.TestCase):
     self.assertEqual(r["state"],"PERLU_VERIFIKASI")
     self.assertIsNone(r["taxAmount"])
     self.assertEqual(r["ruleId"],"MARKETPLACE-2026" if p["channel"]=="Marketplace" else "SPJ-GENERAL")
+ def test_date_and_channel_checks(self):
+  for day in ("2026-09-30","2026-10-01","2026-10-09"):
+   result=m.decide({**BASE,"channel":"Marketplace","transactionDate":day})
+   self.assertEqual(result["state"],"PERLU_VERIFIKASI")
+   self.assertIsNone(result["taxAmount"])
+   self.assertTrue(any("platform" in s.lower() for s in result["checks"]))
+  old=m.decide({**BASE,"channel":"Marketplace","transactionDate":"2026-09-30"})
+  self.assertTrue(any("historical" in s.lower() for s in old["checks"]))
+  card=m.decide({**BASE,"channel":"KKPD","transactionDate":"2026-10-09"})
+  self.assertTrue(any("KKPD" in s for s in card["checks"]))
+  missing=m.decide(BASE)
+  self.assertTrue(any("transaction date" in s.lower() for s in missing["checks"]))
+ def test_invalid_dates(self):
+  for day in ("2026-02-30","2026-13-01","09-10-2026","2026-1-01",20261009,"2026-10-09T00:00:00"):
+   with self.subTest(day=day):
+    self.assertEqual(m.decide({**BASE,"transactionDate":day})["state"],"INPUT_ERROR")
  def test_invalid_amounts(self):
   for amount in [-1,1.2,"1000",True,None,9007199254740992]:
    with self.subTest(amount=amount):

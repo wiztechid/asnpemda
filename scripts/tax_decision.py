@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Fail-closed ASN Pemda tax verification engine. No rates, no computation."""
 import json
+from datetime import date
 from pathlib import Path
 MATRIX=Path(__file__).resolve().parents[1]/"data/tax/decision-matrix.v0.1.json"
 CHANNELS={"UP/GU","LS","KKPD","Marketplace","Lainnya"}
@@ -31,6 +32,16 @@ def decide(payload, matrix_path=MATRIX):
     if (payload.get("channel") not in CHANNELS or payload.get("kind") not in KINDS
         or payload.get("seller") not in SELLERS or payload.get("documents") not in DOCUMENTS):
         return {"state":"INPUT_ERROR","reason":"Missing or unsupported classification field."}
+    raw_date=payload.get("transactionDate")
+    if raw_date is not None:
+        if not isinstance(raw_date,str) or len(raw_date)!=10:
+            return {"state":"INPUT_ERROR","reason":"Transaction date must be YYYY-MM-DD."}
+        try:
+            parsed=date.fromisoformat(raw_date)
+        except ValueError:
+            return {"state":"INPUT_ERROR","reason":"Invalid transaction date."}
+        if parsed.isoformat()!=raw_date:
+            return {"state":"INPUT_ERROR","reason":"Transaction date must be YYYY-MM-DD."}
     marketplace=payload["channel"]=="Marketplace"
     rule=next((r for r in rules if r.get("id")==("MARKETPLACE-2026" if marketplace else "SPJ-GENERAL")),None)
     if rule is None or rule.get("state")!="PERLU_VERIFIKASI":
@@ -38,7 +49,13 @@ def decide(payload, matrix_path=MATRIX):
     checks=["Verify transaction date and goods/service classification",
             "Verify supplier tax status and documentary exemptions",
             "Verify applicable rules, collector, tax base, and rounding"]
+    if raw_date is None:
+        checks.insert(0,"Record transaction date before applying effective-date rules")
+    if payload["channel"]=="KKPD":
+        checks.insert(0,"Verify KKPD issuer, payment evidence, and legally responsible tax collector")
     if marketplace:
         checks.insert(0,"Verify designated platform, date, invoice, and proof of platform withholding")
+        if raw_date is not None and parsed<date(2026,10,1):
+            checks.insert(0,"Review historical marketplace rules: transaction predates 1 October 2026 announcement")
     return {"state":"PERLU_VERIFIKASI","ruleId":rule["id"],"reason":rule["reason"],
             "checks":checks,"taxAmount":None,"source":rule.get("source")}

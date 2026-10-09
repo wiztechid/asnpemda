@@ -1,5 +1,13 @@
-# Date and channel verification v0.2 — implementation checklist
+# Date-aware tax verification v0.2
 
-Status: PRE_RELEASE / HOLD. Before any date-aware rule activation, require strict YYYY-MM-DD validation, effective-date source citations, tests for invalid calendar dates, and historical-law review. KKPD requires confirmation of issuer, card payment evidence and statutory collector. Marketplace requires designation, invoice and withholding evidence; the DJP October 2026 announcement is a review trigger, not a blanket tax determination.
+Implemented in `scripts/tax_decision.py` with regression tests in `scripts/test_tax_decision.py`.
 
-Current Python engine has NOT yet implemented date-aware behavior; this document is a work queue, not a completed feature. Public HTML is an independent noindex prototype. No tax calculation is authorized.
+- Optional `transactionDate` uses strict ISO `YYYY-MM-DD`; invalid dates fail with `INPUT_ERROR`. Missing dates trigger a verification prompt.
+- KKPD triggers a dedicated collector/card-evidence check.
+- Marketplace triggers platform, invoice and withholding evidence checks; dates before 1 October 2026 trigger historical-law review. The date is a **review flag**, not an automatic liability determination.
+- Every valid scenario still returns `PERLU_VERIFIKASI` with `taxAmount: null`. `DAPAT_DIHITUNG` and `TIDAK_BERLAKU` remain disabled.
+- Public HTML/JS is separate from this Python engine and is not yet date-aware. UI parity and legal review are required before release.
+
+Reference: https://www.pajak.go.id/id/siaran-pers/pemungutan-pph-pasal-22-melalui-marketplace-mulai-dilaksanakan-1-oktober-2026
+
+PRE_RELEASE / HOLD. No tax-rate activation or automatic publication.

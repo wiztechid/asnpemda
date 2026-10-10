@@ -54,4 +54,12 @@ for(const method of ["UP/GU","LS","KKPD","Marketplace"]){
   compareWithPython({...base,metode:method,tanggal:day});
  }
 }
+for(const field of ["jenis","rekanan","dokumen","metode"]){
+ for(const bad of ["","INVALID"]){
+  const result=simulate({...base,[field]:bad});
+  assert.match(result.error,/klasifikasi transaksi yang valid/);
+  assert.equal(result.heading,"");
+ }
+}
+console.log("SPJ required-classification fail-closed tests passed");
 console.log("SPJ same-input cross-engine parity passed");

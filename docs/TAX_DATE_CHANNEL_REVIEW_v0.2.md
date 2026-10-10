@@ -6,7 +6,7 @@ Implemented in `scripts/tax_decision.py` with regression tests in `scripts/test_
 - KKPD triggers a dedicated collector/card-evidence check.
 - Marketplace triggers platform, invoice and withholding evidence checks; dates before 1 October 2026 trigger historical-law review. The date is a **review flag**, not an automatic liability determination.
 - Every valid scenario still returns `PERLU_VERIFIKASI` with `taxAmount: null`. `DAPAT_DIHITUNG` and `TIDAK_BERLAKU` remain disabled.
-- Public HTML/JS is separate from this Python engine and is not yet date-aware. UI parity and legal review are required before release.
+- Public HTML/JS is separate from this Python engine. Date-aware UI, same-input cross-engine scenario checks, and a manual Chromium smoke test are now implemented and passed. Full legal review and release authorization remain required.
 
 Reference: https://www.pajak.go.id/id/siaran-pers/pemungutan-pph-pasal-22-melalui-marketplace-mulai-dilaksanakan-1-oktober-2026
 

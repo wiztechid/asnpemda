@@ -40,6 +40,17 @@ class TaxDecisionTests(unittest.TestCase):
   for day in ("2026-02-30","2026-13-01","09-10-2026","2026-1-01",20261009,"2026-10-09T00:00:00"):
    with self.subTest(day=day):
     self.assertEqual(m.decide({**BASE,"transactionDate":day})["state"],"INPUT_ERROR")
+ def test_malformed_rule_identifiers(self):
+  original=json.loads(m.MATRIX.read_text())
+  for bad in ([],{},None,123):
+   with self.subTest(bad=bad):
+    matrix=json.loads(json.dumps(original))
+    matrix["rules"][0]["id"]=bad
+    with tempfile.TemporaryDirectory() as tmp:
+     path=pathlib.Path(tmp)/"matrix.json"
+     path.write_text(json.dumps(matrix))
+     with self.assertRaisesRegex(ValueError,"UNEXPECTED_RULE_SET"):
+      m.decide(BASE,path)
  def test_invalid_amounts(self):
   for amount in [-1,1.2,"1000",True,None,9007199254740992]:
    with self.subTest(amount=amount):

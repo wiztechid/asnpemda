@@ -18,7 +18,7 @@ def decide(payload, matrix_path=MATRIX):
         raise ValueError("UNSAFE_MATRIX")
     expected={"SPJ-GENERAL":("PERLU_VERIFIKASI",True),"MARKETPLACE-2026":("PERLU_VERIFIKASI",True),"NON-APPLICABLE":("TIDAK_BERLAKU",False),"READY":("DAPAT_DIHITUNG",False)}
     ids=[r.get("id") for r in rules]
-    if len(set(ids))!=4 or set(ids)!=set(expected):
+    if any(not isinstance(item,str) for item in ids) or len(set(ids))!=4 or set(ids)!=set(expected):
         raise ValueError("UNEXPECTED_RULE_SET")
     if any((r.get("state"),r.get("enabled",True))!=expected[r["id"]] for r in rules):
         raise ValueError("UNSAFE_RULE_CONFIGURATION")

@@ -51,6 +51,17 @@ class TaxDecisionTests(unittest.TestCase):
      path.write_text(json.dumps(matrix))
      with self.assertRaisesRegex(ValueError,"UNEXPECTED_RULE_SET"):
       m.decide(BASE,path)
+ def test_unhashable_and_invalid_rule_ids(self):
+  original=json.loads(m.MATRIX.read_text())
+  for invalid in ([],{},None,123):
+   with self.subTest(invalid=invalid):
+    matrix=json.loads(json.dumps(original))
+    matrix["rules"][0]["id"]=invalid
+    with tempfile.TemporaryDirectory() as tmp:
+     p=pathlib.Path(tmp)/"matrix.json"
+     p.write_text(json.dumps(matrix))
+     with self.assertRaisesRegex(ValueError,"UNEXPECTED_RULE_SET"):
+      m.decide(BASE,p)
  def test_invalid_amounts(self):
   for amount in [-1,1.2,"1000",True,None,9007199254740992]:
    with self.subTest(amount=amount):

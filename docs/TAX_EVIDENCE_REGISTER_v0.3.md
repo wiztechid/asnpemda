@@ -9,6 +9,17 @@
 | NON-APPLICABLE | Pengecualian | Belum ditetapkan per jenis pajak | Bukti pengecualian dan persetujuan reviewer | DISABLED |
 | READY | Perhitungan | Belum tersedia matriks tarif terotorisasi | Peraturan terkini, tanggal berlaku, dasar pengenaan, perhitungan, rounding, uji, persetujuan rilis | DISABLED |
 
+## Audit status regulasi — 10 Oktober 2026
+
+**Temuan material:** JDIH Kementerian Keuangan mencatat PMK 59/PMK.03/2022 (perubahan PMK 231/2019) **dicabut sebagian** oleh PMK 81 Tahun 2024, dengan catatan Pasal 2 sampai Pasal 7 dan Pasal 23. Karena itu PMK 59/2022 tidak dapat dipakai sendirian sebagai dasar keputusan transaksi 2026. Detail ketentuan konsolidasi dan perubahan sesudahnya masih wajib dicek pasal per pasal.
+
+Sumber resmi:
+- https://jdih.kemenkeu.go.id/dok/59-pmk-03-2022/summary
+- https://jdih.kemenkeu.go.id/dok/pmk-81-tahun-2024/summary
+- https://pajak.go.id/index.php/id/pemungutan-pajak-penghasilan-pasal-22-instansi-pemerintah
+
+**Gate wajib:** reviewer memverifikasi pasal yang berlaku pada tanggal transaksi, perubahan/pencabutan, perbedaan PPh 22 instansi pemerintah dan PPh 22 marketplace, serta perlakuan KKPD. Informasi tarif/ambang dalam materi DJP diperlakukan sebagai petunjuk penelitian, bukan angka siap hitung. Seluruh rule tetap fail-closed.
+
 ## Pengendalian perubahan
 
 - Tanggal **1 Oktober 2026** dipakai hanya untuk memicu pemeriksaan historis marketplace, **bukan** untuk memutuskan pajak otomatis.

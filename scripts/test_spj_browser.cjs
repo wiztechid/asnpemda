@@ -25,3 +25,33 @@ assert(simulate({...base,metode:"Marketplace",tanggal:"2026-09-30"}).checks.some
 assert(!simulate({...base,metode:"Marketplace",tanggal:"2026-10-01"}).checks.some(x=>x.includes("historis")));
 assert(simulate({...base,metode:"Marketplace"}).checks.some(x=>x.includes("platform")));
 console.log("SPJ JavaScript behavior tests passed");
+
+
+const {spawnSync}=require("node:child_process");
+function compareWithPython(data){
+ const payload={amount:Number(data.nilai),transactionDate:data.tanggal,channel:data.metode,kind:data.jenis,seller:data.rekanan,documents:data.dokumen};
+ const py='import json,sys;from scripts.tax_decision import decide;print(json.dumps(decide(json.loads(sys.argv[1]))))';
+ const run=spawnSync("python",["-c",py,JSON.stringify(payload)],{encoding:"utf8",timeout:3000});
+ assert.equal(run.status,0,run.stderr);
+ const engine=JSON.parse(run.stdout),browser=simulate(data);
+ assert.equal(engine.state,"PERLU_VERIFIKASI");
+ assert.equal(engine.taxAmount,null);
+ assert.match(browser.heading,/PERLU VERIFIKASI/);
+ if(data.metode==="KKPD"){
+  assert(browser.checks.some(s=>s.includes("KKPD")));
+  assert(engine.checks.some(s=>s.includes("KKPD")));
+ }
+ if(data.metode==="Marketplace"){
+  assert(browser.checks.some(s=>s.includes("platform")));
+  assert(engine.checks.some(s=>s.includes("platform")));
+  const old=data.tanggal<"2026-10-01";
+  assert.equal(browser.checks.some(s=>s.includes("historis")),old);
+  assert.equal(engine.checks.some(s=>s.includes("historical")),old);
+ }
+}
+for(const method of ["UP/GU","LS","KKPD","Marketplace"]){
+ for(const day of ["2026-09-30","2026-10-01","2026-10-09"]){
+  compareWithPython({...base,metode:method,tanggal:day});
+ }
+}
+console.log("SPJ same-input cross-engine parity passed");

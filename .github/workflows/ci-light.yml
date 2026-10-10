@@ -29,4 +29,5 @@ jobs:
           python scripts/test_tax_decision.py
           python scripts/test_spj_web.py
           node scripts/test_spj_browser.cjs
+          python scripts/test_spj_parity.py
           python scripts/security_gate.py

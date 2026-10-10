@@ -24,3 +24,16 @@ Sumber teks PMK 70/2022: https://www.pajak.go.id/id/peraturan/kriteria-danatau-r
 ## Gate wajib
 
 Reviewer harus mencatat pasal, ayat, perubahan, tanggal efektif, fakta transaksi, bukti, dan keputusan independen. Perlakuan PPh 23 katering serta hubungan PPN/PBJT dan peraturan daerah belum disimpulkan dalam dokumen ini. Jangan menyamakan tidak dikenai PPN dengan bebas dari semua pajak. Tidak ada aktivasi perhitungan otomatis.
+
+
+## Verifikasi pasal sumber primer (10 Oktober 2026)
+
+- **PMK 70/2022 Pasal 4 ayat (2)**: restoran/rumah makan/warung menyediakan layanan penyajian makan-minum, setidaknya fasilitas meja, kursi dan/atau peralatan makan di tempat.
+- **Pasal 4 ayat (3)**: katering meliputi persiapan berdasarkan pesanan, penyajian di lokasi pemesan yang berbeda dari lokasi produksi/penyimpanan, dengan atau tanpa petugas/peralatan.
+- **Pasal 4 ayat (4)–(5)**: penjualan makanan/minuman oleh toko swalayan tertentu, pabrik, atau lounge bandara termasuk kelompok yang dikenai PPN.
+- **Pasal 8**: kategori jasa boga/katering yang tidak dikenai PPN merujuk pada kriteria Pasal 4 ayat (3).
+- **PMK 81/2024**: JDIH mencatat perubahan keempat oleh **PMK 1/2026** bertanggal 22 Januari 2026. Ini verifikasi riwayat dokumen, **belum** verifikasi pasal spesifik PPh 22/PPh 23.
+
+Sumber primer: https://pajak.go.id/id/peraturan/kriteria-danatau-rincian-makanan-dan-minuman-jasa-kesenian-dan-hiburan-jasa-perhotelan ; https://jdih.kemenkeu.go.id/dok/pmk-81-tahun-2024/overview ; https://jdih.kemenkeu.go.id/dok/pmk-1-tahun-2026/overview
+
+**OPEN / BLOCKER:** teks konsolidasi pasal pemungutan PPh 22 instansi pemerintah dan PPh 23 jasa, pengecualian dan ketentuan efektif belum divalidasi menyeluruh; PBJT harus merujuk ketentuan daerah sesuai lokasi dan tanggal transaksi. Tidak ada tarif otomatis.

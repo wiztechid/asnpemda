@@ -1,13 +1,15 @@
-# Release decision v0.8
+# Release decision v0.9
 
-Status: HOLD / NOT APPROVED.
+Status: HOLD / PRE_RELEASE.
 
-Completed: offline evidence intake, deterministic candidate IDs, editorial review proposal and CI unit tests.
+The public site shell is served by Cloudflare Pages from an allowlisted `dist/` artifact. Unapproved article drafts, prototypes, editorial documents, data, source registries, and research files are excluded from the deployment artifact.
+
+This task improves site structure and publication boundaries. It does not approve a policy article or authorize an editorial launch.
+
 Open gates:
-- Human-reviewed primary source and publication-approved article inventory absent.
-- Source network fetcher remains disabled pending DNS rebinding-safe transport review.
-- Final contact/terms and privacy review.
-- Production URL, output allowlist and deployment approval.
-- Content/accessibility/SEO checks on production build.
+- Evidence-backed launch article and exact-revision human approval.
+- Public correction/contact route.
+- Final mobile/accessibility/SEO QC on the publication corpus.
+- Separate human GO decision.
 
-A passing CI or heavy validation does not authorize launch.
+A passing CI, build, or deployment does not override these gates.

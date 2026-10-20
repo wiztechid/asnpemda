@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /data/
-Disallow: /docs/
-Disallow: /schemas/
-Disallow: /scripts/
+
+Sitemap: https://asnpemda.pages.dev/sitemap.xml

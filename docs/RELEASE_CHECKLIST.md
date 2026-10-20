@@ -1,21 +1,18 @@
 # ASN Pemda release readiness checklist
 
-## Completed technical foundation
-- [x] Candidate-only discovery defaults to dry run
-- [x] CI light checks data, HTML links and unit tests
-- [x] Heavy validation is manual
-- [x] Draft article marked noindex
-- [x] Sitemap builder filters approved + published records
-- [x] Security risk register documented
+## Public site foundation
+- [x] Canonical production URL and sitemap origin configured
+- [x] Allowlisted static output; repository root is not deployed
+- [x] Draft article and prototype paths excluded from Pages output and sitemap
+- [x] Core trust pages use a shared navigation and visual system
+- [x] Public build allowlist is checked by CI
 
-## Blocking before public launch
-- [ ] Security-reviewed fetcher with SSRF and robots protections
-- [ ] Verified primary evidence for launch articles
-- [ ] Human editorial approval and revision ledger
-- [ ] Final contact/terms and privacy review
-- [ ] Production URL/base path and canonical checks
-- [ ] Static output allowlist and deploy workflow
-- [ ] Mobile/accessibility/content audit
-- [ ] Explicit human GO authorization
+## Blocking before publication launch
+- [ ] Evidence-backed article inventory reviewed against current primary sources
+- [ ] Human approval recorded against exact article and evidence revisions
+- [ ] Public correction/contact route finalized
+- [ ] Full mobile and accessibility review on the final publication corpus
+- [ ] SEO and canonical review against the final live output
+- [ ] Explicit human GO decision recorded
 
-Release state: HOLD. CI green does not override these blockers.
+Release state: HOLD. Technical readiness does not replace editorial approval.

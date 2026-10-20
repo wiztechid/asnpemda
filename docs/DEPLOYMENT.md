@@ -1,6 +1,16 @@
-# Deployment Gate
+# Cloudflare Pages Deployment
 
-Target candidate: https://wiztechid.github.io/asnpemda/ (not yet confirmed live).
-No automatic Pages deployment is configured. GitHub Pages must be explicitly enabled only after siteUrl and base path are verified, legal/trust pages finalized, and a human release approval recorded.
-Never deploy data/candidates, internal docs, source-state or test fixtures to the public site. A future deploy workflow must publish an allowlisted output directory, not repository root.
-The current index is a preview, not a launch-ready publication. The draft article remains noindex.
+Production site: https://asnpemda.pages.dev  
+Source repository: https://github.com/wiztechid/asnpemda  
+Production branch: `main`
+
+## Public build boundary
+Cloudflare Pages runs `python scripts/build_site.py` and publishes `dist/`. The builder starts from an empty output directory and copies only an explicit public allowlist. It never copies the repository root. Editorial documents, source registries, research notes, scripts, schemas, candidate records, and unapproved drafts stay outside the Pages artifact.
+
+An article enters `dist/` and `sitemap.xml` only when its JSON record is explicitly approved, has `publicationState: PUBLISHED`, has a valid slug, exists as an HTML page, and is not marked noindex.
+
+## Release controls
+- CI light runs source/link checks and the allowlist build smoke test.
+- Heavy validation is manual via workflow dispatch after a substantive batch.
+- A successful build or deployment does not change the editorial release state.
+- The site remains PRE_RELEASE / HOLD until the publication gates and a separate human GO decision are complete.

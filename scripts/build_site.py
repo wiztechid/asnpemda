@@ -20,6 +20,7 @@ BASE_FILES = (
     "editorial.html",
     "privacy.html",
     "disclaimer.html",
+    "404.html",
     "favicon.svg",
     "favicon.ico",
     "robots.txt",

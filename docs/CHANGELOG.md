@@ -6,5 +6,5 @@
 - Added an allowlisted Cloudflare Pages build to `dist/`; drafts, research, internal docs, scripts, schemas, and candidate data are excluded.
 - Added a public-build smoke test to CI and normalized root-relative links in the static site audit.
 - Set the canonical site origin to `https://asnpemda.pages.dev` and added trust-page sitemap entries.
-- Refined the low-poly ASN Pemda mark using the author's visual features, and removed the tie from the uniform icon.
+- Refined the low-poly ASN Pemda mark to match the author's hairstyle and glasses; removed the tie and facial hair.
 - Publication remains PRE_RELEASE / HOLD pending evidence and human approval.

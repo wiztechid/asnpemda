@@ -29,7 +29,7 @@ Head terms sudah ramai dan banyak hasil mengulang tanggal, status penuh waktu, p
 - menjelaskan bahwa siaran pers Kemenkeu menyebut **rencana untuk PPPK paruh waktu di daerah**;
 - membatasi klaim otomatis tanpa seleksi pada pernyataan khusus guru;
 - membedakan PPPK penuh waktu dari PNS;
-- memberi langkah aman tanpa menebak gaji atau syarat tiap individu.
+- memberi checklist empat cek sebelum meneruskan kabar, tanpa menebak gaji atau syarat tiap individu.
 
 Ini snapshot hasil pencarian, bukan peringkat Google tetap. SERP berubah menurut lokasi, perangkat, waktu, dan personalisasi.
 
@@ -47,7 +47,7 @@ Ini snapshot hasil pencarian, bukan peringkat Google tetap. SERP berubah menurut
 - **Title tag:** PPPK Paruh Waktu 2027: Harapan Jadi Penuh Waktu
 - **H1:** Untuk Rekan PPPK Paruh Waktu: Harapan Jadi Penuh Waktu pada 2027
 - **Slug:** `/artikel/pppk-paruh-waktu-penuh-waktu-2027.html`
-- **Meta description:** Pemerintah merencanakan PPPK paruh waktu di daerah beralih ke penuh waktu mulai 2027. Catatan sesama ASN tentang harapan, cakupan, dan hal yang masih menunggu.
+- **Meta description:** Kemenkeu merencanakan peralihan PPPK paruh waktu di daerah ke penuh waktu mulai 2027. Catatan sesama ASN tentang harapan dan hal yang masih ditunggu.
 - Satu H1; jawaban ringkas di awal; status; daftar isi; tabel yang membandingkan informasi diumumkan dan rincian yang belum ada; FAQ; tautan internal; sumber primer.
 - Article + BreadcrumbList JSON-LD; tanpa FAQPage.
 - `noindex,follow`; belum masuk sitemap atau beranda.

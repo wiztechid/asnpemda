@@ -131,6 +131,10 @@
           }
         }
       }
+    },
+    "heroImage": {
+      "type": "string",
+      "pattern": "^assets/[a-z0-9]+(?:-[a-z0-9]+)*[.]webp$"
     }
   }
 }

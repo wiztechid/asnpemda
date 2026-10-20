@@ -4,6 +4,8 @@ Topics: asn-cpns, kesejahteraan, karier, keuangan-daerah, pemerintahan-daerah, p
 
 Article formats: policy-update, living-explainer, operational-guide.
 
+All article formats follow `docs/ARTICLE_WRITING_SOP.md` v1.1 for page structure, SEO metadata, responsive readability, and the standard WebP hero workflow. The format is a flexible baseline; include only sections that serve reader intent.
+
 Candidate state machine:
 DISCOVERED -> DEDUPED -> EVIDENCE_PENDING -> VERIFIED -> DRAFTED -> REVIEW_PENDING -> APPROVED -> PUBLISHED
 Any state -> BLOCKED (with reason). Rejected candidates -> REJECTED.

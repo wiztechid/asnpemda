@@ -20,6 +20,7 @@ BASE_FILES = (
     "editorial.html",
     "privacy.html",
     "disclaimer.html",
+    "koreksi.html",
     "404.html",
     "favicon.svg",
     "favicon.ico",
@@ -30,8 +31,8 @@ BASE_FILES = (
 SLUG_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 
 
-def published_articles() -> list[tuple[str, str | None]]:
-    articles: list[tuple[str, str | None]] = []
+def published_articles() -> list[tuple[str, str | None, str | None]]:
+    articles: list[tuple[str, str | None, str | None]] = []
     records = ROOT / "data" / "articles"
     if not records.exists():
         return articles
@@ -48,7 +49,21 @@ def published_articles() -> list[tuple[str, str | None]]:
         html = source.read_text(encoding="utf-8")
         if re.search(r"""<meta[^>]+name=["']robots["'][^>]+noindex""", html, re.I):
             raise SystemExit(f"ERROR: approved article is still marked noindex: {source.name}")
-        articles.append((f"artikel/{slug}.html", record.get("dateModified")))
+        hero_image = record.get("heroImage")
+        if hero_image is not None:
+            if not isinstance(hero_image, str) or not hero_image or hero_image.startswith("/"):
+                raise SystemExit(f"ERROR: heroImage must be a repository-relative assets path: {source.name}")
+            hero_path = Path(hero_image)
+            if hero_path.is_absolute() or ".." in hero_path.parts or not hero_image.startswith("assets/") or hero_path.suffix.lower() != ".webp":
+                raise SystemExit(f"ERROR: invalid approved article hero path: {hero_image}")
+            hero_source = ROOT / hero_path
+            if not hero_source.is_file():
+                raise SystemExit(f"ERROR: approved article hero is missing: {hero_image}")
+            with hero_source.open("rb") as image_file:
+                header = image_file.read(12)
+            if len(header) != 12 or header[:4] != b"RIFF" or header[8:12] != b"WEBP":
+                raise SystemExit(f"ERROR: approved article hero is not a valid WebP: {hero_image}")
+        articles.append((f"artikel/{slug}.html", record.get("dateModified"), hero_image))
     return articles
 
 
@@ -73,18 +88,22 @@ def main() -> None:
         shutil.copy2(source, target)
 
     articles = published_articles()
-    for relative, _ in articles:
+    for relative, _, hero_image in articles:
         target = DIST / relative
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(ROOT / relative, target)
+        if hero_image:
+            image_target = DIST / hero_image
+            image_target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(ROOT / hero_image, image_target)
 
     ns = "http://www.sitemaps.org/schemas/sitemap/0.9"
     ET.register_namespace("", ns)
     urlset = ET.Element(f"{{{ns}}}urlset")
-    for route in ("", "about.html", "editorial.html", "privacy.html", "disclaimer.html"):
+    for route in ("", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "koreksi.html"):
         url = ET.SubElement(urlset, f"{{{ns}}}url")
         ET.SubElement(url, f"{{{ns}}}loc").text = f"{origin}/{route}"
-    for relative, modified in articles:
+    for relative, modified, _ in articles:
         url = ET.SubElement(urlset, f"{{{ns}}}url")
         ET.SubElement(url, f"{{{ns}}}loc").text = f"{origin}/{relative}"
         if modified:

@@ -10,7 +10,7 @@ subprocess.run([sys.executable, str(root / "scripts" / "build_site.py")], check=
 dist = root / "dist"
 required = {
     "index.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html",
-    "404.html", "favicon.svg", "favicon.ico", "robots.txt", "sitemap.xml",
+    "404.html", "koreksi.html", "favicon.svg", "favicon.ico", "robots.txt", "sitemap.xml",
     "assets/site.css", "assets/author-suiza-ixan.webp",
 }
 actual = {p.relative_to(dist).as_posix() for p in dist.rglob("*") if p.is_file()}
@@ -22,7 +22,19 @@ if blocked:
     raise SystemExit("internal/source files leaked into dist: " + ", ".join(sorted(blocked)))
 if "artikel/gaji-asn-melalui-koperasi.html" in actual:
     raise SystemExit("unapproved draft article leaked into dist")
-for page in ("index.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "404.html"):
+published_path = "artikel/pppk-paruh-waktu-penuh-waktu-2027.html"
+if published_path not in actual:
+    raise SystemExit("approved PPPK article missing from public build")
+published_html = (dist / published_path).read_text(encoding="utf-8")
+if '<meta name="robots" content="index,follow">' not in published_html:
+    raise SystemExit("published PPPK article is not indexable")
+if "/assets/hero-pppk-paruh-waktu-2027.webp" not in published_html:
+    raise SystemExit("published PPPK article hero reference missing")
+if "assets/hero-pppk-paruh-waktu-2027.webp" not in actual:
+    raise SystemExit("published PPPK article hero missing from public build")
+if "/artikel/pppk-paruh-waktu-penuh-waktu-2027.html" not in (dist / "index.html").read_text(encoding="utf-8"):
+    raise SystemExit("homepage does not link to the published PPPK article")
+for page in ("index.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "koreksi.html", "404.html"):
     html = (dist / page).read_text(encoding="utf-8")
     if '<img class="brand-icon" src="/favicon.svg?v=' not in html:
         raise SystemExit(f"{page} brand mark does not reuse the favicon")
@@ -33,4 +45,34 @@ tree = ET.parse(dist / "sitemap.xml")
 locations = [node.text or "" for node in tree.findall(".//{*}loc")]
 if any("gaji-asn-melalui-koperasi" in url for url in locations):
     raise SystemExit("unapproved draft article leaked into sitemap")
+if "https://asnpemda.pages.dev/koreksi.html" not in locations:
+    raise SystemExit("public correction page missing from sitemap")
+if "https://asnpemda.pages.dev/artikel/pppk-paruh-waktu-penuh-waktu-2027.html" not in locations:
+    raise SystemExit("published PPPK article missing from sitemap")
 print("PUBLIC BUILD PASS: allowlist, draft exclusion, and sitemap verified")
+
+smoke_record = root / "data" / "articles" / "ci-hero-smoke.json"
+smoke_page = root / "artikel" / "ci-hero-smoke.html"
+smoke_image = root / "assets" / "ci-hero-smoke.webp"
+if smoke_record.exists() or smoke_page.exists() or smoke_image.exists():
+    raise SystemExit("CI hero smoke fixture path already exists")
+try:
+    smoke_image.write_bytes((root / "assets" / "author-suiza-ixan.webp").read_bytes())
+    smoke_page.write_text('<!doctype html><html><head><link rel="canonical" href="https://asnpemda.pages.dev/artikel/ci-hero-smoke.html"></head><body>CI smoke</body></html>', encoding="utf-8")
+    smoke_record.write_text('{"approved":true,"publicationState":"PUBLISHED","slug":"ci-hero-smoke","dateModified":"2026-10-20","heroImage":"assets/ci-hero-smoke.webp"}', encoding="utf-8")
+    subprocess.run([sys.executable, str(root / "scripts" / "build_site.py")], check=True)
+    if not (dist / "artikel" / "ci-hero-smoke.html").is_file():
+        raise SystemExit("approved article fixture was not copied")
+    if not (dist / "assets" / "ci-hero-smoke.webp").is_file():
+        raise SystemExit("approved article hero was not copied")
+    tree = ET.parse(dist / "sitemap.xml")
+    locations = [node.text or "" for node in tree.findall(".//{*}loc")]
+    if "https://asnpemda.pages.dev/artikel/ci-hero-smoke.html" not in locations:
+        raise SystemExit("approved article fixture missing from sitemap")
+finally:
+    smoke_record.unlink(missing_ok=True)
+    smoke_page.unlink(missing_ok=True)
+    smoke_image.unlink(missing_ok=True)
+subprocess.run([sys.executable, str(root / "scripts" / "build_site.py")], check=True)
+print("ARTICLE HERO BUILD PASS: approved article and WebP asset copied together")
+

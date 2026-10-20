@@ -1,0 +1,73 @@
+{
+  "articleId": "pppk-paruh-waktu-penuh-waktu-2027",
+  "slug": "pppk-paruh-waktu-penuh-waktu-2027",
+  "approved": true,
+  "publicationState": "PUBLISHED",
+  "dateModified": "2026-10-20",
+  "heroImage": "assets/hero-pppk-paruh-waktu-2027.webp",
+  "articlePath": "artikel/pppk-paruh-waktu-penuh-waktu-2027.html",
+  "articleSha256": "7e0d4441a5f0242abdc4ccea280f9e7afe8a0a0978feb2079659432322c7feb7",
+  "evidencePath": "data/candidates/pppk-paruh-waktu-penuh-waktu-2027.evidence.json",
+  "evidenceGitBlobSha1": "33dd78a76ee062fb9dbd9f7b4a7c509d6a6755d9",
+  "evidenceSha256": "a08ab3770305476067d337d3c0740e1856dcf71e60ffa7c5c2ce09a649aaab09",
+  "humanApproval": {
+    "decision": "GO",
+    "authorizedBy": "wiztechid",
+    "role": "human site owner and article author",
+    "approvedAt": "2026-10-20T20:01:06+08:00",
+    "instruction": "User explicitly instructed publication and requested amendment of the SOP to remove independent review as a release requirement."
+  },
+  "editorialAssessment": {
+    "type": "AI_ASSISTED_EDITORIAL_REVIEW",
+    "reviewedAt": "2026-10-20T20:01:06+08:00",
+    "outcome": "APPROVE_WITH_SCOPE_NOTES",
+    "reviewerIsHuman": false,
+    "reviewerIsASN": false,
+    "summary": "Neutral and empathetic tone; regional plan separated from teacher-specific automatic mechanism; optional awareness checklist creates no new requirements; the approximately 6,000 figure is not added to 242,482 because overlap is not explicit in the cited sources."
+  },
+  "id": "pppk-paruh-waktu-penuh-waktu-2027",
+  "title": "PPPK Paruh Waktu Jadi Penuh Waktu 2027: Rencana dan Dampaknya",
+  "status": "WACANA_RESMI",
+  "datePublished": "2026-10-20",
+  "lastVerified": "2026-10-20",
+  "materiality": "HIGH",
+  "asnImpact": "Informasi resmi yang ditinjau menyampaikan rencana peralihan PPPK paruh waktu di daerah pada 2027. Dampak untuk pegawai mengikuti penjelasan resmi sesuai kelompok dan instansi; catatan pemantauan dalam artikel bersifat opsional.",
+  "pemdaImpact": "Kemenkeu menyampaikan rencana pembiayaan pusat untuk peralihan PPPK paruh waktu di daerah serta dukungan bertahap tiga tahun bagi PPPK daerah yang masih dibiayai Pemda. Rincian pelaksanaan belum dirinci dalam sumber yang ditinjau.",
+  "actionRequired": [],
+  "sources": [
+    {
+      "title": "Siaran Pers SP-160/KLI/2026: Mulai 2027, PPPK Paruh Waktu di Daerah Akan Menjadi PPPK Penuh Waktu",
+      "url": "https://media.kemenkeu.go.id/getmedia/b8324d8a-2306-45a9-8626-0cec4255b607/SP-160-Menkeu-Mulai-2027%2C-PPPK-Paruh-Waktu-di-Daerah-Akan-Menjadi-PPPK-Penuh-Waktu_1?ext=.pdf",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true,
+      "publishedAt": "2026-09-14"
+    },
+    {
+      "title": "Penataan Guru Jadi Fokus Pemerintah, Kepastian Status Disiapkan Mulai 2027",
+      "url": "https://www.kemendikdasmen.go.id/siaran-pers/16271-penataan-guru-jadi-fokus-pemerintah-kepastian-status-disiapkan-mulai-2027",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true,
+      "publishedAt": "2026-10-08"
+    },
+    {
+      "title": "Kabar Baik di Tahun 2027 Untuk Guru Non-ASN dan Guru PPPK Paruh Waktu",
+      "url": "https://puslapdik.kemendikdasmen.go.id/kabar-baik-di-tahun-2027-untuk-guru-non-asn-dan-guru-pppk-paruh-waktu/",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true,
+      "publishedAt": "2026-10-09"
+    },
+    {
+      "title": "Guru PPPK Paruh Waktu Akan Dialihkan Menjadi PPPK Penuh dan menjadi Pegawai Pemerintah Pusat",
+      "url": "https://puslapdik.kemendikdasmen.go.id/guru-pppk-paruh-waktu-akan-dialihkan-menjadi-pppk-penuh-dan-menjadi-pegawai-pemerintah-pusat/",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true,
+      "publishedAt": "2026-09-23"
+    }
+  ],
+  "revisionHistory": [
+    {
+      "date": "2026-10-20",
+      "summary": "Dipublikasikan setelah review cakupan sumber dan persetujuan GO pemilik situs; SOP tidak lagi mensyaratkan reviewer independen."
+    }
+  ]
+}

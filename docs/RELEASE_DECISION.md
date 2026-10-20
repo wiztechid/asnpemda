@@ -1,15 +1,9 @@
-# Release decision v0.9
+# Release decision v1.0
 
-Status: HOLD / PRE_RELEASE.
+Status: AUTHORIZED / DEPLOYMENT_QA_PENDING.
 
-The public site shell is served by Cloudflare Pages from an allowlisted `dist/` artifact. Unapproved article drafts, prototypes, editorial documents, data, source registries, and research files are excluded from the deployment artifact.
+The human site owner has authorized publication of the article revision bound to the approval record in `data/articles/pppk-paruh-waktu-penuh-waktu-2027.json`. Independent review is optional under the amended SOP. The recorded AI-assisted editorial assessment is advisory and is not represented as an ASN or human review.
 
-This task improves site structure and publication boundaries. It does not approve a policy article or authorize an editorial launch.
+The release build uses the allowlisted `dist/` artifact. Drafts and internal source material remain excluded.
 
-Open gates:
-- Evidence-backed launch article and exact-revision human approval.
-- Public correction/contact route.
-- Final mobile/accessibility/SEO QC on the publication corpus.
-- Separate human GO decision.
-
-A passing CI, build, or deployment does not override these gates.
+Open items are production checks after deployment: confirm the article and WebP hero load, test desktop and mobile layout, validate links, canonical/robots/structured data, and sitemap. A passing CI does not replace those checks.

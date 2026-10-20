@@ -1,7 +1,7 @@
 {
   "id": "pppk-paruh-waktu-penuh-waktu-2027",
   "slug": "pppk-paruh-waktu-penuh-waktu-2027",
-  "title": "PPPK Paruh Waktu 2027: Harapan Jadi Penuh Waktu, Apa yang Sudah Jelas?",
+  "title": "PPPK Paruh Waktu Jadi Penuh Waktu 2027: Rencana dan Dampaknya",
   "discoveredAt": "2026-10-20T18:45:00+08:00",
   "classification": "policy-update",
   "materiality": "HIGH",
@@ -57,8 +57,8 @@
       "PPPK penuh waktu apakah sama dengan PNS",
       "harapan PPPK paruh waktu diangkat penuh"
     ],
-    "titleTag": "PPPK Paruh Waktu 2027: Harapan Jadi Penuh Waktu",
-    "metaDescription": "Kemenkeu merencanakan peralihan PPPK paruh waktu di daerah ke penuh waktu mulai 2027. Catatan sesama ASN tentang harapan dan hal yang masih ditunggu.",
+    "titleTag": "PPPK Paruh Waktu Jadi Penuh Waktu 2027: Rencana & Dampak",
+    "metaDescription": "Apa arti rencana peralihan PPPK paruh waktu daerah menjadi penuh waktu pada 2027? Catatan sesama ASN tentang dampak dan detail yang masih ditunggu.",
     "slug": "/artikel/pppk-paruh-waktu-penuh-waktu-2027.html",
     "robots": "noindex,follow until human publication approval",
     "structuredData": [
@@ -124,5 +124,6 @@
     "path": "data/candidates/pppk-paruh-waktu-penuh-waktu-2027.evidence.json"
   },
   "evidenceSnapshotPath": "data/candidates/pppk-paruh-waktu-penuh-waktu-2027.evidence.json",
-  "editorialAngle": "Empathetic ASN-to-ASN note for regional part-time PPPK staff hoping for full-time transition; distinguish broad official plan from teacher-specific mechanism and pending individual guidance."
+  "editorialAngle": "Catatan sesama ASN yang menilai dampak yang mungkin dirasakan dari rencana kebijakan PPPK paruh waktu daerah menuju penuh waktu; fakta dibedakan dari hal yang belum dijelaskan.",
+  "editorialBoundary": "Artikel tidak menetapkan kewajiban atau persyaratan. Daftar awareness bersifat opsional dan tidak menggantikan aturan atau pemberitahuan resmi."
 }

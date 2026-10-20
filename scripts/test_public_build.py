@@ -22,6 +22,10 @@ if blocked:
     raise SystemExit("internal/source files leaked into dist: " + ", ".join(sorted(blocked)))
 if "artikel/gaji-asn-melalui-koperasi.html" in actual:
     raise SystemExit("unapproved draft article leaked into dist")
+for page in ("index.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "404.html"):
+    html = (dist / page).read_text(encoding="utf-8")
+    if '<img class="brand-icon" src="/favicon.svg?v=' not in html:
+        raise SystemExit(f"{page} brand mark does not reuse the favicon")
 index = (dist / "index.html").read_text(encoding="utf-8")
 if "/artikel/gaji-asn-melalui-koperasi.html" in index:
     raise SystemExit("homepage links to an unapproved draft article")

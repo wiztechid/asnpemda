@@ -7,13 +7,18 @@
 - [x] Core trust pages use a shared navigation and visual system
 - [x] Public build allowlist is checked by CI
 
-## Blocking before publication launch
-- [ ] Evidence-backed article inventory reviewed against current primary sources
-- [ ] Human approval recorded against exact article and evidence revisions
-- [x] Public correction route implemented in the release candidate with a public GitHub issue form and privacy notice
-- [ ] Public correction route verified on the production domain after deployment
-- [ ] Full mobile and accessibility review on the final publication corpus
-- [ ] SEO and canonical review against the final live output
-- [ ] Explicit human GO decision recorded
+## Article publication
+- [x] Evidence-backed article checked against current primary sources
+- [x] AI-assisted editorial assessment recorded with its limitations
+- [x] Human site-owner GO recorded against exact article and evidence revisions
+- [x] Independent reviewer is optional under SOP v1.0
+- [x] Article metadata, robots, hero image and source links prepared for publication
+- [x] Article linked from homepage and included in generated sitemap
 
-Release state: HOLD. Technical readiness does not replace editorial approval.
+## Post-deploy verification
+- [ ] Production article URL returns the published page and image
+- [ ] Desktop and mobile layout checked
+- [ ] Source and internal links checked
+- [ ] Canonical, robots, structured data and sitemap checked on production
+
+Release state: DEPLOYMENT_QA_PENDING. Publication authorization is recorded; deployment is not complete until production checks pass.

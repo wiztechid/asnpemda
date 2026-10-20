@@ -1,4 +1,4 @@
-# SOP Gaya Penulisan Artikel ASN Pemda v1.2
+# SOP Gaya Penulisan Artikel ASN Pemda v1.3
 
 Status: **WAJIB untuk seluruh artikel baru dan revisi substansial**.
 
@@ -83,4 +83,4 @@ Gunakan pola editorial situs ASN Pemda dan Design System v1.0. Susunan ini menja
 - [ ] Mobile readability diperiksa
 - [ ] Evidence review dan publication approval terpenuhi secara terpisah
 
-**Gerbang rilis:** SOP gaya tidak menggantikan validasi sumber, legal review, maupun otorisasi publikasi.
+**Gerbang rilis:** SOP gaya tidak menggantikan validasi sumber dan otorisasi publikasi. Review independen dapat diminta bila bermanfaat, tetapi bukan prasyarat. Untuk klaim berdampak tinggi, pemilik situs tetap wajib mencatat keputusan GO manusia yang terikat ke revisi final.

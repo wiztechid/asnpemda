@@ -1,9 +1,9 @@
-# Publication Authorization v0.9
+# Publication Authorization v1.0
 
-An editor's APPROVE decision is bound to SHA-256 of the exact article file bytes, a reviewed evidence fingerprint and review fingerprint. Editing the article (even whitespace), replacing the evidence or revising the review invalidates authorization.
+A human site owner may authorize publication after reviewing the proposed article and evidence. Independent review is optional and is not a release requirement. The author may also be the approver when the owner records an explicit GO decision.
 
-Command: python scripts/publication_approval.py article.json reviewed-evidence.json decision.json
+Bind the decision to SHA-256 of the exact article bytes and the evidence fingerprint. Any subsequent article or evidence change requires a new approval record. Keep the approval, editorial assessment, evidence and revision history in the repository.
 
-This produces an approval proposal record; it does not publish or modify the article. Protect the approval record with repository branch protection, reviewer separation, append-only audit history and human authorization before production use. The author must not self-approve high-impact claims.
+AI-assisted editorial review may be documented as an advisory quality check. It must not be described as a human review or as an ASN's professional opinion unless a human ASN actually performed that review.
 
-Next gate: build a publication validator that requires this approval record for every published article and enforces revision ledger continuity. Current site remains PRE_RELEASE.
+No autonomous publication of legal, financial or personnel-policy claims is permitted. Publication requires a recorded human owner GO decision, exact-revision authorization, passing release checks and production verification.

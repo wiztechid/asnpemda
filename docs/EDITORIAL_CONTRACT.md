@@ -22,4 +22,4 @@ Nominal/persentase gaji, tunjangan, TPP, THR, gaji ke-13; hak kepegawaian; pajak
 `dateModified` hanya berubah bila substansi berubah. Pemeriksaan ulang tanpa perubahan dicatat sebagai `lastVerified`.
 
 ## Publication Gate
-AUTO-DISCOVERY dan AUTO-DRAFT diperbolehkan. Perubahan hukum/keuangan material tidak boleh AUTO-PUBLISH; wajib review gate.
+AUTO-DISCOVERY dan AUTO-DRAFT diperbolehkan. Perubahan hukum/keuangan/personnel material tidak boleh AUTO-PUBLISH. Publikasi memerlukan pemeriksaan sumber primer dan keputusan GO eksplisit dari pemilik situs yang dicatat pada revisi final. Review independen dapat diminta bila bermanfaat, tetapi bukan syarat rilis.

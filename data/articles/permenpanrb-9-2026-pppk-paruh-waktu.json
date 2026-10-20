@@ -69,9 +69,13 @@
     {
       "date": "2026-10-21",
       "summary": "Mengganti label “Jawaban singkat” menjadi “Inti ketentuan” agar lebih sesuai dengan ringkasan regulasi."
+    },
+    {
+      "date": "2026-10-21",
+      "summary": "Perapian tipografi: seluruh paragraf artikel rata kiri-kanan dengan pembungkus kata untuk keterbacaan di desktop dan ponsel."
     }
   ],
-  "articleSha256": "58226f07936885dc4d82d3b9be9e35029f88f75698bb160793c3263ea81db37b",
+  "articleSha256": "af6a74686cd647e1adf363bef7b71f3ad17d60e610655f783a068097f0902c14",
   "evidenceGitBlobSha1": "4f256eed43efd63a8611d07133cea85ee4333611",
   "evidenceSha256": "7347f2bf9ccb5e205195b42ae2a280f5cf1fd7c1632259bcc29f1b3afc133379"
 }

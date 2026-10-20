@@ -1,0 +1,189 @@
+{
+  "articleId": "aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj",
+  "slug": "aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj",
+  "approved": true,
+  "publicationState": "PUBLISHED",
+  "datePublished": "2026-10-20",
+  "dateModified": "2026-10-20",
+  "lastVerified": "2026-10-20",
+  "heroImage": "assets/hero-aturan-wfh-asn-pemda-2026.webp",
+  "articlePath": "artikel/aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj.html",
+  "articleSha256": "dbea9df88690bd7a24366ea01313184613b4286fa6fe5e5508dae802694a4086",
+  "evidencePath": "data/candidates/aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj.evidence.json",
+  "evidenceGitBlobSha1": "d669de151f02c268bdbcffb1943f2baca029dce3",
+  "evidenceSha256": "118919b76ee8627c92a1e4afad711c88228406352bf142850bd3f65aaf5e3d11",
+  "humanApproval": {
+    "decision": "GO",
+    "authorizedBy": "wiztechid",
+    "role": "human site owner and article author",
+    "approvedAt": "2026-10-20T22:00:00+08:00",
+    "instruction": "User requested the next article in the continuing ASN Pemda publication workflow; publication authorization follows the prior explicit instruction to publish and the amended SOP."
+  },
+  "editorialAssessment": {
+    "type": "AI_ASSISTED_EDITORIAL_REVIEW",
+    "reviewedAt": "2026-10-20T22:00:00+08:00",
+    "outcome": "APPROVE_WITH_SCOPE_NOTES",
+    "reviewerIsHuman": false,
+    "reviewerIsASN": false,
+    "summary": "Distinguishes the active June circular from the repealed March circular; treats Friday WFH as stated in the Ditjen Otda socialization presentation; local implementation and service continuity are described without asserting a universal roster or new individual obligations."
+  },
+  "id": "aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj",
+  "title": "Aturan WFH ASN Pemda 2026: Isi SE Mendagri 4412/SJ",
+  "status": "BERLAKU",
+  "materiality": "MEDIUM",
+  "asnImpact": "Pola WFH ASN Pemda dibahas dalam edaran penyesuaian. Pengaturan hari dan roster teknis perlu dibaca bersama arahan resmi Pemda masing-masing.",
+  "pemdaImpact": "Kepala daerah mengatur jadwal WFH/WFO, pengawasan, target, kesinambungan layanan, dan pelaporan sesuai arahan edaran dan karakteristik organisasi.",
+  "actionRequired": [],
+  "sources": [
+    {
+      "title": "SE Mendagri Nomor 000.9.6.1/4412/SJ tentang Penyesuaian Pelaksanaan Transformasi Budaya Kerja ASN di Lingkungan Pemda",
+      "url": "https://ppid.kemendagri.go.id/front/dokumen/detail/300445957",
+      "issuer": "Kementerian Dalam Negeri",
+      "publishedAt": "2026-06-01",
+      "documentIdentity": "SE Mendagri 000.9.6.1/4412/SJ",
+      "keyClaims": [
+        "ditetapkan 1 Juni 2026",
+        "menyesuaikan kebijakan transformasi budaya kerja ASN Pemda"
+      ],
+      "sourceType": "REGULATION",
+      "isPrimary": true
+    },
+    {
+      "title": "Status SE Mendagri Nomor 000.9.6.1/4412/SJ",
+      "url": "https://jdih.kaboki.go.id/ProdukHukum/detail_produk?id=S21LZ2hhN1ZDN01taEIxRU9rcEZ2QT09",
+      "issuer": "JDIH Kabupaten Ogan Komering Ilir",
+      "publishedAt": "2026-06-01",
+      "documentIdentity": "Record JDIH, status berlaku",
+      "keyClaims": [
+        "status tercatat berlaku",
+        "mencabut SE Mendagri 800.1.5/3349/SJ"
+      ],
+      "sourceType": "JDIH",
+      "isPrimary": true
+    },
+    {
+      "title": "Paparan sosialisasi penyesuaian transformasi budaya kerja ASN Pemda",
+      "url": "https://www.slideshare.net/slideshow/penyesuaian-pelaksanaan-transformasi-budaya-kerja-asn-di-pemerintah-daerah/289586441",
+      "issuer": "Direktorat Fasilitasi Kelembagaan dan Kepegawaian Perangkat Daerah, Ditjen Otonomi Daerah Kemendagri",
+      "publishedAt": "2026-06",
+      "documentIdentity": "Paparan sosialisasi SE 000.9.6.1/4412/SJ",
+      "keyClaims": [
+        "pola WFH satu hari kerja setiap Jumat",
+        "kepala daerah mengatur jadwal WFH/WFO, pengendalian, pengawasan, target dan indikator kinerja",
+        "pelaporan bulanan berjenjang dan penunjukan PIC"
+      ],
+      "sourceType": "OFFICIAL_STATEMENT",
+      "isPrimary": true
+    },
+    {
+      "title": "Status SE Mendagri Nomor 800.1.5/3349/SJ",
+      "url": "https://jdih.kaboki.go.id/ProdukHukum/detail_produk?id=UWVyZHROMlVLQ2ZrWi8xUUFoakRIdz09",
+      "issuer": "JDIH Kabupaten Ogan Komering Ilir",
+      "publishedAt": "2026-03-31",
+      "documentIdentity": "Record JDIH, dicabut/tidak berlaku",
+      "keyClaims": [
+        "SE terdahulu berstatus dicabut/tidak berlaku oleh SE 000.9.6.1/4412/SJ"
+      ],
+      "sourceType": "JDIH",
+      "isPrimary": true
+    },
+    {
+      "title": "Surat Edaran Menteri PANRB Nomor 3 Tahun 2026",
+      "url": "https://jdih.menpan.go.id/dokumen-hukum/surat-edaran-menteri-pendayagunaan-aparatur-negara-dan-reformasi-birokrasi-nomor-3-tahun-2026-tentan-2107",
+      "issuer": "JDIH Kementerian PANRB",
+      "publishedAt": "2026-03-30",
+      "documentIdentity": "SE Menteri PANRB Nomor 3 Tahun 2026",
+      "keyClaims": [
+        "status tercatat berlaku",
+        "kerangka tugas kedinasan ASN dalam rangka transformasi tata kelola"
+      ],
+      "sourceType": "JDIH",
+      "isPrimary": true
+    }
+  ],
+  "seo": {
+    "focusKeyword": "aturan WFH ASN Pemda 2026",
+    "secondaryKeywords": [
+      "SE Mendagri 4412/SJ",
+      "WFH ASN Pemda setiap Jumat 2026",
+      "aturan terbaru WFH ASN daerah",
+      "SE Mendagri 800.1.5/3349/SJ dicabut",
+      "jadwal WFH ASN pemerintah daerah"
+    ],
+    "titleTag": "Aturan WFH ASN Pemda 2026: Isi SE Mendagri 4412/SJ",
+    "metaDescription": "Aturan WFH ASN Pemda berubah pada Juni 2026. Simak status SE Mendagri 4412/SJ, pola kerja Jumat, pengaturan daerah, dan hal yang perlu dipantau.",
+    "slug": "/artikel/aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj.html",
+    "robots": "index,follow",
+    "structuredData": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "image": {
+      "path": "/assets/hero-aturan-wfh-asn-pemda-2026.webp",
+      "format": "image/webp",
+      "width": 1200,
+      "height": 675,
+      "alt": "Ilustrasi rekan ASN Pemda berkoordinasi saat satu rekan bekerja dari rumah.",
+      "keywords": [
+        "aturan WFH ASN Pemda 2026",
+        "SE Mendagri 4412/SJ",
+        "WFH ASN Jumat",
+        "ASN Pemda"
+      ],
+      "embeddedMetadata": [
+        "EXIF ImageDescription",
+        "EXIF XPTitle",
+        "EXIF XPKeywords",
+        "XMP dc:title",
+        "XMP dc:description",
+        "XMP dc:subject"
+      ],
+      "socialImageUrl": "https://asnpemda.pages.dev/assets/hero-aturan-wfh-asn-pemda-2026.webp"
+    }
+  },
+  "serpAudit": {
+    "checkedAt": "2026-10-20",
+    "queries": [
+      "aturan WFH ASN Pemda 2026",
+      "SE Mendagri 4412/SJ WFH ASN",
+      "WFH ASN Pemda setiap Jumat 2026",
+      "aturan terbaru WFH ASN daerah",
+      "SE Mendagri 3349 dicabut WFH Pemda"
+    ],
+    "observedCompetitorTypes": [
+      "portal berita nasional yang merangkum edaran Maret 2026",
+      "media lokal dan laman Pemda dengan petunjuk implementasi wilayah",
+      "JDIH dan PPID pemerintah yang memuat edaran Juni 2026"
+    ],
+    "intent": "Informational and current-status: readers need to know whether the Friday WFH policy still applies, which Mendagri circular is current, what the June adjustment changed, and how local implementation affects staff.",
+    "contentGap": [
+      "many high-ranking search results still describe the March circular as current",
+      "few concise explanations connect the June 1 replacement circular with the continuing Friday WFH pattern in the official socialization material",
+      "explain local discretion and service continuity without treating one region’s schedule as a national rule"
+    ],
+    "competitionAssessment": "The broad WFH ASN term has substantial news competition. The long-tail opportunity is current status and the specific 000.9.6.1/4412/SJ circular; search results sampled show older March coverage alongside a smaller number of June-status resources. No validated volume or formal difficulty score is available."
+  },
+  "openItems": [],
+  "evidenceFingerprint": {
+    "algorithm": "git-blob-sha1",
+    "value": "d669de151f02c268bdbcffb1943f2baca029dce3",
+    "path": "data/candidates/aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj.evidence.json"
+  },
+  "evidenceSnapshotPath": "data/candidates/aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj.evidence.json",
+  "editorialAngle": "Catatan sesama ASN tentang status aturan WFH Pemda yang diperbarui, perbedaan edaran Maret dan Juni, serta dampak teknis pada jadwal dan kesinambungan layanan.",
+  "editorialBoundary": "Tidak menggeneralisasi roster satu daerah sebagai aturan nasional. Memisahkan isi edaran, paparan sosialisasi, dan pengaturan lokal. Awareness pembaca bukan persyaratan resmi.",
+  "publicationAuthorization": {
+    "decision": "GO",
+    "authorizedBy": "wiztechid",
+    "role": "human site owner and article author",
+    "authorizedAt": "2026-10-20T22:00:00+08:00",
+    "scope": "Continue the article publication workflow after the prior explicit publish authorization."
+  },
+  "revisionHistory": [
+    {
+      "date": "2026-10-20",
+      "summary": "Artikel baru disusun dari SE Mendagri 000.9.6.1/4412/SJ dan paparan sosialisasi Ditjen Otda; mencatat SE sebelumnya dicabut."
+    }
+  ]
+}

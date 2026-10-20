@@ -1,0 +1,99 @@
+{
+  "candidateId": "aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj",
+  "capturedAt": "2026-10-20T22:00:00+08:00",
+  "evidenceState": "CURRENT_CIRCULAR_VERIFIED; LOCAL_IMPLEMENTATION_VARIES",
+  "sources": [
+    {
+      "title": "SE Mendagri Nomor 000.9.6.1/4412/SJ tentang Penyesuaian Pelaksanaan Transformasi Budaya Kerja ASN di Lingkungan Pemda",
+      "url": "https://ppid.kemendagri.go.id/front/dokumen/detail/300445957",
+      "issuer": "Kementerian Dalam Negeri",
+      "publishedAt": "2026-06-01",
+      "documentIdentity": "SE Mendagri 000.9.6.1/4412/SJ",
+      "keyClaims": [
+        "ditetapkan 1 Juni 2026",
+        "menyesuaikan kebijakan transformasi budaya kerja ASN Pemda"
+      ],
+      "sourceType": "REGULATION",
+      "isPrimary": true
+    },
+    {
+      "title": "Status SE Mendagri Nomor 000.9.6.1/4412/SJ",
+      "url": "https://jdih.kaboki.go.id/ProdukHukum/detail_produk?id=S21LZ2hhN1ZDN01taEIxRU9rcEZ2QT09",
+      "issuer": "JDIH Kabupaten Ogan Komering Ilir",
+      "publishedAt": "2026-06-01",
+      "documentIdentity": "Record JDIH, status berlaku",
+      "keyClaims": [
+        "status tercatat berlaku",
+        "mencabut SE Mendagri 800.1.5/3349/SJ"
+      ],
+      "sourceType": "JDIH",
+      "isPrimary": true
+    },
+    {
+      "title": "Paparan sosialisasi penyesuaian transformasi budaya kerja ASN Pemda",
+      "url": "https://www.slideshare.net/slideshow/penyesuaian-pelaksanaan-transformasi-budaya-kerja-asn-di-pemerintah-daerah/289586441",
+      "issuer": "Direktorat Fasilitasi Kelembagaan dan Kepegawaian Perangkat Daerah, Ditjen Otonomi Daerah Kemendagri",
+      "publishedAt": "2026-06",
+      "documentIdentity": "Paparan sosialisasi SE 000.9.6.1/4412/SJ",
+      "keyClaims": [
+        "pola WFH satu hari kerja setiap Jumat",
+        "kepala daerah mengatur jadwal WFH/WFO, pengendalian, pengawasan, target dan indikator kinerja",
+        "pelaporan bulanan berjenjang dan penunjukan PIC"
+      ],
+      "sourceType": "OFFICIAL_STATEMENT",
+      "isPrimary": true
+    },
+    {
+      "title": "Status SE Mendagri Nomor 800.1.5/3349/SJ",
+      "url": "https://jdih.kaboki.go.id/ProdukHukum/detail_produk?id=UWVyZHROMlVLQ2ZrWi8xUUFoakRIdz09",
+      "issuer": "JDIH Kabupaten Ogan Komering Ilir",
+      "publishedAt": "2026-03-31",
+      "documentIdentity": "Record JDIH, dicabut/tidak berlaku",
+      "keyClaims": [
+        "SE terdahulu berstatus dicabut/tidak berlaku oleh SE 000.9.6.1/4412/SJ"
+      ],
+      "sourceType": "JDIH",
+      "isPrimary": true
+    },
+    {
+      "title": "Surat Edaran Menteri PANRB Nomor 3 Tahun 2026",
+      "url": "https://jdih.menpan.go.id/dokumen-hukum/surat-edaran-menteri-pendayagunaan-aparatur-negara-dan-reformasi-birokrasi-nomor-3-tahun-2026-tentan-2107",
+      "issuer": "JDIH Kementerian PANRB",
+      "publishedAt": "2026-03-30",
+      "documentIdentity": "SE Menteri PANRB Nomor 3 Tahun 2026",
+      "keyClaims": [
+        "status tercatat berlaku",
+        "kerangka tugas kedinasan ASN dalam rangka transformasi tata kelola"
+      ],
+      "sourceType": "JDIH",
+      "isPrimary": true
+    }
+  ],
+  "serpAudit": {
+    "checkedAt": "2026-10-20",
+    "queries": [
+      "aturan WFH ASN Pemda 2026",
+      "SE Mendagri 4412/SJ WFH ASN",
+      "WFH ASN Pemda setiap Jumat 2026",
+      "aturan terbaru WFH ASN daerah",
+      "SE Mendagri 3349 dicabut WFH Pemda"
+    ],
+    "observedCompetitorTypes": [
+      "portal berita nasional yang merangkum edaran Maret 2026",
+      "media lokal dan laman Pemda dengan petunjuk implementasi wilayah",
+      "JDIH dan PPID pemerintah yang memuat edaran Juni 2026"
+    ],
+    "intent": "Informational and current-status: readers need to know whether the Friday WFH policy still applies, which Mendagri circular is current, what the June adjustment changed, and how local implementation affects staff.",
+    "contentGap": [
+      "many high-ranking search results still describe the March circular as current",
+      "few concise explanations connect the June 1 replacement circular with the continuing Friday WFH pattern in the official socialization material",
+      "explain local discretion and service continuity without treating one region’s schedule as a national rule"
+    ],
+    "competitionAssessment": "The broad WFH ASN term has substantial news competition. The long-tail opportunity is current status and the specific 000.9.6.1/4412/SJ circular; search results sampled show older March coverage alongside a smaller number of June-status resources. No validated volume or formal difficulty score is available."
+  },
+  "limitations": [
+    "Implementation schedules and WFH/WFO proportions can be set through local technical arrangements; do not present one locality’s roster as nationwide.",
+    "The exact central circular PDF is linked from the Ministry of Home Affairs PPID; status and repeal metadata were cross-checked in JDIH OKI.",
+    "SERP assessment is a manual sample; no search volume or keyword difficulty is claimed."
+  ]
+}

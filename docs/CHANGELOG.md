@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-20 — Article format and WebP hero standard v1.1
+- Standardized the reusable article page structure, SEO metadata, structured data, and status-aware draft handling in `docs/ARTICLE_WRITING_SOP.md`.
+- Added the 1200 × 675 WebP hero workflow covering embedded EXIF/XMP metadata, descriptive alt text, Open Graph/Twitter cards, Article schema, candidate records, and validation.
+- Applied the standard to the PPPK 2027 article; its image remains attached to the draft PR and is not public until the separate publication gates pass.
+- Preserved Design System v1.0.
+
 ## 2026-10-20 — SOP alignment and public build boundary
 - Kept Design System v1.0 and refreshed the home, About, editorial, privacy, disclaimer, and not-found pages as one coherent reader journey.
 - Removed the homepage promotion of an unapproved draft; topic cards now describe scope rather than link to unpublished articles.

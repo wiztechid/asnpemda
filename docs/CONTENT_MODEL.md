@@ -2,7 +2,7 @@
 
 Topics: asn-cpns, kesejahteraan, karier, keuangan-daerah, pemerintahan-daerah, pengadaan-aset, pengawasan.
 
-Article formats: policy-update, living-explainer, operational-guide.
+Article formats: policy-update, living-explainer, operational-guide.\n\nAll article formats follow `docs/ARTICLE_WRITING_SOP.md` v1.1 for page structure, SEO metadata, responsive readability, and the standard WebP hero workflow. The format is a flexible baseline; include only sections that serve reader intent.
 
 Candidate state machine:
 DISCOVERED -> DEDUPED -> EVIDENCE_PENDING -> VERIFIED -> DRAFTED -> REVIEW_PENDING -> APPROVED -> PUBLISHED

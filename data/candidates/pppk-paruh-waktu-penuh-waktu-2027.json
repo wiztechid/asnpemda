@@ -124,7 +124,7 @@
     "workbookCoverage": "pns.xlsx covers 2025-10-01 through 2026-09-30 but does not include these exact 2027 phrases; monthly volume is not claimed."
   },
   "openItems": [
-    "Independent editorial/legal review of exact scope and policy status",
+    "Independent editorial/legal review of exact scope, neutral framing, and policy status",
     "Recheck official implementing rules and technical guidance immediately before publication; review of MENPANRB, BKN, and JDIH search results through 20 October 2026 did not locate a newer instrument.",
     "Validate current SERP and query volume before publication",
     "Final publication approval tied to exact revised bytes plus separate release GO"
@@ -135,6 +135,6 @@
     "path": "data/candidates/pppk-paruh-waktu-penuh-waktu-2027.evidence.json"
   },
   "evidenceSnapshotPath": "data/candidates/pppk-paruh-waktu-penuh-waktu-2027.evidence.json",
-  "editorialAngle": "Catatan sesama ASN yang menilai dampak yang mungkin dirasakan dari rencana kebijakan PPPK paruh waktu daerah menuju penuh waktu; fakta dibedakan dari hal yang belum dijelaskan.",
-  "editorialBoundary": "Artikel tidak menetapkan kewajiban atau persyaratan. Daftar awareness bersifat opsional dan tidak menggantikan aturan atau pemberitahuan resmi."
+  "editorialAngle": "Catatan sesama ASN yang menjelaskan arah rencana kebijakan, dampak yang mungkin dirasakan, dan konteks kelompok secara netral serta berempati.",
+  "editorialBoundary": "Gunakan bahasa netral dan empatik. Artikel menjelaskan dampak yang mungkin, membedakan keterangan resmi per kelompok, dan tidak menyatakan kewajiban, menyalahkan instansi, atau menyimpulkan di luar sumber."
 }

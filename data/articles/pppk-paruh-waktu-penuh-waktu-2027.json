@@ -6,7 +6,7 @@
   "dateModified": "2026-10-20",
   "heroImage": "assets/hero-pppk-paruh-waktu-2027.webp",
   "articlePath": "artikel/pppk-paruh-waktu-penuh-waktu-2027.html",
-  "articleSha256": "7e0d4441a5f0242abdc4ccea280f9e7afe8a0a0978feb2079659432322c7feb7",
+  "articleSha256": "046780fecbc30156bd56f851b3199afdf37e27d0a6a53f85e06f9e4c02506bdf",
   "evidencePath": "data/candidates/pppk-paruh-waktu-penuh-waktu-2027.evidence.json",
   "evidenceGitBlobSha1": "33dd78a76ee062fb9dbd9f7b4a7c509d6a6755d9",
   "evidenceSha256": "a08ab3770305476067d337d3c0740e1856dcf71e60ffa7c5c2ce09a649aaab09",
@@ -68,6 +68,10 @@
     {
       "date": "2026-10-20",
       "summary": "Dipublikasikan setelah review cakupan sumber dan persetujuan GO pemilik situs; SOP tidak lagi mensyaratkan reviewer independen."
+    },
+    {
+      "date": "2026-10-20",
+      "summary": "Perbaikan tata letak, keterbacaan paragraf, footer, tombol berbagi, breadcrumb, dan metadata SEO; isi editorial, sumber, serta klaim artikel tetap sama."
     }
   ]
 }

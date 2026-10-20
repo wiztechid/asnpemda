@@ -1,0 +1,73 @@
+{
+  "articleId": "permenpanrb-9-2026-pppk-paruh-waktu",
+  "slug": "permenpanrb-9-2026-pppk-paruh-waktu",
+  "approved": true,
+  "publicationState": "PUBLISHED",
+  "dateModified": "2026-10-21",
+  "heroImage": "assets/hero-permenpanrb-9-2026.webp",
+  "articlePath": "artikel/permenpanrb-9-2026-pppk-paruh-waktu.html",
+  "evidencePath": "data/candidates/permenpanrb-9-2026-pppk-paruh-waktu.evidence.json",
+  "humanApproval": {
+    "decision": "GO",
+    "authorizedBy": "wiztechid",
+    "role": "human site owner and article author",
+    "approvedAt": "2026-10-21T00:01:00+08:00",
+    "instruction": "User requested continuation of the article workflow with a winnable SERP target; earlier instruction authorized publication and removed independent-review requirement."
+  },
+  "editorialAssessment": {
+    "type": "AI_ASSISTED_EDITORIAL_REVIEW",
+    "reviewedAt": "2026-10-21T00:01:00+08:00",
+    "outcome": "APPROVE_WITH_SCOPE_NOTES",
+    "reviewerIsHuman": false,
+    "reviewerIsASN": false,
+    "summary": "Didasarkan pada JDIH BPK dan naskah resmi. Membedakan mekanisme pengusulan dalam PermenPANRB dari rencana umum peralihan 2027; tidak menyimpulkan pengangkatan otomatis bagi seluruh PPPK Paruh Waktu."
+  },
+  "id": "permenpanrb-9-2026-pppk-paruh-waktu",
+  "title": "PermenPANRB Nomor 9 Tahun 2026: Aturan PPPK Paruh Waktu",
+  "status": "BERLAKU",
+  "datePublished": "2026-10-21",
+  "lastVerified": "2026-10-21",
+  "materiality": "HIGH",
+  "asnImpact": "Memberi ringkasan mengenai cakupan PPPK Paruh Waktu, perjanjian kerja, evaluasi, hak dan kewajiban, serta mekanisme pengusulan alih status menurut peraturan.",
+  "pemdaImpact": "Membantu Pemda membaca alur perencanaan kebutuhan, pertimbangan anggaran dan kinerja, serta tahapan usulan berdasarkan naskah regulasi.",
+  "actionRequired": [],
+  "sources": [
+    {
+      "title": "Permen PANRB No. 9 Tahun 2026 tentang Pegawai Pemerintah dengan Perjanjian Kerja Paruh Waktu",
+      "url": "https://peraturan.bpk.go.id/Details/351339/permen-panrb-no-9-tahun-2026",
+      "sourceType": "JDIH",
+      "isPrimary": true,
+      "publishedAt": "2026-06-26"
+    },
+    {
+      "title": "Naskah PermenPANRB Nomor 9 Tahun 2026",
+      "url": "https://peraturan.bpk.go.id/Download/415118/permenpanrb-no-9-tahun-2026.pdf",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "2026-06-26"
+    },
+    {
+      "title": "Siaran Pers SP-160/KLI/2026 tentang rencana peralihan PPPK Paruh Waktu di daerah mulai 2027",
+      "url": "https://www.kemenkeu.go.id/informasi-publik/publikasi/siaran-pers/2027-PPPK-paruh-waktu-jadi-penuh-waktu",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true,
+      "publishedAt": "2026-09-14"
+    },
+    {
+      "title": "Guru PPPK Paruh Waktu Akan Dialihkan Menjadi PPPK Penuh dan menjadi Pegawai Pemerintah Pusat",
+      "url": "https://puslapdik.kemendikdasmen.go.id/guru-pppk-paruh-waktu-akan-dialihkan-menjadi-pppk-penuh-dan-menjadi-pegawai-pemerintah-pusat/",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true,
+      "publishedAt": "2026-09-23"
+    }
+  ],
+  "revisionHistory": [
+    {
+      "date": "2026-10-21",
+      "summary": "Artikel disiapkan dan diterbitkan berdasarkan sumber primer; rujukan mekanisme alih status diarahkan ke naskah peraturan, dengan pemisahan dari pengumuman kebijakan 2027."
+    }
+  ],
+  "articleSha256": "c9f9bfcd1b047c3772123f9c680904edbf765d380746441fae44783d71df9c95",
+  "evidenceGitBlobSha1": "4f256eed43efd63a8611d07133cea85ee4333611",
+  "evidenceSha256": "7347f2bf9ccb5e205195b42ae2a280f5cf1fd7c1632259bcc29f1b3afc133379"
+}

@@ -1,0 +1,58 @@
+{
+  "candidateId": "permenpanrb-9-2026-pppk-paruh-waktu",
+  "capturedAt": "2026-10-21T00:01:00+08:00",
+  "evidenceState": "OFFICIAL_REGULATION_VERIFIED; IMPLEMENTATION_DETAILS_REQUIRE_CASE_SPECIFIC_READING",
+  "sources": [
+    {
+      "title": "Permen PANRB No. 9 Tahun 2026 tentang Pegawai Pemerintah dengan Perjanjian Kerja Paruh Waktu",
+      "url": "https://peraturan.bpk.go.id/Details/351339/permen-panrb-no-9-tahun-2026",
+      "issuer": "JDIH Badan Pemeriksa Keuangan",
+      "publishedAt": "2026-06-26",
+      "documentIdentity": "PermenPANRB Nomor 9 Tahun 2026; ditetapkan 19 Juni dan diundangkan/berlaku 26 Juni 2026",
+      "keyClaims": [
+        "Peraturan berstatus berlaku pada halaman metadata JDIH BPK",
+        "Mengatur pengadaan PPPK Paruh Waktu termasuk perjanjian kerja, evaluasi, hak dan kewajiban, serta pengangkatan menjadi PPPK."
+      ]
+    },
+    {
+      "title": "Naskah PermenPANRB Nomor 9 Tahun 2026",
+      "url": "https://peraturan.bpk.go.id/Download/415118/permenpanrb-no-9-tahun-2026.pdf",
+      "issuer": "Kementerian PANRB; salinan pada JDIH BPK",
+      "publishedAt": "2026-06-26",
+      "documentIdentity": "Naskah 10 halaman; Pasal 3–5, 14–20, dan 24–26",
+      "keyClaims": [
+        "Pasal 3 menyebut rumpun jabatan yang dapat diisi PPPK Paruh Waktu.",
+        "Pasal 14 menetapkan perjanjian kerja satu tahun sampai diangkat menjadi PPPK; Pasal 15 mengatur waktu kerja ditetapkan PPK sesuai karakteristik pekerjaan.",
+        "Pasal 17 memuat evaluasi berkala dan tahunan yang menjadi pertimbangan perpanjangan perjanjian atau pengangkatan menjadi PPPK.",
+        "Pasal 24 menyebut PPK dapat mengusulkan pengangkatan dengan mempertimbangkan ketersediaan anggaran dan hasil evaluasi kinerja untuk mengisi lowongan pada instansi tempat pegawai bekerja.",
+        "Pasal 25 menguraikan penetapan kebutuhan, usulan perubahan status kepada BKN, pertimbangan teknis, dan penetapan pengangkatan."
+      ]
+    }
+  ],
+  "serpAudit": {
+    "checkedAt": "2026-10-21",
+    "queries": [
+      "PermenPANRB Nomor 9 Tahun 2026 PPPK paruh waktu",
+      "aturan PPPK paruh waktu 2026",
+      "PPPK paruh waktu alih status PermenPANRB 9/2026",
+      "pasal 24 PermenPANRB 9 2026"
+    ],
+    "observedCompetitorTypes": [
+      "Portal berita nasional yang merangkum status dan alih status PPPK",
+      "Situs berita umum dan situs informasi ASN yang membahas regulasi terbaru"
+    ],
+    "intent": "Informational: mencari isi aturan, siapa yang dicakup, status kontrak/evaluasi, dan apakah alih status otomatis.",
+    "contentGap": [
+      "Merangkum pasal inti dengan bahasa yang mudah dibaca ASN dan Pemda",
+      "Menautkan langsung ke JDIH dan naskah resmi",
+      "Membedakan aturan mekanisme usulan dari pemberitaan mengenai rencana peralihan 2027",
+      "Menyatakan bahwa volume pencarian dan tingkat kesulitan keyword belum divalidasi dengan alat SEO berbayar."
+    ],
+    "competitionAssessment": "Peluang long-tail yang lebih terarah daripada istilah umum PPPK paruh waktu. SERP sampel menampilkan media nasional dan rangkuman generik; artikel berpotensi bersaing melalui ketepatan sumber primer serta jawaban yang spesifik. Tidak ada volume terverifikasi maupun skor kesulitan formal."
+  },
+  "limitations": [
+    "Peluang SERP bersifat penilaian kualitatif dari sampel hasil pencarian, bukan jaminan peringkat.",
+    "Artikel merangkum peraturan; penerapan terhadap kondisi kepegawaian tertentu mengikuti penetapan dan dokumen instansi yang berwenang.",
+    "Rencana peralihan yang diberitakan untuk 2027 dibedakan dari mekanisme dalam PermenPANRB 9/2026."
+  ]
+}

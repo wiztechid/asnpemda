@@ -64,7 +64,30 @@
     "structuredData": [
       "Article",
       "BreadcrumbList"
-    ]
+    ],
+    "image": {
+      "path": "/assets/hero-pppk-paruh-waktu-2027.webp",
+      "format": "image/webp",
+      "width": 1200,
+      "height": 675,
+      "alt": "Ilustrasi dua rekan ASN Pemda saling mendukung saat menunggu kejelasan peralihan PPPK paruh waktu menjadi penuh waktu pada 2027.",
+      "keywords": [
+        "PPPK paruh waktu jadi penuh waktu 2027",
+        "PPPK paruh waktu 2027",
+        "PPPK paruh waktu daerah jadi penuh waktu",
+        "nasib PPPK paruh waktu 2027",
+        "ASN Pemda"
+      ],
+      "embeddedMetadata": [
+        "EXIF ImageDescription",
+        "EXIF XPTitle",
+        "EXIF XPKeywords",
+        "XMP dc:title",
+        "XMP dc:description",
+        "XMP dc:subject"
+      ],
+      "socialImageUrl": "https://asnpemda.pages.dev/assets/hero-pppk-paruh-waktu-2027.webp"
+    }
   },
   "serpAudit": {
     "checkedAt": "2026-10-20",

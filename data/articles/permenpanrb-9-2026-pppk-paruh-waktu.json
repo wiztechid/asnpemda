@@ -65,9 +65,13 @@
     {
       "date": "2026-10-21",
       "summary": "Artikel disiapkan dan diterbitkan berdasarkan sumber primer; rujukan mekanisme alih status diarahkan ke naskah peraturan, dengan pemisahan dari pengumuman kebijakan 2027."
+    },
+    {
+      "date": "2026-10-21",
+      "summary": "Mengganti label “Jawaban singkat” menjadi “Inti ketentuan” agar lebih sesuai dengan ringkasan regulasi."
     }
   ],
-  "articleSha256": "b0e090ffc068278703617902e44e9eb0b3127a56446357fcc40f62b464f11e47",
+  "articleSha256": "58226f07936885dc4d82d3b9be9e35029f88f75698bb160793c3263ea81db37b",
   "evidenceGitBlobSha1": "4f256eed43efd63a8611d07133cea85ee4333611",
   "evidenceSha256": "7347f2bf9ccb5e205195b42ae2a280f5cf1fd7c1632259bcc29f1b3afc133379"
 }

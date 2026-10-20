@@ -1,6 +1,8 @@
-# SOP Gaya Penulisan Artikel ASN Pemda v1.3
+# SOP Penulisan dan Publikasi Artikel ASN Pemda v1.4
 
 Status: **WAJIB untuk seluruh artikel baru dan revisi substansial**.
+
+Pembaruan v1.4 (21 Oktober 2026) menetapkan keterhubungan artikel, umpan balik pembaca, komentar tanpa akun dengan penyaringan anti-spam dan moderasi, serta pemeriksaan fitur setelah rilis.
 
 ## Suara editorial
 Tulis seperti rekan ASN yang memahami aturan dan menjelaskannya dengan ramah, santai, jernih, dan profesional. Pembaca utama: ASN, PPPK, bendahara, PPTK, PPK-SKPD, PA/KPA, pejabat OPD, dan masyarakat yang mencari penjelasan kebijakan daerah.
@@ -10,7 +12,7 @@ Santai **bukan** berarti bercanda soal hak pegawai, keuangan negara, atau konsek
 ## Struktur artikel yang disarankan
 1. **Judul langsung menjawab kebutuhan pembaca**, tidak sensasional.
 2. **Pembuka 2–3 kalimat**: apa persoalannya dan kenapa penting.
-3. **Jawaban singkat**: apa yang sudah pasti diketahui, dan batasannya.
+3. **Inti ketentuan**: apa yang sudah pasti diketahui, dan batasannya. Untuk topik nonregulasi, gunakan judul ringkasan yang paling alami.
 4. **Penjelasan inti** dengan subjudul berupa pertanyaan alami, misalnya “Siapa yang terdampak?” atau “Mulai kapan berlaku?”.
 5. **Contoh situasi kerja** yang relevan bagi ASN/OPD; tandai sebagai ilustrasi, bukan ketentuan baru.
 6. **Dampak dan persiapan**: sebutkan kewajiban hanya jika ada dasar resmi. Jika belum ada, sajikan hal yang dapat dipantau sebagai awareness opsional dan tandai bahwa itu bukan syarat atau instruksi.
@@ -36,8 +38,13 @@ Gunakan pola editorial situs ASN Pemda dan Design System v1.0. Susunan ini menja
 - Cantumkan blok **Artikel terkait** di bawah isi artikel jika tersedia artikel relevan. Pilih berdasarkan kesamaan kebijakan, kelompok ASN, atau langkah kerja; jangan menampilkan rekomendasi acak atau mengulang judul tanpa alasan.
 - Sediakan umpan balik ringkas “Apakah artikel ini membantu?” dan kolom komentar tanpa login bila layanan komentar aktif. Jangan meminta email atau data kepegawaian.
 - Komentar harus melalui Turnstile, pembatasan frekuensi, pemeriksaan tautan/promosi, dan tinjauan manual sebelum tayang. Komentar pembaca adalah masukan, bukan sumber resmi atau pernyataan ASN Pemda.
+- Gunakan satu blok **Suara Pembaca** per artikel: umpan balik satu klik dan formulir komentar. Letakkan setelah artikel terkait dan sebelum profil penulis/fitur berbagi.
+- Kiriman komentar harus tersimpan sebagai `pending`; endpoint publik hanya boleh mengembalikan komentar `approved`. Jangan sediakan endpoint moderasi publik.
+- Terapkan perlindungan berlapis: Turnstile diverifikasi di server, honeypot, pembatasan frekuensi, dan penolakan tautan/promosi. Perlindungan otomatis membantu menyaring kiriman; keputusan tayang tetap melalui moderasi manual.
+- Umpan balik satu klik cukup disimpan sebagai jumlah agregat; jangan kaitkan pilihan dengan nama atau isi komentar.
 - Tampilkan pengingat agar pembaca tidak mengirim NIP, nomor rekening, kata sandi, token, dokumen internal, tautan privat, atau data pribadi. Render kiriman sebagai teks biasa, bukan HTML.
 - Simpan hanya data yang diperlukan. Jangan simpan IP mentah untuk moderasi; gunakan hash berjangka pendek hanya untuk pembatasan kiriman dan bersihkan data pembatas lama. Jelaskan pemrosesan data di halaman Privasi.
+- Jelaskan retensi sesuai mekanisme pembersihan yang benar-benar berjalan. Jika pembersihan dipicu saat endpoint diakses, jangan menjanjikan penghapusan pada jadwal otomatis yang tidak tersedia.
 - Masukan kebijakan atau praktik dari pembaca tidak boleh dilabeli “terverifikasi” sebelum editor memeriksa sumber primer dan reproduksibilitasnya.
 
 ## SEO dan structured data
@@ -90,7 +97,11 @@ Gunakan pola editorial situs ASN Pemda dan Design System v1.0. Susunan ini menja
 - [ ] Tidak ada judul sensasional atau kesimpulan melampaui sumber
 - [ ] Satu H1, title/description/canonical, robots, Open Graph/Twitter, dan Article/Breadcrumb schema sesuai status rilis
 - [ ] Hero WebP tersedia, metadata/record kandidat cocok, alt akurat, ukuran dan URL valid
+- [ ] Tautan kontekstual dan kartu Artikel terkait mengarah ke halaman relevan yang tersedia; hero kartu berhasil dimuat
+- [ ] Umpan balik dan formulir komentar tampil tanpa login/email, peringatan data sensitif dan tautan privasi tersedia, Turnstile termuat
+- [ ] Uji kiriman tak aman ditolak; komentar menunggu moderasi dan hanya komentar approved yang tampil
 - [ ] Mobile readability diperiksa
+- [ ] Build lulus, fungsi interaksi dan tautan diperiksa pada domain produksi setelah rilis
 - [ ] Evidence review dan publication approval terpenuhi secara terpisah
 
 **Gerbang rilis:** SOP gaya tidak menggantikan validasi sumber dan otorisasi publikasi. Review independen dapat diminta bila bermanfaat, tetapi bukan prasyarat. Untuk klaim berdampak tinggi, pemilik situs tetap wajib mencatat keputusan GO manusia yang terikat ke revisi final.

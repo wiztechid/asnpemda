@@ -1,5 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ASN Pemda">
-  <rect width="64" height="64" rx="15" fill="#355cf6"/>
-  <text x="29" y="49" fill="#fff" font-family="Arial, sans-serif" font-size="43" font-weight="800" text-anchor="middle">A</text>
-  <path d="m49 7 2.2 6.2 6.3 2.3-6.3 2.2L49 24l-2.2-6.3-6.3-2.2 6.3-2.3z" fill="#ffc96d"/>
+  <rect width="64" height="64" rx="15" fill="#14224a"/>
+  <path d="M17 9h21l11 11v34H17a5 5 0 0 1-5-5V14a5 5 0 0 1 5-5Z" fill="#f8f9ff"/>
+  <path d="M38 9v12h11" fill="#ffc96d"/>
+  <path d="m18 30 14-10 14 10v2H18z" fill="#ffc96d"/>
+  <path d="M19 32h26v3H19z" fill="#355cf6"/>
+  <path d="M22 35h4v9h-4zm8 0h4v9h-4zm8 0h4v9h-4z" fill="#355cf6"/>
+  <path d="M18 44h28v4H18z" fill="#14224a"/>
+  <path d="M21 49h22v2H21z" fill="#ffc96d"/>
 </svg>

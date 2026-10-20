@@ -13,7 +13,7 @@
   "evidenceSnapshot": [
     {
       "title": "Siaran Pers: Menkeu: Mulai 2027, PPPK Paruh Waktu di Daerah Akan Menjadi PPPK Penuh Waktu",
-      "url": "https://wip.kemenkeu.go.id/informasi-publik/publikasi/siaran-pers/2027-PPPK-paruh-waktu-jadi-penuh-waktu",
+      "url": "https://media.kemenkeu.go.id/getmedia/b8324d8a-2306-45a9-8626-0cec4255b607/SP-160-Menkeu-Mulai-2027%2C-PPPK-Paruh-Waktu-di-Daerah-Akan-Menjadi-PPPK-Penuh-Waktu_1?ext=.pdf",
       "issuer": "Kementerian Keuangan",
       "publishedAt": "2026-09-14",
       "documentIdentity": "Siaran Pers SP-160/KLI/2026",
@@ -44,6 +44,17 @@
       "keyClaims": [
         "Menguatkan tanggal, cakupan, dan mekanisme bagi kelompok guru",
         "Menyebut kelompok guru PPPK penuh waktu 935.316 orang terpisah dari PPPK paruh waktu"
+      ]
+    },
+    {
+      "title": "Guru PPPK Paruh Waktu Akan Dialihkan Menjadi PPPK Penuh dan menjadi Pegawai Pemerintah Pusat",
+      "url": "https://puslapdik.kemendikdasmen.go.id/guru-pppk-paruh-waktu-akan-dialihkan-menjadi-pppk-penuh-dan-menjadi-pegawai-pemerintah-pusat/",
+      "issuer": "Pusat Layanan Pembiayaan Pendidikan, Kemendikdasmen",
+      "publishedAt": "2026-09-23",
+      "documentIdentity": "Berita resmi Puslapdik, 23 September 2026",
+      "keyClaims": [
+        "Puslapdik menyebut sekitar 6.000 PPPK paruh waktu yang menjalankan tugas sebagai guru tetapi memiliki SK pelaksana.",
+        "Pemberitaan tidak menjelaskan apakah angka sekitar 6.000 terpisah dari atau termasuk dalam angka 242.482 yang diumumkan Kemendikdasmen pada 8 Oktober 2026."
       ]
     }
   ],
@@ -114,13 +125,13 @@
   },
   "openItems": [
     "Independent editorial/legal review of exact scope and policy status",
-    "Check for implementing regulation or technical guidance after 2026-10-20",
+    "Recheck official implementing rules and technical guidance immediately before publication; review of MENPANRB, BKN, and JDIH search results through 20 October 2026 did not locate a newer instrument.",
     "Validate current SERP and query volume before publication",
     "Final publication approval tied to exact revised bytes plus separate release GO"
   ],
   "evidenceFingerprint": {
     "algorithm": "git-blob-sha1",
-    "value": "0ef84e0a0125e3804f3297e70e276b614a53b5d0",
+    "value": "33dd78a76ee062fb9dbd9f7b4a7c509d6a6755d9",
     "path": "data/candidates/pppk-paruh-waktu-penuh-waktu-2027.evidence.json"
   },
   "evidenceSnapshotPath": "data/candidates/pppk-paruh-waktu-penuh-waktu-2027.evidence.json",

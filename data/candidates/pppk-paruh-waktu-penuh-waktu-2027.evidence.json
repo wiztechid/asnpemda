@@ -1,11 +1,11 @@
 {
   "candidateId": "pppk-paruh-waktu-penuh-waktu-2027",
-  "capturedAt": "2026-10-20T19:06:00+08:00",
+  "capturedAt": "2026-10-20T19:29:00+08:00",
   "evidenceState": "OFFICIAL_PLAN_VERIFIED; IMPLEMENTING_GUIDANCE_PENDING",
   "sources": [
     {
       "title": "Siaran Pers: Menkeu: Mulai 2027, PPPK Paruh Waktu di Daerah Akan Menjadi PPPK Penuh Waktu",
-      "url": "https://wip.kemenkeu.go.id/informasi-publik/publikasi/siaran-pers/2027-PPPK-paruh-waktu-jadi-penuh-waktu",
+      "url": "https://media.kemenkeu.go.id/getmedia/b8324d8a-2306-45a9-8626-0cec4255b607/SP-160-Menkeu-Mulai-2027%2C-PPPK-Paruh-Waktu-di-Daerah-Akan-Menjadi-PPPK-Penuh-Waktu_1?ext=.pdf",
       "issuer": "Kementerian Keuangan",
       "publishedAt": "2026-09-14",
       "documentIdentity": "Siaran Pers SP-160/KLI/2026",
@@ -37,6 +37,17 @@
         "Menguatkan tanggal, cakupan, dan mekanisme bagi kelompok guru",
         "Menyebut kelompok guru PPPK penuh waktu 935.316 orang terpisah dari PPPK paruh waktu"
       ]
+    },
+    {
+      "title": "Guru PPPK Paruh Waktu Akan Dialihkan Menjadi PPPK Penuh dan menjadi Pegawai Pemerintah Pusat",
+      "url": "https://puslapdik.kemendikdasmen.go.id/guru-pppk-paruh-waktu-akan-dialihkan-menjadi-pppk-penuh-dan-menjadi-pegawai-pemerintah-pusat/",
+      "issuer": "Pusat Layanan Pembiayaan Pendidikan, Kemendikdasmen",
+      "publishedAt": "2026-09-23",
+      "documentIdentity": "Berita resmi Puslapdik, 23 September 2026",
+      "keyClaims": [
+        "Puslapdik menyebut sekitar 6.000 PPPK paruh waktu yang menjalankan tugas sebagai guru tetapi memiliki SK pelaksana.",
+        "Pemberitaan tidak menjelaskan apakah angka sekitar 6.000 terpisah dari atau termasuk dalam angka 242.482 yang diumumkan Kemendikdasmen pada 8 Oktober 2026."
+      ]
     }
   ],
   "serpAudit": {
@@ -63,8 +74,9 @@
     "workbookCoverage": "pns.xlsx covers 2025-10-01 through 2026-09-30 but does not include these exact 2027 phrases; monthly volume is not claimed."
   },
   "limitations": [
-    "Kemenkeu's document is a press release describing a plan; implementation for individuals is not detailed in the reviewed text.",
+    "Kemenkeu's SP-160/KLI/2026 is a press release describing plans; individual implementation is not detailed in the reviewed PDF. It separately mentions local-government-funded PPPK and gradual central financing over three years.",
     "Automatic no-selection wording is specific to the teacher cohort in the Education Ministry announcement.",
-    "SERP sampled manually; no validated volume or organic difficulty score."
+    "SERP sampled manually; no validated volume or organic difficulty score.",
+    "Puslapdik's 23 September 2026 report mentions about 6,000 part-time PPPK performing teacher duties with an implementer SK; the source does not state whether that number is included in or separate from the 242,482 figure published later."
   ]
 }

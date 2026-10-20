@@ -10,7 +10,8 @@
 ## Blocking before publication launch
 - [ ] Evidence-backed article inventory reviewed against current primary sources
 - [ ] Human approval recorded against exact article and evidence revisions
-- [ ] Public correction/contact route finalized
+- [x] Public correction route implemented in the release candidate with a public GitHub issue form and privacy notice
+- [ ] Public correction route verified on the production domain after deployment
 - [ ] Full mobile and accessibility review on the final publication corpus
 - [ ] SEO and canonical review against the final live output
 - [ ] Explicit human GO decision recorded

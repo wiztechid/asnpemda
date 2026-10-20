@@ -1,4 +1,4 @@
-# SOP Gaya Penulisan Artikel ASN Pemda v1.1
+# SOP Gaya Penulisan Artikel ASN Pemda v1.2
 
 Status: **WAJIB untuk seluruh artikel baru dan revisi substansial**.
 
@@ -13,7 +13,7 @@ Santai **bukan** berarti bercanda soal hak pegawai, keuangan negara, atau konsek
 3. **Jawaban singkat**: apa yang sudah pasti diketahui, dan batasannya.
 4. **Penjelasan inti** dengan subjudul berupa pertanyaan alami, misalnya “Siapa yang terdampak?” atau “Mulai kapan berlaku?”.
 5. **Contoh situasi kerja** yang relevan bagi ASN/OPD; tandai sebagai ilustrasi, bukan ketentuan baru.
-6. **Yang perlu dilakukan**: langkah praktis atau checklist, hanya bila didukung aturan.
+6. **Dampak dan persiapan**: sebutkan kewajiban hanya jika ada dasar resmi. Jika belum ada, sajikan hal yang dapat dipantau sebagai awareness opsional dan tandai bahwa itu bukan syarat atau instruksi.
 7. **Dasar hukum dan sumber primer**: nama/nomor regulasi, pasal relevan, tanggal, tautan resmi, dan status berlaku bila dapat diverifikasi.
 8. **Terakhir diperiksa** dan catatan perubahan substansi jika artikel diperbarui.
 
@@ -27,6 +27,7 @@ Gunakan pola editorial situs ASN Pemda dan Design System v1.0. Susunan ini menja
 4. **Hero image:** tampil setelah header artikel, sebelum kartu status atau jawaban singkat. Gunakan elemen `figure`, teks alternatif deskriptif, dimensi eksplisit, dan caption bila memberi konteks.
 5. **Orientasi pembaca:** untuk artikel kebijakan yang berubah, tampilkan status kebijakan dan batas cakupannya. Tambahkan jawaban singkat; gunakan kartu fakta dan daftar isi bila panjang atau membantu navigasi.
 6. **Isi:** susun H2/H3 berdasarkan pertanyaan dan urutan keputusan pembaca. Tambahkan tabel, contoh, langkah praktis, dan FAQ hanya bila menambah pemahaman.
+   - Jika aturan atau instruksi resmi belum tersedia, jangan menyebut langkah sebagai kewajiban atau syarat. Sajikan sebagai daftar awareness/persiapan opsional, sebutkan bahwa itu bukan persyaratan resmi, dan batasi pada dampak yang bisa dipantau dari informasi yang ada.
 7. **Penutup tepercaya:** sumber primer yang ditautkan, tanggal pemeriksaan, profil/tautan penulis, serta keterangan draft atau disclaimer yang sesuai.
 
 ### SEO dan structured data

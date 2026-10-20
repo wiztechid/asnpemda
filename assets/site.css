@@ -47,3 +47,44 @@
 .article-card:only-child .article-card-image{height:100%;min-height:260px;aspect-ratio:auto}
 .article-card:only-child .article-card-body{align-self:center;padding:28px clamp(24px,4vw,46px)}
 @media(max-width:650px){.article-card:only-child{display:block}.article-card:only-child .article-card-image{height:auto;min-height:0;aspect-ratio:16/9}.article-card:only-child .article-card-body{padding:16px}}
+
+
+/* Related reading and moderated reader discussion. */
+.related-posts,.reader-engagement{max-width:900px;margin:34px auto 0;padding:22px;border:1px solid #e7eaf4;border-radius:18px;background:#fff}
+.related-heading h2,.reader-engagement h2{font:800 24px/1.25 'Plus Jakarta Sans',system-ui,sans-serif;letter-spacing:-.04em;color:#172756;margin:7px 0 8px}
+.related-heading p,.reader-engagement p{color:#66708b;margin:0 0 14px}
+.related-card{display:grid;grid-template-columns:minmax(160px,.36fr) 1fr;overflow:hidden;border:1px solid #e7eaf4;border-radius:14px;background:#f9faff;transition:border-color .2s,transform .2s}
+.related-card:hover{border-color:#b9c6ff;transform:translateY(-2px)}
+.related-card img{width:100%;height:100%;min-height:155px;object-fit:cover;background:#edf0fa}
+.related-card-copy{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:18px}
+.related-label{font-size:10px;letter-spacing:.1em;font-weight:800;color:#6a54e8}
+.related-card-copy strong{font:800 18px/1.35 'Plus Jakarta Sans',system-ui,sans-serif;color:#172756}
+.related-card-copy>span:not(.related-label){font-size:14px;color:#66708b;line-height:1.6}
+.related-card-copy b{font-size:13px;color:#355cf6;margin-top:3px}
+.related-inline{padding:12px 15px;border-left:3px solid #355cf6;background:#f5f7ff;border-radius:0 10px 10px 0}
+.related-inline a{color:#355cf6;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.reader-engagement{background:#f8f9ff;display:grid;grid-template-columns:.85fr 1.15fr;gap:25px}
+.reader-feedback{padding:5px 0}
+.feedback-buttons{display:flex;flex-wrap:wrap;gap:9px}
+.feedback-buttons button,.comment-submit{border:1px solid #dfe4f2;border-radius:11px;background:#fff;color:#24345e;min-height:44px;padding:10px 14px;font:700 14px/1.35 'DM Sans',system-ui,sans-serif;cursor:pointer}
+.feedback-buttons button:hover,.comment-submit:hover{border-color:#355cf6;color:#355cf6}
+.feedback-buttons button span{display:inline-grid;place-items:center;min-width:22px;height:22px;margin-left:5px;border-radius:99px;background:#edf0ff;font-size:12px}
+.engagement-status{min-height:1.4em;margin:10px 0 0!important;font-size:13px;color:#3458dd!important}
+.reader-comments{border-left:1px solid #e3e7f2;padding-left:24px}
+.reader-comments h2{font-size:21px}
+.comment-guidance,.comment-safety{font-size:13px;line-height:1.6}
+.comment-list{display:grid;gap:10px;margin:14px 0}
+.comment-item{background:#fff;border:1px solid #e7eaf4;border-radius:12px;padding:12px 14px}
+.comment-item strong{font-size:13px;color:#24345e}
+.comment-item time{font-size:11px;color:#8490a8;margin-left:8px}
+.comment-item p{margin:6px 0 0;color:#354261;font-size:14px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}
+.comment-form{display:grid;gap:12px;margin-top:16px}
+.comment-form label:not(.comment-trap){display:grid;gap:6px;font-size:13px;font-weight:700;color:#354261}
+.comment-form input,.comment-form textarea{width:100%;border:1px solid #dfe4f2;border-radius:10px;background:#fff;color:#24345e;padding:11px 12px;font:400 15px/1.5 'DM Sans',system-ui,sans-serif}
+.comment-form textarea{resize:vertical;min-height:110px}
+.comment-form input:focus,.comment-form textarea:focus{outline:3px solid #dfe5ff;border-color:#355cf6}
+.comment-trap{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.comment-submit{justify-self:start;background:#355cf6;color:#fff;border-color:#355cf6}
+.comment-safety{margin-top:12px!important}
+.comment-safety a{color:#355cf6;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:650px){.related-posts,.reader-engagement{margin-top:24px;padding:17px}.related-card{grid-template-columns:1fr}.related-card img{height:auto;min-height:0;aspect-ratio:16/9}.related-card-copy{padding:15px}.related-card-copy strong{font-size:17px}.reader-engagement{grid-template-columns:1fr;gap:18px}.reader-comments{border-left:0;border-top:1px solid #e3e7f2;padding:18px 0 0}.feedback-buttons{display:grid;grid-template-columns:1fr 1fr}.feedback-buttons button{font-size:13px;padding:9px 8px}}

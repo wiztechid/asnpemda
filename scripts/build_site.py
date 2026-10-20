@@ -26,6 +26,7 @@ BASE_FILES = (
     "favicon.ico",
     "robots.txt",
     "assets/site.css",
+    "assets/article-engagement.js",
     "assets/author-suiza-ixan.webp",
 )
 SLUG_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")

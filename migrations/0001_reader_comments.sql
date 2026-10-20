@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS reader_comments (id TEXT PRIMARY KEY, article_slug TEXT NOT NULL, display_name TEXT NOT NULL CHECK(length(display_name) BETWEEN 2 AND 40), comment_text TEXT NOT NULL CHECK(length(comment_text) BETWEEN 10 AND 1200), status TEXT NOT NULL DEFAULT 'pending' CHECK(status IN ('pending','approved','rejected')), created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now')));
+CREATE INDEX IF NOT EXISTS idx_reader_comments_public ON reader_comments(article_slug,status,created_at DESC);
+CREATE TABLE IF NOT EXISTS comment_rate_limits (ip_hash TEXT NOT NULL,bucket TEXT NOT NULL,count INTEGER NOT NULL DEFAULT 0,PRIMARY KEY(ip_hash,bucket));
+CREATE TABLE IF NOT EXISTS feedback_votes (article_slug TEXT NOT NULL,ip_hash TEXT NOT NULL,vote TEXT NOT NULL CHECK(vote IN ('yes','no')),updated_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now')),PRIMARY KEY(article_slug,ip_hash));
+CREATE TABLE IF NOT EXISTS feedback_totals (article_slug TEXT NOT NULL,vote TEXT NOT NULL CHECK(vote IN ('yes','no')),count INTEGER NOT NULL DEFAULT 0,PRIMARY KEY(article_slug,vote));

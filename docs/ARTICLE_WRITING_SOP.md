@@ -25,12 +25,22 @@ Gunakan pola editorial situs ASN Pemda dan Design System v1.0. Susunan ini menja
 2. **Navigasi halaman:** tautan lewati ke isi, header situs, breadcrumb, dan footer yang konsisten.
 3. **Pembuka artikel:** kicker/topik, H1, ringkasan/deck 1–2 kalimat, nama penulis, tanggal terakhir diperiksa, dan perkiraan waktu baca.
 4. **Hero image:** tampil setelah header artikel, sebelum kartu status atau jawaban singkat. Gunakan elemen `figure`, teks alternatif deskriptif, dimensi eksplisit, dan caption bila memberi konteks.
-5. **Orientasi pembaca:** untuk artikel kebijakan yang berubah, tampilkan status kebijakan dan batas cakupannya. Tambahkan jawaban singkat; gunakan kartu fakta dan daftar isi bila panjang atau membantu navigasi.
+5. **Orientasi pembaca:** untuk artikel kebijakan yang berubah, tampilkan status kebijakan dan batas cakupannya. Tambahkan ringkasan inti (label “Inti ketentuan” untuk artikel regulasi); gunakan kartu fakta dan daftar isi bila panjang atau membantu navigasi.
 6. **Isi:** susun H2/H3 berdasarkan pertanyaan dan urutan keputusan pembaca. Tambahkan tabel, contoh, langkah praktis, dan FAQ hanya bila menambah pemahaman.
    - Jika aturan atau instruksi resmi belum tersedia, jangan menyebut langkah sebagai kewajiban atau syarat. Sajikan sebagai daftar awareness/persiapan opsional, sebutkan bahwa itu bukan persyaratan resmi, dan batasi pada dampak yang bisa dipantau dari informasi yang ada.
 7. **Penutup tepercaya:** sumber primer yang ditautkan, tanggal pemeriksaan, profil/tautan penulis, serta keterangan draft atau disclaimer yang sesuai.
 
-### SEO dan structured data
+### Keterhubungan artikel dan partisipasi pembaca
+
+- Tautkan artikel lain di dalam isi hanya saat topik dan maksud pembaca benar-benar beririsan; jelaskan hubungan konteksnya dengan teks tautan yang deskriptif.
+- Cantumkan blok **Artikel terkait** di bawah isi artikel jika tersedia artikel relevan. Pilih berdasarkan kesamaan kebijakan, kelompok ASN, atau langkah kerja; jangan menampilkan rekomendasi acak atau mengulang judul tanpa alasan.
+- Sediakan umpan balik ringkas “Apakah artikel ini membantu?” dan kolom komentar tanpa login bila layanan komentar aktif. Jangan meminta email atau data kepegawaian.
+- Komentar harus melalui Turnstile, pembatasan frekuensi, pemeriksaan tautan/promosi, dan tinjauan manual sebelum tayang. Komentar pembaca adalah masukan, bukan sumber resmi atau pernyataan ASN Pemda.
+- Tampilkan pengingat agar pembaca tidak mengirim NIP, nomor rekening, kata sandi, token, dokumen internal, tautan privat, atau data pribadi. Render kiriman sebagai teks biasa, bukan HTML.
+- Simpan hanya data yang diperlukan. Jangan simpan IP mentah untuk moderasi; gunakan hash berjangka pendek hanya untuk pembatasan kiriman dan bersihkan data pembatas lama. Jelaskan pemrosesan data di halaman Privasi.
+- Masukan kebijakan atau praktik dari pembaca tidak boleh dilabeli “terverifikasi” sebelum editor memeriksa sumber primer dan reproduksibilitasnya.
+
+## SEO dan structured data
 
 - Tetapkan satu focus keyword dan sejumlah kecil keyword pendukung berdasarkan riset. Pakai secara alami di title, H1, slug, pembuka, dan subjudul yang relevan; hindari pengulangan mekanis.
 - Meta description merangkum manfaat dan batas artikel secara akurat. Jangan mengklaim volume atau kesulitan keyword tanpa data.

@@ -1,0 +1,69 @@
+{
+  "candidateId": "pppk-guru-paruh-waktu-penuh-waktu-2027",
+  "capturedAt": "2026-10-20T18:45:00+08:00",
+  "evidenceState": "PRIMARY_OFFICIAL_RELEASES_READ; CURRENT_IMPLEMENTING_GUIDANCE_NOT_YET_VERIFIED",
+  "sources": [
+    {
+      "title": "Penataan Guru Jadi Fokus Pemerintah, Kepastian Status Disiapkan Mulai 2027",
+      "url": "https://www.kemendikdasmen.go.id/siaran-pers/16271-penataan-guru-jadi-fokus-pemerintah-kepastian-status-disiapkan-mulai-2027",
+      "issuer": "Kemendikdasmen",
+      "publishedAt": "2026-10-08",
+      "documentIdentity": "Siaran Pers No. 858/sipers/A6/X/2026",
+      "keyClaims": [
+        "242.482 guru PPPK paruh waktu disebut beralih menjadi PPPK penuh waktu mulai 2027-01-01 dengan mekanisme otomatis tanpa seleksi",
+        "status disebut beralih menjadi pegawai pemerintah pusat",
+        "Rp23 triliun disebut sebagai dukungan gaji dan tunjangan agregat",
+        "guru PPPK penuh waktu dapat ikut seleksi menjadi guru PNS bertahap, dengan syarat administrasi"
+      ]
+    },
+    {
+      "title": "Kabar Baik di Tahun 2027 Untuk Guru Non-ASN dan Guru PPPK Paruh Waktu",
+      "url": "https://puslapdik.kemendikdasmen.go.id/kabar-baik-di-tahun-2027-untuk-guru-non-asn-dan-guru-pppk-paruh-waktu/",
+      "issuer": "Puslapdik Kemendikdasmen",
+      "publishedAt": "2026-10-09",
+      "documentIdentity": "Berita resmi Puslapdik, 9 Oktober 2026",
+      "keyClaims": [
+        "mengulang jumlah, tanggal, mekanisme dan cakupan guru",
+        "menyebut Rp23 triliun untuk gaji dan tunjangan agregat"
+      ]
+    },
+    {
+      "title": "Siaran Pers: Menkeu: Mulai 2027, PPPK Paruh Waktu di Daerah Akan Menjadi PPPK Penuh Waktu",
+      "url": "https://wip.kemenkeu.go.id/informasi-publik/publikasi/siaran-pers/2027-PPPK-paruh-waktu-jadi-penuh-waktu",
+      "issuer": "Kementerian Keuangan",
+      "publishedAt": "2026-09-14",
+      "documentIdentity": "Siaran pers Kemenkeu, 14 September 2026",
+      "keyClaims": [
+        "konteks kebijakan PPPK paruh waktu di daerah; tidak dipakai untuk memperluas klaim khusus guru"
+      ]
+    }
+  ],
+  "serpAudit": {
+    "checkedAt": "2026-10-20",
+    "queries": [
+      "guru PPPK paruh waktu 2027 otomatis jadi penuh waktu",
+      "PPPK paruh waktu 2027 syarat dan jadwal",
+      "guru PPPK paruh waktu jadi PNS 2027",
+      "gaji guru PPPK paruh waktu penuh waktu 2027"
+    ],
+    "observedCompetitorTypes": [
+      "official Kemendikdasmen/Puslapdik pages",
+      "national news publishers including Antara, Detik, Tirto, Suara, and Okezone",
+      "education and CPNS information sites"
+    ],
+    "intent": "Urgent informational clarification: who is included, when transition starts, automatic or not, whether it means PNS, and what is known about pay.",
+    "contentGap": [
+      "separate teacher PPPK part-time from all PPPK part-time personnel",
+      "distinguish PPPK full-time transition from PNS selection",
+      "treat Rp23 trillion as aggregate, not individual salary",
+      "label official announcement separately from implementing regulation"
+    ],
+    "competitionAssessment": "High on broad news/gaji terms because national media and official pages already cover the announcement; narrow question-led queries offer a clearer content gap. No formal organic keyword-difficulty score or validated search volume is available.",
+    "workbookCoverage": "pns.xlsx covers 2025-10-01 through 2026-09-30 but does not include the exact 2027-transition phrases; monthly volume is not claimed."
+  },
+  "limitations": [
+    "SERP sampled manually; rankings vary by location, device, time, and personalization.",
+    "No validated search volume or organic difficulty score.",
+    "Search workbook coverage ends 2026-09-30 and predates the exact 2027 phrasing."
+  ]
+}

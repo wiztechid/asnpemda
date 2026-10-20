@@ -22,6 +22,18 @@ if blocked:
     raise SystemExit("internal/source files leaked into dist: " + ", ".join(sorted(blocked)))
 if "artikel/gaji-asn-melalui-koperasi.html" in actual:
     raise SystemExit("unapproved draft article leaked into dist")
+published_path = "artikel/pppk-paruh-waktu-penuh-waktu-2027.html"
+if published_path not in actual:
+    raise SystemExit("approved PPPK article missing from public build")
+published_html = (dist / published_path).read_text(encoding="utf-8")
+if '<meta name="robots" content="index,follow">' not in published_html:
+    raise SystemExit("published PPPK article is not indexable")
+if "/assets/hero-pppk-paruh-waktu-2027.webp" not in published_html:
+    raise SystemExit("published PPPK article hero reference missing")
+if "assets/hero-pppk-paruh-waktu-2027.webp" not in actual:
+    raise SystemExit("published PPPK article hero missing from public build")
+if "/artikel/pppk-paruh-waktu-penuh-waktu-2027.html" not in (dist / "index.html").read_text(encoding="utf-8"):
+    raise SystemExit("homepage does not link to the published PPPK article")
 for page in ("index.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "koreksi.html", "404.html"):
     html = (dist / page).read_text(encoding="utf-8")
     if '<img class="brand-icon" src="/favicon.svg?v=' not in html:
@@ -35,6 +47,8 @@ if any("gaji-asn-melalui-koperasi" in url for url in locations):
     raise SystemExit("unapproved draft article leaked into sitemap")
 if "https://asnpemda.pages.dev/koreksi.html" not in locations:
     raise SystemExit("public correction page missing from sitemap")
+if "https://asnpemda.pages.dev/artikel/pppk-paruh-waktu-penuh-waktu-2027.html" not in locations:
+    raise SystemExit("published PPPK article missing from sitemap")
 print("PUBLIC BUILD PASS: allowlist, draft exclusion, and sitemap verified")
 
 smoke_record = root / "data" / "articles" / "ci-hero-smoke.json"

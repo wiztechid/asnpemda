@@ -24,7 +24,7 @@
   },
   "id": "permenpanrb-9-2026-pppk-paruh-waktu",
   "title": "PermenPANRB Nomor 9 Tahun 2026: Aturan PPPK Paruh Waktu",
-  "status": "REGULASI_BERLAKU",
+  "status": "BERLAKU",
   "datePublished": "2026-10-21",
   "lastVerified": "2026-10-21",
   "materiality": "HIGH",
@@ -35,14 +35,14 @@
     {
       "title": "Permen PANRB No. 9 Tahun 2026 tentang Pegawai Pemerintah dengan Perjanjian Kerja Paruh Waktu",
       "url": "https://peraturan.bpk.go.id/Details/351339/permen-panrb-no-9-tahun-2026",
-      "sourceType": "OFFICIAL_REGULATION",
+      "sourceType": "JDIH",
       "isPrimary": true,
       "publishedAt": "2026-06-26"
     },
     {
       "title": "Naskah PermenPANRB Nomor 9 Tahun 2026",
       "url": "https://peraturan.bpk.go.id/Download/415118/permenpanrb-no-9-tahun-2026.pdf",
-      "sourceType": "OFFICIAL_REGULATION_TEXT",
+      "sourceType": "REGULATION",
       "isPrimary": true,
       "publishedAt": "2026-06-26"
     },

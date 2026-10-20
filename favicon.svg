@@ -2,20 +2,28 @@
   <defs><clipPath id="tile"><rect width="64" height="64" rx="15"/></clipPath></defs>
   <g clip-path="url(#tile)">
     <rect width="64" height="64" fill="#14224a"/>
-    <path d="M0 0h64v19L32 31 0 19z" fill="#1c3265"/>
-    <path d="M0 0h32v31L0 19z" fill="#203b77"/><path d="M64 0H32v31l32-12z" fill="#172b5d"/>
-    <!-- Balai pemerintahan daerah: atap dan fasad bersegi -->
+    <path d="M0 0h64v19L32 31 0 19z" fill="#1c3265"/><path d="M0 0h32v31L0 19z" fill="#203b77"/><path d="M64 0H32v31l32-12z" fill="#172b5d"/>
+    <!-- Balai pemerintahan daerah -->
     <path d="M9 25 32 11l23 14-23 4z" fill="#f4c66d"/><path d="M9 25 32 11v18z" fill="#ffdc91"/><path d="m32 11 23 14-23 4z" fill="#dfa94c"/>
     <path d="M13 26h38v3H13z" fill="#fff3d5"/><path d="M15 30h34v21H15z" fill="#e8efff"/><path d="M15 30h17v21H15z" fill="#fff8e9"/>
     <path d="M19 33h4v14h-4zm11 0h4v14h-4zm11 0h4v14h-4z" fill="#7487b5"/><path d="M12 50h40v4H12z" fill="#f4c66d"/>
-    <!-- Siluet ASN berseragam, dibuat dengan bidang poligon -->
-    <path d="M19 64v-8c0-7 5-11 13-11s13 4 13 11v8z" fill="#d6a65c"/><path d="M19 64v-8c0-7 5-11 13-11v19z" fill="#eac47d"/><path d="m19 56 4-8 9-3v19H19z" fill="#c8954e"/><path d="m45 56-4-8-9-3v19h13z" fill="#d6a65c"/>
-    <path d="M25 43h14v8l-7 6-7-6z" fill="#f6cf8f"/><path d="M25 43h7v14l-7-6z" fill="#e7b970"/>
-    <path d="M23 29c0-7 4-11 9-11s9 4 9 11v8c0 6-4 9-9 9s-9-3-9-9z" fill="#e8b780"/><path d="M23 29c0-7 4-11 9-11v28c-5 0-9-3-9-9z" fill="#f3c995"/>
-    <path d="m32 27 8 3v9l-8 8z" fill="#dca775"/><path d="m23 34 9 3v10l-6-3-3-5z" fill="#edbd88"/>
-    <path d="M22 29c0-8 4-13 10-13 7 0 11 5 10 13l-5-4-5 2-5-2z" fill="#202947"/><path d="M22 29c0-8 4-13 10-13v13l-5-2z" fill="#303d62"/>
-    <path d="M27 34h2m7 0h2" stroke="#263251" stroke-width="1.6" stroke-linecap="round"/><path d="M30 40q2 1.5 4 0" fill="none" stroke="#9b5d4e" stroke-width="1.2" stroke-linecap="round"/>
-    <!-- Kerah, dasi dan tanda pengenal tanpa lambang institusi -->
-    <path d="m23 47 9 5-5 5-6-6zm18 0-9 5 5 5 6-6z" fill="#fff5df"/><path d="m29 50 3 2 3-2-1 10h-4z" fill="#355cf6"/><path d="M39 54h4v2h-4z" fill="#fff3d5"/><path d="M39 54h2v2h-2z" fill="#ffc96d"/>
+    <!-- Seragam ASN cokelat, tanpa dasi -->
+    <path d="M18 64v-8c0-7 5-11 14-11s14 4 14 11v8z" fill="#a96732"/><path d="M18 64v-8c0-7 5-11 14-11v19z" fill="#bd8045"/>
+    <path d="m18 56 5-8 9-3v19H18z" fill="#a56734"/><path d="m46 56-5-8-9-3v19h14z" fill="#b7783e"/>
+    <path d="M25 43h14v8l-7 5-7-5z" fill="#c78a50"/><path d="M25 43h7v13l-7-5z" fill="#b77940"/>
+    <!-- Wajah bersegi dan rambut hitam pendek -->
+    <path d="M23 28c0-7 4-11 9-11s9 4 9 11v9c0 6-4 9-9 9s-9-3-9-9z" fill="#d49568"/>
+    <path d="M23 28c0-7 4-11 9-11v29c-5 0-9-3-9-9z" fill="#e0a676"/><path d="m32 27 9 4v8l-9 7z" fill="#c7835b"/><path d="m23 34 9 3v9l-6-3-3-5z" fill="#d99a6a"/>
+    <path d="M22 29c0-8 3-13 10-14 4-1 8 1 10 5l2 7-5-2-3-4-7 3-7 5z" fill="#171a20"/>
+    <path d="m22 29 2-9 8-5v9l-7 5z" fill="#282b30"/><path d="m32 15 7 2 3 4-5-1-5 4z" fill="#111419"/>
+    <!-- Kacamata hitam persegi dan goatee -->
+    <path d="M23 31h8v5h-8zm10 0h8v5h-8z" fill="#dbe4ed" fill-opacity=".48" stroke="#151a22" stroke-width="1.5"/>
+    <path d="M31 33h2m8-1 2-2" fill="none" stroke="#151a22" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M26 36h3m7 0h3" stroke="#171a20" stroke-width="1.1" stroke-linecap="round"/>
+    <path d="M28 39q4-2 8 0l-1 2h-6z" fill="#39241d"/><path d="m29 41 3 1 3-1v3l-3 2-3-2z" fill="#39241d"/>
+    <!-- Kerah, epaulet, dan tanda pengenal sederhana -->
+    <path d="m24 46 8 5-5 5-6-7zm16 0-8 5 5 5 6-7z" fill="#d6a06b"/>
+    <path d="m18 49 8-3 2 2-8 4zM46 49l-8-3-2 2 8 4z" fill="#d69a5f"/>
+    <path d="M22 53h5v2h-5z" fill="#f7e6c5"/><path d="M39 53h4v3h-4z" fill="#f4c66d"/>
   </g>
 </svg>

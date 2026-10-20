@@ -59,6 +59,12 @@ async function verifyTurnstile(request, env, token) {
   }
 }
 
+async function cleanup(env) {
+  const hour = Math.floor(Date.now() / 3600000);
+  await env.COMMENTS_DB.prepare("DELETE FROM comment_rate_limits WHERE CAST(bucket AS INTEGER) < ?").bind(hour - 1).run();
+  await env.COMMENTS_DB.prepare("DELETE FROM reader_comments WHERE (status = 'pending' AND datetime(created_at) < datetime('now', '-90 days')) OR (status = 'rejected' AND datetime(created_at) < datetime('now', '-30 days')) OR datetime(created_at) < datetime('now', '-365 days')").run();
+}
+
 export async function onRequest(context) {
   const { request, env } = context;
   if (!sameOrigin(request, request.method !== "GET")) return reply({ error: "Permintaan ditolak." }, 403);
@@ -68,6 +74,7 @@ export async function onRequest(context) {
   if (!ALLOWED_ARTICLES.has(article)) return reply({ error: "Artikel tidak ditemukan." }, 404);
 
   if (request.method === "GET") {
+    await cleanup(env);
     const result = await env.COMMENTS_DB.prepare(
       "SELECT id, display_name AS name, comment_text AS comment, created_at AS createdAt FROM reader_comments WHERE article_slug = ? AND status = 'approved' ORDER BY created_at DESC LIMIT 30",
     ).bind(article).all();
@@ -94,8 +101,7 @@ export async function onRequest(context) {
   const hour = String(Math.floor(Date.now() / 3600000));
   const ipHash = await digestIp(request, env, hour);
   if (!ipHash) return reply({ error: "Verifikasi keamanan sedang tidak tersedia." }, 503);
-  await env.COMMENTS_DB.prepare("DELETE FROM comment_rate_limits WHERE bucket < ?").bind(String(Number(hour) - 1)).run();
-  await env.COMMENTS_DB.prepare("DELETE FROM reader_comments WHERE (status = 'pending' AND created_at < datetime('now', '-90 days')) OR (status = 'rejected' AND created_at < datetime('now', '-30 days')) OR created_at < datetime('now', '-365 days')").run();
+  await cleanup(env);
   const limit = await env.COMMENTS_DB.prepare(
     "INSERT INTO comment_rate_limits (ip_hash, bucket, count) VALUES (?, ?, 1) ON CONFLICT(ip_hash, bucket) DO UPDATE SET count = count + 1 WHERE count < 3 RETURNING count",
   ).bind(ipHash, hour).first();

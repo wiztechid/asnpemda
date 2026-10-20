@@ -36,4 +36,4 @@ SET status = 'rejected'
 WHERE id = ? AND status = 'pending';
 ```
 
-Selalu gunakan parameter binding untuk ID. Jangan menampilkan antrean `pending` atau `rejected` ke publik. Komentar `pending` dihapus otomatis setelah 90 hari, komentar `rejected` setelah 30 hari, dan komentar `approved` setelah paling lama satu tahun. Ringkasan suara pembaca hanya berupa jumlah “membantu” dan “belum membantu”; sistem tidak menyimpan nama atau komentar untuk pilihan tersebut.
+Selalu gunakan parameter binding untuk ID. Jangan menampilkan antrean `pending` atau `rejected` ke publik. Saat endpoint komentar diakses, layanan menghapus komentar `pending` yang lebih lama dari 90 hari, `rejected` lebih lama dari 30 hari, dan semua komentar yang lebih lama dari satu tahun. Permintaan berikutnya menjalankan pembersihan itu. Ringkasan suara pembaca hanya berupa jumlah “membantu” dan “belum membantu”; sistem tidak menyimpan nama atau komentar untuk pilihan tersebut.

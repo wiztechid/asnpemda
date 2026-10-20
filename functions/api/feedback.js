@@ -28,6 +28,10 @@ async function readJson(request) {
   } catch { return null; }
 }
 
+async function cleanup(env) {
+  await env.COMMENTS_DB.prepare("DELETE FROM feedback_votes WHERE datetime(updated_at) < datetime('now', '-2 days')").run();
+}
+
 export async function onRequest(context) {
   const { request, env } = context;
   const origin = request.headers.get("Origin");
@@ -39,6 +43,7 @@ export async function onRequest(context) {
   if (!ALLOWED_ARTICLES.has(article)) return reply({ error: "Artikel tidak ditemukan." }, 404);
 
   if (request.method === "GET") {
+    await cleanup(env);
     const rows = await env.COMMENTS_DB.prepare("SELECT vote, count FROM feedback_totals WHERE article_slug = ?").bind(article).all();
     const counts = { yes: 0, no: 0 };
     for (const row of rows.results || []) counts[row.vote] = Number(row.count) || 0;
@@ -50,7 +55,7 @@ export async function onRequest(context) {
   const day = new Date().toISOString().slice(0, 10);
   const ipHash = await digestIp(request, env, day);
   if (!ipHash) return reply({ error: "Umpan balik belum dapat diproses." }, 503);
-  await env.COMMENTS_DB.prepare("DELETE FROM feedback_votes WHERE updated_at < datetime('now', '-2 days')").run();
+  await cleanup(env);
   const prior = await env.COMMENTS_DB.prepare("SELECT vote FROM feedback_votes WHERE article_slug = ? AND ip_hash = ?").bind(article, ipHash).first();
   if (!prior) {
     await env.COMMENTS_DB.batch([

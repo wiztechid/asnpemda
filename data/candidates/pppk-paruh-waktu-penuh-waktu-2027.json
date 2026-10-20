@@ -1,0 +1,105 @@
+{
+  "id": "pppk-paruh-waktu-penuh-waktu-2027",
+  "slug": "pppk-paruh-waktu-penuh-waktu-2027",
+  "title": "PPPK Paruh Waktu 2027: Harapan Jadi Penuh Waktu, Apa yang Sudah Jelas?",
+  "discoveredAt": "2026-10-20T18:45:00+08:00",
+  "classification": "policy-update",
+  "materiality": "HIGH",
+  "dedupeKey": "pppk-guru-paruh-waktu-penuh-waktu-2027",
+  "state": "DRAFTED",
+  "verification": "PRIMARY_OFFICIAL_RELEASES_READ; INDEPENDENT_REVIEW_PENDING",
+  "approved": false,
+  "articlePath": "artikel/pppk-paruh-waktu-penuh-waktu-2027.html",
+  "evidenceSnapshot": [
+    {
+      "title": "Siaran Pers: Menkeu: Mulai 2027, PPPK Paruh Waktu di Daerah Akan Menjadi PPPK Penuh Waktu",
+      "url": "https://wip.kemenkeu.go.id/informasi-publik/publikasi/siaran-pers/2027-PPPK-paruh-waktu-jadi-penuh-waktu",
+      "issuer": "Kementerian Keuangan",
+      "publishedAt": "2026-09-14",
+      "documentIdentity": "Siaran Pers SP-160/KLI/2026",
+      "keyClaims": [
+        "Mulai Januari 2027 seluruh PPPK paruh waktu di daerah direncanakan beralih menjadi PPPK penuh waktu",
+        "Pembiayaan direncanakan ditanggung pemerintah pusat",
+        "Pengumuman berupa rencana kebijakan; teks yang ditinjau tidak merinci langkah individual"
+      ]
+    },
+    {
+      "title": "Penataan Guru Jadi Fokus Pemerintah, Kepastian Status Disiapkan Mulai 2027",
+      "url": "https://www.kemendikdasmen.go.id/siaran-pers/16271-penataan-guru-jadi-fokus-pemerintah-kepastian-status-disiapkan-mulai-2027",
+      "issuer": "Kemendikdasmen",
+      "publishedAt": "2026-10-08",
+      "documentIdentity": "Siaran Pers No. 858/sipers/A6/X/2026",
+      "keyClaims": [
+        "242.482 guru PPPK paruh waktu disebut akan menjadi PPPK penuh waktu mulai 2027-01-01 dengan mekanisme otomatis tanpa seleksi",
+        "Status kelompok guru dialihkan menjadi pegawai pemerintah pusat",
+        "Guru PPPK penuh waktu dapat mengikuti seleksi menjadi guru PNS bertahap jika memenuhi syarat administrasi"
+      ]
+    },
+    {
+      "title": "Kabar Baik di Tahun 2027 Untuk Guru Non-ASN dan Guru PPPK Paruh Waktu",
+      "url": "https://puslapdik.kemendikdasmen.go.id/kabar-baik-di-tahun-2027-untuk-guru-non-asn-dan-guru-pppk-paruh-waktu/",
+      "issuer": "Puslapdik Kemendikdasmen",
+      "publishedAt": "2026-10-09",
+      "documentIdentity": "Berita resmi Puslapdik, 9 Oktober 2026",
+      "keyClaims": [
+        "Menguatkan tanggal, cakupan, dan mekanisme bagi kelompok guru",
+        "Menyebut kelompok guru PPPK penuh waktu 935.316 orang terpisah dari PPPK paruh waktu"
+      ]
+    }
+  ],
+  "seo": {
+    "focusKeyword": "PPPK paruh waktu jadi penuh waktu 2027",
+    "secondaryKeywords": [
+      "PPPK paruh waktu 2027",
+      "PPPK paruh waktu daerah jadi penuh waktu",
+      "nasib PPPK paruh waktu 2027",
+      "PPPK paruh waktu otomatis jadi penuh waktu",
+      "PPPK penuh waktu apakah sama dengan PNS",
+      "harapan PPPK paruh waktu diangkat penuh"
+    ],
+    "titleTag": "PPPK Paruh Waktu 2027: Harapan Jadi Penuh Waktu",
+    "metaDescription": "Pemerintah merencanakan PPPK paruh waktu di daerah beralih ke penuh waktu mulai 2027. Catatan sesama ASN tentang harapan, cakupan, dan hal yang masih menunggu.",
+    "slug": "/artikel/pppk-paruh-waktu-penuh-waktu-2027.html",
+    "robots": "noindex,follow until human publication approval",
+    "structuredData": [
+      "Article",
+      "BreadcrumbList"
+    ]
+  },
+  "serpAudit": {
+    "checkedAt": "2026-10-20",
+    "queries": [
+      "PPPK paruh waktu jadi penuh waktu 2027",
+      "PPPK paruh waktu daerah 2027 mulai Januari",
+      "PPPK paruh waktu 2027 otomatis atau tidak",
+      "PPPK penuh waktu apakah sama dengan PNS"
+    ],
+    "observedCompetitorTypes": [
+      "Kementerian Keuangan and other official government pages",
+      "InfoPublik and national/regional news publishers",
+      "education, recruitment, and regional news publishers"
+    ],
+    "intent": "Informational plus reassurance: status of the announced plan, scope, what is automatic, what differs from PNS, and what staff should do while waiting.",
+    "contentGap": [
+      "empathetic ASN-to-ASN voice for PPPK part-time readers",
+      "separate broad regional plan from teacher-specific automatic mechanism",
+      "clarify full-time PPPK is not automatically PNS",
+      "give practical steps without inventing conditions, salary, or individual dates"
+    ],
+    "competitionAssessment": "Fresh official and news coverage makes head-term competition high. The opportunity is scoped explanation and an empathetic practical voice. No formal organic keyword-difficulty score or validated search volume is available.",
+    "workbookCoverage": "pns.xlsx covers 2025-10-01 through 2026-09-30 but does not include these exact 2027 phrases; monthly volume is not claimed."
+  },
+  "openItems": [
+    "Independent editorial/legal review of exact scope and policy status",
+    "Check for implementing regulation or technical guidance after 2026-10-20",
+    "Validate current SERP and query volume before publication",
+    "Final publication approval tied to exact revised bytes plus separate release GO"
+  ],
+  "evidenceFingerprint": {
+    "algorithm": "git-blob-sha1",
+    "value": "0ef84e0a0125e3804f3297e70e276b614a53b5d0",
+    "path": "data/candidates/pppk-paruh-waktu-penuh-waktu-2027.evidence.json"
+  },
+  "evidenceSnapshotPath": "data/candidates/pppk-paruh-waktu-penuh-waktu-2027.evidence.json",
+  "editorialAngle": "Empathetic ASN-to-ASN note for regional part-time PPPK staff hoping for full-time transition; distinguish broad official plan from teacher-specific mechanism and pending individual guidance."
+}

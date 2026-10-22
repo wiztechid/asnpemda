@@ -34,6 +34,20 @@ BASE_FILES = (
 SLUG_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 
 
+FROZEN_MASTER_REQUIRED = ("article-page", "breadcrumbs", "article-content", "article-header", "article-hero", "status-card", "quick-answer", "toc", "article-body", "related-posts", "reader-engagement", "share-panel", "site-footer", "footer-grid")
+FROZEN_MASTER_LEGACY = {"permenpanrb-9-2026-pppk-paruh-waktu", "pppk-paruh-waktu-penuh-waktu-2027"}
+
+
+def validate_master_template(slug: str, content: str) -> None:
+    if slug in FROZEN_MASTER_LEGACY:
+        return
+    missing = [name for name in FROZEN_MASTER_REQUIRED if name not in content]
+    if missing:
+        raise SystemExit(f"ERROR: {slug} diverges from FROZEN article master: {missing}")
+    if content.count("<h1") != 1 or "article-engagement.js" not in content:
+        raise SystemExit(f"ERROR: {slug} failed master template structural validation")
+
+
 def published_articles() -> list[tuple[str, str | None, str | None]]:
     articles: list[tuple[str, str | None, str | None]] = []
     records = ROOT / "data" / "articles"
@@ -52,6 +66,7 @@ def published_articles() -> list[tuple[str, str | None, str | None]]:
         html = source.read_text(encoding="utf-8")
         if re.search(r"""<meta[^>]+name=["']robots["'][^>]+noindex""", html, re.I):
             raise SystemExit(f"ERROR: approved article is still marked noindex: {source.name}")
+        validate_master_template(slug, html)
         hero_image = record.get("heroImage")
         if hero_image is not None:
             if not isinstance(hero_image, str) or not hero_image or hero_image.startswith("/"):

@@ -28,6 +28,7 @@ BASE_FILES = (
     "assets/site.css",
     "assets/article-engagement.js",
     "assets/author-suiza-ixan.webp",
+    "assets/hero-sertifikasi-pbj-lkpp-2026.svg",
 )
 SLUG_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 

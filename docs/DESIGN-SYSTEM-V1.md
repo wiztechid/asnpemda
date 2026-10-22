@@ -52,3 +52,12 @@ Perubahan artikel hanya mengisi slot konten. Perubahan layout global perlu propo
 - **Pemisahan konten dan desain:** artikel baru menggunakan class `article-page`, `article-content`, `article-hero`, `status-card`, `quick-answer`, `toc`, `article-body`, `related-posts`, `reader-engagement`, `author-box`, `share-panel`, `site-footer`; hindari CSS inline yang menduplikasi desain global.
 - **Blogroll:** otomatis dari artikel berstatus approved/PUBLISHED pada build, tidak perlu edit setiap artikel. Jangan tampilkan tautan draft.
 - **Freeze:** modifikasi layout global memerlukan proposal versi, QC responsif 360/768/1440, cek footer, gambar, aksesibilitas, tautan, dan hasil build. Perbaikan teks artikel boleh tanpa perubahan layout.
+
+## 🔒 FROZEN — Master Artikel ASN Pemda v1.1 (22 Oktober 2026)
+**Keputusan pemilik:** layout artikel terakhir disetujui dan dibekukan sebagai acuan artikel baru. Acuan visual: artikel WFH ASN Pemda; acuan perbaikan terkini: artikel sertifikasi PBJ Level-1 dan PPK Tipe C.
+
+**Komponen wajib dan urutan:** breadcrumb → judul/deck/metadata → hero low-poly utuh (tanpa crop) → status regulasi → ringkasan → tiga kartu manfaat sejajar di desktop / satu kolom di ponsel → daftar isi → isi dan sumber resmi → **satu** blok Bacaan selanjutnya (maksimal tiga artikel approved/PUBLISHED, tanpa duplikasi) → feedback/komentar → penulis → berbagi → footer lengkap.
+
+**Perubahan rutin yang diizinkan:** judul, slug, tanggal, metadata, konten, rujukan, gambar pada slot hero, kategori, dan rekomendasi artikel berdasarkan relevansi. **Dilarang** mengubah CSS global, struktur/urutan komponen, header, footer, tata letak tiga kartu, atau menambah blok rekomendasi kedua saat update artikel.
+
+**Kontrol:** `scripts/build_site.py` menjaga struktur dasar master dan publication gate. Pengubahan master harus atas persetujuan eksplisit pemilik, revisi versi, review diff, regression test build, serta QC visual desktop/mobile. Freeze ini merupakan aturan proyek; bukan jaminan visual pixel-perfect otomatis.

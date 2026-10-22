@@ -61,3 +61,14 @@ Perubahan artikel hanya mengisi slot konten. Perubahan layout global perlu propo
 **Perubahan rutin yang diizinkan:** judul, slug, tanggal, metadata, konten, rujukan, gambar pada slot hero, kategori, dan rekomendasi artikel berdasarkan relevansi. **Dilarang** mengubah CSS global, struktur/urutan komponen, header, footer, tata letak tiga kartu, atau menambah blok rekomendasi kedua saat update artikel.
 
 **Kontrol:** `scripts/build_site.py` menjaga struktur dasar master dan publication gate. Pengubahan master harus atas persetujuan eksplisit pemilik, revisi versi, review diff, regression test build, serta QC visual desktop/mobile. Freeze ini merupakan aturan proyek; bukan jaminan visual pixel-perfect otomatis.
+
+## Editorial Voice v1.0 — ASN Milenial & Gen Z (22 Oktober 2026)
+
+**Audiens utama:** ASN/CPNS/PPPK generasi milenial dan Gen Z di pemerintah daerah. **Positioning:** teman baca kebijakan yang cerdas, ringan, dekat dengan keseharian OPD, dan tetap berpegang pada sumber primer.
+
+- Gunakan bahasa Indonesia populer-profesional; hangat, ringkas, tidak menggurui. Boleh menggunakan pertanyaan pembuka, analogi pekerjaan kantor, dan kalimat seperti “Apa dampaknya buat kita di OPD?” Hindari bahasa birokratis bertele-tele, jargon tanpa penjelasan, slang yang cepat basi, serta clickbait yang melebih-lebihkan.
+- Judul harus menjawab intent pembaca dan memuat topik/aturan relevan. Lead maksimal 2 paragraf pendek: apa yang baru, status resminya, dan mengapa penting. Paragraf ideal 2–4 kalimat; gunakan subjudul berbentuk pertanyaan, contoh konkret, checklist tindakan, dan FAQ yang tidak mengulang isi.
+- Struktur artikel mengikuti **master template v1.1 FROZEN**; ubah **copywriting saja**, jangan mengubah layout, CSS, komponen, header/footer, atau urutan. Gunakan kartu “Yang berubah / Siapa terdampak / Perlu dilakukan” untuk informasi paling praktis.
+- **Akurasi wajib:** bedakan RESMI/TERBIT, RANCANGAN, ARAH KEBIJAKAN, dan WACANA RESMI. Cantumkan nomor/tanggal aturan bila terverifikasi, pihak terdampak, tanggal efektif/tenggat, konsekuensi praktis, dan tautan sumber primer. Jangan mengarang hak, kewajiban, konversi otomatis, atau kepastian yang belum ada.
+- **SEO dan kualitas:** riset intent SERP dan sumber primer; artikel mendalam idealnya minimal 900 kata jika topik layak, tetapi tetap mudah dipindai. Jangan memanjangkan paragraf hanya demi target kata; informasi yang sama tidak boleh diulang. Internal link ke artikel yang benar-benar terkait.
+- **Quality Gate bahasa:** sebelum publish, cek keterbacaan di ponsel, konsistensi istilah, ketepatan hukum, kejelasan tindakan, minim repetisi, dan apakah pembaca ASN dapat memahami inti artikel dalam 30 detik pertama.

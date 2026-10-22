@@ -87,29 +87,33 @@ def published_articles() -> list[tuple[str, str | None, str | None]]:
 
 
 def add_article_blogroll(page: str, current: str, published: list[tuple[str, str | None, str | None]]) -> str:
-    """Add a responsive published-only reading list to the bottom of an article."""
-    cards = []
+    """Use one curated related-reading section with up to three published cards."""
+    if 'class="related-posts"' not in page:
+        return page
+    candidates = []
     for relative, _, hero in reversed(published):
         if relative == current:
             continue
         source_html = (ROOT / relative).read_text(encoding="utf-8")
         title_match = re.search(r"<title>(.*?)</title>", source_html, re.I | re.S)
         title = html_utils.unescape(title_match.group(1).split(" — ASN Pemda")[0].strip()) if title_match else Path(relative).stem.replace("-", " ").title()
-        description = "Penjelasan kebijakan, dampak praktis, dan langkah yang perlu dicermati ASN."
-        image = ('<img src="../' + html_utils.escape(hero, quote=True) + '" alt="" loading="lazy" decoding="async" width="360" height="203">') if hero else '<span class="blogroll-monogram" aria-hidden="true">ASN</span>'
-        cards.append('<a class="blogroll-card" href="' + html_utils.escape(Path(relative).name, quote=True) + '">' + image + '<span class="blogroll-copy"><strong>' + html_utils.escape(title) + '</strong><span>' + description + '</span><b>Baca artikel →</b></span></a>')
-        if len(cards) == 3:
+        picture = ('<img src="../' + html_utils.escape(hero, quote=True) + '" alt="" loading="lazy" decoding="async" width="360" height="203">') if hero else '<span class="blogroll-monogram" aria-hidden="true">ASN</span>'
+        candidates.append('<a class="blogroll-card" href="' + html_utils.escape(Path(relative).name, quote=True) + '">' + picture + '<span class="blogroll-copy"><strong>' + html_utils.escape(title) + '</strong><span>Informasi dan penjelasan untuk ASN dan pemerintah daerah.</span><b>Baca artikel →</b></span></a>')
+        if len(candidates) == 3:
             break
-    if not cards:
+    if not candidates:
         return page
-    # A master article already has curated related posts. Avoid a second reading section.
-    if 'class="related-posts"' in page or 'class="related-reading-card"' in page:
+    start = page.find('<section class="related-posts"')
+    if start < 0:
         return page
-    block = '<section id="asn-blogroll" class="asn-blogroll" aria-labelledby="asn-blogroll-title"><div class="blogroll-heading"><span class="kicker">JELAJAHI ARTIKEL LAIN</span><h2 id="asn-blogroll-title">Bacaan lain untuk rekan ASN</h2><p>Pilihan artikel lain yang sudah terbit.</p></div><div class="blogroll-grid">' + ''.join(cards) + '</div><a class="blogroll-all" href="../index.html#artikel-terbaru">Lihat semua artikel →</a></section>'
-    for marker in ('<section class="reader-engagement"', '<div class="author-box"', '</article>', '</main>'):
-        if marker in page:
-            return page.replace(marker, block + '\n' + marker, 1)
-    return page
+    # Replace the existing related block rather than adding a second block.
+    end = page.find('</section>', start)
+    if end < 0:
+        return page
+    end += len('</section>')
+    block = '<section class="related-posts asn-blogroll" aria-labelledby="related-title"><div class="blogroll-heading"><span class="kicker">LANJUTKAN MEMBACA</span><h2 id="related-title">Bacaan selanjutnya</h2><p>Artikel lain yang sudah terbit di ASN Pemda.</p></div><div class="blogroll-grid">' + ''.join(candidates) + '</div><a class="blogroll-all" href="../index.html#artikel-terbaru">Lihat semua artikel →</a></section>'
+    return page[:start] + block + page[end:]
+
 
 
 def main() -> None:

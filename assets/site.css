@@ -107,3 +107,14 @@
 @media(max-width:800px){.blogroll-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.asn-blogroll{padding:18px;margin:28px 0}.blogroll-grid{grid-template-columns:1fr}.blogroll-card{flex-direction:row;align-items:stretch}.blogroll-card img,.blogroll-monogram{width:110px;min-width:110px;aspect-ratio:auto;object-fit:contain}.blogroll-copy{padding:12px}.blogroll-copy strong{font-size:14px}.blogroll-copy>span{display:none}}
 @media(prefers-reduced-motion:reduce){.blogroll-card{transition:none}}
+
+/* Frozen article master: three key takeaways above table of contents */
+.article-page .takeaways{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0 28px}
+.article-page .takeaways>div{min-width:0;padding:18px 19px;background:#f5f7ff;border:1px solid #e1e7f5;border-radius:14px}
+.article-page .takeaways>div:nth-child(1){border-top:3px solid #355cf6}
+.article-page .takeaways>div:nth-child(2){border-top:3px solid #7c66df}
+.article-page .takeaways>div:nth-child(3){border-top:3px solid #278c80}
+.article-page .takeaways strong{display:block;color:#172756;font-size:14px;line-height:1.45;margin-bottom:8px}
+.article-page .takeaways p{margin:0;color:#4d5b76;font-size:14px;line-height:1.6;text-align:left}
+.article-page .takeaways+.toc{margin-top:0}
+@media(max-width:680px){.article-page .takeaways{grid-template-columns:1fr;gap:10px;margin:20px 0 24px}.article-page .takeaways>div{padding:14px 16px}.article-page .takeaways strong{margin-bottom:4px}}

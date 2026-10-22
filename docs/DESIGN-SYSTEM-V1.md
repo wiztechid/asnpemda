@@ -45,3 +45,10 @@ Perubahan artikel hanya mengisi slot konten. Perubahan layout global perlu propo
 - **Publication gate:** `data/articles/<slug>.json` harus approved dan PUBLISHED; aset hero harus termasuk dalam build allowlist. Deploy sukses dan inspeksi URL publik adalah bagian dari QC.
 - **SOP konten:** artikel mendalam minimal 900 kata bila topik memungkinkan, sumber primer, SERP intent, status hukum terverifikasi, dan tidak mengarang mekanisme. Jangan klaim lulus QC mobile tanpa pengujian nyata.
 - **Change control:** jangan mengubah desain frozen secara ad hoc. Perubahan layout global harus diajukan sebagai revisi versi, bukan ditimpa per artikel.
+
+## Master Template Artikel — Referensi WFH (22 Oktober 2026)
+- **MASTER VISUAL:** `artikel/aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj.html` sesuai screenshot yang disetujui pengguna. Ini menggantikan contoh referensi PPPK sebagai acuan utama layout; jangan membuat HTML/CSS artikel dari nol.
+- Urutan wajib: breadcrumb → kicker/judul/deck/metadata → hero utuh → status resmi → versi gampangnya → tiga manfaat → daftar isi → artikel >900 kata bila layak → sumber → artikel terkait/blogroll → feedback/komentar → penulis → share → footer tiga kolom.
+- **Pemisahan konten dan desain:** artikel baru menggunakan class `article-page`, `article-content`, `article-hero`, `status-card`, `quick-answer`, `toc`, `article-body`, `related-posts`, `reader-engagement`, `author-box`, `share-panel`, `site-footer`; hindari CSS inline yang menduplikasi desain global.
+- **Blogroll:** otomatis dari artikel berstatus approved/PUBLISHED pada build, tidak perlu edit setiap artikel. Jangan tampilkan tautan draft.
+- **Freeze:** modifikasi layout global memerlukan proposal versi, QC responsif 360/768/1440, cek footer, gambar, aksesibilitas, tautan, dan hasil build. Perbaikan teks artikel boleh tanpa perubahan layout.

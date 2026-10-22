@@ -97,3 +97,15 @@ Perubahan artikel hanya mengisi slot konten. Perubahan layout global perlu propo
 10. **Publish decision:** jangan klaim PASS tanpa audit sumber dan QC teknis aktual. Simpan bukti SEO brief dan QC per artikel; bila ada data yang belum tersedia, tandai sebagai belum diverifikasi.
 
 **Freeze tetap berlaku:** perubahan ini hanya kebijakan editorial dan QC, tidak mengubah master visual artikel v1.1.
+
+## 🔒 FROZEN — Bahasa Pembaca & SEO Artikel v1.3 (22 Oktober 2026)
+
+**Keputusan pemilik:** SOP editorial dan SEO ini FROZEN untuk seluruh artikel ASN Pemda berikutnya; perubahan prinsip hanya melalui persetujuan eksplisit pemilik dan versi SOP baru. Master template visual v1.1 tetap FROZEN secara terpisah.
+
+**Aturan bahasa nonnegosiasi:** tulis untuk ASN milenial dan Gen Z dengan bahasa Indonesia yang akrab, sederhana, langsung, tetapi profesional. Pilih kata yang benar-benar digunakan dan dipahami pembaca saat mencari informasi. Jangan mengutamakan jargon SEO, birokrasi, akademis, atau teknis. Jika istilah resmi diperlukan untuk akurasi hukum, sebutkan istilah aslinya lalu jelaskan dengan kalimat sehari-hari pada penyebutan pertama. Hindari slang berlebihan, metafora membingungkan, clickbait, dan singkatan tanpa penjelasan.
+
+**Contoh transformasi:** “implikasi kebijakan” → “dampak aturan”; “mekanisme implementasi” → “cara penerapannya”; “melakukan inventarisasi” → “mendata”; “stakeholder” → “pihak yang terlibat”; “penatausahaan” → “pencatatan dan pengelolaan administrasi” (sesuaikan makna hukum dengan konteks). Istilah resmi seperti SPM, SP2D, PPPK, atau diskresi tidak boleh diganti secara keliru; jelaskan maknanya dengan contoh praktis.
+
+**Quality Gate sebelum publish:** >700 kata isi utama tanpa filler; keyword utama punya bukti permintaan atau pengecualian editorial yang dicatat; intent SERP jelas; answer-first dalam 100 kata pertama; paragraf singkat; contoh dampak untuk ASN/OPD; status aturan dan sumber primer diverifikasi; tidak ada jargon tak dijelaskan; judul/meta/H2 natural dan mudah dipahami; tautan terkait relevan; QC desktop/mobile. Jangan mengklaim peringkat atau skor Google tertentu.
+
+**Pemeriksaan akhir:** minta penilai membaca judul, 100 kata pembuka, tiga kartu ringkasan, dan subjudul: apakah ASN nonspesialis dapat memahami inti artikel tanpa mencari arti istilah di tempat lain? Jika tidak, sederhanakan sebelum publikasi.

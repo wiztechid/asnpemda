@@ -102,6 +102,9 @@ def add_article_blogroll(page: str, current: str, published: list[tuple[str, str
             break
     if not cards:
         return page
+    # A master article already has curated related posts. Avoid a second reading section.
+    if 'class="related-posts"' in page or 'class="related-reading-card"' in page:
+        return page
     block = '<section id="asn-blogroll" class="asn-blogroll" aria-labelledby="asn-blogroll-title"><div class="blogroll-heading"><span class="kicker">JELAJAHI ARTIKEL LAIN</span><h2 id="asn-blogroll-title">Bacaan lain untuk rekan ASN</h2><p>Pilihan artikel lain yang sudah terbit.</p></div><div class="blogroll-grid">' + ''.join(cards) + '</div><a class="blogroll-all" href="../index.html#artikel-terbaru">Lihat semua artikel →</a></section>'
     for marker in ('<section class="reader-engagement"', '<div class="author-box"', '</article>', '</main>'):
         if marker in page:

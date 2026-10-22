@@ -80,3 +80,20 @@ Perubahan artikel hanya mengisi slot konten. Perubahan layout global perlu propo
 - **Brief wajib sebelum publish:** keyword utama, 3–6 turunan, search intent, bukti demand dan tanggal cek, analisis 5–10 hasil SERP, content gap, judul SEO, slug, meta description, H1/H2, FAQ relevan, internal link, dan sumber primer.
 - **Publication gate:** bila volume tidak tersedia, tandai 'demand belum terverifikasi' dan jangan labeli sebagai keyword tervalidasi. Artikel berita material tetap boleh dipertimbangkan melalui keputusan editorial eksplisit, tanpa mengarang volume.
 - **Gaya:** ASN milenial dan Gen Z; bahasa ringan, paragraf pendek, contoh kasus OPD, tetap tepat hukum. Master template visual v1.1 tetap FROZEN.
+
+## Google People-First Quality Gate v1.2 — 22 Oktober 2026
+
+**Tujuan:** membantu pembaca ASN menyelesaikan persoalan nyata dengan artikel akurat, orisinal, jelas, dan mudah dinavigasi. **Tidak menjanjikan ranking, Discover, atau kelulusan AdSense.** E-E-A-T adalah kerangka evaluasi kualitas, bukan satu skor/ranking factor tunggal.
+
+1. **Answer-first:** 100 kata awal menjelaskan jawaban, status kebijakan, siapa terdampak, dan apa yang harus dilakukan; hindari intro basa-basi.
+2. **Information gain:** wajib ada nilai tambah yang dapat diverifikasi (contoh kasus OPD, perbandingan aturan lama vs baru jika relevan, checklist tindakan per peran, skenario/FAQ yang benar-benar membantu). Jangan mengarang contoh sebagai fakta.
+3. **Regulation delta:** jika membahas aturan baru, jelaskan secara akurat apa yang berubah, yang tetap, tanggal efektif, dan hal yang masih menunggu penjelasan resmi; jangan menyimpulkan perubahan jika teks regulasi belum tersedia.
+4. **Action by role:** bila relevan, jelaskan dampak berbeda untuk ASN/PPPK, bendahara, PPK, UKPBJ, BKPSDM, BPKAD, dan pimpinan OPD. Tidak semua peran wajib muncul dalam setiap artikel.
+5. **Evidence & transparency:** sumber primer resmi dengan tautan yang dapat diperiksa; penulis dan kebijakan editorial jelas; pisahkan fakta, interpretasi, dan ketidakpastian. Tanggal terbit/perbarui hanya berubah bila ada revisi substansial.
+6. **Search intent & demand:** riset SERP, long-tail relevan, volume bila tersedia dengan sumber/negara/periode, dan content gap. Jangan menyamakan kompetisi iklan dengan kesulitan SEO. Hindari keyword stuffing dan FAQ buatan untuk mengejar rich result.
+7. **Readable, not padded:** >700 kata isi utama sesuai standar internal; pembahasan lengkap tanpa pengulangan, paragraf pendek, H2/H3 informatif, ringkasan 3 kartu, bahasa profesional-akrab untuk milenial/Gen Z.
+8. **Technical & UX:** satu H1, judul/meta unik, canonical benar, schema hanya sesuai konten nyata, alt text deskriptif, gambar optimal, tautan internal relevan, mobile accessibility, performa Core Web Vitals, tidak ada interstitial/iklan mengganggu.
+9. **Review cycle:** audit Search Console (impressions, CTR, posisi, query, indexing), feedback pembaca, link rusak, dan aturan yang berubah; prioritaskan update substansial, bukan mengganti tanggal agar terlihat segar.
+10. **Publish decision:** jangan klaim PASS tanpa audit sumber dan QC teknis aktual. Simpan bukti SEO brief dan QC per artikel; bila ada data yang belum tersedia, tandai sebagai belum diverifikasi.
+
+**Freeze tetap berlaku:** perubahan ini hanya kebijakan editorial dan QC, tidak mengubah master visual artikel v1.1.

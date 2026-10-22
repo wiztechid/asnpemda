@@ -72,78 +72,25 @@ def published_articles() -> list[tuple[str, str | None, str | None]]:
 
 
 def add_article_blogroll(page: str, current: str, published: list[tuple[str, str | None, str | None]]) -> str:
-    """Build-time related reading: only published URLs, never drafts or broken links."""
-    if 'id="asn-blogroll"' in page:
-        page = re.sub(r'<section id="asn-blogroll"[\\s\\S]*?</section>', '', page, count=1)
-    candidates = []
+    """Add a responsive published-only reading list to the bottom of an article."""
+    cards = []
     for relative, _, hero in reversed(published):
         if relative == current:
             continue
-        source = ROOT / relative
-        body = source.read_text(encoding="utf-8")
-        title_match = re.search(r'<title>(.*?)</title>', body, re.I | re.S)
-        desc_match = re.search(r'<meta\\s+name=["\\']description["\\']\\s+content=["\\']([^"\\']+)', body, re.I)
-        title = html_utils.unescape(re.sub(r'\\s*[—|-]\\s*ASN Pemda\\s*    config = json.loads((ROOT / "site-config.json").read_text(encoding="utf-8"))
-    origin = config.get("siteUrl", "").rstrip("/")
-    if not origin.startswith("https://") or "example" in origin:
-        raise SystemExit("ERROR: set a valid HTTPS siteUrl before building")
-
-    if DIST == ROOT or ROOT not in DIST.parents:
-        raise SystemExit("ERROR: unsafe output directory")
-    if DIST.exists():
-        shutil.rmtree(DIST)
-    DIST.mkdir(parents=True)
-
-    for relative in BASE_FILES:
-        source = ROOT / relative
-        if not source.is_file():
-            raise SystemExit(f"ERROR: required public file missing: {relative}")
-        target = DIST / relative
-        target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(source, target)
-
-    articles = published_articles()
-    for relative, _, hero_image in articles:
-        target = DIST / relative
-        target.parent.mkdir(parents=True, exist_ok=True)
-        original = (ROOT / relative).read_text(encoding='utf-8')
-        target.write_text(add_article_blogroll(original, relative, articles), encoding='utf-8')
-        if hero_image:
-            image_target = DIST / hero_image
-            image_target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(ROOT / hero_image, image_target)
-
-    ns = "http://www.sitemaps.org/schemas/sitemap/0.9"
-    ET.register_namespace("", ns)
-    urlset = ET.Element(f"{{{ns}}}urlset")
-    for route in ("", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "koreksi.html"):
-        url = ET.SubElement(urlset, f"{{{ns}}}url")
-        ET.SubElement(url, f"{{{ns}}}loc").text = f"{origin}/{route}"
-    for relative, modified, _ in articles:
-        url = ET.SubElement(urlset, f"{{{ns}}}url")
-        ET.SubElement(url, f"{{{ns}}}loc").text = f"{origin}/{relative}"
-        if modified:
-            ET.SubElement(url, f"{{{ns}}}lastmod").text = modified
-    ET.ElementTree(urlset).write(DIST / "sitemap.xml", encoding="utf-8", xml_declaration=True)
-    print(f"Public build complete: {len(BASE_FILES)} allowlisted files, {len(articles)} approved articles; output=dist/")
-
-
-if __name__ == "__main__":
-    main()
-, '', title_match.group(1).strip())) if title_match else Path(relative).stem.replace("-", " ").title()
-        desc = html_utils.unescape(desc_match.group(1)) if desc_match else "Baca penjelasan kebijakan dan dampaknya untuk ASN dan pemerintah daerah."
-        # Hero metadata may be absent in older approved articles; use a text card in that case.
-        img = f'<img src="../{html_utils.escape(hero, quote=True)}" alt="" loading="lazy" decoding="async" width="360" height="203">' if hero else '<span class="blogroll-monogram" aria-hidden="true">ASN</span>'
-        candidates.append(f'<a class="blogroll-card" href="{html_utils.escape(Path(relative).name, quote=True)}">{img}<span class="blogroll-copy"><strong>{html_utils.escape(title)}</strong><span>{html_utils.escape(desc[:125])}</span><b>Baca artikel →</b></span></a>')
-        if len(candidates) >= 3:
+        source_html = (ROOT / relative).read_text(encoding="utf-8")
+        title_match = re.search(r"<title>(.*?)</title>", source_html, re.I | re.S)
+        title = html_utils.unescape(title_match.group(1).split(" — ASN Pemda")[0].strip()) if title_match else Path(relative).stem.replace("-", " ").title()
+        description = "Penjelasan kebijakan, dampak praktis, dan langkah yang perlu dicermati ASN."
+        image = ('<img src="../' + html_utils.escape(hero, quote=True) + '" alt="" loading="lazy" decoding="async" width="360" height="203">') if hero else '<span class="blogroll-monogram" aria-hidden="true">ASN</span>'
+        cards.append('<a class="blogroll-card" href="' + html_utils.escape(Path(relative).name, quote=True) + '">' + image + '<span class="blogroll-copy"><strong>' + html_utils.escape(title) + '</strong><span>' + description + '</span><b>Baca artikel →</b></span></a>')
+        if len(cards) == 3:
             break
-    if not candidates:
+    if not cards:
         return page
-    block = '<section id="asn-blogroll" class="asn-blogroll" aria-labelledby="asn-blogroll-title"><div class="blogroll-heading"><span class="kicker">JELAJAHI ARTIKEL LAIN</span><h2 id="asn-blogroll-title">Bacaan lain untuk rekan ASN</h2><p>Artikel yang sudah terbit dan dapat dibaca berikutnya.</p></div><div class="blogroll-grid">' + ''.join(candidates) + '</div><a class="blogroll-all" href="../index.html#artikel-terbaru">Lihat semua artikel →</a></section>'
-    # Bottom of article, before feedback/share when present; fallback before footer.
+    block = '<section id="asn-blogroll" class="asn-blogroll" aria-labelledby="asn-blogroll-title"><div class="blogroll-heading"><span class="kicker">JELAJAHI ARTIKEL LAIN</span><h2 id="asn-blogroll-title">Bacaan lain untuk rekan ASN</h2><p>Pilihan artikel lain yang sudah terbit.</p></div><div class="blogroll-grid">' + ''.join(cards) + '</div><a class="blogroll-all" href="../index.html#artikel-terbaru">Lihat semua artikel →</a></section>'
     for marker in ('<section class="reader-engagement"', '<div class="author-box"', '</article>', '</main>'):
         if marker in page:
-            return page.replace(marker, block + '\\n' + marker, 1)
+            return page.replace(marker, block + '\n' + marker, 1)
     return page
 
 
@@ -171,7 +118,8 @@ def main() -> None:
     for relative, _, hero_image in articles:
         target = DIST / relative
         target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(ROOT / relative, target)
+        original = (ROOT / relative).read_text(encoding='utf-8')
+        target.write_text(add_article_blogroll(original, relative, articles), encoding='utf-8')
         if hero_image:
             image_target = DIST / hero_image
             image_target.parent.mkdir(parents=True, exist_ok=True)

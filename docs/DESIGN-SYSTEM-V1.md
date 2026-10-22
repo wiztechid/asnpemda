@@ -38,3 +38,10 @@ Status: **BASELINE / FROZEN untuk struktur visual**, perubahan hanya melalui rev
 
 ## Change control
 Perubahan artikel hanya mengisi slot konten. Perubahan layout global perlu proposal, screenshot before/after, QC mobile, dan kenaikan versi v1.1 dst. Jangan mengubah struktur frozen diam-diam.
+
+## Penegasan freeze artikel (22 Oktober 2026)
+- **Referensi struktur HTML artikel yang dibekukan:** `artikel/permenpanrb-9-2026-pppk-paruh-waktu.html` (header, navigasi, footer 3 kolom, metadata, komponen engagement, sumber, penulis, share, related posts). Artikel baru tidak boleh menggunakan footer satu baris atau header alternatif.
+- **Hero editorial wajib:** rasio intrinsik 1200 × 675, alt deskriptif, tampilan utuh tanpa crop (`height:auto;object-fit:contain`). Gaya visual yang diminta: ilustrasi low-poly/geometris; jangan mengganti gaya menjadi foto atau kartun 3D tanpa persetujuan.
+- **Publication gate:** `data/articles/<slug>.json` harus approved dan PUBLISHED; aset hero harus termasuk dalam build allowlist. Deploy sukses dan inspeksi URL publik adalah bagian dari QC.
+- **SOP konten:** artikel mendalam minimal 900 kata bila topik memungkinkan, sumber primer, SERP intent, status hukum terverifikasi, dan tidak mengarang mekanisme. Jangan klaim lulus QC mobile tanpa pengujian nyata.
+- **Change control:** jangan mengubah desain frozen secara ad hoc. Perubahan layout global harus diajukan sebagai revisi versi, bukan ditimpa per artikel.

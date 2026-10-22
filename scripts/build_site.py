@@ -116,6 +116,44 @@ def add_article_blogroll(page: str, current: str, published: list[tuple[str, str
 
 
 
+
+def refresh_homepage_cards(home: str, articles: list[tuple[str, str | None, str | None]]) -> str:
+    """Only approved articles appear; sort by publication date, maximum six."""
+    approved = {Path(relative).stem: (relative, modified, hero) for relative, modified, hero in articles}
+    card_re = re.compile(r'<article class="article-card"[\\s\\S]*?</article>')
+    cards = {}
+    for match in card_re.finditer(home):
+        card = match.group(0)
+        found = re.search(r'href="/artikel/([a-z0-9-]+)\\.html"', card)
+        if found and found.group(1) in approved:
+            cards[found.group(1)] = card
+    for slug, (relative, modified, hero) in approved.items():
+        if slug in cards:
+            continue
+        body = (ROOT / relative).read_text(encoding="utf-8")
+        title_match = re.search(r'<title>(.*?)</title>', body, re.I | re.S)
+        title = html_utils.unescape(title_match.group(1).split(' — ASN Pemda')[0]) if title_match else slug.replace('-', ' ').title()
+        description_match = re.search(r'<meta\\s+name="description"\\s+content="([^"]+)"', body, re.I)
+        description = html_utils.unescape(description_match.group(1)) if description_match else 'Informasi terbaru untuk ASN dan pemerintah daerah.'
+        if not hero:
+            hero_match = re.search(r'<figure[^>]*class="article-hero"[^>]*>[\\s\\S]*?<img[^>]*src="([^"]+)"', body, re.I)
+            if hero_match:
+                candidate = hero_match.group(1).replace('../', '').lstrip('/')
+                if candidate.startswith('assets/') and (ROOT / candidate).is_file():
+                    hero = candidate
+        img = ('<img src="/' + html_utils.escape(hero, quote=True) + '" alt="" width="1200" height="675" loading="lazy">') if hero else '<span class="article-card-placeholder">ASN Pemda</span>'
+        date = (modified or '')[:10]
+        cards[slug] = '<article class="article-card"><a class="article-card-image" href="/' + relative + '">' + img + '</a><div class="article-card-body"><div class="article-card-meta"><span>' + html_utils.escape(date) + '</span></div><h3><a href="/' + relative + '">' + html_utils.escape(title) + '</a></h3><p>' + html_utils.escape(description[:150]) + '</p><a class="text-link" href="/' + relative + '">Baca artikel →</a></div></article>'
+    ordered = sorted(cards, key=lambda slug: ((approved[slug][1] or '')[:10], slug), reverse=True)[:6]
+    start = home.find('<div class="article-grid">')
+    if start < 0:
+        raise SystemExit('ERROR: homepage article grid missing')
+    end = home.find('</div>\\n</section>\\n<section class="home-topics"', start)
+    if end < 0:
+        raise SystemExit('ERROR: homepage grid boundary missing')
+    return home[:start] + '<div class="article-grid">\\n' + '\\n'.join(cards[slug] for slug in ordered) + '\\n  ' + home[end:]
+
+
 def main() -> None:
     config = json.loads((ROOT / "site-config.json").read_text(encoding="utf-8"))
     origin = config.get("siteUrl", "").rstrip("/")
@@ -137,6 +175,8 @@ def main() -> None:
         shutil.copy2(source, target)
 
     articles = published_articles()
+    home_path = DIST / 'index.html'
+    home_path.write_text(refresh_homepage_cards(home_path.read_text(encoding='utf-8'), articles), encoding='utf-8')
     for relative, _, hero_image in articles:
         target = DIST / relative
         target.parent.mkdir(parents=True, exist_ok=True)

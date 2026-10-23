@@ -1,7 +1,7 @@
 {
   "candidateId": "kenaikan-gaji-berkala-pns",
   "capturedAt": "2026-10-23T10:04:03+01:00",
-  "evidenceState": "PRIMARY_RULES_VERIFIED; WORKBOOK_SIGNAL_RECORDED; SERP_SAMPLE_ONLY; HUMAN_REVIEW_PENDING",
+  "evidenceState": "PRIMARY_RULES_VERIFIED; WORKBOOK_SIGNAL_RECORDED; SERP_SAMPLE_ONLY; HUMAN_OWNER_GO_RECORDED",
   "state": "REVIEW_PENDING",
   "approved": false,
   "sources": [
@@ -118,10 +118,10 @@
     "Workbook avg. monthly searches 500 and competition Rendah; API response, geo, and language settings not verified.",
     "SERP is a limited public search sample, not a complete Google Indonesia top-10 audit.",
     "BKN KMS page's table points to 2019; PP 5/2024 is used for the current salary-table basis.",
-    "Human legal/editorial review and publication approval remain pending.",
-    "SERP audit remains a sampled public web search; keyword demand is workbook data, not a verified Google Ads API response."
+    "SERP audit remains a sampled public web search; keyword demand is workbook data, not a verified Google Ads API response.",
+    "No independent legal opinion is represented; interpretation is bounded to cited primary rules and notes in the article."
   ],
-  "articleSha256": "a815d68ea60b605995a30e8ae678519d8d00e72639e65ed82dbb326d1abf42a0",
+  "articleSha256": "b65bc72cce09b97c6875320b57aba9164dec88d5da065e37c0bf810c1a67689f",
   "sourceFingerprint": "17fde5c567dd3e0b79addc4034e2ab8a32a1e75b7c7a44b79e1c8b3cf5f680b4",
-  "reviewFingerprint": "a815d68ea60b605995a30e8ae678519d8d00e72639e65ed82dbb326d1abf42a0"
+  "reviewFingerprint": "b65bc72cce09b97c6875320b57aba9164dec88d5da065e37c0bf810c1a67689f"
 }

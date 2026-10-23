@@ -6,13 +6,15 @@
   "classification": "evergreen-guide",
   "materiality": "MEDIUM",
   "dedupeKey": "kgb-pns-syarat-perhitungan-mkg",
-  "state": "REVIEW_PENDING",
-  "verification": "PRIMARY_RULES_VERIFIED; WORKBOOK_SIGNAL_RECORDED; SERP_SAMPLE_ONLY; HUMAN_REVIEW_PENDING",
-  "approved": false,
+  "state": "PUBLISHED",
+  "verification": "PRIMARY_RULES_VERIFIED; WORKBOOK_SIGNAL_RECORDED; SERP_SAMPLE_ONLY; HUMAN_OWNER_APPROVED",
+  "approved": true,
   "articlePath": "artikel/kenaikan-gaji-berkala-pns.html",
   "publicationAuthorization": {
-    "decision": "PENDING",
-    "scope": "Tidak dipublikasikan sampai pemilik situs memberi GO yang terikat hash artikel final."
+    "decision": "APPROVED",
+    "scope": "Pemilik situs memberi instruksi publish setelah audit akhir; terikat ke HTML final dan evidence fingerprint.",
+    "articleSha256": "b65bc72cce09b97c6875320b57aba9164dec88d5da065e37c0bf810c1a67689f",
+    "approvedAt": "2026-10-23T17:38:11+08:00"
   },
   "seo": {
     "focusKeyword": "kenaikan gaji berkala PNS",
@@ -156,11 +158,12 @@
     "Workbook avg. monthly searches 500 and competition Rendah; API response, geo, and language settings not verified.",
     "SERP is a limited public search sample, not a complete Google Indonesia top-10 audit.",
     "BKN KMS page's table points to 2019; PP 5/2024 is used for the current salary-table basis.",
-    "Human legal/editorial review and publication approval remain pending."
+    "Google Ads API response and geo/language targeting remain unverified; workbook volume is the only demand metric used.",
+    "SERP review remains a sampled public search, not a localized Google Indonesia top-10 audit."
   ],
   "evidenceFingerprint": {
     "algorithm": "git-blob-sha1",
-    "value": "cef03cf1e9bdac0aaea2c01420eed5d45eb52c9c",
+    "value": "8d46cac8cd6609afed367b3cbafffb4c695eb991",
     "path": "data/candidates/kenaikan-gaji-berkala-pns.evidence.json"
   },
   "evidenceSnapshotPath": "data/candidates/kenaikan-gaji-berkala-pns.evidence.json",
@@ -169,14 +172,15 @@
   "editorialReview": {
     "type": "AI_ASSISTED_EDITORIAL_REVIEW",
     "reviewedAt": "2026-10-23T10:04:03+01:00",
-    "outcome": "DRAFT_FOR_HUMAN_REVIEW",
+    "outcome": "APPROVE_WITH_SCOPE_NOTES",
     "identityNote": "Review ini dibantu AI dan bukan penilaian ASN/manusia.",
     "findings": [
       "Aturan utama dan tabel gaji ditautkan ke JDIH BPK/Kemenkeu.",
       "Batas dua bulan dibedakan sebagai waktu penerbitan surat pemberitahuan, bukan tenggat permohonan nasional.",
       "Dataset demand dicatat sebagai metrik spreadsheet; API dan target geo tidak diverifikasi.",
       "Alur pemrosesan lokal dinyatakan perlu mengikuti informasi resmi instansi.",
-      "Audit lanjutan: judul diperjelas mengikuti intent cara menghitung; kartu artikel terkait memakai hero dari artikel tujuan."
+      "Audit lanjutan: judul diperjelas mengikuti intent cara menghitung; kartu artikel terkait memakai hero dari artikel tujuan.",
+      "Pemilik situs memberi instruksi publish setelah menerima audit dan hash revisi; perubahan rilis hanya pada robots/datePublished dan penghapusan label draf."
     ]
   }
 }

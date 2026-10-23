@@ -77,9 +77,13 @@
     {
       "date": "2026-10-21",
       "summary": "Menambahkan tautan kontekstual dan artikel terkait, umpan balik anonim, serta komentar tanpa akun yang ditinjau sebelum tayang."
+    },
+    {
+      "date": "2026-10-23",
+      "summary": "Audit integritas: articleSha256 disinkronkan dengan byte HTML artikel yang diperiksa pada branch PR; sumber dan klaim utama tidak diubah dalam perbaikan gate ini. Master artikel tetap dibekukan."
     }
   ],
-  "articleSha256": "5f37f776741a58eaf363ead824408b0086467c098659ce0846e01857887f8f1b",
+  "articleSha256": "d451e3ff5c5bc9df544496eb6ad571b39074ac269a471bd3688a37b9de1ea1fb",
   "evidenceGitBlobSha1": "4f256eed43efd63a8611d07133cea85ee4333611",
   "evidenceSha256": "7347f2bf9ccb5e205195b42ae2a280f5cf1fd7c1632259bcc29f1b3afc133379"
 }

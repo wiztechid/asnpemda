@@ -6,7 +6,7 @@
   "dateModified": "2026-10-20",
   "heroImage": "assets/hero-pppk-paruh-waktu-2027.webp",
   "articlePath": "artikel/pppk-paruh-waktu-penuh-waktu-2027.html",
-  "articleSha256": "ff5b57ad3f30c62d214b87b76e147ea59f3ba70805543a2362436cd2fc92c747",
+  "articleSha256": "b3a46b8c7a8d0bb22394e0a8625f91003b599f25ce936968b9c1c258937ddf50",
   "evidencePath": "data/candidates/pppk-paruh-waktu-penuh-waktu-2027.evidence.json",
   "evidenceGitBlobSha1": "33dd78a76ee062fb9dbd9f7b4a7c509d6a6755d9",
   "evidenceSha256": "a08ab3770305476067d337d3c0740e1856dcf71e60ffa7c5c2ce09a649aaab09",
@@ -80,6 +80,10 @@
     {
       "date": "2026-10-21",
       "summary": "Menambahkan tautan kontekstual dan artikel terkait, umpan balik anonim, serta komentar tanpa akun yang ditinjau sebelum tayang."
+    },
+    {
+      "date": "2026-10-23",
+      "summary": "Audit integritas: articleSha256 disinkronkan dengan byte HTML artikel yang diperiksa pada branch PR; sumber dan klaim utama tidak diubah dalam perbaikan gate ini. Master artikel tetap dibekukan."
     }
   ]
 }

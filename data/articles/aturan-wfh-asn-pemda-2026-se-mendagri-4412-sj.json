@@ -8,7 +8,7 @@
   "lastVerified": "2026-10-20",
   "heroImage": "assets/hero-aturan-wfh-asn-pemda-2026.webp",
   "articlePath": "artikel/aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj.html",
-  "articleSha256": "dbea9df88690bd7a24366ea01313184613b4286fa6fe5e5508dae802694a4086",
+  "articleSha256": "499a00e6dc6ae57575c23d9e9834673c1b487899a690ff87d44c1aab0d719840",
   "evidencePath": "data/candidates/aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj.evidence.json",
   "evidenceGitBlobSha1": "d669de151f02c268bdbcffb1943f2baca029dce3",
   "evidenceSha256": "118919b76ee8627c92a1e4afad711c88228406352bf142850bd3f65aaf5e3d11",
@@ -184,6 +184,10 @@
     {
       "date": "2026-10-20",
       "summary": "Artikel baru disusun dari SE Mendagri 000.9.6.1/4412/SJ dan paparan sosialisasi Ditjen Otda; mencatat SE sebelumnya dicabut."
+    },
+    {
+      "date": "2026-10-23",
+      "summary": "Audit integritas: articleSha256 disinkronkan dengan byte HTML artikel yang diperiksa pada branch PR; sumber dan klaim utama tidak diubah dalam perbaikan gate ini. Master artikel tetap dibekukan."
     }
   ]
 }

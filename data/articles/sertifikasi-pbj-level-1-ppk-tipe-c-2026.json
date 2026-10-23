@@ -47,6 +47,10 @@
   "revisionHistory": [
     {
       "date": "2026-10-23",
+      "summary": "Audit ulang blogroll menemukan metadata hero belum tercatat sehingga kartu terkait menampilkan monogram ASN. Metadata kini menunjuk pada ilustrasi SVG yang sama dengan hero artikel; public build memvalidasi elemen SVG statis sebelum digunakan."
+    },
+    {
+      "date": "2026-10-23",
       "summary": "Memperbaiki metadata sosial, structured data, FAQ, dan tautan berbagi yang sebelumnya tercampur dengan artikel WFH; menyelaraskan judul dan bahasa untuk pembaca ASN muda serta membatasi klaim pada bukti resmi yang tersedia."
     },
     {
@@ -133,5 +137,6 @@
     ],
     "competitionAssessment": "Course and certification terms surface official training portals and provider pages, creating strong competition for transactional training intent. The narrower circular-status and 'what does this mean for my assignment?' intent has a clearer editorial opening. No formal organic difficulty score was measured.",
     "workbookCoverage": "No exact PBJ or PPK Tipe C query appears in pns(1).xlsx; therefore this focus keyword has no assigned search volume. Dataset rows about general regional finance are unrelated and are not used as proxies."
-  }
+  },
+  "heroImage": "assets/hero-sertifikasi-pbj-lkpp-2026.svg"
 }

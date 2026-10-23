@@ -38,7 +38,7 @@ if "/assets/hero-pppk-paruh-waktu-2027.webp" not in published_html:
 if "assets/hero-pppk-paruh-waktu-2027.webp" not in actual:
     raise SystemExit("published PPPK article hero missing from public build")
 pension_page = (dist / "artikel" / "cara-menghitung-gaji-pensiun-pns.html").read_text(encoding="utf-8")
-if '<a class="blogroll-card" href="sertifikasi-pbj-level-1-ppk-tipe-c-2026.html"><img src="../assets/hero-sertifikasi-pbj-lkpp-2026.svg"' not in pension_page:
+if '<a class="blogroll-card" href="sertifikasi-pbj-level-1-ppk-tipe-c-2026"><img src="../assets/hero-sertifikasi-pbj-lkpp-2026.svg"' not in pension_page:
     raise SystemExit("related PBJ article card does not use its matching hero image")
 insights_css = (dist / "assets" / "article-insights.css").read_text(encoding="utf-8")
 for token in (".article-page .article-body > h2", ".article-page .article-body > section[id]:not(.pension-calculator) > h2", "counter(article-section", "@media(max-width:650px)"):
@@ -56,7 +56,7 @@ for article_file in sorted(path for path in actual if path.startswith("artikel/"
         raise SystemExit("article is missing the heading highlights stylesheet: " + article_file)
     if len(re.findall(r"<h2\b", built_article, re.I)) != len(re.findall(r"<h2\b", source_article, re.I)):
         raise SystemExit("public build changed frozen article subheading count: " + article_file)
-if "/artikel/pppk-paruh-waktu-penuh-waktu-2027.html" not in (dist / "index.html").read_text(encoding="utf-8"):
+if "/artikel/pppk-paruh-waktu-penuh-waktu-2027" not in (dist / "index.html").read_text(encoding="utf-8"):
     raise SystemExit("homepage does not link to the published PPPK article")
 home_html = (dist / "index.html").read_text(encoding="utf-8")
 if 'property="og:image"' not in home_html or 'name="twitter:card" content="summary_large_image"' not in home_html:
@@ -70,7 +70,7 @@ if 'assets/home-topic-filters.js' not in home_html:
 if 'Semua</button>' not in home_html or 'Pensiun & kesejahteraan' not in home_html:
     raise SystemExit("homepage topic filter controls missing or incomplete")
 home_cards = re.findall(r'<article class="article-card"[^>]*data-topic="([^"]+)"', home_html)
-if len(home_cards) != len(set(re.findall(r'href="/artikel/([a-z0-9-]+)\.html"', home_html))):
+if len(home_cards) != len(set(re.findall(r'href="/artikel/([a-z0-9-]+)"', home_html))):
     raise SystemExit("homepage card count does not match linked published article count")
 pension_card = re.search(r'<article class="article-card"[^>]*data-topic="pensiun"[\s\S]*?</article>', home_html)
 if not pension_card or "menit baca" not in pension_card.group(0) or "article-card-label" not in pension_card.group(0):
@@ -89,6 +89,8 @@ tree = ET.parse(dist / "sitemap.xml")
 locations = [node.text or "" for node in tree.findall(".//{*}loc")]
 if len(locations) != len(set(locations)):
     raise SystemExit("sitemap contains duplicate URLs")
+if any(url.endswith(".html") for url in locations):
+    raise SystemExit("sitemap contains Cloudflare Pages URLs that redirect from .html")
 site_url = "https://asnpemda.pages.dev"
 robots = (dist / "robots.txt").read_text(encoding="utf-8")
 if f"Sitemap: {site_url}/sitemap.xml" not in robots.splitlines():
@@ -98,6 +100,8 @@ for url in locations:
     if url == site_url + "/":
         relative = "index.html"
     page_path = dist / relative
+    if not page_path.is_file() and (dist / (relative + ".html")).is_file():
+        page_path = dist / (relative + ".html")
     if not page_path.is_file() or page_path.suffix.lower() != ".html":
         raise SystemExit(f"sitemap URL does not resolve to a public HTML page: {url}")
     page_html = page_path.read_text(encoding="utf-8")
@@ -128,9 +132,9 @@ for url in locations:
         raise SystemExit(f"noindex page leaked into sitemap: {url}")
 if any("gaji-asn-melalui-koperasi" in url for url in locations):
     raise SystemExit("unapproved draft article leaked into sitemap")
-if "https://asnpemda.pages.dev/koreksi.html" not in locations:
+if "https://asnpemda.pages.dev/koreksi" not in locations:
     raise SystemExit("public correction page missing from sitemap")
-if "https://asnpemda.pages.dev/artikel/pppk-paruh-waktu-penuh-waktu-2027.html" not in locations:
+if "https://asnpemda.pages.dev/artikel/pppk-paruh-waktu-penuh-waktu-2027" not in locations:
     raise SystemExit("published PPPK article missing from sitemap")
 print("PUBLIC BUILD PASS: allowlist, draft exclusion, and sitemap verified")
 
@@ -141,7 +145,7 @@ if smoke_record.exists() or smoke_page.exists() or smoke_image.exists():
     raise SystemExit("CI hero smoke fixture path already exists")
 try:
     smoke_image.write_bytes((root / "assets" / "author-suiza-ixan.webp").read_bytes())
-    smoke_page.write_text('<!doctype html><html><head><link rel="canonical" href="https://asnpemda.pages.dev/artikel/ci-hero-smoke.html"></head><body><main class="article-page"><nav class="breadcrumbs"></nav><article class="article-content"><header class="article-header"><h1>CI smoke</h1></header><figure class="article-hero"></figure><aside class="status-card"></aside><section class="quick-answer"></section><nav class="toc"></nav><div class="article-body"></div><section class="related-posts"></section><section class="reader-engagement"></section><section class="share-panel"></section></article></main><footer class="site-footer"><div class="footer-grid"></div></footer><script src="../assets/article-engagement.js"></script></body></html>', encoding="utf-8")
+    smoke_page.write_text('<!doctype html><html><head><link rel="canonical" href="https://asnpemda.pages.dev/artikel/ci-hero-smoke"></head><body><main class="article-page"><nav class="breadcrumbs"></nav><article class="article-content"><header class="article-header"><h1>CI smoke</h1></header><figure class="article-hero"></figure><aside class="status-card"></aside><section class="quick-answer"></section><nav class="toc"></nav><div class="article-body"></div><section class="related-posts"></section><section class="reader-engagement"></section><section class="share-panel"></section></article></main><footer class="site-footer"><div class="footer-grid"></div></footer><script src="../assets/article-engagement.js"></script></body></html>', encoding="utf-8")
     smoke_record.write_text('{"approved":true,"publicationState":"PUBLISHED","slug":"ci-hero-smoke","dateModified":"2026-10-20","heroImage":"assets/ci-hero-smoke.webp"}', encoding="utf-8")
     subprocess.run([sys.executable, str(root / "scripts" / "build_site.py")], check=True)
     if not (dist / "artikel" / "ci-hero-smoke.html").is_file():
@@ -150,7 +154,7 @@ try:
         raise SystemExit("approved article hero was not copied")
     tree = ET.parse(dist / "sitemap.xml")
     locations = [node.text or "" for node in tree.findall(".//{*}loc")]
-    if "https://asnpemda.pages.dev/artikel/ci-hero-smoke.html" not in locations:
+    if "https://asnpemda.pages.dev/artikel/ci-hero-smoke" not in locations:
         raise SystemExit("approved article fixture missing from sitemap")
 finally:
     smoke_record.unlink(missing_ok=True)

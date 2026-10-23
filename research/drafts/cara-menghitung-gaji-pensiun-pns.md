@@ -115,13 +115,14 @@ THT berbeda dari pensiun bulanan. Rincian manfaat mengikuti program dan perhitun
 
 Terakhir diperiksa: 23 Oktober 2026. Naskah ini masih draft; cek ulang status peraturan dan angka dasar pensiun sebelum proses publikasi.
 
-### Kalkulator simulasi di halaman artikel
-
-Kalkulator pada halaman draft memakai dasar pensiun dan masa kerja dalam tahun penuh. Persentase dihitung 2,5% per tahun dan dibatasi maksimum 75%. Bulan tambahan, batas minimum hukum, tunjangan, potongan, THT, serta verifikasi dokumen tidak dihitung. Hasilnya estimasi pensiun pokok bruto untuk edukasi, bukan penetapan resmi. Data diisi dan dihitung di browser; kalkulator tidak meminta NIP atau menyimpan masukan.
-
 ---
 
 ## Catatan editorial internal
+
+
+### Kalkulator simulasi di halaman artikel
+
+Kalkulator pada halaman draft memakai dasar pensiun dan masa kerja dalam tahun penuh. Persentase dihitung 2,5% per tahun dan dibatasi maksimum 75%. Bulan tambahan, batas minimum hukum, tunjangan, potongan, THT, serta verifikasi dokumen tidak dihitung. Hasilnya estimasi pensiun pokok bruto untuk edukasi, bukan penetapan resmi. Data diisi dan dihitung di browser; kalkulator tidak meminta NIP atau menyimpan masukan.
 
 - Tidak menyatakan Indonesia sebagai lokasi volume workbook karena konfigurasi lokasi tidak tercantum di file ekspor.
 - Angka 500 adalah rata-rata bulanan pada dataset Keyword Planner, bukan jaminan trafik atau data Google Search Console.

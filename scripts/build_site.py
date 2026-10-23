@@ -179,7 +179,7 @@ def main() -> None:
     robots_text = robots_path.read_text(encoding="utf-8")
     robots_lines = [line for line in robots_text.splitlines() if not line.strip().lower().startswith("sitemap:")]
     robots_lines.append(f"Sitemap: {origin}/sitemap.xml")
-    robots_path.write_text("\\n".join(robots_lines) + "\\n", encoding="utf-8")
+    robots_path.write_text("\n".join(robots_lines) + "\n", encoding="utf-8")
 
     articles = published_articles()
     home_path = DIST / 'index.html'

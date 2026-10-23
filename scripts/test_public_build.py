@@ -65,11 +65,11 @@ for url in locations:
     canonicals = re.findall(r'<link\b(?=[^>]*\brel=["\']canonical["\'])(?=[^>]*\bhref=["\']([^"\']+)["\'])[^>]*>', page_html, re.I)
     if len(canonicals) != 1 or canonicals[0] != url:
         raise SystemExit(f"canonical does not match sitemap URL: {url}")
-    og_urls = re.findall(r'<meta\\b(?=[^>]*\\bproperty=["\\']og:url["\\'])(?=[^>]*\\bcontent=["\\']([^"\\']+)["\\'])[^>]*>', page_html, re.I)
+    og_urls = re.findall(r'<meta\b(?=[^>]*\bproperty=["\']og:url["\'])(?=[^>]*\bcontent=["\']([^"\']+)["\'])[^>]*>', page_html, re.I)
     if len(og_urls) != 1 or og_urls[0] != url:
         raise SystemExit(f"Open Graph URL does not match sitemap URL: {url}")
     if relative.startswith("artikel/"):
-        jsonld = re.findall(r'<script[^>]*type=["\\']application/ld\\+json["\\'][^>]*>([\\s\\S]*?)</script>', page_html, re.I)
+        jsonld = re.findall(r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>([\s\S]*?)</script>', page_html, re.I)
         article_schemas = []
         for payload in jsonld:
             try:

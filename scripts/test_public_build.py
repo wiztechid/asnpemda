@@ -41,9 +41,11 @@ pension_page = (dist / "artikel" / "cara-menghitung-gaji-pensiun-pns.html").read
 if '<a class="blogroll-card" href="sertifikasi-pbj-level-1-ppk-tipe-c-2026.html"><img src="../assets/hero-sertifikasi-pbj-lkpp-2026.svg"' not in pension_page:
     raise SystemExit("related PBJ article card does not use its matching hero image")
 insights_css = (dist / "assets" / "article-insights.css").read_text(encoding="utf-8")
-for token in (".article-body h2::before", "counter(article-section", 'content:"POIN PENTING"', "@media(max-width:650px)"):
+for token in (".article-body h2::before", "counter(article-section", "@media(max-width:650px)"):
     if token not in insights_css:
         raise SystemExit("article heading highlight CSS missing required feature: " + token)
+if "POIN PENTING" in insights_css:
+    raise SystemExit("removed subheading label is still present in article styles")
 insights_link = '<link rel="stylesheet" href="../assets/article-insights.css?v=20261023-1">'
 for article_file in sorted(path for path in actual if path.startswith("artikel/") and path.endswith(".html")):
     built_article = (dist / article_file).read_text(encoding="utf-8")

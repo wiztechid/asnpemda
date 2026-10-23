@@ -73,15 +73,39 @@ def published_articles() -> list[tuple[str, str | None, str | None]]:
             if not isinstance(hero_image, str) or not hero_image or hero_image.startswith("/"):
                 raise SystemExit(f"ERROR: heroImage must be a repository-relative assets path: {source.name}")
             hero_path = Path(hero_image)
-            if hero_path.is_absolute() or ".." in hero_path.parts or not hero_image.startswith("assets/") or hero_path.suffix.lower() != ".webp":
+            if hero_path.is_absolute() or ".." in hero_path.parts or not hero_image.startswith("assets/") or hero_path.suffix.lower() not in {".webp", ".svg"}:
                 raise SystemExit(f"ERROR: invalid approved article hero path: {hero_image}")
             hero_source = ROOT / hero_path
             if not hero_source.is_file():
                 raise SystemExit(f"ERROR: approved article hero is missing: {hero_image}")
-            with hero_source.open("rb") as image_file:
-                header = image_file.read(12)
-            if len(header) != 12 or header[:4] != b"RIFF" or header[8:12] != b"WEBP":
-                raise SystemExit(f"ERROR: approved article hero is not a valid WebP: {hero_image}")
+            if hero_path.suffix.lower() == ".webp":
+                with hero_source.open("rb") as image_file:
+                    header = image_file.read(12)
+                if len(header) != 12 or header[:4] != b"RIFF" or header[8:12] != b"WEBP":
+                    raise SystemExit(f"ERROR: approved article hero is not a valid WebP: {hero_image}")
+            else:
+                raw_svg = hero_source.read_bytes()
+                if re.search(rb"<!DOCTYPE|<!ENTITY", raw_svg, re.I):
+                    raise SystemExit(f"ERROR: SVG hero must not contain a document type or entity declaration: {hero_image}")
+                try:
+                    svg_root = ET.fromstring(raw_svg)
+                except ET.ParseError as error:
+                    raise SystemExit(f"ERROR: approved SVG hero is malformed: {hero_image}: {error}") from error
+                allowed_tags = {"svg", "title", "desc", "g", "rect", "circle", "ellipse", "line", "polyline", "polygon", "path", "text", "tspan"}
+                if svg_root.tag.rsplit("}", 1)[-1].lower() != "svg":
+                    raise SystemExit(f"ERROR: approved SVG hero must have an SVG root: {hero_image}")
+                for node in svg_root.iter():
+                    tag = node.tag.rsplit("}", 1)[-1].lower()
+                    if tag not in allowed_tags:
+                        raise SystemExit(f"ERROR: SVG hero contains an unsupported element {tag}: {hero_image}")
+                    for attribute, value in node.attrib.items():
+                        name = attribute.rsplit("}", 1)[-1].lower()
+                        if name.startswith("on"):
+                            raise SystemExit(f"ERROR: SVG hero contains an event handler: {hero_image}")
+                        if name in {"href", "src"} and value and not value.startswith("#"):
+                            raise SystemExit(f"ERROR: SVG hero contains an external reference: {hero_image}")
+                        if re.search(r"url\s*\(\s*['\"]?(?:https?:|data:|//)", value, re.I):
+                            raise SystemExit(f"ERROR: SVG hero contains an external URL: {hero_image}")
         articles.append((f"artikel/{slug}.html", record.get("dateModified"), hero_image))
     return articles
 

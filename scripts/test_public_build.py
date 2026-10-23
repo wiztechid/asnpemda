@@ -37,6 +37,9 @@ if "/assets/hero-pppk-paruh-waktu-2027.webp" not in published_html:
     raise SystemExit("published PPPK article hero reference missing")
 if "assets/hero-pppk-paruh-waktu-2027.webp" not in actual:
     raise SystemExit("published PPPK article hero missing from public build")
+pension_page = (dist / "artikel" / "cara-menghitung-gaji-pensiun-pns.html").read_text(encoding="utf-8")
+if '<a class="blogroll-card" href="sertifikasi-pbj-level-1-ppk-tipe-c-2026.html"><img src="../assets/hero-sertifikasi-pbj-lkpp-2026.svg"' not in pension_page:
+    raise SystemExit("related PBJ article card does not use its matching hero image")
 if "/artikel/pppk-paruh-waktu-penuh-waktu-2027.html" not in (dist / "index.html").read_text(encoding="utf-8"):
     raise SystemExit("homepage does not link to the published PPPK article")
 for page in ("index.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "koreksi.html", "404.html"):

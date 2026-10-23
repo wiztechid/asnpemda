@@ -12,7 +12,7 @@
   "materiality": "MEDIUM",
   "articlePath": "artikel/cara-menghitung-gaji-pensiun-pns.html",
   "heroImage": "assets/hero-pensiun-pns.webp",
-  "articleSha256": "bfd97c0870109f65e97bd1967416f58c542f1aa0b55216479f600155337aff06",
+  "articleSha256": "8947ab5f3a42e5694b916211c4cedcdf45bd84f409e06a01a2c3c6de87f476ca",
   "evidencePath": "data/candidates/cara-menghitung-gaji-pensiun-pns.evidence.json",
   "humanApproval": {
     "decision": "GO",
@@ -23,9 +23,9 @@
   },
   "publicationAuthorization": {
     "articleId": "cara-menghitung-gaji-pensiun-pns",
-    "articleSha256": "bfd97c0870109f65e97bd1967416f58c542f1aa0b55216479f600155337aff06",
-    "evidenceFingerprint": "59207a70548309dd22ebffe2e62ab6602ecc4f7fc52b6ce55c12d2509bb8b091",
-    "reviewFingerprint": "255556b3212f05d1a6372ef0901748098b7f1fbaf86f935d078a61671db4ebeb",
+    "articleSha256": "8947ab5f3a42e5694b916211c4cedcdf45bd84f409e06a01a2c3c6de87f476ca",
+    "evidenceFingerprint": "595513695620089465e3ca834412d60fee59516b5fb6cf0da0bb071d762cb1e3",
+    "reviewFingerprint": "24ecb5a93a377e7c60817a5615f9d49d7b2e9a199f0c004c912d601f7878330a",
     "reviewer": "wiztechid",
     "approvedAt": "2026-10-23T15:00:00+08:00",
     "authorization": "APPROVED"
@@ -109,6 +109,7 @@
     "readinessScore": 9.5,
     "scoreMeaning": "internal readiness; not ranking prediction"
   },
-  "evidenceFingerprint": "59207a70548309dd22ebffe2e62ab6602ecc4f7fc52b6ce55c12d2509bb8b091",
-  "reviewFingerprint": "255556b3212f05d1a6372ef0901748098b7f1fbaf86f935d078a61671db4ebeb"
+  "evidenceFingerprint": "595513695620089465e3ca834412d60fee59516b5fb6cf0da0bb071d762cb1e3",
+  "reviewFingerprint": "24ecb5a93a377e7c60817a5615f9d49d7b2e9a199f0c004c912d601f7878330a",
+  "evidenceSha256": "f0b1617a00ba9f1e9dd45c6f6c4c0bed89b3280fb030ef7e487f237329401358"
 }

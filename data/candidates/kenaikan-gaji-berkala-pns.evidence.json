@@ -118,9 +118,10 @@
     "Workbook avg. monthly searches 500 and competition Rendah; API response, geo, and language settings not verified.",
     "SERP is a limited public search sample, not a complete Google Indonesia top-10 audit.",
     "BKN KMS page's table points to 2019; PP 5/2024 is used for the current salary-table basis.",
-    "Human legal/editorial review and publication approval remain pending."
+    "Human legal/editorial review and publication approval remain pending.",
+    "SERP audit remains a sampled public web search; keyword demand is workbook data, not a verified Google Ads API response."
   ],
-  "articleSha256": "11e323372e93a00df57f12b738b0bf4bfd81acaf0b4878317659ee21a659498d",
+  "articleSha256": "3593c6e4620c726bc6e257bd03b3f093fee037ba2632fb3535122c2882e58407",
   "sourceFingerprint": "17fde5c567dd3e0b79addc4034e2ab8a32a1e75b7c7a44b79e1c8b3cf5f680b4",
-  "reviewFingerprint": "db64bf1ce75df65d62bf079be18f6bbaed6d9975b335c0fcc2b813cdfc7410b0"
+  "reviewFingerprint": "3593c6e4620c726bc6e257bd03b3f093fee037ba2632fb3535122c2882e58407"
 }

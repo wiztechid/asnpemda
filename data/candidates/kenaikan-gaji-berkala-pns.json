@@ -1,7 +1,7 @@
 {
   "id": "kenaikan-gaji-berkala-pns",
   "slug": "kenaikan-gaji-berkala-pns",
-  "title": "Kenaikan Gaji Berkala PNS: Syarat, Cara Hitung, dan TMT",
+  "title": "Cara Menghitung Kenaikan Gaji Berkala PNS: Syarat dan TMT",
   "discoveredAt": "2026-10-23T10:04:03+01:00",
   "classification": "evergreen-guide",
   "materiality": "MEDIUM",
@@ -22,8 +22,8 @@
       "masa kerja golongan PNS",
       "TMT KGB PNS"
     ],
-    "titleTag": "Kenaikan Gaji Berkala PNS: Syarat, Cara Hitung, dan TMT",
-    "metaDescription": "Cek syarat kenaikan gaji berkala PNS, cara membaca masa kerja golongan, waktu pemberitahuan, dan dasar tabel gaji terbaru.",
+    "titleTag": "Cara Menghitung Kenaikan Gaji Berkala PNS: Syarat dan TMT",
+    "metaDescription": "Pahami syarat kenaikan gaji berkala PNS, cara membaca masa kerja golongan, menghitung perubahan gaji pokok, dan waktu pemberitahuan.",
     "slug": "/artikel/kenaikan-gaji-berkala-pns.html",
     "robots": "noindex,follow until human publication approval",
     "structuredData": [
@@ -160,7 +160,7 @@
   ],
   "evidenceFingerprint": {
     "algorithm": "git-blob-sha1",
-    "value": "42713e9433b565b4e8d8ac80c4a219f6b328b450",
+    "value": "1c00f9cf33032e204f906a0e0f8f1b4336891f36",
     "path": "data/candidates/kenaikan-gaji-berkala-pns.evidence.json"
   },
   "evidenceSnapshotPath": "data/candidates/kenaikan-gaji-berkala-pns.evidence.json",
@@ -175,7 +175,8 @@
       "Aturan utama dan tabel gaji ditautkan ke JDIH BPK/Kemenkeu.",
       "Batas dua bulan dibedakan sebagai waktu penerbitan surat pemberitahuan, bukan tenggat permohonan nasional.",
       "Dataset demand dicatat sebagai metrik spreadsheet; API dan target geo tidak diverifikasi.",
-      "Alur pemrosesan lokal dinyatakan perlu mengikuti informasi resmi instansi."
+      "Alur pemrosesan lokal dinyatakan perlu mengikuti informasi resmi instansi.",
+      "Audit lanjutan: judul diperjelas mengikuti intent cara menghitung; kartu artikel terkait memakai hero dari artikel tujuan."
     ]
   }
 }

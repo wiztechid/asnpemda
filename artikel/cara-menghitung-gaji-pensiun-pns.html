@@ -169,10 +169,10 @@
   const rupiah=new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0});
   const ribuan=new Intl.NumberFormat("id-ID",{maximumFractionDigits:0});
   const uang=[base,floor];
-  const ambilAngka=field=>Number(field.value.replace(/\\D/g,""));
+  const ambilAngka=field=>Number(field.value.replace(/\D/g,""));
   uang.forEach(field=>{
     field.value=field.value ? ribuan.format(ambilAngka(field)) : "";
-    field.addEventListener("focus",()=>{field.value=field.value.replace(/\\./g,"");});
+    field.addEventListener("focus",()=>{field.value=field.value.replace(/\./g,"");});
     field.addEventListener("blur",()=>{if(field.value)field.value=ribuan.format(ambilAngka(field));});
   });
   button.addEventListener("click",()=>{

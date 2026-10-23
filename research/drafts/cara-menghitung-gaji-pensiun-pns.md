@@ -21,7 +21,7 @@ Banyak PNS ingin tahu berapa penghasilan bulanan setelah pensiun. Rumus dasarnya
 
 ## Inti ketentuan
 
-Undang-Undang Nomor 11 Tahun 1969 tentang Pensiun Pegawai dan Pensiun Janda/Duda Pegawai mengatur bahwa pensiun pegawai dihitung sebesar 2,5 persen dari dasar pensiun untuk setiap tahun masa kerja. Batas paling tinggi adalah 75 persen dari dasar pensiun. Pasal 11 juga mengatur batas minimum yang merujuk pada gaji pokok terendah menurut peraturan gaji PNS yang berlaku.
+UU Nomor 11 Tahun 1969 Pasal 11 menetapkan 2,5 persen dari dasar pensiun untuk setiap tahun masa kerja, paling tinggi 75 persen. Pasal ini juga menetapkan bahwa pensiun tidak boleh lebih rendah dari gaji pokok terendah menurut peraturan gaji yang berlaku. KMS Manajemen ASN BKN merangkum batas minimum umum 40 persen dari dasar pensiun, di samping batas gaji pokok terendah tersebut. Dasar pensiun untuk simulasi ini ialah gaji pokok terakhir, sesuai penjelasan BKN. Kasus khusus seperti cacat karena tugas, pensiun janda/duda, dan pensiun tewas punya ketentuan tersendiri dan tidak disimulasikan.
 
 Sebagai gambaran awal, dasar pensiun merujuk pada gaji pokok terakhir, bukan seluruh take-home pay. Tunjangan kinerja, TPP, uang makan, atau total penghasilan bulanan saat masih aktif tidak otomatis menjadi dasar rumus 2,5 persen ini.
 
@@ -29,9 +29,11 @@ Sebagai gambaran awal, dasar pensiun merujuk pada gaji pokok terakhir, bukan sel
 
 Rumus ilustrasi yang sering dipakai adalah:
 
-Pensiun pokok perkiraan per bulan = 2,5% × masa kerja pensiun yang diakui × dasar pensiun
+Pensiun pokok ilustratif = dasar pensiun × persentase masa kerja
+Persentase masa kerja = 2,5% × (tahun + bulan/12), sekurang-kurangnya 40% dan paling tinggi 75% menurut ringkasan KMS Manajemen ASN BKN.
+Hasil juga tidak boleh lebih rendah dari gaji pokok terendah menurut peraturan gaji yang berlaku.
 
-Masa kerja yang digunakan dalam perhitungan paling banyak setara 30 tahun untuk mencapai batas 75 persen. Rumus ini membantu memahami cara kerja persentasenya. Penetapan angka final tetap mengikuti pemeriksaan dokumen dan aturan teknis oleh pejabat berwenang.
+UU Nomor 11 Tahun 1969 Pasal 6 ayat (5) menyebut pecahan bulan dibulatkan ke atas menjadi sebulan penuh. Kalkulator menerima tahun dan bulan dari masa kerja pensiun yang sudah diverifikasi; kalkulator tidak menentukan sendiri masa kerja yang diakui. Batas 75% tercapai pada 30 tahun. Angka final tetap mengikuti penetapan resmi dan pemeriksaan dokumen.
 
 ## Contoh simulasi
 
@@ -108,7 +110,8 @@ THT berbeda dari pensiun bulanan. Rincian manfaat mengikuti program dan perhitun
 ### Sumber primer dan rujukan
 
 - [Undang-Undang Nomor 11 Tahun 1969 tentang Pensiun Pegawai dan Pensiun Janda/Duda Pegawai — JDIH BPK](https://peraturan.bpk.go.id/Details/49112/uu-no-11-tahun-1969), khususnya Pasal 8, Pasal 9, Pasal 11, dan Pasal 12.
-- [Peraturan Pemerintah Nomor 8 Tahun 2024 — JDIH BPK](https://peraturan.bpk.go.id/Details/276760/pp-no-8-tahun-2024).
+- [Peraturan Pemerintah Nomor 5 Tahun 2024 tentang perubahan tabel gaji PNS — JDIH BPK](https://peraturan.bpk.go.id/Details/276755/pp-no-5-tahun-2024).
+- [Peraturan Pemerintah Nomor 8 Tahun 2024 tentang penetapan pensiun pokok — JDIH BPK](https://peraturan.bpk.go.id/Details/276760/pp-no-8-tahun-2024).
 - [Peraturan BKN Nomor 2 Tahun 2024 — JDIH BPK](https://peraturan.bpk.go.id/Details/279675/peraturan-bkn-no-2-tahun-2024).
 - [Penjelasan pensiun PNS — KMS Manajemen ASN BKN](https://apps-denpasar.bkn.go.id/kms/ensiklopedia:pensiun_pns).
 - [Program Tabungan Hari Tua — TASPEN](https://www.taspen.co.id/produk-layanan/produk-taspen/tabungan-hari-tua).
@@ -122,12 +125,12 @@ Terakhir diperiksa: 23 Oktober 2026. Naskah ini masih draft; cek ulang status pe
 
 ### Kalkulator simulasi di halaman artikel
 
-Kalkulator pada halaman draft memakai dasar pensiun dan masa kerja dalam tahun penuh. Persentase dihitung 2,5% per tahun dan dibatasi maksimum 75%. Bulan tambahan, batas minimum hukum, tunjangan, potongan, THT, serta verifikasi dokumen tidak dihitung. Hasilnya estimasi pensiun pokok bruto untuk edukasi, bukan penetapan resmi. Data diisi dan dihitung di browser; kalkulator tidak meminta NIP atau menyimpan masukan.
+Kalkulator memakai gaji pokok terakhir sebagai dasar pensiun, tahun dan bulan masa kerja pensiun yang telah diakui, batas 40%–75% sebagaimana diringkas KMS Manajemen ASN BKN, serta pembanding gaji pokok terendah. Nilai pembanding awal mengikuti batas bawah tabel gaji PP 5/2024 dan dapat diedit jika tabel yang berlaku berbeda. Kalkulator tidak memeriksa kelayakan pensiun atau dokumen; tidak mencakup kasus khusus, tunjangan, potongan, THT, atau penghasilan bersih. Hasilnya simulasi edukatif, bukan penetapan resmi. Masukan dihitung di browser dan tidak disimpan; kalkulator tidak meminta NIP.
 
 - Tidak menyatakan Indonesia sebagai lokasi volume workbook karena konfigurasi lokasi tidak tercantum di file ekspor.
 - Angka 500 adalah rata-rata bulanan pada dataset Keyword Planner, bukan jaminan trafik atau data Google Search Console.
 - Persaingan “Rendah” pada workbook adalah kompetisi iklan, bukan organic keyword difficulty.
 - Contoh Rp5.000.000 dan masa kerja 26 tahun penuh merupakan asumsi penjelas, bukan contoh resmi dari BKN/TASPEN.
-- Kalkulator memakai tahun penuh; hasil tidak menggantikan penghitungan resmi atau memproses bulan tambahan.
+- Kalkulator memakai bulan masa kerja dan membandingkan hasil dengan batas minimum 40% serta gaji pokok terendah; kalkulator tidak memeriksa kelayakan, dokumen, atau kasus pensiun khusus.
 - Draf tidak membuat klaim tentang kenaikan pensiun tahun 2026.
 - Sebelum dijadikan halaman HTML, tambahkan hero WebP sesuai SOP, rekam hash artikel dan bukti, jalankan regression/quality gate, lalu minta keputusan GO pemilik situs yang terikat ke revisi final.

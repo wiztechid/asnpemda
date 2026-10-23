@@ -12,32 +12,32 @@
   "materiality": "MEDIUM",
   "articlePath": "artikel/cara-menghitung-gaji-pensiun-pns.html",
   "heroImage": "assets/hero-pensiun-pns.webp",
-  "articleSha256": "fc256904e3fcce46f3fb0b77e8de5b623dd24a3838dbbc3e960e31ef6d336366",
+  "articleSha256": "c9cdf6d823e7f120f25a9fd5d75df6eb5416ca492cc4bca40c9d58648c53d041",
   "evidencePath": "data/candidates/cara-menghitung-gaji-pensiun-pns.evidence.json",
   "humanApproval": {
     "decision": "GO",
     "authorizedBy": "wiztechid",
     "role": "human site owner and article author",
-    "approvedAt": "2026-10-23T16:20:00+08:00",
-    "instruction": "User requested the hero image be more appealing while retaining the low-poly ASN retirement concept; publication remains subject to Quality Gate."
+    "approvedAt": "2026-10-23T17:05:00+08:00",
+    "instruction": "User requested a full audit against the original article template and correction of the clipped hero and layout differences; deployment remains gated by CI."
   },
   "publicationAuthorization": {
     "articleId": "cara-menghitung-gaji-pensiun-pns",
-    "articleSha256": "fc256904e3fcce46f3fb0b77e8de5b623dd24a3838dbbc3e960e31ef6d336366",
-    "evidenceFingerprint": "6b16d1e62770ac9ee5d0736d1c04ff9ea37a1d91485c37d4c3fff6d2f302f8c0",
-    "reviewFingerprint": "b270744d3b3b677cc48e9ef0dadae75a2f54ad24218fb75101d382d77909c101",
+    "articleSha256": "c9cdf6d823e7f120f25a9fd5d75df6eb5416ca492cc4bca40c9d58648c53d041",
+    "evidenceFingerprint": "498b0de0f28da937f77c7a54bb52cf78b97baae9a4058d858055f27bc4fcec15",
+    "reviewFingerprint": "d08b9b9d5fc0453aed8e696632217ad99bfeee56b81767d761bf96e7a4c22d3a",
     "reviewer": "wiztechid",
-    "approvedAt": "2026-10-23T16:20:00+08:00",
+    "approvedAt": "2026-10-23T17:05:00+08:00",
     "authorization": "APPROVED"
   },
   "editorialAssessment": {
     "type": "AI_ASSISTED_EDITORIAL_REVIEW",
-    "reviewedAt": "2026-10-23T16:20:00+08:00",
+    "reviewedAt": "2026-10-23T17:05:00+08:00",
     "outcome": "APPROVE_WITH_SCOPE_NOTES",
     "reviewerIsHuman": false,
     "reviewerIsASN": false,
     "score": 9.5,
-    "summary": "Template, reader utility, SEO structure, calculator and legal sources passed review. Workbook demand is not represented as Indonesia-specific; SERP findings remain a sample. Hero diperbarui ke ilustrasi low-poly ASN pensiun; metadata alternatif diselaraskan."
+    "summary": "Kesiapan konten dan SEO tetap dinilai 9,5/10. Audit tata letak menemukan hero terpotong akibat CSS dan elemen template bersama yang belum lengkap; struktur kini diselaraskan dengan artikel acuan tanpa mengubah klaim atau kalkulator."
   },
   "asnImpact": "Artikel memberi simulasi umum perhitungan pensiun pokok PNS dan mengarahkan pembaca memeriksa masa kerja serta dasar pensiun resmi. Kalkulator tidak menetapkan hak atau nilai pembayaran.",
   "pemdaImpact": "Materi membantu ASN dan pengelola kepegawaian memahami komponen dasar; penetapan tetap mengikuti dokumen dan proses resmi.",
@@ -96,7 +96,7 @@
   "revisionHistory": [
     {
       "date": "2026-10-23",
-      "summary": "Memperbarui hero menjadi ilustrasi low-poly ASN yang menyiapkan masa pensiun; alt text, caption, dan metadata gambar diselaraskan. Isi kalkulator dan klaim artikel tidak berubah."
+      "summary": "Audit menyeluruh terhadap artikel acuan: memulihkan stylesheet dan navigasi bersama, memperbaiki hero responsif agar tidak terpotong, serta menyelaraskan metadata, TOC, fakta ringkas, author box, interaksi, dan footer. Isi kalkulator dan klaim hukum dipertahankan."
     },
     {
       "date": "2026-10-23",
@@ -113,7 +113,7 @@
     "readinessScore": 9.5,
     "scoreMeaning": "internal readiness; not ranking prediction"
   },
-  "evidenceFingerprint": "6b16d1e62770ac9ee5d0736d1c04ff9ea37a1d91485c37d4c3fff6d2f302f8c0",
-  "reviewFingerprint": "b270744d3b3b677cc48e9ef0dadae75a2f54ad24218fb75101d382d77909c101",
-  "evidenceSha256": "6bd9142ade7a0121f1b6c3b17caf96c4647847291ac501bcfafa3a0ac62bbf64"
+  "evidenceFingerprint": "498b0de0f28da937f77c7a54bb52cf78b97baae9a4058d858055f27bc4fcec15",
+  "reviewFingerprint": "d08b9b9d5fc0453aed8e696632217ad99bfeee56b81767d761bf96e7a4c22d3a",
+  "evidenceSha256": "eab0aef621d6fa1a26bf3b086e603027630dc6a63926a3bfe0ec1ed82e913ae5"
 }

@@ -1,6 +1,6 @@
 {
   "articleId": "cara-menghitung-gaji-pensiun-pns",
-  "reviewedAt": "2026-10-23T16:20:00+08:00",
+  "reviewedAt": "2026-10-23T17:05:00+08:00",
   "reviewer": "AI-assisted editorial review",
   "reviewerIsHuman": false,
   "outcome": "APPROVE_WITH_SCOPE_NOTES",
@@ -13,19 +13,40 @@
     "hero WebP 1200x675 and responsive layout",
     "calculator scope and disclaimer",
     "official legal source links and article dates",
-    "hero image now clearly depicts a retired ASN in low-poly style",
-    "WebP size, 1200x675 dimensions, alt text and schema caption aligned"
+    "compared full article structure with published reference template",
+    "verified shared site.css and favicon are loaded",
+    "verified hero image responsive sizing removes overflow clipping",
+    "checked one H1, valid JSON-LD, in-page anchors, skip navigation, header/footer and mobile calculator layout"
   ],
   "findings": [
     "Formula claims checked against UU 11/1969 and BKN KMS",
     "PP 5/2024 and PP 8/2024 are legal context; no claim of a new 2026 pension increase",
     "Google Ads workbook shows 500 average monthly searches but export geo is unverified; do not represent this as Indonesia-specific API volume",
     "SERP observations are a sample, not a full top-10 competition study",
-    "Hero image updated to better communicate ASN retirement planning while preserving the existing article template and facts."
+    "Screenshot showed the hero clipped because the article omitted the shared responsive hero rule; the whole page also diverged from the frozen article layout. The page is now aligned with the published reference while keeping unique calculator styling and article content."
   ],
   "disposition": "APPROVE_WITH_SCOPE_NOTES",
+  "templateComparison": {
+    "baseline": "artikel/pppk-paruh-waktu-penuh-waktu-2027.html",
+    "findings": [
+      "Target article omitted the shared assets/site.css and favicon references.",
+      "Target article omitted the sticky site header and primary navigation.",
+      "The hero figure used 20px padding and lacked responsive image sizing, clipping the 16:9 artwork.",
+      "Article-specific CSS diverged from the shared frozen article layout and omitted source styles for typography, tables, and responsive related content.",
+      "Target footer and author block lacked some standard links and spacing.",
+      "The table of contents listed the calculator before the formula although the page body showed formula first.",
+      "The article repeated the heading 'Inti ketentuan' in the quick summary and main body."
+    ],
+    "fixes": [
+      "Loaded shared site CSS and favicon links; added standard header/navigation.",
+      "Applied the reference article's full layout stylesheet, preserving only calculator-specific styles.",
+      "Restored responsive hero image rule and removed padded clipping frame.",
+      "Aligned article metadata, quick facts, TOC order, author block, related block, feedback copy, share copy, and footer with the reference template.",
+      "Renamed the repeated body heading and made page skip navigation target the main article."
+    ]
+  },
   "visualReview": {
     "outcome": "PASS",
-    "notes": "Subject and article topic are aligned; illustration has no text or official insignia."
+    "notes": "Hero asset itself is intact 1200x675. The prior crop came from the article stylesheet, not from missing pixels in the artwork."
   }
 }

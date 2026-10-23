@@ -1,17 +1,17 @@
 /* Frozen visual template for article section headings. */
 .article-page .article-body{counter-reset:article-section}
 .article-page .article-body > h2,
-.article-page .article-body > section > h2{counter-increment:article-section;display:flex;align-items:center;position:relative;margin:38px 0 16px;padding:14px 18px 14px 68px;min-height:70px;border:1px solid #e4e9f7;border-left:4px solid #526df3;border-radius:13px;background:linear-gradient(112deg,#f4f6ff 0%,#fff 82%);box-shadow:0 6px 18px #26396d0a;scroll-margin-top:110px;overflow-wrap:anywhere;text-wrap:balance}
+.article-page .article-body > section[id]:not(.pension-calculator) > h2{counter-increment:article-section;display:flex;align-items:center;position:relative;margin:38px 0 16px;padding:14px 18px 14px 68px;min-height:70px;border:1px solid #e4e9f7;border-left:4px solid #526df3;border-radius:13px;background:linear-gradient(112deg,#f4f6ff 0%,#fff 82%);box-shadow:0 6px 18px #26396d0a;scroll-margin-top:110px;overflow-wrap:anywhere;text-wrap:balance}
 .article-page .article-body > h2::before,
-.article-page .article-body > section > h2::before{content:counter(article-section,decimal-leading-zero);position:absolute;left:15px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:linear-gradient(145deg,#355cf6,#7754e8);color:#fff;font:800 13px/1 'Plus Jakarta Sans',system-ui,sans-serif;box-shadow:0 4px 10px #355cf626}
+.article-page .article-body > section[id]:not(.pension-calculator) > h2::before{content:counter(article-section,decimal-leading-zero);position:absolute;left:15px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:linear-gradient(145deg,#355cf6,#7754e8);color:#fff;font:800 13px/1 'Plus Jakarta Sans',system-ui,sans-serif;box-shadow:0 4px 10px #355cf626}
 .article-page .article-body h3{position:relative;padding-left:14px}
 .article-page .article-body h3::before{content:"";position:absolute;left:0;top:.22em;bottom:.22em;width:3px;border-radius:3px;background:#f1b84b}
 .article-page .article-body .callout{box-shadow:0 7px 20px #26396d0a}
 .article-page .article-body .callout strong:first-child{color:#243b86}
 @media(max-width:650px){
 .article-page .article-body > h2,
-.article-page .article-body > section > h2{margin:32px 0 14px;padding:13px 14px 13px 60px;min-height:64px;border-radius:12px;font-size:clamp(21px,6vw,24px);line-height:1.35}
+.article-page .article-body > section[id]:not(.pension-calculator) > h2{margin:32px 0 14px;padding:13px 14px 13px 60px;min-height:64px;border-radius:12px;font-size:clamp(21px,6vw,24px);line-height:1.35}
 .article-page .article-body > h2::before,
-.article-page .article-body > section > h2::before{left:12px;width:35px;height:35px;border-radius:10px;font-size:12px}
+.article-page .article-body > section[id]:not(.pension-calculator) > h2::before{left:12px;width:35px;height:35px;border-radius:10px;font-size:12px}
 .article-page .article-body h3{padding-left:12px}
 }

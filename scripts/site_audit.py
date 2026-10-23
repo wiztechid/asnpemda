@@ -17,6 +17,9 @@ for record_path in sorted((root / "data" / "articles").glob("*.json")):
 
 for page in sorted(root.rglob("*.html")):
     text = page.read_text(encoding="utf-8")
+    # Google verification HTML files intentionally contain one exact plaintext token line.
+    if page.parent == root and page.name.startswith("google") and text.strip() == f"google-site-verification: {page.name}":
+        continue
     for tag in ("<html", "<title>", '<meta name="viewport"', "</html>"):
         if tag not in text:
             errors.append(f"{page.relative_to(root)} missing {tag}")

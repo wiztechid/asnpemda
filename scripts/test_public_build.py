@@ -50,7 +50,7 @@ for article_file in sorted(path for path in actual if path.startswith("artikel/"
     source_article = (root / article_file).read_text(encoding="utf-8")
     if insights_link not in built_article:
         raise SystemExit("article is missing the heading highlights stylesheet: " + article_file)
-    if len(re.findall(r"<h2\\b", built_article, re.I)) != len(re.findall(r"<h2\\b", source_article, re.I)):
+    if len(re.findall(r"<h2\b", built_article, re.I)) != len(re.findall(r"<h2\b", source_article, re.I)):
         raise SystemExit("public build changed frozen article subheading count: " + article_file)
 if "/artikel/pppk-paruh-waktu-penuh-waktu-2027.html" not in (dist / "index.html").read_text(encoding="utf-8"):
     raise SystemExit("homepage does not link to the published PPPK article")

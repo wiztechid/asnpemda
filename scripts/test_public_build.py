@@ -70,12 +70,12 @@ if 'assets/home-topic-filters.js' not in home_html:
 if 'Semua</button>' not in home_html or 'Pensiun &amp; kesejahteraan' not in home_html:
     raise SystemExit("homepage topic filter controls missing or incomplete")
 home_cards = re.findall(r'<article class="article-card"[^>]*data-topic="([^"]+)"', home_html)
-if len(home_cards) != len(set(re.findall(r'href="/artikel/([a-z0-9-]+)\\.html"', home_html))):
+if len(home_cards) != len(set(re.findall(r'href="/artikel/([a-z0-9-]+)\.html"', home_html))):
     raise SystemExit("homepage card count does not match linked published article count")
-pension_card = re.search(r'<article class="article-card"[^>]*data-topic="pensiun"[\\s\\S]*?</article>', home_html)
+pension_card = re.search(r'<article class="article-card"[^>]*data-topic="pensiun"[\s\S]*?</article>', home_html)
 if not pension_card or "menit baca" not in pension_card.group(0) or "article-card-label" not in pension_card.group(0):
     raise SystemExit("generated pension card is missing its reading time or category label")
-if not re.search(r'<span>\\d{1,2} [A-Z][a-z]+ 2026</span>', pension_card.group(0)):
+if not re.search(r'<span>\d{1,2} [A-Z][a-z]+ 2026</span>', pension_card.group(0)):
     raise SystemExit("generated pension card date is not localized")
 
 for page in ("index.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "koreksi.html", "404.html"):

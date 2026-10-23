@@ -1,11 +1,11 @@
 {
   "candidateId": "cara-menghitung-gaji-pensiun-pns",
-  "capturedAt": "2026-10-23T15:00:00+08:00",
+  "capturedAt": "2026-10-23T16:20:00+08:00",
   "evidenceState": "LEGAL_SOURCES_RECHECKED; SEARCH_DEMAND_GEO_UNVERIFIED; SERP_SAMPLE_ONLY",
   "state": "REVIEW_PENDING",
   "approved": false,
-  "sourceFingerprint": "595513695620089465e3ca834412d60fee59516b5fb6cf0da0bb071d762cb1e3",
-  "reviewFingerprint": "24ecb5a93a377e7c60817a5615f9d49d7b2e9a199f0c004c912d601f7878330a",
+  "sourceFingerprint": "6b16d1e62770ac9ee5d0736d1c04ff9ea37a1d91485c37d4c3fff6d2f302f8c0",
+  "reviewFingerprint": "b270744d3b3b677cc48e9ef0dadae75a2f54ad24218fb75101d382d77909c101",
   "sources": [
     {
       "title": "UU Nomor 11 Tahun 1969 tentang Pensiun Pegawai dan Pensiun Janda/Duda Pegawai",
@@ -80,5 +80,15 @@
     "No verified Google Ads API response for this research profile",
     "Workbook geographic targeting not established",
     "SERP competition score not established"
-  ]
+  ],
+  "visualAsset": {
+    "path": "assets/hero-pensiun-pns.webp",
+    "sha256": "92c0a2d167fbd37153908004e0e15fa948ce86a79ac61e30e072682519aa683e",
+    "width": 1200,
+    "height": 675,
+    "format": "WEBP",
+    "style": "low-poly editorial illustration",
+    "description": "ASN memasuki masa pensiun, sedang menyiapkan rencana dengan kalkulator; suasana pagi optimistis.",
+    "generatedWith": "OpenAI ImageGen"
+  }
 }

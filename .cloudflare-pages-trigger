@@ -2,3 +2,5 @@ Clean URL regression: align canonical, internal links, Open Graph, JSON-LD, and 
 Trigger refreshed: 2026-10-23
 
 Frozen article master: shared stylesheet, strict module order, and regression gate updated 2026-10-23.
+
+Retry CI after exact published-article hash correction: 2026-10-23.

@@ -1,6 +1,137 @@
 {
+  "id": "sertifikasi-pbj-level-1-ppk-tipe-c-2026",
   "slug": "sertifikasi-pbj-level-1-ppk-tipe-c-2026",
+  "title": "Sertifikasi PBJ Level-1 dan PPK Tipe C: Apa yang Perlu ASN Tahu?",
+  "status": "TERBIT",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-23",
+  "lastVerified": "2026-10-23",
+  "materiality": "MEDIUM",
+  "asnImpact": "ASN yang menangani pengadaan dapat memakai informasi ini untuk memeriksa skema sertifikasi yang relevan. Artikel tidak menyatakan sertifikat Level-1 otomatis setara dengan sertifikat PPK Tipe C.",
+  "pemdaImpact": "UKPBJ, BKPSDM, dan OPD perlu membaca naskah lengkap sebelum mengubah persyaratan penugasan, SOP, atau rencana pelatihan.",
+  "actionRequired": [
+    "Baca naskah lengkap SE Deputi III LKPP Nomor 2 Tahun 2026.",
+    "Cocokkan syarat kompetensi dan penugasan dengan aturan yang berlaku.",
+    "Tunda perubahan SOP atau klaim konversi sertifikat sampai mekanisme resminya terverifikasi."
+  ],
+  "sources": [
+    {
+      "title": "Surat Edaran Deputi III LKPP Nomor 2 Tahun 2026 tentang Integrasi Sertifikasi Kompetensi PBJ Level-1, PPK Tipe C, dan Pejabat Pengadaan",
+      "url": "https://jdih.lkpp.go.id/?regulasi=HM-DARAT",
+      "sourceType": "JDIH",
+      "isPrimary": true,
+      "publishedAt": "2026-10-20"
+    },
+    {
+      "title": "Keputusan Deputi III LKPP Nomor 18 Tahun 2025 tentang Pedoman Sertifikasi Kompetensi PBJ Level-1 dan PPK Tipe C",
+      "url": "https://jdih.lkpp.go.id/regulation/keputusan-deputi-iii/keputusan-deputi-iii-nomor-18-tahun-2025",
+      "sourceType": "JDIH",
+      "isPrimary": true,
+      "publishedAt": "2025-08-11"
+    },
+    {
+      "title": "Surat Edaran Kepala LKPP Nomor 1 Tahun 2024 tentang Pemenuhan Kebutuhan Pejabat dan Personel Bersertifikat Kompetensi",
+      "url": "https://jdih.lkpp.go.id/regulation/surat-edaran-kepala-lkpp/surat-edaran-kepala-lkpp-nomor-1-tahun-2024",
+      "sourceType": "JDIH",
+      "isPrimary": true,
+      "publishedAt": "2024-01-15"
+    },
+    {
+      "title": "Persyaratan Peserta Sertifikasi Kompetensi Level-1",
+      "url": "https://ppid.lkpp.go.id/information/public/453/persyaratan-peserta-sertifikasi-kompetensi-level-1",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true,
+      "publishedAt": null
+    }
+  ],
+  "revisionHistory": [
+    {
+      "date": "2026-10-23",
+      "summary": "Memperbaiki metadata sosial, structured data, FAQ, dan tautan berbagi yang sebelumnya tercampur dengan artikel WFH; menyelaraskan judul dan bahasa untuk pembaca ASN muda serta membatasi klaim pada bukti resmi yang tersedia."
+    },
+    {
+      "date": "2026-10-23",
+      "summary": "Melengkapi catatan SEO dan sampel SERP untuk empat artikel; volume tidak diklaim karena frasa fokus tidak ada di dataset, dan kompetisi organik tidak disamakan dengan kompetisi iklan."
+    }
+  ],
   "approved": true,
   "publicationState": "PUBLISHED",
-  "dateModified": "2026-10-22"
+  "articlePath": "artikel/sertifikasi-pbj-level-1-ppk-tipe-c-2026.html",
+  "articleSha256": "1a18e63d888609cf84c1b62cf21d44d571f307cc483d5112ba2c85115db415a8",
+  "evidencePath": "data/candidates/sertifikasi-pbj-level-1-ppk-tipe-c-2026.evidence.json",
+  "evidenceSha256": "bf842f7a5002fff5a6e1ecc8654719655d12798188a0257d6601832ccf2afa4e",
+  "humanApproval": {
+    "decision": "GO",
+    "authorizedBy": "wiztechid",
+    "role": "human site owner and article author",
+    "approvedAt": "2026-10-23",
+    "instruction": "User approved processing under the editorial SOP and requested language suited to millennial and Gen Z ASN readers."
+  },
+  "editorialAssessment": {
+    "type": "AI_ASSISTED_EDITORIAL_REVIEW",
+    "reviewedAt": "2026-10-23",
+    "outcome": "APPROVE_WITH_SCOPE_NOTES",
+    "reviewerIsHuman": false,
+    "reviewerIsASN": false,
+    "summary": "Metadata lintas artikel telah dikoreksi; klaim tentang mekanisme integrasi tetap dibatasi karena naskah lengkap belum diverifikasi. Penilaian AI bersifat advisory."
+  },
+  "evidenceGitBlobSha1": "ef881d7166b053bd7208700a591aa7328b5ec2ab",
+  "seo": {
+    "focusKeyword": "Sertifikasi PBJ Level-1 dan PPK Tipe C",
+    "secondaryKeywords": [
+      "integrasi sertifikasi PBJ Level-1 PPK Tipe C",
+      "Surat Edaran LKPP Nomor 2 Tahun 2026",
+      "syarat sertifikasi PPK Tipe C",
+      "sertifikasi kompetensi Pejabat Pengadaan"
+    ],
+    "titleTag": "Sertifikasi PBJ Level-1 dan PPK Tipe C: Apa yang Perlu ASN Tahu?",
+    "metaDescription": "SE LKPP tentang integrasi sertifikasi PBJ Level-1, PPK Tipe C, dan Pejabat Pengadaan. Ini dampaknya bagi ASN dan langkah aman sebelum bertindak.",
+    "slug": "/artikel/sertifikasi-pbj-level-1-ppk-tipe-c-2026.html",
+    "robots": "index,follow",
+    "structuredData": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "searchDemandNote": "pns(1).xlsx covers 2025-10-01 through 2026-09-30 and contains no exact PBJ, sertifikasi PBJ, or PPK Tipe C focus query. No monthly search volume is assigned."
+  },
+  "serpAudit": {
+    "checkedAt": "2026-10-23",
+    "method": "Web search result sample; not a verified Google Search rank tracker. Positions and organic difficulty scores were not measured.",
+    "queries": [
+      "sertifikasi PBJ Level-1 PPK Tipe C LKPP 2026",
+      "syarat sertifikasi PPK Tipe C Level 1",
+      "apakah sertifikat PBJ Level-1 setara PPK Tipe C"
+    ],
+    "observedCompetitorTypes": [
+      "Official training and certification portals, including LKPP and BPKP",
+      "Training providers promoting PPK Tipe C courses",
+      "Older regulatory documents describing certification requirements"
+    ],
+    "sampledResults": [
+      {
+        "title": "Pusdiklatwas BPKP — Pelatihan dan Sertifikasi Kompetensi PPK Tipe C",
+        "url": "https://pusdiklatwas.bpkp.go.id/katalog/pelatihan-dan-sertifikasi-kompetensi-ppk-tipe-c",
+        "type": "OFFICIAL_TRAINING"
+      },
+      {
+        "title": "Pusat Pelatihan SDM PBJ e-Learning LKPP",
+        "url": "https://elearning.lkpp.go.id/?lang=id",
+        "type": "OFFICIAL_TRAINING"
+      },
+      {
+        "title": "LPKN — Pelatihan Kompetensi PPK Tipe C",
+        "url": "https://event.lpkn.id/event/PPK-TipeC",
+        "type": "TRAINING_PROVIDER"
+      }
+    ],
+    "intent": "Informational and action-oriented: ASN/OPD readers want to understand the 2026 integration circular, eligibility and next steps, and whether Level-1 certification automatically confers PPK Tipe C status.",
+    "contentGap": [
+      "Interpret the 2026 circular in plain language and distinguish confirmed details from items requiring the full official text.",
+      "Keep Level-1 and PPK Tipe C certification requirements distinct; do not imply automatic equivalence or a guaranteed appointment.",
+      "Give a safe verification path through LKPP/UKPBJ before changing assignment, SOP, or training plans."
+    ],
+    "competitionAssessment": "Course and certification terms surface official training portals and provider pages, creating strong competition for transactional training intent. The narrower circular-status and 'what does this mean for my assignment?' intent has a clearer editorial opening. No formal organic difficulty score was measured.",
+    "workbookCoverage": "No exact PBJ or PPK Tipe C query appears in pns(1).xlsx; therefore this focus keyword has no assigned search volume. Dataset rows about general regional finance are unrelated and are not used as proxies."
+  }
 }

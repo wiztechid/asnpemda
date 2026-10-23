@@ -77,9 +77,75 @@
     {
       "date": "2026-10-21",
       "summary": "Menambahkan tautan kontekstual dan artikel terkait, umpan balik anonim, serta komentar tanpa akun yang ditinjau sebelum tayang."
+    },
+    {
+      "date": "2026-10-23",
+      "summary": "Audit integritas: articleSha256 disinkronkan dengan byte HTML artikel yang diperiksa pada branch PR; sumber dan klaim utama tidak diubah dalam perbaikan gate ini. Master artikel tetap dibekukan."
+    },
+    {
+      "date": "2026-10-23",
+      "summary": "Melengkapi catatan SEO dan sampel SERP untuk empat artikel; volume tidak diklaim karena frasa fokus tidak ada di dataset, dan kompetisi organik tidak disamakan dengan kompetisi iklan."
     }
   ],
-  "articleSha256": "5f37f776741a58eaf363ead824408b0086467c098659ce0846e01857887f8f1b",
+  "articleSha256": "d451e3ff5c5bc9df544496eb6ad571b39074ac269a471bd3688a37b9de1ea1fb",
   "evidenceGitBlobSha1": "4f256eed43efd63a8611d07133cea85ee4333611",
-  "evidenceSha256": "7347f2bf9ccb5e205195b42ae2a280f5cf1fd7c1632259bcc29f1b3afc133379"
+  "evidenceSha256": "7347f2bf9ccb5e205195b42ae2a280f5cf1fd7c1632259bcc29f1b3afc133379",
+  "seo": {
+    "focusKeyword": "PermenPANRB Nomor 9 Tahun 2026 PPPK Paruh Waktu",
+    "secondaryKeywords": [
+      "aturan PPPK paruh waktu 2026",
+      "hak dan kewajiban PPPK paruh waktu",
+      "evaluasi PPPK paruh waktu",
+      "mekanisme alih status PPPK paruh waktu"
+    ],
+    "titleTag": "PermenPANRB Nomor 9 Tahun 2026: Aturan PPPK Paruh Waktu",
+    "metaDescription": "Ringkasan PermenPANRB Nomor 9 Tahun 2026: cakupan PPPK paruh waktu, perjanjian kerja, evaluasi, hak, dan mekanisme alih status menurut aturan.",
+    "slug": "/artikel/permenpanrb-9-2026-pppk-paruh-waktu",
+    "robots": "index,follow",
+    "structuredData": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "searchDemandNote": "pns(1).xlsx covers 2025-10-01 through 2026-09-30 and contains no exact query for PermenPANRB 9/2026 or PPPK paruh waktu. No volume is assigned to this focus keyword. The separate 500/month row for 'status pppk' is broad and is not attributed to this article."
+  },
+  "serpAudit": {
+    "checkedAt": "2026-10-23",
+    "method": "Web search result sample; not a verified Google Search rank tracker. Positions and organic difficulty scores were not measured.",
+    "queries": [
+      "PermenPANRB Nomor 9 Tahun 2026 PPPK paruh waktu",
+      "hak dan kewajiban PPPK paruh waktu PermenPANRB 9/2026",
+      "mekanisme alih status PPPK paruh waktu 2026"
+    ],
+    "observedCompetitorTypes": [
+      "Official JDIH/legal-text pages, including BPK and government training/legal-information pages",
+      "National news publishers summarizing the new regulation and status changes",
+      "Unofficial document mirrors and explainers"
+    ],
+    "sampledResults": [
+      {
+        "title": "Permen PANRB No. 9 Tahun 2026 — JDIH BPK",
+        "url": "https://peraturan.bpk.go.id/Details/351339/permen-panrb-no-9-tahun-2026",
+        "type": "OFFICIAL_REGULATION"
+      },
+      {
+        "title": "JDIH BGTK NTB — PermenPANRB Nomor 9 Tahun 2026",
+        "url": "https://jdih.bgtkntb.id/detail.php?id=94",
+        "type": "OFFICIAL_JDIH"
+      },
+      {
+        "title": "BKN: PermenPANRB 9 Tahun 2026 Jadi Payung Hukum...",
+        "url": "https://www.jpnn.com/news/bkn-permenpanrb-9-tahun-2026-jadi-payung-hukum-pengangkatan-p3k-pw-menjadi-pppk",
+        "type": "NEWS"
+      }
+    ],
+    "intent": "Informational and rule-lookup: readers want the regulation's scope, contract and evaluation rules, rights, and the actual path for proposing a status change.",
+    "contentGap": [
+      "Translate key provisions into a quick guide while linking readers to the regulation text.",
+      "Separate a status-change mechanism in the regulation from broader 2027 announcements; do not promise automatic conversion for every PPPK part-time employee.",
+      "Use ASN-friendly language and practical context without inventing salary, timing, or eligibility."
+    ],
+    "competitionAssessment": "The regulation name has strong official and news coverage in this sample, so the head term is competitive. A narrower, source-led explanation of rights, evaluation, contract, and status-change steps is the defensible opportunity. No formal organic difficulty score was measured.",
+    "workbookCoverage": "No exact focus-keyword or close PPPK paruh waktu phrase appears in pns(1).xlsx; its broad 'status pppk' row (500/month, low advertising competition) is not treated as this article's volume."
+  }
 }

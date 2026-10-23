@@ -1,0 +1,43 @@
+{
+  "evidenceId": "sertifikasi-pbj-level-1-ppk-tipe-c-2026-source-snapshot",
+  "capturedOn": "2026-10-23",
+  "sources": [
+    {
+      "publisher": "JDIH LKPP",
+      "title": "Surat Edaran Deputi III Nomor 2 Tahun 2026",
+      "url": "https://jdih.lkpp.go.id/?regulasi=HM-DARAT",
+      "type": "JDIH",
+      "primary": true,
+      "documentDate": "2026-10-20",
+      "verifiedSubject": "Integrasi Sertifikasi Kompetensi PBJ Level-1 dengan Sertifikasi Kompetensi PPK Tipe C dan Pejabat Pengadaan."
+    },
+    {
+      "publisher": "JDIH LKPP",
+      "title": "Keputusan Deputi III Nomor 18 Tahun 2025",
+      "url": "https://jdih.lkpp.go.id/regulation/keputusan-deputi-iii/keputusan-deputi-iii-nomor-18-tahun-2025",
+      "type": "JDIH",
+      "primary": true,
+      "verifiedSubject": "Pedoman Sertifikasi Kompetensi PBJ Level-1 dan PPK Tipe C; tercatat berlaku."
+    },
+    {
+      "publisher": "JDIH LKPP",
+      "title": "Surat Edaran Kepala LKPP Nomor 1 Tahun 2024",
+      "url": "https://jdih.lkpp.go.id/regulation/surat-edaran-kepala-lkpp/surat-edaran-kepala-lkpp-nomor-1-tahun-2024",
+      "type": "JDIH",
+      "primary": true,
+      "verifiedSubject": "Pemenuhan kebutuhan pejabat fungsional pengadaan, personel bersertifikat, dan PPK bersertifikat; tercatat berlaku."
+    },
+    {
+      "publisher": "PPID LKPP",
+      "title": "Persyaratan Peserta Sertifikasi Kompetensi Level-1",
+      "url": "https://ppid.lkpp.go.id/information/public/453/persyaratan-peserta-sertifikasi-kompetensi-level-1",
+      "type": "OFFICIAL_INFORMATION",
+      "primary": true,
+      "verifiedSubject": "Halaman informasi resmi mengenai persyaratan peserta sertifikasi Level-1."
+    }
+  ],
+  "claimBoundaries": [
+    "Dari metadata entri 2026 yang diverifikasi, artikel menyebut hanya judul dan tanggal entri; mekanisme pada naskah lengkap tidak disimpulkan.",
+    "Artikel tidak menyatakan konversi otomatis, perubahan kewenangan penugasan, atau perubahan prosedur SP2D."
+  ]
+}

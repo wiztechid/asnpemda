@@ -157,7 +157,7 @@ def homepage_topic(slug: str) -> str:
 
 
 def format_indonesian_date(value: str | None) -> str:
-    match = re.match(r"(\\d{4})-(\\d{2})-(\\d{2})", value or "")
+    match = re.match(r"(\d{4})-(\d{2})-(\d{2})", value or "")
     if not match:
         return ""
     year, month, day = match.groups()
@@ -171,11 +171,11 @@ def format_indonesian_date(value: str | None) -> str:
 def refresh_homepage_cards(home: str, articles: list[tuple[str, str | None, str | None]]) -> str:
     """Only approved articles appear; align generated cards with the homepage card template."""
     approved = {Path(relative).stem: (relative, modified, hero) for relative, modified, hero in articles}
-    card_re = re.compile(r'<article class="article-card"[^>]*>[\\s\\S]*?</article>')
+    card_re = re.compile(r'<article class="article-card"[^>]*>[\s\S]*?</article>')
     cards = {}
     for match in card_re.finditer(home):
         card = match.group(0)
-        found = re.search(r'href="/artikel/([a-z0-9-]+)\\.html"', card)
+        found = re.search(r'href="/artikel/([a-z0-9-]+)\.html"', card)
         if found and found.group(1) in approved:
             slug = found.group(1)
             card = re.sub(r'<article class="article-card"[^>]*>', '<article class="article-card" data-topic="' + homepage_topic(slug) + '">', card, count=1)
@@ -186,20 +186,20 @@ def refresh_homepage_cards(home: str, articles: list[tuple[str, str | None, str 
         body = (ROOT / relative).read_text(encoding="utf-8")
         title_match = re.search(r'<title>(.*?)</title>', body, re.I | re.S)
         title = html_utils.unescape(title_match.group(1).split(' — ASN Pemda')[0]) if title_match else slug.replace('-', ' ').title()
-        description_match = re.search(r'<meta\\s+name="description"\\s+content="([^"]+)"', body, re.I)
+        description_match = re.search(r'<meta\s+name="description"\s+content="([^"]+)"', body, re.I)
         description = html_utils.unescape(description_match.group(1)) if description_match else 'Informasi terbaru untuk ASN dan pemerintah daerah.'
-        published_match = re.search(r'<meta\\s+property="article:published_time"\\s+content="([^"]+)"', body, re.I)
+        published_match = re.search(r'<meta\s+property="article:published_time"\s+content="([^"]+)"', body, re.I)
         date = format_indonesian_date(published_match.group(1) if published_match else modified)
-        reading_match = re.search(r'Waktu baca:\\s*(?:sekitar\\s*)?(\\d+)\\s*menit', body, re.I)
+        reading_match = re.search(r'Waktu baca:\s*(?:sekitar\s*)?(\d+)\s*menit', body, re.I)
         reading = (reading_match.group(1) + ' menit baca') if reading_match else ''
-        kicker_match = re.search(r'<div class="article-kicker">([\\s\\S]*?)</div>', body, re.I)
+        kicker_match = re.search(r'<div class="article-kicker">([\s\S]*?)</div>', body, re.I)
         category = ''
         if kicker_match:
             kicker_text = html_utils.unescape(re.sub(r'<[^>]+>', ' ', kicker_match.group(1)))
             parts = [part.strip() for part in kicker_text.split('•') if part.strip()]
             category = parts[-1].title() if parts else ''
         if not hero:
-            hero_match = re.search(r'<figure[^>]*class="article-hero"[^>]*>[\\s\\S]*?<img[^>]*src="([^"]+)"', body, re.I)
+            hero_match = re.search(r'<figure[^>]*class="article-hero"[^>]*>[\s\S]*?<img[^>]*src="([^"]+)"', body, re.I)
             if hero_match:
                 candidate = hero_match.group(1).replace('../', '').lstrip('/')
                 if candidate.startswith('assets/') and (ROOT / candidate).is_file():
@@ -212,11 +212,11 @@ def refresh_homepage_cards(home: str, articles: list[tuple[str, str | None, str 
     start = home.find('<div class="article-grid">')
     if start < 0:
         raise SystemExit('ERROR: homepage article grid missing')
-    end = home.find('</div>\\n</section>\\n<section class="home-topics"', start)
+    end = home.find('</div>\n</section>\n<section class="home-topics"', start)
     if end < 0:
         raise SystemExit('ERROR: homepage grid boundary missing')
     grid_class = 'article-grid article-grid-count-' + str(len(ordered))
-    return home[:start] + '<div class="' + grid_class + '" data-topic-filter-grid>\\n' + '\\n'.join(cards[slug] for slug in ordered) + '\\n  ' + home[end:]
+    return home[:start] + '<div class="' + grid_class + '" data-topic-filter-grid>\n' + '\n'.join(cards[slug] for slug in ordered) + '\n  ' + home[end:]
 
 def main() -> None:
     config = json.loads((ROOT / "site-config.json").read_text(encoding="utf-8"))

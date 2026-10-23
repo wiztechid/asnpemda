@@ -4,11 +4,11 @@
   "approved": true,
   "publicationState": "PUBLISHED",
   "datePublished": "2026-10-20",
-  "dateModified": "2026-10-20",
+  "dateModified": "2026-10-23",
   "lastVerified": "2026-10-20",
   "heroImage": "assets/hero-aturan-wfh-asn-pemda-2026.webp",
   "articlePath": "artikel/aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj.html",
-  "articleSha256": "46b528c314b7db97c6a6a60f77bdf0a710ae9900b7e8942346c5d3f894c2ee82",
+  "articleSha256": "1f978fce2663e7762f73dbc85b8b2f2c6f4215dba8604b8c3259094c10646f3c",
   "evidencePath": "data/candidates/aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj.evidence.json",
   "evidenceGitBlobSha1": "d669de151f02c268bdbcffb1943f2baca029dce3",
   "evidenceSha256": "118919b76ee8627c92a1e4afad711c88228406352bf142850bd3f65aaf5e3d11",
@@ -17,7 +17,7 @@
     "authorizedBy": "wiztechid",
     "role": "human site owner and article author",
     "approvedAt": "2026-10-20T22:00:00+08:00",
-    "instruction": "User requested the next article in the continuing ASN Pemda publication workflow; publication authorization follows the prior explicit instruction to publish and the amended SOP. User requested stricter enforcement of the frozen article template; this revision normalizes shared markup and CSS only, with article wording, claims, and sources unchanged."
+    "instruction": "Pemilik situs secara eksplisit meminta label ringkasan artikel diseragamkan menjadi “Versi Mudahnya” di seluruh artikel terbit. Perubahan hanya pada label heading; template beku, CSS, isi substantif, klaim, dan sumber tidak berubah."
   },
   "editorialAssessment": {
     "type": "AI_ASSISTED_EDITORIAL_REVIEW",
@@ -178,7 +178,8 @@
     "authorizedBy": "wiztechid",
     "role": "human site owner and article author",
     "authorizedAt": "2026-10-20T22:00:00+08:00",
-    "scope": "Continue the article publication workflow after the prior explicit publish authorization."
+    "scope": "Continue the article publication workflow after the prior explicit publish authorization.",
+    "articleSha256": "1f978fce2663e7762f73dbc85b8b2f2c6f4215dba8604b8c3259094c10646f3c"
   },
   "revisionHistory": [
     {

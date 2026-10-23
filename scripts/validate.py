@@ -15,16 +15,6 @@ required=set(schema["required"])
 for p in sorted((root/"data/articles").glob("*.json")):
     try: a=json.loads(p.read_text(encoding="utf-8"))
     except Exception as e: fail(str(p)+": "+str(e));continue
-    # The PBJ explainer uses a compact publication manifest, not the living-policy schema.
-    # Validate that exact legacy shape separately; full policy records still require all schema fields.
-    publication_manifest_fields={"slug","approved","publicationState","dateModified"}
-    if "status" not in a and set(a)==publication_manifest_fields:
-        if a.get("approved") is not True: fail(str(p)+": not approved; published articles require approval")
-        if a.get("publicationState") != "PUBLISHED": fail(str(p)+": publication manifest is not PUBLISHED")
-        if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*",a.get("slug","")): fail(str(p)+": invalid slug")
-        try: datetime.date.fromisoformat(a["dateModified"])
-        except (ValueError,KeyError,TypeError): fail(str(p)+": invalid dateModified")
-        continue
     missing=required-set(a)
     if missing: fail(str(p)+": missing "+str(sorted(missing)))
     if a.get("status") not in schema["properties"]["status"]["enum"]: fail(str(p)+": invalid status")

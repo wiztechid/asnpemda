@@ -1,0 +1,87 @@
+{
+  "articleId": "kenaikan-gaji-berkala-pns",
+  "id": "kenaikan-gaji-berkala-pns",
+  "slug": "kenaikan-gaji-berkala-pns",
+  "title": "Cara Menghitung Kenaikan Gaji Berkala PNS: Syarat dan TMT",
+  "approved": true,
+  "publicationState": "PUBLISHED",
+  "status": "BERLAKU",
+  "datePublished": "2026-10-23",
+  "dateModified": "2026-10-23",
+  "lastVerified": "2026-10-23",
+  "materiality": "MEDIUM",
+  "articlePath": "artikel/kenaikan-gaji-berkala-pns.html",
+  "heroImage": "assets/hero-kenaikan-gaji-berkala-pns.webp",
+  "articleSha256": "b65bc72cce09b97c6875320b57aba9164dec88d5da065e37c0bf810c1a67689f",
+  "evidencePath": "data/candidates/kenaikan-gaji-berkala-pns.evidence.json",
+  "humanApproval": {
+    "decision": "GO",
+    "authorizedBy": "wiztechid",
+    "role": "human site owner and article author",
+    "approvedAt": "2026-10-23T17:38:11+08:00",
+    "instruction": "User explicitly instructed publication after the final 9.5/10 audit; the article body is unchanged from the reviewed draft. Publication-only edits set indexability/datePublished and remove the draft label."
+  },
+  "publicationAuthorization": {
+    "articleId": "kenaikan-gaji-berkala-pns",
+    "articleSha256": "b65bc72cce09b97c6875320b57aba9164dec88d5da065e37c0bf810c1a67689f",
+    "evidenceFingerprint": "17fde5c567dd3e0b79addc4034e2ab8a32a1e75b7c7a44b79e1c8b3cf5f680b4",
+    "reviewFingerprint": "b65bc72cce09b97c6875320b57aba9164dec88d5da065e37c0bf810c1a67689f",
+    "reviewer": "wiztechid",
+    "approvedAt": "2026-10-23T17:38:11+08:00",
+    "authorization": "APPROVED"
+  },
+  "editorialAssessment": {
+    "type": "AI_ASSISTED_EDITORIAL_REVIEW",
+    "reviewedAt": "2026-10-23T17:38:11+08:00",
+    "outcome": "APPROVE_WITH_SCOPE_NOTES",
+    "reviewerIsHuman": false,
+    "reviewerIsASN": false,
+    "score": 9.5,
+    "summary": "Mutu editorial dan SEO dinilai 9,5/10. Status pencarian merujuk workbook, bukan respons Google Ads API; kompetisi organik belum dinilai secara terlokalisasi. Artikel membatasi interpretasi aturan dan membedakan PNS dari PPPK serta prosedur instansi."
+  },
+  "asnImpact": "Membantu PNS memahami syarat KGB, cara membaca masa kerja golongan, nominal pada tabel gaji pokok, dan waktu pemberitahuan. Penetapan personal tetap mengikuti dokumen resmi dan proses instansi.",
+  "pemdaImpact": "Memberi unit kepegawaian dan pengelola gaji penjelasan nasional yang ringkas, sambil menjaga ruang prosedur administratif tiap instansi.",
+  "actionRequired": [],
+  "sources": [
+    {
+      "title": "PP Nomor 7 Tahun 1977 tentang Peraturan Gaji PNS",
+      "url": "https://peraturan.bpk.go.id/Details/67316/pp-no-7-tahun-1977",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "1977-03-01"
+    },
+    {
+      "title": "Teks lengkap PP Nomor 7 Tahun 1977 — JDIH Kementerian Keuangan",
+      "url": "https://jdih.kemenkeu.go.id/api/download/fulltext/1977/7tahun~1977pp.htm",
+      "sourceType": "JDIH",
+      "isPrimary": true,
+      "publishedAt": "1977-03-01"
+    },
+    {
+      "title": "PP Nomor 5 Tahun 2024 tentang Perubahan atas PP 7/1977",
+      "url": "https://peraturan.bpk.go.id/Details/276755/pp-no-5-tahun-2024",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "2024-01-26"
+    },
+    {
+      "title": "KMS Manajemen ASN BKN — Gaji, Tunjangan, dan Fasilitas PNS",
+      "url": "https://apps-denpasar.bkn.go.id/kms/ensiklopedia%3Apenggajian_tunjangan_dan_fasilitas_pns",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true,
+      "publishedAt": null
+    }
+  ],
+  "revisionHistory": [
+    {
+      "date": "2026-10-23",
+      "summary": "Dipublikasikan setelah instruksi GO pemilik situs; artikel menjelaskan KGB PNS dengan rujukan PP 7/1977 dan perubahan tabel gaji melalui PP 5/2024."
+    },
+    {
+      "date": "2026-10-23",
+      "summary": "Audit SEO menyesuaikan title dengan intent cara menghitung dan memperbaiki kartu artikel terkait; substansi artikel tidak berubah."
+    }
+  ],
+  "evidenceSha256": "f1fef9f1254134dbc6794e3e3478240fd4997ced44c978ab49cc96036cff9819",
+  "evidenceGitBlobSha1": "8d46cac8cd6609afed367b3cbafffb4c695eb991"
+}

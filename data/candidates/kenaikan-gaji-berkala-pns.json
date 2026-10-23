@@ -1,0 +1,181 @@
+{
+  "id": "kenaikan-gaji-berkala-pns",
+  "slug": "kenaikan-gaji-berkala-pns",
+  "title": "Kenaikan Gaji Berkala PNS: Syarat, Cara Hitung, dan TMT",
+  "discoveredAt": "2026-10-23T10:04:03+01:00",
+  "classification": "evergreen-guide",
+  "materiality": "MEDIUM",
+  "dedupeKey": "kgb-pns-syarat-perhitungan-mkg",
+  "state": "REVIEW_PENDING",
+  "verification": "PRIMARY_RULES_VERIFIED; WORKBOOK_SIGNAL_RECORDED; SERP_SAMPLE_ONLY; HUMAN_REVIEW_PENDING",
+  "approved": false,
+  "articlePath": "artikel/kenaikan-gaji-berkala-pns.html",
+  "publicationAuthorization": {
+    "decision": "PENDING",
+    "scope": "Tidak dipublikasikan sampai pemilik situs memberi GO yang terikat hash artikel final."
+  },
+  "seo": {
+    "focusKeyword": "kenaikan gaji berkala PNS",
+    "secondaryKeywords": [
+      "cara menghitung kenaikan gaji berkala PNS",
+      "syarat kenaikan gaji berkala PNS",
+      "masa kerja golongan PNS",
+      "TMT KGB PNS"
+    ],
+    "titleTag": "Kenaikan Gaji Berkala PNS: Syarat, Cara Hitung, dan TMT",
+    "metaDescription": "Cek syarat kenaikan gaji berkala PNS, cara membaca masa kerja golongan, waktu pemberitahuan, dan dasar tabel gaji terbaru.",
+    "slug": "/artikel/kenaikan-gaji-berkala-pns.html",
+    "robots": "noindex,follow until human publication approval",
+    "structuredData": [
+      "Article",
+      "BreadcrumbList"
+    ],
+    "image": {
+      "path": "/assets/hero-kenaikan-gaji-berkala-pns.webp",
+      "format": "image/webp",
+      "width": 1200,
+      "height": 675,
+      "alt": "Ilustrasi low-poly ASN membaca tabel gaji dan kalender di kantor untuk memahami kenaikan gaji berkala.",
+      "keywords": [
+        "kenaikan gaji berkala PNS",
+        "masa kerja golongan PNS",
+        "ASN Pemda"
+      ],
+      "embeddedMetadata": [
+        "EXIF ImageDescription",
+        "EXIF XPTitle",
+        "EXIF XPKeywords",
+        "XMP dc:title",
+        "XMP dc:description",
+        "XMP dc:subject"
+      ]
+    }
+  },
+  "serpAudit": {
+    "checkedAt": "2026-10-23",
+    "method": "sampled public web search; not localized Google top 10",
+    "queries": [
+      "kenaikan gaji berkala PNS syarat cara menghitung KGB PNS",
+      "kenaikan gaji berkala PNS TMT masa kerja golongan tabel gaji 2024"
+    ],
+    "intent": "informational/task-oriented",
+    "competitors": [
+      {
+        "title": "KMS Manajemen ASN BKN — Gaji, Tunjangan, dan Fasilitas PNS",
+        "url": "https://apps-denpasar.bkn.go.id/kms/ensiklopedia%3Apenggajian_tunjangan_dan_fasilitas_pns",
+        "note": "Official explanation; displayed salary table still cites 2019."
+      },
+      {
+        "title": "Cara Menghitung Kenaikan Gaji Berkala Bagi Karyawan",
+        "url": "https://mekari.com/blog/cara-menghitung-kenaikan-gaji-berkala/",
+        "note": "General payroll, not PNS-specific."
+      },
+      {
+        "title": "Tabel Skala Gaji PNS, TNI dan POLRI",
+        "url": "https://djpb.kemenkeu.go.id/kppn/tapaktuan/id/publikasi-kppn/publikasi-umum/tabel-gaji-pns%2C-tni%2C-polri.html",
+        "note": "Official pay table, not a KGB guide."
+      }
+    ],
+    "competitionAssessment": "Official BKN/JDIH references compete on authority; sample also surfaces generic payroll content. No verified organic difficulty score; Google Indonesia localization not verified.",
+    "contentGap": [
+      "Explain rules and local processing separately.",
+      "Use current salary table and MKG instead of a universal percentage.",
+      "Distinguish KGB, promotion, table revision, TPP and PPPK."
+    ],
+    "workbookCoverage": "Workbook period 2025-10-01 through 2026-09-30: focus phrase and selected related phrases display avg. monthly searches 500 and competition Rendah. Country/language targeting and Google Ads API response are not verified.",
+    "relatedWorkbookTerms": [
+      {
+        "keyword": "cara menghitung kenaikan gaji berkala pns",
+        "avgMonthlySearchesAsDisplayed": 500,
+        "competitionAsDisplayed": "Rendah"
+      },
+      {
+        "keyword": "gaji berkala pns",
+        "avgMonthlySearchesAsDisplayed": 500,
+        "competitionAsDisplayed": "Rendah"
+      },
+      {
+        "keyword": "peraturan tentang kenaikan gaji berkala pns terbaru",
+        "avgMonthlySearchesAsDisplayed": 500,
+        "competitionAsDisplayed": "Rendah",
+        "threeMonthChangeAsDisplayed": "900%"
+      }
+    ]
+  },
+  "evidenceSnapshot": [
+    {
+      "title": "PP Nomor 7 Tahun 1977 tentang Peraturan Gaji PNS",
+      "url": "https://peraturan.bpk.go.id/Details/67316/pp-no-7-tahun-1977",
+      "issuer": "JDIH BPK",
+      "publishedAt": "1977-03-01",
+      "documentIdentity": "PP Nomor 7 Tahun 1977 tentang Peraturan Gaji PNS",
+      "keyClaims": [
+        "Status Berlaku; PP 5/2024 tercatat sebagai perubahan terakhir.",
+        "Pasal 11: masa kerja golongan yang ditentukan dan nilai rata-rata pelaksanaan pekerjaan minimal cukup.",
+        "Pasal 12: surat pemberitahuan diterbitkan dua bulan sebelum berlaku.",
+        "Pasal 13: mengatur penundaan terkait syarat penilaian."
+      ]
+    },
+    {
+      "title": "PP 7/1977 full text",
+      "url": "https://jdih.kemenkeu.go.id/api/download/fulltext/1977/7tahun~1977pp.htm",
+      "issuer": "JDIH Kementerian Keuangan",
+      "publishedAt": "1977-03-01",
+      "documentIdentity": "PP 7/1977 full text",
+      "keyClaims": [
+        "Teks Pasal 11-13 diperiksa langsung."
+      ]
+    },
+    {
+      "title": "PP Nomor 5 Tahun 2024",
+      "url": "https://peraturan.bpk.go.id/Details/276755/pp-no-5-tahun-2024",
+      "issuer": "JDIH BPK",
+      "publishedAt": "2024-01-26",
+      "documentIdentity": "PP Nomor 5 Tahun 2024",
+      "keyClaims": [
+        "Mengubah Lampiran II/tabel gaji pokok PP 7/1977.",
+        "Perubahan tabel disebut berlaku 1 Januari 2024; penetapan/pengundangan 26 Januari 2024."
+      ]
+    },
+    {
+      "title": "KMS Manajemen ASN BKN — Gaji, Tunjangan, dan Fasilitas PNS",
+      "url": "https://apps-denpasar.bkn.go.id/kms/ensiklopedia%3Apenggajian_tunjangan_dan_fasilitas_pns",
+      "issuer": "BKN",
+      "publishedAt": null,
+      "documentIdentity": "KMS Manajemen ASN BKN — Gaji, Tunjangan, dan Fasilitas PNS",
+      "keyClaims": [
+        "Panduan KGB menggunakan masa kerja golongan dan tabel gaji.",
+        "Tabel pada halaman masih menyebut aturan 2019; tidak digunakan sebagai angka nominal terbaru."
+      ]
+    }
+  ],
+  "openItems": [
+    "Pemilik situs meninjau interpretasi Pasal 11 tentang frasa nilai rata-rata sekurang-kurangnya cukup dalam konteks dokumen kinerja yang berlaku.",
+    "Jalankan final review pada HTML final dan simpan GO yang terikat ke SHA-256 artikel sebelum artikel dimasukkan ke data/articles.",
+    "Sampel SERP Google Indonesia terlokalisasi belum tersedia; organic difficulty tidak dinilai.",
+    "Workbook avg. monthly searches 500 and competition Rendah; API response, geo, and language settings not verified.",
+    "SERP is a limited public search sample, not a complete Google Indonesia top-10 audit.",
+    "BKN KMS page's table points to 2019; PP 5/2024 is used for the current salary-table basis.",
+    "Human legal/editorial review and publication approval remain pending."
+  ],
+  "evidenceFingerprint": {
+    "algorithm": "git-blob-sha1",
+    "value": "42713e9433b565b4e8d8ac80c4a219f6b328b450",
+    "path": "data/candidates/kenaikan-gaji-berkala-pns.evidence.json"
+  },
+  "evidenceSnapshotPath": "data/candidates/kenaikan-gaji-berkala-pns.evidence.json",
+  "editorialAngle": "Panduan sesama ASN yang menguraikan syarat KGB, cara memeriksa MKG/TMT, dan membedakan aturan nasional dari alur layanan instansi dengan bahasa ringan.",
+  "editorialBoundary": "Jangan menjanjikan hak atau nominal, mengubah istilah penilaian PP 7/1977 menjadi predikat/angka tanpa verifikasi, menyamakan proses lokal dengan aturan nasional, atau mencampur aturan PNS dan PPPK.",
+  "editorialReview": {
+    "type": "AI_ASSISTED_EDITORIAL_REVIEW",
+    "reviewedAt": "2026-10-23T10:04:03+01:00",
+    "outcome": "DRAFT_FOR_HUMAN_REVIEW",
+    "identityNote": "Review ini dibantu AI dan bukan penilaian ASN/manusia.",
+    "findings": [
+      "Aturan utama dan tabel gaji ditautkan ke JDIH BPK/Kemenkeu.",
+      "Batas dua bulan dibedakan sebagai waktu penerbitan surat pemberitahuan, bukan tenggat permohonan nasional.",
+      "Dataset demand dicatat sebagai metrik spreadsheet; API dan target geo tidak diverifikasi.",
+      "Alur pemrosesan lokal dinyatakan perlu mengikuti informasi resmi instansi."
+    ]
+  }
+}

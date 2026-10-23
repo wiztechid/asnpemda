@@ -28,6 +28,7 @@ BASE_FILES = (
     "robots.txt",
     "assets/site.css",
     "assets/home-topic-filters.js",
+    "assets/article-template.css",
     "assets/article-insights.css",
     "assets/article-engagement.js",
     "assets/author-suiza-ixan.webp",
@@ -37,18 +38,51 @@ BASE_FILES = (
 SLUG_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 
 
-FROZEN_MASTER_REQUIRED = ("article-page", "breadcrumbs", "article-content", "article-header", "article-hero", "status-card", "quick-answer", "toc", "article-body", "related-posts", "reader-engagement", "share-panel", "site-footer", "footer-grid")
-FROZEN_MASTER_LEGACY = {"permenpanrb-9-2026-pppk-paruh-waktu", "pppk-paruh-waktu-penuh-waktu-2027"}
+FROZEN_MASTER_SEQUENCE = (
+    "article-page", "breadcrumbs", "article-content", "article-header", "article-hero",
+    "status-card", "quick-answer", "takeaways", "toc", "article-body", "related-posts",
+    "reader-engagement", "share-panel", "site-footer", "footer-grid",
+)
+FROZEN_MASTER_REQUIRED = FROZEN_MASTER_SEQUENCE
+
+
+def class_matches(content: str, name: str) -> list[re.Match[str]]:
+    pattern = re.compile(r"""class=["']([^"']*)["']""")
+    return [match for match in pattern.finditer(content) if name in match.group(1).split()]
 
 
 def validate_master_template(slug: str, content: str) -> None:
-    if slug in FROZEN_MASTER_LEGACY:
-        return
-    missing = [name for name in FROZEN_MASTER_REQUIRED if name not in content]
+    missing = [name for name in FROZEN_MASTER_REQUIRED if len(class_matches(content, name)) != 1]
     if missing:
-        raise SystemExit(f"ERROR: {slug} diverges from FROZEN article master: {missing}")
+        raise SystemExit(f"ERROR: {slug} must contain exactly one of each frozen article module: {missing}")
     if content.count("<h1") != 1 or "article-engagement.js" not in content:
-        raise SystemExit(f"ERROR: {slug} failed master template structural validation")
+        raise SystemExit(f"ERROR: {slug} failed frozen article template structural validation")
+    if re.search(r"<style\b", content, re.I):
+        raise SystemExit(f"ERROR: {slug} contains inline CSS; use the shared frozen article stylesheet")
+    if len(re.findall(r"""href=["'][^"']*article-template\.css(?:\?[^"']*)?["']""", content, re.I)) != 1:
+        raise SystemExit(f"ERROR: {slug} must link exactly one shared article-template.css")
+    if len(re.findall(r"""href=["'][^"']*site\.css(?:\?[^"']*)?["']""", content, re.I)) != 1:
+        raise SystemExit(f"ERROR: {slug} must link exactly one site.css")
+    if class_matches(content, "fact-grid"):
+        raise SystemExit(f"ERROR: {slug} uses legacy fact-grid instead of frozen takeaways")
+    quick = re.search(r"""<section\b[^>]*class=["'][^"']*quick-answer[^"']*["'][^>]*>([\s\S]*?)</section>""", content, re.I)
+    if not quick or not re.search(r"<h2\b", quick.group(1), re.I):
+        raise SystemExit(f"ERROR: {slug} quick answer must be one semantic section with a heading")
+    toc = re.search(r"""<nav\b[^>]*class=["'][^"']*toc[^"']*["'][^>]*>([\s\S]*?)</nav>""", content, re.I)
+    ids = re.findall(r"""\bid=["']([^"']+)["']""", content, re.I)
+    if len(ids) != len(set(ids)):
+        raise SystemExit(f"ERROR: {slug} contains duplicate element ids")
+    if not toc:
+        raise SystemExit(f"ERROR: {slug} table of contents is missing")
+    broken = sorted({target for target in re.findall(r"""href=["']#([^"']+)["']""", toc.group(1), re.I) if target not in ids})
+    if broken:
+        raise SystemExit(f"ERROR: {slug} table of contents points to missing sections: {broken}")
+    takeaways = re.search(r"""<div\b[^>]*class=["'][^"']*takeaways[^"']*["'][^>]*>([\s\S]*?)</div>\s*<nav\b[^>]*class=["'][^"']*toc""", content, re.I)
+    if not takeaways or len(re.findall(r"<div\b[^>]*>\s*<strong\b", takeaways.group(1), re.I)) != 3:
+        raise SystemExit(f"ERROR: {slug} must place exactly three takeaway cards before the TOC")
+    positions = [class_matches(content, name)[0].start() for name in FROZEN_MASTER_SEQUENCE]
+    if positions != sorted(positions):
+        raise SystemExit(f"ERROR: {slug} modules are out of frozen master order")
 
 
 def published_articles() -> list[tuple[str, str | None, str | None]]:

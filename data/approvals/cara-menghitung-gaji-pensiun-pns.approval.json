@@ -1,9 +1,10 @@
 {
   "articleId": "cara-menghitung-gaji-pensiun-pns",
-  "articleSha256": "c9cdf6d823e7f120f25a9fd5d75df6eb5416ca492cc4bca40c9d58648c53d041",
+  "articleSha256": "dc8a07bdb985b9eeba219229e93a7c988698d5b9bd44993b61d2ff5c7280ea52",
   "evidenceFingerprint": "498b0de0f28da937f77c7a54bb52cf78b97baae9a4058d858055f27bc4fcec15",
   "reviewFingerprint": "d08b9b9d5fc0453aed8e696632217ad99bfeee56b81767d761bf96e7a4c22d3a",
   "reviewer": "wiztechid",
   "approvedAt": "2026-10-23T17:05:00+08:00",
-  "authorization": "APPROVED"
+  "authorization": "APPROVED",
+  "templateRevisionScope": "Template-only HTML/CSS normalization requested by the site owner; editorial copy and source evidence unchanged."
 }

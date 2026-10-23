@@ -6,7 +6,7 @@
   "dateModified": "2026-10-20",
   "heroImage": "assets/hero-pppk-paruh-waktu-2027.webp",
   "articlePath": "artikel/pppk-paruh-waktu-penuh-waktu-2027.html",
-  "articleSha256": "b3a46b8c7a8d0bb22394e0a8625f91003b599f25ce936968b9c1c258937ddf50",
+  "articleSha256": "ff87ba868b324d51143d3579d53be36c6be741e166bc30c6c149888c70996555",
   "evidencePath": "data/candidates/pppk-paruh-waktu-penuh-waktu-2027.evidence.json",
   "evidenceGitBlobSha1": "33dd78a76ee062fb9dbd9f7b4a7c509d6a6755d9",
   "evidenceSha256": "a08ab3770305476067d337d3c0740e1856dcf71e60ffa7c5c2ce09a649aaab09",
@@ -15,7 +15,7 @@
     "authorizedBy": "wiztechid",
     "role": "human site owner and article author",
     "approvedAt": "2026-10-20T20:01:06+08:00",
-    "instruction": "User explicitly instructed publication and requested amendment of the SOP to remove independent review as a release requirement."
+    "instruction": "User explicitly instructed publication and requested amendment of the SOP to remove independent review as a release requirement. User requested stricter enforcement of the frozen article template; this revision normalizes shared markup and CSS only, with article wording, claims, and sources unchanged."
   },
   "editorialAssessment": {
     "type": "AI_ASSISTED_EDITORIAL_REVIEW",
@@ -84,6 +84,15 @@
     {
       "date": "2026-10-23",
       "summary": "Audit integritas: articleSha256 disinkronkan dengan byte HTML artikel yang diperiksa pada branch PR; sumber dan klaim utama tidak diubah dalam perbaikan gate ini. Master artikel tetap dibekukan."
+    },
+    {
+      "date": "2026-10-23",
+      "summary": "At the user's request, removed page-specific inline CSS, standardized the answer and three takeaway cards, and aligned the article with the FROZEN shared template. Article wording, claims, and sources were preserved."
     }
-  ]
+  ],
+  "templateRevisionAuthorization": {
+    "authorizedBy": "wiztechid",
+    "instruction": "User requested stricter adherence to the frozen article template. Authorized scope: shared HTML structure and CSS normalization only; editorial copy, claims, and evidence remain unchanged.",
+    "articleSha256": "ff87ba868b324d51143d3579d53be36c6be741e166bc30c6c149888c70996555"
+  }
 }

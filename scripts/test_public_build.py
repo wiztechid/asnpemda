@@ -13,7 +13,7 @@ dist = root / "dist"
 required = {
     "index.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html",
     "404.html", "koreksi.html", "favicon.svg", "favicon.ico", "robots.txt", "sitemap.xml",
-    "assets/site.css", "assets/home-topic-filters.js", "assets/article-insights.css", "assets/author-suiza-ixan.webp", "google3aabce049d4a051c.html",
+    "assets/site.css", "assets/home-topic-filters.js", "assets/article-template.css", "assets/article-insights.css", "assets/author-suiza-ixan.webp", "google3aabce049d4a051c.html",
 }
 actual = {p.relative_to(dist).as_posix() for p in dist.rglob("*") if p.is_file()}
 missing = required - actual
@@ -54,6 +54,32 @@ for article_file in sorted(path for path in actual if path.startswith("artikel/"
     source_article = (root / article_file).read_text(encoding="utf-8")
     if insights_link not in built_article:
         raise SystemExit("article is missing the heading highlights stylesheet: " + article_file)
+    if built_article.count('href="../assets/article-template.css?v=20261023-1"') != 1 or re.search(r"<style\b", built_article, re.I):
+        raise SystemExit("article does not use exactly one shared frozen stylesheet: " + article_file)
+    if "class=\"fact-grid\"" in built_article:
+        raise SystemExit("article uses the legacy fact-grid summary: " + article_file)
+    if len(re.findall(r"""<section\b[^>]*class=["'][^"']*quick-answer[^"']*["']""", built_article, re.I)) != 1:
+        raise SystemExit("article quick answer must use one semantic section: " + article_file)
+    attrs = list(re.finditer(r"""class=["']([^"']*)["']""", built_article))
+    classes = [(match.group(1).split(), match.start()) for match in attrs]
+    module_order = ("article-page", "breadcrumbs", "article-content", "article-header", "article-hero", "status-card", "quick-answer", "takeaways", "toc", "article-body", "related-posts", "reader-engagement", "share-panel", "site-footer", "footer-grid")
+    module_positions = []
+    for module in module_order:
+        matches = [position for names, position in classes if module in names]
+        if len(matches) != 1:
+            raise SystemExit("article must contain exactly one frozen module " + module + ": " + article_file)
+        module_positions.append(matches[0])
+    if module_positions != sorted(module_positions):
+        raise SystemExit("article modules do not follow the frozen master order: " + article_file)
+    ids = re.findall(r"""\bid=["']([^"']+)["']""", built_article, re.I)
+    if len(ids) != len(set(ids)):
+        raise SystemExit("article contains duplicate ids: " + article_file)
+    toc = re.search(r"""<nav\b[^>]*class=["'][^"']*toc[^"']*["'][^>]*>([\s\S]*?)</nav>""", built_article, re.I)
+    if not toc or any(target not in ids for target in re.findall(r"""href=["']#([^"']+)["']""", toc.group(1), re.I)):
+        raise SystemExit("article table of contents contains a broken section link: " + article_file)
+    takeaways = re.search(r"""<div\b[^>]*class=["'][^"']*takeaways[^"']*["'][^>]*>([\s\S]*?)</div>\s*<nav\b[^>]*class=["'][^"']*toc""", built_article, re.I)
+    if not takeaways or len(re.findall(r"<div\b[^>]*>\s*<strong\b", takeaways.group(1), re.I)) != 3:
+        raise SystemExit("article must have exactly three takeaway cards before the TOC: " + article_file)
     if len(re.findall(r"<h2\b", built_article, re.I)) != len(re.findall(r"<h2\b", source_article, re.I)):
         raise SystemExit("public build changed frozen article subheading count: " + article_file)
 if "/artikel/pppk-paruh-waktu-penuh-waktu-2027" not in (dist / "index.html").read_text(encoding="utf-8"):
@@ -145,7 +171,7 @@ if smoke_record.exists() or smoke_page.exists() or smoke_image.exists():
     raise SystemExit("CI hero smoke fixture path already exists")
 try:
     smoke_image.write_bytes((root / "assets" / "author-suiza-ixan.webp").read_bytes())
-    smoke_page.write_text('<!doctype html><html><head><link rel="canonical" href="https://asnpemda.pages.dev/artikel/ci-hero-smoke"></head><body><main class="article-page"><nav class="breadcrumbs"></nav><article class="article-content"><header class="article-header"><h1>CI smoke</h1></header><figure class="article-hero"></figure><aside class="status-card"></aside><section class="quick-answer"></section><nav class="toc"></nav><div class="article-body"></div><section class="related-posts"></section><section class="reader-engagement"></section><section class="share-panel"></section></article></main><footer class="site-footer"><div class="footer-grid"></div></footer><script src="../assets/article-engagement.js"></script></body></html>', encoding="utf-8")
+    smoke_page.write_text('<!doctype html><html><head><link rel="canonical" href="https://asnpemda.pages.dev/artikel/ci-hero-smoke"><link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../assets/article-template.css"></head><body><main class="article-page"><nav class="breadcrumbs"></nav><article class="article-content"><header class="article-header"><h1>CI smoke</h1></header><figure class="article-hero"></figure><aside class="status-card"></aside><section class="quick-answer"><h2>Jawaban singkat</h2></section><div class="takeaways"><div><strong>Satu</strong><p>Ringkas</p></div><div><strong>Dua</strong><p>Ringkas</p></div><div><strong>Tiga</strong><p>Ringkas</p></div></div><nav class="toc"></nav><div class="article-body"></div><section class="related-posts"></section><section class="reader-engagement"></section><section class="share-panel"></section></article></main><footer class="site-footer"><div class="footer-grid"></div></footer><script src="../assets/article-engagement.js"></script></body></html>', encoding="utf-8")
     smoke_record.write_text('{"approved":true,"publicationState":"PUBLISHED","slug":"ci-hero-smoke","dateModified":"2026-10-20","heroImage":"assets/ci-hero-smoke.webp"}', encoding="utf-8")
     subprocess.run([sys.executable, str(root / "scripts" / "build_site.py")], check=True)
     if not (dist / "artikel" / "ci-hero-smoke.html").is_file():

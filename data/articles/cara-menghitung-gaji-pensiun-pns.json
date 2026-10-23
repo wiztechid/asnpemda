@@ -12,18 +12,18 @@
   "materiality": "MEDIUM",
   "articlePath": "artikel/cara-menghitung-gaji-pensiun-pns.html",
   "heroImage": "assets/hero-pensiun-pns.webp",
-  "articleSha256": "8b679350615454695c78110b16df818baab10296c8eddc0e194411c579726378",
+  "articleSha256": "dc8a07bdb985b9eeba219229e93a7c988698d5b9bd44993b61d2ff5c7280ea52",
   "evidencePath": "data/candidates/cara-menghitung-gaji-pensiun-pns.evidence.json",
   "humanApproval": {
     "decision": "GO",
     "authorizedBy": "wiztechid",
     "role": "human site owner and article author",
     "approvedAt": "2026-10-23T14:16:00+08:00",
-    "instruction": "User requested Indonesian thousand separators for rupiah inputs, simpler calculator labels, and corrections to homepage article cards; legal formula and editorial claims remain unchanged."
+    "instruction": "User requested Indonesian thousand separators for rupiah inputs, simpler calculator labels, and corrections to homepage article cards; legal formula and editorial claims remain unchanged. User requested stricter enforcement of the frozen article template; this revision normalizes shared markup and CSS only, with article wording, claims, and sources unchanged."
   },
   "publicationAuthorization": {
     "articleId": "cara-menghitung-gaji-pensiun-pns",
-    "articleSha256": "8b679350615454695c78110b16df818baab10296c8eddc0e194411c579726378",
+    "articleSha256": "dc8a07bdb985b9eeba219229e93a7c988698d5b9bd44993b61d2ff5c7280ea52",
     "evidenceFingerprint": "498b0de0f28da937f77c7a54bb52cf78b97baae9a4058d858055f27bc4fcec15",
     "reviewFingerprint": "d08b9b9d5fc0453aed8e696632217ad99bfeee56b81767d761bf96e7a4c22d3a",
     "reviewer": "wiztechid",
@@ -105,6 +105,10 @@
     {
       "date": "2026-10-23",
       "summary": "Dipublikasikan setelah verifikasi ulang sumber hukum, audit template/SEO dan persetujuan GO pemilik situs. Volume pencarian geografis dan kompetisi SERP tetap diberi batasan."
+    },
+    {
+      "date": "2026-10-23",
+      "summary": "At the user's request, removed page-specific inline CSS, standardized the answer and three takeaway cards, and aligned the article with the FROZEN shared template. Article wording, claims, and sources were preserved."
     }
   ],
   "searchAudit": {
@@ -119,5 +123,10 @@
   },
   "evidenceFingerprint": "498b0de0f28da937f77c7a54bb52cf78b97baae9a4058d858055f27bc4fcec15",
   "reviewFingerprint": "d08b9b9d5fc0453aed8e696632217ad99bfeee56b81767d761bf96e7a4c22d3a",
-  "evidenceSha256": "eab0aef621d6fa1a26bf3b086e603027630dc6a63926a3bfe0ec1ed82e913ae5"
+  "evidenceSha256": "eab0aef621d6fa1a26bf3b086e603027630dc6a63926a3bfe0ec1ed82e913ae5",
+  "templateRevisionAuthorization": {
+    "authorizedBy": "wiztechid",
+    "instruction": "User requested stricter adherence to the frozen article template. Authorized scope: shared HTML structure and CSS normalization only; editorial copy, claims, and evidence remain unchanged.",
+    "articleSha256": "dc8a07bdb985b9eeba219229e93a7c988698d5b9bd44993b61d2ff5c7280ea52"
+  }
 }

@@ -12,8 +12,8 @@
   "articlePath": "artikel/kenaikan-gaji-berkala-pns.html",
   "publicationAuthorization": {
     "decision": "APPROVED",
-    "scope": "Pemilik situs memberi instruksi publish setelah audit akhir; terikat ke HTML final dan evidence fingerprint.",
-    "articleSha256": "b65bc72cce09b97c6875320b57aba9164dec88d5da065e37c0bf810c1a67689f",
+    "scope": "Pemilik situs memberi instruksi publish setelah audit akhir; terikat ke HTML final dan evidence fingerprint. User explicitly requested stricter frozen article template; authorization covers template-only HTML/CSS normalization, with text/evidence unchanged.",
+    "articleSha256": "540bd084c9e4946b886d92f592cf03b887c1914bb916312b75086d317a369e0e",
     "approvedAt": "2026-10-23T17:38:11+08:00"
   },
   "seo": {
@@ -182,5 +182,6 @@
       "Audit lanjutan: judul diperjelas mengikuti intent cara menghitung; kartu artikel terkait memakai hero dari artikel tujuan.",
       "Pemilik situs memberi instruksi publish setelah menerima audit dan hash revisi; perubahan rilis hanya pada robots/datePublished dan penghapusan label draf."
     ]
-  }
+  },
+  "templateRevisionScope": "Template-only HTML/CSS normalization requested by the site owner; editorial copy and source evidence unchanged."
 }

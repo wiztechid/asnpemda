@@ -8,7 +8,7 @@
   "lastVerified": "2026-10-20",
   "heroImage": "assets/hero-aturan-wfh-asn-pemda-2026.webp",
   "articlePath": "artikel/aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj.html",
-  "articleSha256": "499a00e6dc6ae57575c23d9e9834673c1b487899a690ff87d44c1aab0d719840",
+  "articleSha256": "46b528c314b7db97c6a6a60f77bdf0a710ae9900b7e8942346c5d3f894c2ee82",
   "evidencePath": "data/candidates/aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj.evidence.json",
   "evidenceGitBlobSha1": "d669de151f02c268bdbcffb1943f2baca029dce3",
   "evidenceSha256": "118919b76ee8627c92a1e4afad711c88228406352bf142850bd3f65aaf5e3d11",
@@ -17,7 +17,7 @@
     "authorizedBy": "wiztechid",
     "role": "human site owner and article author",
     "approvedAt": "2026-10-20T22:00:00+08:00",
-    "instruction": "User requested the next article in the continuing ASN Pemda publication workflow; publication authorization follows the prior explicit instruction to publish and the amended SOP."
+    "instruction": "User requested the next article in the continuing ASN Pemda publication workflow; publication authorization follows the prior explicit instruction to publish and the amended SOP. User requested stricter enforcement of the frozen article template; this revision normalizes shared markup and CSS only, with article wording, claims, and sources unchanged."
   },
   "editorialAssessment": {
     "type": "AI_ASSISTED_EDITORIAL_REVIEW",
@@ -188,6 +188,15 @@
     {
       "date": "2026-10-23",
       "summary": "Audit integritas: articleSha256 disinkronkan dengan byte HTML artikel yang diperiksa pada branch PR; sumber dan klaim utama tidak diubah dalam perbaikan gate ini. Master artikel tetap dibekukan."
+    },
+    {
+      "date": "2026-10-23",
+      "summary": "At the user's request, removed page-specific inline CSS, standardized the answer and three takeaway cards, and aligned the article with the FROZEN shared template. Article wording, claims, and sources were preserved."
     }
-  ]
+  ],
+  "templateRevisionAuthorization": {
+    "authorizedBy": "wiztechid",
+    "instruction": "User requested stricter adherence to the frozen article template. Authorized scope: shared HTML structure and CSS normalization only; editorial copy, claims, and evidence remain unchanged.",
+    "articleSha256": "46b528c314b7db97c6a6a60f77bdf0a710ae9900b7e8942346c5d3f894c2ee82"
+  }
 }

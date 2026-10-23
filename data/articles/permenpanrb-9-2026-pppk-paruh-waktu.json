@@ -12,7 +12,7 @@
     "authorizedBy": "wiztechid",
     "role": "human site owner and article author",
     "approvedAt": "2026-10-21T00:01:00+08:00",
-    "instruction": "User requested continuation of the article workflow with a winnable SERP target; earlier instruction authorized publication and removed independent-review requirement."
+    "instruction": "User requested continuation of the article workflow with a winnable SERP target; earlier instruction authorized publication and removed independent-review requirement. User requested stricter enforcement of the frozen article template; this revision normalizes shared markup and CSS only, with article wording, claims, and sources unchanged."
   },
   "editorialAssessment": {
     "type": "AI_ASSISTED_EDITORIAL_REVIEW",
@@ -85,9 +85,13 @@
     {
       "date": "2026-10-23",
       "summary": "Melengkapi catatan SEO dan sampel SERP untuk empat artikel; volume tidak diklaim karena frasa fokus tidak ada di dataset, dan kompetisi organik tidak disamakan dengan kompetisi iklan."
+    },
+    {
+      "date": "2026-10-23",
+      "summary": "At the user's request, removed page-specific inline CSS, standardized the answer and three takeaway cards, and aligned the article with the FROZEN shared template. Article wording, claims, and sources were preserved."
     }
   ],
-  "articleSha256": "d451e3ff5c5bc9df544496eb6ad571b39074ac269a471bd3688a37b9de1ea1fb",
+  "articleSha256": "6c17973f0dea4f35c7e8676078b22564d801bf25bdde9b71d7f393ceca81b41b",
   "evidenceGitBlobSha1": "4f256eed43efd63a8611d07133cea85ee4333611",
   "evidenceSha256": "7347f2bf9ccb5e205195b42ae2a280f5cf1fd7c1632259bcc29f1b3afc133379",
   "seo": {
@@ -147,5 +151,10 @@
     ],
     "competitionAssessment": "The regulation name has strong official and news coverage in this sample, so the head term is competitive. A narrower, source-led explanation of rights, evaluation, contract, and status-change steps is the defensible opportunity. No formal organic difficulty score was measured.",
     "workbookCoverage": "No exact focus-keyword or close PPPK paruh waktu phrase appears in pns(1).xlsx; its broad 'status pppk' row (500/month, low advertising competition) is not treated as this article's volume."
+  },
+  "templateRevisionAuthorization": {
+    "authorizedBy": "wiztechid",
+    "instruction": "User requested stricter adherence to the frozen article template. Authorized scope: shared HTML structure and CSS normalization only; editorial copy, claims, and evidence remain unchanged.",
+    "articleSha256": "6c17973f0dea4f35c7e8676078b22564d801bf25bdde9b71d7f393ceca81b41b"
   }
 }

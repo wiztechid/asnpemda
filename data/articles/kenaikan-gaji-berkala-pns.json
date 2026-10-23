@@ -12,18 +12,18 @@
   "materiality": "MEDIUM",
   "articlePath": "artikel/kenaikan-gaji-berkala-pns.html",
   "heroImage": "assets/hero-kenaikan-gaji-berkala-pns.webp",
-  "articleSha256": "b65bc72cce09b97c6875320b57aba9164dec88d5da065e37c0bf810c1a67689f",
+  "articleSha256": "540bd084c9e4946b886d92f592cf03b887c1914bb916312b75086d317a369e0e",
   "evidencePath": "data/candidates/kenaikan-gaji-berkala-pns.evidence.json",
   "humanApproval": {
     "decision": "GO",
     "authorizedBy": "wiztechid",
     "role": "human site owner and article author",
     "approvedAt": "2026-10-23T17:38:11+08:00",
-    "instruction": "User explicitly instructed publication after the final 9.5/10 audit; the article body is unchanged from the reviewed draft. Publication-only edits set indexability/datePublished and remove the draft label."
+    "instruction": "User explicitly instructed publication after the final 9.5/10 audit; the article body is unchanged from the reviewed draft. Publication-only edits set indexability/datePublished and remove the draft label. User requested stricter enforcement of the frozen article template; this revision normalizes shared markup and CSS only, with article wording, claims, and sources unchanged."
   },
   "publicationAuthorization": {
     "articleId": "kenaikan-gaji-berkala-pns",
-    "articleSha256": "b65bc72cce09b97c6875320b57aba9164dec88d5da065e37c0bf810c1a67689f",
+    "articleSha256": "540bd084c9e4946b886d92f592cf03b887c1914bb916312b75086d317a369e0e",
     "evidenceFingerprint": "17fde5c567dd3e0b79addc4034e2ab8a32a1e75b7c7a44b79e1c8b3cf5f680b4",
     "reviewFingerprint": "b65bc72cce09b97c6875320b57aba9164dec88d5da065e37c0bf810c1a67689f",
     "reviewer": "wiztechid",
@@ -80,8 +80,17 @@
     {
       "date": "2026-10-23",
       "summary": "Audit SEO menyesuaikan title dengan intent cara menghitung dan memperbaiki kartu artikel terkait; substansi artikel tidak berubah."
+    },
+    {
+      "date": "2026-10-23",
+      "summary": "At the user's request, removed page-specific inline CSS, standardized the answer and three takeaway cards, and aligned the article with the FROZEN shared template. Article wording, claims, and sources were preserved."
     }
   ],
   "evidenceSha256": "f1fef9f1254134dbc6794e3e3478240fd4997ced44c978ab49cc96036cff9819",
-  "evidenceGitBlobSha1": "8d46cac8cd6609afed367b3cbafffb4c695eb991"
+  "evidenceGitBlobSha1": "8d46cac8cd6609afed367b3cbafffb4c695eb991",
+  "templateRevisionAuthorization": {
+    "authorizedBy": "wiztechid",
+    "instruction": "User requested stricter adherence to the frozen article template. Authorized scope: shared HTML structure and CSS normalization only; editorial copy, claims, and evidence remain unchanged.",
+    "articleSha256": "540bd084c9e4946b886d92f592cf03b887c1914bb916312b75086d317a369e0e"
+  }
 }

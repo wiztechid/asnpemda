@@ -38,11 +38,11 @@ Masa kerja yang digunakan dalam perhitungan paling banyak setara 30 tahun untuk 
 Misalnya, sebagai ilustrasi saja:
 
 - dasar pensiun: Rp5.000.000;
-- masa kerja pensiun yang diakui: 26 tahun 6 bulan, atau 26,5 tahun jika dihitung proporsional dalam contoh;
-- persentase ilustrasi: 2,5% × 26,5 = 66,25%;
-- perkiraan pensiun pokok: 66,25% × Rp5.000.000 = Rp3.312.500 per bulan.
+- masa kerja pensiun yang diakui: 26 tahun penuh (ilustrasi sederhana; bulan tambahan belum dihitung);
+- persentase ilustrasi: 2,5% × 26 = 65%;
+- perkiraan pensiun pokok: 65% × Rp5.000.000 = Rp3.250.000 per bulan.
 
-Angka Rp3.312.500 ini bukan janji nilai pensiun dan bukan hasil penetapan resmi. Contoh sengaja memakai angka dasar pensiun bulat agar alurnya terlihat. Dasar pensiun dan masa kerja pada berkas seseorang bisa berbeda.
+Angka Rp3.250.000 ini bukan janji nilai pensiun dan bukan hasil penetapan resmi. Contoh sengaja memakai angka dasar pensiun dan masa kerja dalam tahun penuh agar alurnya terlihat. Bulan tambahan tidak dimasukkan ke ilustrasi ini; gunakan masa kerja pensiun yang sudah diverifikasi instansi. Dasar pensiun dan masa kerja pada berkas seseorang bisa berbeda.
 
 Jika masa kerja yang dihitung mencapai 30 tahun atau lebih, persentase dalam rumus umum dibatasi paling tinggi 75 persen. Contohnya, 75 persen dari dasar pensiun Rp5.000.000 adalah Rp3.750.000. Batas ini hanya menjelaskan komponen pensiun pokok dalam simulasi, bukan seluruh penghasilan bersih penerima pensiun.
 
@@ -115,6 +115,10 @@ THT berbeda dari pensiun bulanan. Rincian manfaat mengikuti program dan perhitun
 
 Terakhir diperiksa: 23 Oktober 2026. Naskah ini masih draft; cek ulang status peraturan dan angka dasar pensiun sebelum proses publikasi.
 
+### Kalkulator simulasi di halaman artikel
+
+Kalkulator pada halaman draft memakai dasar pensiun dan masa kerja dalam tahun penuh. Persentase dihitung 2,5% per tahun dan dibatasi maksimum 75%. Bulan tambahan, batas minimum hukum, tunjangan, potongan, THT, serta verifikasi dokumen tidak dihitung. Hasilnya estimasi pensiun pokok bruto untuk edukasi, bukan penetapan resmi. Data diisi dan dihitung di browser; kalkulator tidak meminta NIP atau menyimpan masukan.
+
 ---
 
 ## Catatan editorial internal
@@ -122,6 +126,7 @@ Terakhir diperiksa: 23 Oktober 2026. Naskah ini masih draft; cek ulang status pe
 - Tidak menyatakan Indonesia sebagai lokasi volume workbook karena konfigurasi lokasi tidak tercantum di file ekspor.
 - Angka 500 adalah rata-rata bulanan pada dataset Keyword Planner, bukan jaminan trafik atau data Google Search Console.
 - Persaingan “Rendah” pada workbook adalah kompetisi iklan, bukan organic keyword difficulty.
-- Contoh Rp5.000.000 dan masa kerja 26 tahun 6 bulan merupakan asumsi penjelas, bukan contoh resmi dari BKN/TASPEN.
+- Contoh Rp5.000.000 dan masa kerja 26 tahun penuh merupakan asumsi penjelas, bukan contoh resmi dari BKN/TASPEN.
+- Kalkulator memakai tahun penuh; hasil tidak menggantikan penghitungan resmi atau memproses bulan tambahan.
 - Draf tidak membuat klaim tentang kenaikan pensiun tahun 2026.
 - Sebelum dijadikan halaman HTML, tambahkan hero WebP sesuai SOP, rekam hash artikel dan bukti, jalankan regression/quality gate, lalu minta keputusan GO pemilik situs yang terikat ke revisi final.

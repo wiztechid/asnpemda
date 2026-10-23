@@ -188,7 +188,16 @@ def main() -> None:
         target = DIST / relative
         target.parent.mkdir(parents=True, exist_ok=True)
         original = (ROOT / relative).read_text(encoding='utf-8')
-        target.write_text(add_article_blogroll(original, relative, articles), encoding='utf-8')
+        public_html = add_article_blogroll(original, relative, articles)
+        canonical_tags = list(re.finditer(r'<link\b[^>]*\brel=["\']canonical["\'][^>]*>', public_html, re.I))
+        if len(canonical_tags) != 1:
+            raise SystemExit(f"ERROR: published article must have exactly one canonical: {relative}")
+        canonical_tag = canonical_tags[0].group(0)
+        canonical_href, replacements = re.subn(r'(\bhref=["\'])[^"\']+(["\'])', lambda match: match.group(1) + f"{origin}/{relative}" + match.group(2), canonical_tag, count=1, flags=re.I)
+        if replacements != 1:
+            raise SystemExit(f"ERROR: published article canonical href is missing: {relative}")
+        public_html = public_html[:canonical_tags[0].start()] + canonical_href + public_html[canonical_tags[0].end():]
+        target.write_text(public_html, encoding='utf-8')
         if hero_image:
             image_target = DIST / hero_image
             image_target.parent.mkdir(parents=True, exist_ok=True)

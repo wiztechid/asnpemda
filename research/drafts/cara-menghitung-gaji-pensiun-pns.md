@@ -111,6 +111,7 @@ THT berbeda dari pensiun bulanan. Rincian manfaat mengikuti program dan perhitun
 
 - [Undang-Undang Nomor 11 Tahun 1969 tentang Pensiun Pegawai dan Pensiun Janda/Duda Pegawai — JDIH BPK](https://peraturan.bpk.go.id/Details/49112/uu-no-11-tahun-1969), khususnya Pasal 8, Pasal 9, Pasal 11, dan Pasal 12.
 - [Peraturan Pemerintah Nomor 5 Tahun 2024 tentang perubahan tabel gaji PNS — JDIH BPK](https://peraturan.bpk.go.id/Details/276755/pp-no-5-tahun-2024).
+- [Peraturan BKN Nomor 1 Tahun 2024, lampiran tabel penyesuaian gaji ke PP 5/2024 — JDIH BPK](https://peraturan.bpk.go.id/Download/338410/Peraturan%20BKN%20Nomor%201%20Tahun%202024.pdf).
 - [Peraturan Pemerintah Nomor 8 Tahun 2024 tentang penetapan pensiun pokok — JDIH BPK](https://peraturan.bpk.go.id/Details/276760/pp-no-8-tahun-2024).
 - [Peraturan BKN Nomor 2 Tahun 2024 — JDIH BPK](https://peraturan.bpk.go.id/Details/279675/peraturan-bkn-no-2-tahun-2024).
 - [Penjelasan pensiun PNS — KMS Manajemen ASN BKN](https://apps-denpasar.bkn.go.id/kms/ensiklopedia:pensiun_pns).

@@ -2,6 +2,7 @@
 """Smoke-test the allowlisted public Cloudflare Pages artifact."""
 import subprocess
 import sys
+import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -60,10 +61,10 @@ for url in locations:
     if not page_path.is_file() or page_path.suffix.lower() != ".html":
         raise SystemExit(f"sitemap URL does not resolve to a public HTML page: {url}")
     page_html = page_path.read_text(encoding="utf-8")
-    canonicals = re.findall(r'<link\\b(?=[^>]*\\brel=["\\']canonical["\\'])(?=[^>]*\\bhref=["\\']([^"\\']+)["\\'])[^>]*>', page_html, re.I)
+    canonicals = re.findall(r'<link\b(?=[^>]*\brel=["\']canonical["\'])(?=[^>]*\bhref=["\']([^"\']+)["\'])[^>]*>', page_html, re.I)
     if len(canonicals) != 1 or canonicals[0] != url:
         raise SystemExit(f"canonical does not match sitemap URL: {url}")
-    if re.search(r'<meta\\b(?=[^>]*\\bname=["\\']robots["\\'])(?=[^>]*\\bcontent=["\\'][^"\\']*noindex)[^>]*>', page_html, re.I):
+    if re.search(r'<meta\b(?=[^>]*\bname=["\']robots["\'])(?=[^>]*\bcontent=["\'][^"\']*noindex)[^>]*>', page_html, re.I):
         raise SystemExit(f"noindex page leaked into sitemap: {url}")
 if any("gaji-asn-melalui-koperasi" in url for url in locations):
     raise SystemExit("unapproved draft article leaked into sitemap")

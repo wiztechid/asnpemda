@@ -27,6 +27,7 @@ BASE_FILES = (
     "favicon.ico",
     "robots.txt",
     "assets/site.css",
+    "assets/article-insights.css",
     "assets/article-engagement.js",
     "assets/author-suiza-ixan.webp",
     "assets/hero-sertifikasi-pbj-lkpp-2026.svg",
@@ -213,6 +214,12 @@ def main() -> None:
         target.parent.mkdir(parents=True, exist_ok=True)
         original = (ROOT / relative).read_text(encoding='utf-8')
         public_html = add_article_blogroll(original, relative, articles)
+        insights_link = '<link rel="stylesheet" href="../assets/article-insights.css?v=20261023-1">'
+        if insights_link in public_html:
+            raise SystemExit(f"ERROR: duplicate article insights stylesheet: {relative}")
+        if "</head>" not in public_html:
+            raise SystemExit(f"ERROR: article head closing tag is missing: {relative}")
+        public_html = public_html.replace("</head>", insights_link + "</head>", 1)
         canonical_tags = list(re.finditer(r'<link\b[^>]*\brel=["\']canonical["\'][^>]*>', public_html, re.I))
         if len(canonical_tags) != 1:
             raise SystemExit(f"ERROR: published article must have exactly one canonical: {relative}")

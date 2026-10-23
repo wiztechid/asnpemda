@@ -13,7 +13,7 @@ dist = root / "dist"
 required = {
     "index.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html",
     "404.html", "koreksi.html", "favicon.svg", "favicon.ico", "robots.txt", "sitemap.xml",
-    "assets/site.css", "assets/author-suiza-ixan.webp", "google3aabce049d4a051c.html",
+    "assets/site.css", "assets/article-insights.css", "assets/author-suiza-ixan.webp", "google3aabce049d4a051c.html",
 }
 actual = {p.relative_to(dist).as_posix() for p in dist.rglob("*") if p.is_file()}
 missing = required - actual
@@ -40,6 +40,18 @@ if "assets/hero-pppk-paruh-waktu-2027.webp" not in actual:
 pension_page = (dist / "artikel" / "cara-menghitung-gaji-pensiun-pns.html").read_text(encoding="utf-8")
 if '<a class="blogroll-card" href="sertifikasi-pbj-level-1-ppk-tipe-c-2026.html"><img src="../assets/hero-sertifikasi-pbj-lkpp-2026.svg"' not in pension_page:
     raise SystemExit("related PBJ article card does not use its matching hero image")
+insights_css = (dist / "assets" / "article-insights.css").read_text(encoding="utf-8")
+for token in (".article-body h2::before", "counter(article-section", 'content:"POIN PENTING"', "@media(max-width:650px)"):
+    if token not in insights_css:
+        raise SystemExit("article heading highlight CSS missing required feature: " + token)
+insights_link = '<link rel="stylesheet" href="../assets/article-insights.css?v=20261023-1">'
+for article_file in sorted(path for path in actual if path.startswith("artikel/") and path.endswith(".html")):
+    built_article = (dist / article_file).read_text(encoding="utf-8")
+    source_article = (root / article_file).read_text(encoding="utf-8")
+    if insights_link not in built_article:
+        raise SystemExit("article is missing the heading highlights stylesheet: " + article_file)
+    if len(re.findall(r"<h2\b", built_article, re.I)) != len(re.findall(r"<h2\b", source_article, re.I)):
+        raise SystemExit("public build changed frozen article subheading count: " + article_file)
 if "/artikel/pppk-paruh-waktu-penuh-waktu-2027.html" not in (dist / "index.html").read_text(encoding="utf-8"):
     raise SystemExit("homepage does not link to the published PPPK article")
 for page in ("index.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "koreksi.html", "404.html"):

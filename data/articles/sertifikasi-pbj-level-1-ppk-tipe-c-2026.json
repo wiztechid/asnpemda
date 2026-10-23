@@ -65,7 +65,7 @@
   "approved": true,
   "publicationState": "PUBLISHED",
   "articlePath": "artikel/sertifikasi-pbj-level-1-ppk-tipe-c-2026.html",
-  "articleSha256": "09474c1cad02e7c9aadb50ed2dede3971b04dc06b63adf30c11c25c57c375c82",
+  "articleSha256": "ff9951435e8d79752cdf23c8ae5f9f9158e96f658362f5746d389b445545fb9b",
   "evidencePath": "data/candidates/sertifikasi-pbj-level-1-ppk-tipe-c-2026.evidence.json",
   "evidenceSha256": "bf842f7a5002fff5a6e1ecc8654719655d12798188a0257d6601832ccf2afa4e",
   "humanApproval": {
@@ -73,7 +73,7 @@
     "authorizedBy": "wiztechid",
     "role": "human site owner and article author",
     "approvedAt": "2026-10-23",
-    "instruction": "User approved processing under the editorial SOP and requested language suited to millennial and Gen Z ASN readers. User requested stricter enforcement of the frozen article template; this revision normalizes shared markup and CSS only, with article wording, claims, and sources unchanged."
+    "instruction": "Pemilik situs secara eksplisit meminta label ringkasan artikel diseragamkan menjadi “Versi Mudahnya” di seluruh artikel terbit. Perubahan hanya pada label heading; template beku, CSS, isi substantif, klaim, dan sumber tidak berubah."
   },
   "editorialAssessment": {
     "type": "AI_ASSISTED_EDITORIAL_REVIEW",

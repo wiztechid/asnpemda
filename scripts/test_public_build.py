@@ -58,7 +58,7 @@ if smoke_record.exists() or smoke_page.exists() or smoke_image.exists():
     raise SystemExit("CI hero smoke fixture path already exists")
 try:
     smoke_image.write_bytes((root / "assets" / "author-suiza-ixan.webp").read_bytes())
-    smoke_page.write_text('<!doctype html><html><head><link rel="canonical" href="https://asnpemda.pages.dev/artikel/ci-hero-smoke.html"></head><body>CI smoke</body></html>', encoding="utf-8")
+    smoke_page.write_text('<!doctype html><html><head><link rel="canonical" href="https://asnpemda.pages.dev/artikel/ci-hero-smoke.html"></head><body><main class="article-page"><nav class="breadcrumbs"></nav><article class="article-content"><header class="article-header"><h1>CI smoke</h1></header><figure class="article-hero"></figure><aside class="status-card"></aside><section class="quick-answer"></section><nav class="toc"></nav><div class="article-body"></div><section class="related-posts"></section><section class="reader-engagement"></section><section class="share-panel"></section></article></main><footer class="site-footer"><div class="footer-grid"></div></footer><script src="../assets/article-engagement.js"></script></body></html>', encoding="utf-8")
     smoke_record.write_text('{"approved":true,"publicationState":"PUBLISHED","slug":"ci-hero-smoke","dateModified":"2026-10-20","heroImage":"assets/ci-hero-smoke.webp"}', encoding="utf-8")
     subprocess.run([sys.executable, str(root / "scripts" / "build_site.py")], check=True)
     if not (dist / "artikel" / "ci-hero-smoke.html").is_file():

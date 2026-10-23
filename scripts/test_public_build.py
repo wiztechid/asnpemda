@@ -2,6 +2,7 @@
 """Smoke-test the allowlisted public Cloudflare Pages artifact."""
 import subprocess
 import sys
+import json
 import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -64,6 +65,26 @@ for url in locations:
     canonicals = re.findall(r'<link\b(?=[^>]*\brel=["\']canonical["\'])(?=[^>]*\bhref=["\']([^"\']+)["\'])[^>]*>', page_html, re.I)
     if len(canonicals) != 1 or canonicals[0] != url:
         raise SystemExit(f"canonical does not match sitemap URL: {url}")
+    og_urls = re.findall(r'<meta\b(?=[^>]*\bproperty=["\']og:url["\'])(?=[^>]*\bcontent=["\']([^"\']+)["\'])[^>]*>', page_html, re.I)
+    if len(og_urls) != 1 or og_urls[0] != url:
+        raise SystemExit(f"Open Graph URL does not match sitemap URL: {url}")
+    if relative.startswith("artikel/"):
+        jsonld = re.findall(r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>([\s\S]*?)</script>', page_html, re.I)
+        article_schemas = []
+        for payload in jsonld:
+            try:
+                schema = json.loads(payload)
+            except json.JSONDecodeError as error:
+                raise SystemExit(f"invalid JSON-LD on {url}: {error}") from error
+            if schema.get("@type") == "Article":
+                article_schemas.append(schema)
+        if len(article_schemas) != 1:
+            raise SystemExit(f"expected one Article JSON-LD object: {url}")
+        main_entity = article_schemas[0].get("mainEntityOfPage")
+        if isinstance(main_entity, dict):
+            main_entity = main_entity.get("@id") or main_entity.get("url")
+        if main_entity != url or (article_schemas[0].get("url") and article_schemas[0]["url"] != url):
+            raise SystemExit(f"Article JSON-LD URL does not match sitemap URL: {url}")
     if re.search(r'<meta\b(?=[^>]*\bname=["\']robots["\'])(?=[^>]*\bcontent=["\'][^"\']*noindex)[^>]*>', page_html, re.I):
         raise SystemExit(f"noindex page leaked into sitemap: {url}")
 if any("gaji-asn-melalui-koperasi" in url for url in locations):

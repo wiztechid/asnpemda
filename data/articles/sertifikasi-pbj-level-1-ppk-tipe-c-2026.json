@@ -56,12 +56,16 @@
     {
       "date": "2026-10-23",
       "summary": "Melengkapi catatan SEO dan sampel SERP untuk empat artikel; volume tidak diklaim karena frasa fokus tidak ada di dataset, dan kompetisi organik tidak disamakan dengan kompetisi iklan."
+    },
+    {
+      "date": "2026-10-23",
+      "summary": "At the user's request, removed page-specific inline CSS, standardized the answer and three takeaway cards, and aligned the article with the FROZEN shared template. Article wording, claims, and sources were preserved."
     }
   ],
   "approved": true,
   "publicationState": "PUBLISHED",
   "articlePath": "artikel/sertifikasi-pbj-level-1-ppk-tipe-c-2026.html",
-  "articleSha256": "1a18e63d888609cf84c1b62cf21d44d571f307cc483d5112ba2c85115db415a8",
+  "articleSha256": "09474c1cad02e7c9a9adb50ed2dede3971b04dc06b63adf30c11c25c57c375c82",
   "evidencePath": "data/candidates/sertifikasi-pbj-level-1-ppk-tipe-c-2026.evidence.json",
   "evidenceSha256": "bf842f7a5002fff5a6e1ecc8654719655d12798188a0257d6601832ccf2afa4e",
   "humanApproval": {
@@ -69,7 +73,7 @@
     "authorizedBy": "wiztechid",
     "role": "human site owner and article author",
     "approvedAt": "2026-10-23",
-    "instruction": "User approved processing under the editorial SOP and requested language suited to millennial and Gen Z ASN readers."
+    "instruction": "User approved processing under the editorial SOP and requested language suited to millennial and Gen Z ASN readers. User requested stricter enforcement of the frozen article template; this revision normalizes shared markup and CSS only, with article wording, claims, and sources unchanged."
   },
   "editorialAssessment": {
     "type": "AI_ASSISTED_EDITORIAL_REVIEW",
@@ -138,5 +142,10 @@
     "competitionAssessment": "Course and certification terms surface official training portals and provider pages, creating strong competition for transactional training intent. The narrower circular-status and 'what does this mean for my assignment?' intent has a clearer editorial opening. No formal organic difficulty score was measured.",
     "workbookCoverage": "No exact PBJ or PPK Tipe C query appears in pns(1).xlsx; therefore this focus keyword has no assigned search volume. Dataset rows about general regional finance are unrelated and are not used as proxies."
   },
-  "heroImage": "assets/hero-sertifikasi-pbj-lkpp-2026.svg"
+  "heroImage": "assets/hero-sertifikasi-pbj-lkpp-2026.svg",
+  "templateRevisionAuthorization": {
+    "authorizedBy": "wiztechid",
+    "instruction": "User requested stricter adherence to the frozen article template. Authorized scope: shared HTML structure and CSS normalization only; editorial copy, claims, and evidence remain unchanged.",
+    "articleSha256": "09474c1cad02e7c9a9adb50ed2dede3971b04dc06b63adf30c11c25c57c375c82"
+  }
 }

@@ -1,0 +1,24 @@
+{
+  "articleId": "cara-menghitung-gaji-pensiun-pns",
+  "reviewedAt": "2026-10-23T15:00:00+08:00",
+  "reviewer": "AI-assisted editorial review",
+  "reviewerIsHuman": false,
+  "outcome": "APPROVE_WITH_SCOPE_NOTES",
+  "score": 9.5,
+  "scoreType": "internal readiness, not ranking prediction",
+  "checks": [
+    "single H1 and frozen template structure",
+    "canonical/OG/Twitter metadata",
+    "direct Article, BreadcrumbList and FAQPage JSON-LD",
+    "hero WebP 1200x675 and responsive layout",
+    "calculator scope and disclaimer",
+    "official legal source links and article dates"
+  ],
+  "findings": [
+    "Formula claims checked against UU 11/1969 and BKN KMS",
+    "PP 5/2024 and PP 8/2024 are legal context; no claim of a new 2026 pension increase",
+    "Google Ads workbook shows 500 average monthly searches but export geo is unverified; do not represent this as Indonesia-specific API volume",
+    "SERP observations are a sample, not a full top-10 competition study"
+  ],
+  "disposition": "APPROVE_WITH_SCOPE_NOTES"
+}

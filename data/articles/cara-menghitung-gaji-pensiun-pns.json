@@ -1,0 +1,115 @@
+{
+  "articleId": "cara-menghitung-gaji-pensiun-pns",
+  "id": "cara-menghitung-gaji-pensiun-pns",
+  "slug": "cara-menghitung-gaji-pensiun-pns",
+  "title": "Cara Menghitung Gaji Pensiun PNS: Rumus dan Kalkulator Simulasi",
+  "approved": true,
+  "publicationState": "PUBLISHED",
+  "status": "BERLAKU",
+  "datePublished": "2026-10-23",
+  "dateModified": "2026-10-23",
+  "lastVerified": "2026-10-23",
+  "materiality": "MEDIUM",
+  "articlePath": "artikel/cara-menghitung-gaji-pensiun-pns.html",
+  "heroImage": "assets/hero-pensiun-pns.webp",
+  "articleSha256": "8947ab5f3a42e5694b916211c4cedcdf45bd84f409e06a01a2c3c6de87f476ca",
+  "evidencePath": "data/candidates/cara-menghitung-gaji-pensiun-pns.evidence.json",
+  "humanApproval": {
+    "decision": "GO",
+    "authorizedBy": "wiztechid",
+    "role": "human site owner and article author",
+    "approvedAt": "2026-10-23T15:00:00+08:00",
+    "instruction": "User explicitly instructed publication in this conversation."
+  },
+  "publicationAuthorization": {
+    "articleId": "cara-menghitung-gaji-pensiun-pns",
+    "articleSha256": "8947ab5f3a42e5694b916211c4cedcdf45bd84f409e06a01a2c3c6de87f476ca",
+    "evidenceFingerprint": "595513695620089465e3ca834412d60fee59516b5fb6cf0da0bb071d762cb1e3",
+    "reviewFingerprint": "24ecb5a93a377e7c60817a5615f9d49d7b2e9a199f0c004c912d601f7878330a",
+    "reviewer": "wiztechid",
+    "approvedAt": "2026-10-23T15:00:00+08:00",
+    "authorization": "APPROVED"
+  },
+  "editorialAssessment": {
+    "type": "AI_ASSISTED_EDITORIAL_REVIEW",
+    "reviewedAt": "2026-10-23T15:00:00+08:00",
+    "outcome": "APPROVE_WITH_SCOPE_NOTES",
+    "reviewerIsHuman": false,
+    "reviewerIsASN": false,
+    "score": 9.5,
+    "summary": "Template, reader utility, SEO structure, calculator and legal sources passed review. Workbook demand is not represented as Indonesia-specific; SERP findings remain a sample."
+  },
+  "asnImpact": "Artikel memberi simulasi umum perhitungan pensiun pokok PNS dan mengarahkan pembaca memeriksa masa kerja serta dasar pensiun resmi. Kalkulator tidak menetapkan hak atau nilai pembayaran.",
+  "pemdaImpact": "Materi membantu ASN dan pengelola kepegawaian memahami komponen dasar; penetapan tetap mengikuti dokumen dan proses resmi.",
+  "actionRequired": [],
+  "sources": [
+    {
+      "title": "UU Nomor 11 Tahun 1969 tentang Pensiun Pegawai dan Pensiun Janda/Duda Pegawai",
+      "url": "https://peraturan.bpk.go.id/Details/49112/uu-no-11-tahun-1969",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "1969-08-08"
+    },
+    {
+      "title": "KMS Manajemen ASN BKN — Pensiun",
+      "url": "https://apps-denpasar.bkn.go.id/kms/ensiklopedia:pensiun_pns",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true,
+      "publishedAt": null
+    },
+    {
+      "title": "PP Nomor 5 Tahun 2024 tentang Perubahan atas Peraturan Gaji PNS",
+      "url": "https://peraturan.bpk.go.id/Details/276755/pp-no-5-tahun-2024",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "2024-01-26"
+    },
+    {
+      "title": "PP Nomor 8 Tahun 2024 tentang Penetapan Pensiun Pokok Pensiunan PNS dan Janda/Dudanya",
+      "url": "https://peraturan.bpk.go.id/Details/276760/pp-no-8-tahun-2024",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "2024-01-26"
+    },
+    {
+      "title": "Peraturan BKN Nomor 1 Tahun 2024",
+      "url": "https://peraturan.bpk.go.id/Download/338410/Peraturan%20BKN%20Nomor%201%20Tahun%202024.pdf",
+      "sourceType": "JDIH",
+      "isPrimary": true,
+      "publishedAt": "2024-01-26"
+    },
+    {
+      "title": "Peraturan BKN Nomor 2 Tahun 2024",
+      "url": "https://peraturan.bpk.go.id/Details/279675/peraturan-bkn-no-2-tahun-2024",
+      "sourceType": "JDIH",
+      "isPrimary": true,
+      "publishedAt": "2024-03-01"
+    },
+    {
+      "title": "TASPEN — Tabungan Hari Tua",
+      "url": "https://www.taspen.co.id/produk-layanan/produk-taspen/tabungan-hari-tua",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true,
+      "publishedAt": null
+    }
+  ],
+  "revisionHistory": [
+    {
+      "date": "2026-10-23",
+      "summary": "Dipublikasikan setelah verifikasi ulang sumber hukum, audit template/SEO dan persetujuan GO pemilik situs. Volume pencarian geografis dan kompetisi SERP tetap diberi batasan."
+    }
+  ],
+  "searchAudit": {
+    "focusKeyword": "cara menghitung gaji pensiun PNS",
+    "workbookVolume": 500,
+    "workbookPeriod": "2025-10-01/2026-09-30",
+    "workbookGeo": "unverified",
+    "googleAdsApiVerified": false,
+    "serpAudit": "manual sample; not full top-10",
+    "readinessScore": 9.5,
+    "scoreMeaning": "internal readiness; not ranking prediction"
+  },
+  "evidenceFingerprint": "595513695620089465e3ca834412d60fee59516b5fb6cf0da0bb071d762cb1e3",
+  "reviewFingerprint": "24ecb5a93a377e7c60817a5615f9d49d7b2e9a199f0c004c912d601f7878330a",
+  "evidenceSha256": "f0b1617a00ba9f1e9dd45c6f6c4c0bed89b3280fb030ef7e487f237329401358"
+}

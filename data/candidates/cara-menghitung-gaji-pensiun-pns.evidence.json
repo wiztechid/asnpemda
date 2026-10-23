@@ -1,0 +1,84 @@
+{
+  "candidateId": "cara-menghitung-gaji-pensiun-pns",
+  "capturedAt": "2026-10-23T15:00:00+08:00",
+  "evidenceState": "LEGAL_SOURCES_RECHECKED; SEARCH_DEMAND_GEO_UNVERIFIED; SERP_SAMPLE_ONLY",
+  "state": "REVIEW_PENDING",
+  "approved": false,
+  "sourceFingerprint": "595513695620089465e3ca834412d60fee59516b5fb6cf0da0bb071d762cb1e3",
+  "reviewFingerprint": "24ecb5a93a377e7c60817a5615f9d49d7b2e9a199f0c004c912d601f7878330a",
+  "sources": [
+    {
+      "title": "UU Nomor 11 Tahun 1969 tentang Pensiun Pegawai dan Pensiun Janda/Duda Pegawai",
+      "url": "https://peraturan.bpk.go.id/Details/49112/uu-no-11-tahun-1969",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "1969-08-08"
+    },
+    {
+      "title": "KMS Manajemen ASN BKN — Pensiun",
+      "url": "https://apps-denpasar.bkn.go.id/kms/ensiklopedia:pensiun_pns",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true,
+      "publishedAt": null
+    },
+    {
+      "title": "PP Nomor 5 Tahun 2024 tentang Perubahan atas Peraturan Gaji PNS",
+      "url": "https://peraturan.bpk.go.id/Details/276755/pp-no-5-tahun-2024",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "2024-01-26"
+    },
+    {
+      "title": "PP Nomor 8 Tahun 2024 tentang Penetapan Pensiun Pokok Pensiunan PNS dan Janda/Dudanya",
+      "url": "https://peraturan.bpk.go.id/Details/276760/pp-no-8-tahun-2024",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "2024-01-26"
+    },
+    {
+      "title": "Peraturan BKN Nomor 1 Tahun 2024",
+      "url": "https://peraturan.bpk.go.id/Download/338410/Peraturan%20BKN%20Nomor%201%20Tahun%202024.pdf",
+      "sourceType": "JDIH",
+      "isPrimary": true,
+      "publishedAt": "2024-01-26"
+    },
+    {
+      "title": "Peraturan BKN Nomor 2 Tahun 2024",
+      "url": "https://peraturan.bpk.go.id/Details/279675/peraturan-bkn-no-2-tahun-2024",
+      "sourceType": "JDIH",
+      "isPrimary": true,
+      "publishedAt": "2024-03-01"
+    },
+    {
+      "title": "TASPEN — Tabungan Hari Tua",
+      "url": "https://www.taspen.co.id/produk-layanan/produk-taspen/tabungan-hari-tua",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true,
+      "publishedAt": null
+    }
+  ],
+  "searchDemand": {
+    "focusKeyword": "cara menghitung gaji pensiun PNS",
+    "monthlySearchesFromWorkbook": 500,
+    "period": "2025-10-01/2026-09-30",
+    "geo": "unverified; not an Indonesia-specific API result",
+    "apiVerified": false
+  },
+  "serpAudit": {
+    "asOf": "2026-10-23",
+    "method": "manual sample",
+    "coverage": "not a complete top-10 audit",
+    "intent": "informational/calculative"
+  },
+  "keyClaims": [
+    "UU 11/1969 Pasal 11: 2.5% per year, max 75%, floor against lowest applicable basic salary",
+    "BKN KMS summarizes minimum 40% of pension base and last basic salary as pension base",
+    "UU 11/1969 Pasal 6(5) rounds a fractional month upward",
+    "Calculator is illustrative and does not determine eligibility or official payment"
+  ],
+  "limitations": [
+    "No verified Google Ads API response for this research profile",
+    "Workbook geographic targeting not established",
+    "SERP competition score not established"
+  ]
+}

@@ -2,6 +2,7 @@ const ALLOWED_ARTICLES = new Set([
   "permenpanrb-9-2026-pppk-paruh-waktu",
   "pppk-paruh-waktu-penuh-waktu-2027",
   "aturan-wfh-asn-pemda-2026-se-mendagri-4412-sj",
+  "cara-menghitung-gaji-pensiun-pns",
 ]);
 const PUBLIC_HOST = "asnpemda.pages.dev";
 const TURNSTILE_ACTION = "reader-comment";

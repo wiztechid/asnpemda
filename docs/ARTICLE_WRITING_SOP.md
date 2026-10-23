@@ -30,6 +30,7 @@ Gunakan pola editorial situs ASN Pemda dan Design System v1.0. Susunan ini menja
 5. **Orientasi pembaca:** untuk artikel kebijakan yang berubah, tampilkan status kebijakan dan batas cakupannya. Tambahkan ringkasan inti (label “Inti ketentuan” untuk artikel regulasi); gunakan kartu fakta dan daftar isi bila panjang atau membantu navigasi.
 6. **Isi:** susun H2/H3 berdasarkan pertanyaan dan urutan keputusan pembaca. Tambahkan tabel, contoh, langkah praktis, dan FAQ hanya bila menambah pemahaman.
    - Jika aturan atau instruksi resmi belum tersedia, jangan menyebut langkah sebagai kewajiban atau syarat. Sajikan sebagai daftar awareness/persiapan opsional, sebutkan bahwa itu bukan persyaratan resmi, dan batasi pada dampak yang bisa dipantau dari informasi yang ada.
+   - **Template subjudul artikel FROZEN:** H2 bagian utama (H2 langsung di `.article-body` atau langsung di dalam `section` isi) memakai kartu sorotan bernomor urut, aksen biru, dan ruang teks yang sejajar di tengah. Jangan menambahkan label berulang seperti “Poin penting”. Judul komponen di dalam isi—misalnya kalkulator atau panel alat—tidak ikut dinomori atau diberi kartu H2. H3 memakai aksen kecil tanpa nomor. Pola harus tetap rapi pada ponsel dan diterapkan melalui stylesheet terpusat saat build, tanpa mengubah teks/urutan naskah artikel.
 7. **Penutup tepercaya:** sumber primer yang ditautkan, tanggal pemeriksaan, profil/tautan penulis, serta keterangan draft atau disclaimer yang sesuai.
 
 ### Keterhubungan artikel dan partisipasi pembaca

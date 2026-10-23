@@ -2,6 +2,7 @@
 """Smoke-test the allowlisted public Cloudflare Pages artifact."""
 import subprocess
 import sys
+import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -46,6 +47,25 @@ if "/artikel/gaji-asn-melalui-koperasi.html" in index:
     raise SystemExit("homepage links to an unapproved draft article")
 tree = ET.parse(dist / "sitemap.xml")
 locations = [node.text or "" for node in tree.findall(".//{*}loc")]
+if len(locations) != len(set(locations)):
+    raise SystemExit("sitemap contains duplicate URLs")
+site_url = "https://asnpemda.pages.dev"
+robots = (dist / "robots.txt").read_text(encoding="utf-8")
+if f"Sitemap: {site_url}/sitemap.xml" not in robots.splitlines():
+    raise SystemExit("robots.txt sitemap URL does not match the configured public origin")
+for url in locations:
+    relative = url.removeprefix(site_url + "/")
+    if url == site_url + "/":
+        relative = "index.html"
+    page_path = dist / relative
+    if not page_path.is_file() or page_path.suffix.lower() != ".html":
+        raise SystemExit(f"sitemap URL does not resolve to a public HTML page: {url}")
+    page_html = page_path.read_text(encoding="utf-8")
+    canonicals = re.findall(r'<link\b(?=[^>]*\brel=["\']canonical["\'])(?=[^>]*\bhref=["\']([^"\']+)["\'])[^>]*>', page_html, re.I)
+    if len(canonicals) != 1 or canonicals[0] != url:
+        raise SystemExit(f"canonical does not match sitemap URL: {url}")
+    if re.search(r'<meta\b(?=[^>]*\bname=["\']robots["\'])(?=[^>]*\bcontent=["\'][^"\']*noindex)[^>]*>', page_html, re.I):
+        raise SystemExit(f"noindex page leaked into sitemap: {url}")
 if any("gaji-asn-melalui-koperasi" in url for url in locations):
     raise SystemExit("unapproved draft article leaked into sitemap")
 if "https://asnpemda.pages.dev/koreksi.html" not in locations:

@@ -34,7 +34,7 @@
 <header class="article-header"><span class="article-kicker">PANDUAN PENSIUN PNS</span><h1>Cara Menghitung Gaji Pensiun PNS: Rumus dan Kalkulator Simulasi</h1><p class="article-deck">Pahami rumus dasarnya, bedakan pensiun pokok dari manfaat lain, lalu coba simulasi sederhana dengan angka yang bisa kamu sesuaikan.</p><div class="article-meta"><span>Oleh Suiza Ixan Saputro</span><span>Draft untuk tinjauan internal</span></div></header>
 <figure class="article-hero"><div>Ilustrasi hero WebP belum dibuat. Aset visual wajib dilengkapi sebelum naskah dipertimbangkan untuk publikasi.</div><figcaption>Draft internal — belum siap terbit.</figcaption></figure>
 <div class="status-card"><strong>STATUS: DRAFT / NOINDEX</strong><p>Halaman ini hanya untuk tinjauan. Belum diizinkan untuk tayang dan tidak masuk ke build publik.</p></div>
-<section class="quick-answer" aria-labelledby="quick-title"><h2 id="quick-title">Jawaban singkat</h2><p>Rumus umum memakai 2,5% dari dasar pensiun untuk setiap tahun masa kerja yang diakui, dengan batas maksimum 75%. Kalkulator di bawah menyederhanakan hitungan ke tahun penuh dan tidak menentukan hak pensiun resmi.</p></section>
+<section class="quick-answer" aria-labelledby="quick-title"><h2 id="quick-title">Jawaban singkat</h2><p>Rumus umum memakai 2,5% dari dasar pensiun untuk setiap tahun masa kerja. BKN merangkum batas 40%–75%; UU juga melarang hasil di bawah gaji pokok terendah yang berlaku. Kalkulator ini hanya simulasi umum, bukan penetapan hak pensiun.</p></section>
 <nav class="toc" aria-label="Daftar isi"><strong>Di artikel ini</strong><ol><li><a href="#kalkulator">Kalkulator simulasi</a></li><li><a href="#article-body">Rumus, contoh, dan penjelasan lengkap</a></li></ol></nav>
 <div class="article-body" id="article-body">
 <p>Banyak PNS ingin tahu berapa penghasilan bulanan setelah pensiun. Rumus dasarnya memang bisa dipahami dengan cepat, tetapi hasil resmi bergantung pada gaji pokok sebagai dasar pensiun dan masa kerja pensiun yang diakui. Jadi, simulasi mandiri berguna untuk mendapat gambaran awal, bukan untuk menggantikan keputusan pensiun dari instansi dan BKN.</p>
@@ -47,16 +47,21 @@
 <p>Masa kerja yang digunakan dalam perhitungan paling banyak setara 30 tahun untuk mencapai batas 75 persen. Rumus ini membantu memahami cara kerja persentasenya. Penetapan angka final tetap mengikuti pemeriksaan dokumen dan aturan teknis oleh pejabat berwenang.</p>
 <section class="pension-calculator" id="kalkulator" aria-labelledby="calc-title">
 <h2 id="calc-title">Kalkulator simulasi pensiun pokok</h2>
-<p>Masukkan dasar pensiun bulanan dan masa kerja pensiun dalam <strong>tahun penuh</strong>. Kalkulator menerapkan 2,5% per tahun dengan batas 75%.</p>
+<p>Masukkan gaji pokok terakhir sebagai dasar pensiun dan masa kerja pensiun yang sudah diverifikasi. Kalkulator memakai batas 40%–75% serta pembanding gaji pokok terendah.</p>
 <div class="calc-fields">
 <label for="pension-base">Dasar pensiun per bulan (Rp)
 <input id="pension-base" name="pension-base" type="number" inputmode="numeric" min="1" step="1" value="5000000" autocomplete="off"></label>
-<label for="pension-years">Masa kerja pensiun (tahun penuh)
-<input id="pension-years" name="pension-years" type="number" inputmode="numeric" min="1" max="99" step="1" value="26" autocomplete="off"></label>
+<label for="pension-years">Masa kerja pensiun (tahun)
+<input id="pension-years" name="pension-years" type="number" inputmode="numeric" min="0" max="99" step="1" value="26" autocomplete="off"></label>
+<label for="pension-months">Masa kerja pensiun (bulan)
+<input id="pension-months" name="pension-months" type="number" inputmode="numeric" min="0" max="11" step="1" value="0" autocomplete="off"></label>
+<label for="pension-floor">Gaji pokok terendah pembanding (Rp)
+<input id="pension-floor" name="pension-floor" type="number" inputmode="numeric" min="1" step="1" value="1685700" autocomplete="off" aria-describedby="pension-floor-note"></label>
 </div>
+<p id="pension-floor-note" class="calc-caveat">Nilai awal mengikuti batas bawah tabel gaji PP 5/2024. Sesuaikan bila peraturan gaji yang berlaku saat penetapan berubah.</p>
 <button id="pension-calculate" type="button">Hitung perkiraan</button>
-<div class="calc-result" id="pension-result" role="status" aria-live="polite">Contoh: 26 tahun × 2,5% dari Rp5.000.000 = Rp3.250.000 per bulan.</div>
-<p class="calc-caveat">Hanya estimasi pensiun pokok bruto. Bulan tambahan, batas minimum hukum, tunjangan, potongan, THT, dan pemeriksaan dokumen tidak dihitung. Perhitungan resmi mengikuti data kepegawaian dan keputusan instansi. Nilai yang dimasukkan diproses di browser ini dan tidak disimpan.</p>
+<div class="calc-result" id="pension-result" role="status" aria-live="polite">Masukkan data untuk melihat estimasi pensiun pokok bruto per bulan.</div>
+<p class="calc-caveat">Simulasi umum ini memakai 2,5% per tahun dan bulan, minimum 40%, maksimum 75%, serta lantai gaji pokok terendah. Tidak memeriksa kelayakan, data kepegawaian, atau kasus khusus; tidak menghitung tunjangan, potongan, THT, maupun nilai bersih. Angka resmi mengikuti penetapan instansi. Masukan diproses di browser dan tidak disimpan.</p>
 </section>
 <h2>Contoh simulasi</h2>
 <p>Misalnya, sebagai ilustrasi saja:</p>
@@ -105,7 +110,8 @@
 <h3>Sumber primer dan rujukan</h3>
 <ul>
 <li><a href="https://peraturan.bpk.go.id/Details/49112/uu-no-11-tahun-1969" target="_blank" rel="noopener noreferrer">Undang-Undang Nomor 11 Tahun 1969 tentang Pensiun Pegawai dan Pensiun Janda/Duda Pegawai — JDIH BPK</a>, khususnya Pasal 8, Pasal 9, Pasal 11, dan Pasal 12.</li>
-<li><a href="https://peraturan.bpk.go.id/Details/276760/pp-no-8-tahun-2024" target="_blank" rel="noopener noreferrer">Peraturan Pemerintah Nomor 8 Tahun 2024 — JDIH BPK</a>.</li>
+<li><a href="https://peraturan.bpk.go.id/Details/276755/pp-no-5-tahun-2024" target="_blank" rel="noopener noreferrer">Peraturan Pemerintah Nomor 5 Tahun 2024 tentang tabel gaji PNS — JDIH BPK</a>.</li>
+<li><a href="https://peraturan.bpk.go.id/Details/276760/pp-no-8-tahun-2024" target="_blank" rel="noopener noreferrer">Peraturan Pemerintah Nomor 8 Tahun 2024 tentang penetapan pensiun pokok — JDIH BPK</a>.</li>
 <li><a href="https://peraturan.bpk.go.id/Details/279675/peraturan-bkn-no-2-tahun-2024" target="_blank" rel="noopener noreferrer">Peraturan BKN Nomor 2 Tahun 2024 — JDIH BPK</a>.</li>
 <li><a href="https://apps-denpasar.bkn.go.id/kms/ensiklopedia:pensiun_pns" target="_blank" rel="noopener noreferrer">Penjelasan pensiun PNS — KMS Manajemen ASN BKN</a>.</li>
 <li><a href="https://www.taspen.co.id/produk-layanan/produk-taspen/tabungan-hari-tua" target="_blank" rel="noopener noreferrer">Program Tabungan Hari Tua — TASPEN</a>.</li>
@@ -119,7 +125,7 @@
 </article></main>
 <footer class="site-footer"><div class="shell footer-grid"><div><a class="brand" href="../index.html"><span>ASN Pemda</span></a><p>Teman baca kebijakan ASN dan Pemda. Independen, bukan situs resmi pemerintah.</p></div><div><strong>Jelajahi</strong><a href="../index.html#artikel-terbaru">Artikel terbaru</a><a href="../editorial.html">Kebijakan editorial</a></div><div><strong>Informasi</strong><a href="../privacy.html">Privasi</a><a href="../disclaimer.html">Disclaimer</a></div></div></footer>
 <script>
-(()=>{const base=document.getElementById("pension-base"),years=document.getElementById("pension-years"),result=document.getElementById("pension-result"),button=document.getElementById("pension-calculate");const rupiah=new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0});button.addEventListener("click",()=>{const salary=Number(base.value),service=Number(years.value);if(!Number.isSafeInteger(salary)||salary<1){result.textContent="Masukkan dasar pensiun berupa angka rupiah bulat yang lebih dari nol.";base.focus();return}if(!Number.isInteger(service)||service<1||service>99){result.textContent="Masukkan masa kerja dalam tahun penuh, minimal 1 tahun.";years.focus();return}const rate=Math.min(75,service*2.5),estimate=Math.round(salary*rate/100);result.textContent="Perkiraan pensiun pokok bruto: "+rupiah.format(estimate)+" per bulan ("+rate.toLocaleString("id-ID")+"% dari dasar pensiun)."+(service>=30?" Batas 75% telah tercapai.":"");});})();
+(()=>{const base=document.getElementById("pension-base"),years=document.getElementById("pension-years"),months=document.getElementById("pension-months"),floor=document.getElementById("pension-floor"),result=document.getElementById("pension-result"),button=document.getElementById("pension-calculate");const rupiah=new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0});button.addEventListener("click",()=>{const salary=Number(base.value),y=Number(years.value),m=Number(months.value),minimum=Number(floor.value);if(!Number.isSafeInteger(salary)||salary<1){result.textContent="Masukkan gaji pokok terakhir berupa angka rupiah bulat yang lebih dari nol.";base.focus();return}if(!Number.isInteger(y)||y<0||y>99||!Number.isInteger(m)||m<0||m>11||y+m===0){result.textContent="Masukkan masa kerja pensiun dalam tahun dan bulan yang valid.";years.focus();return}if(!Number.isSafeInteger(minimum)||minimum<1){result.textContent="Masukkan gaji pokok terendah pembanding yang valid.";floor.focus();return}const service=y+m/12,rate=Math.min(75,Math.max(40,service*2.5)),formula=Math.round(salary*rate/100),estimate=Math.max(formula,minimum);result.textContent="Perkiraan pensiun pokok bruto: "+rupiah.format(estimate)+" per bulan ("+rate.toLocaleString("id-ID")+"% dari dasar pensiun)."+(formula<minimum?" Hasil disesuaikan ke batas gaji pokok terendah yang dimasukkan.":service>=30?" Batas maksimum 75% tercapai.":"");});})();
 </script>
 <script src="../assets/article-engagement.js" defer></script>
 </body></html>

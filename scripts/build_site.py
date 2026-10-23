@@ -27,6 +27,7 @@ BASE_FILES = (
     "favicon.ico",
     "robots.txt",
     "assets/site.css",
+    "assets/home-topic-filters.js",
     "assets/article-insights.css",
     "assets/article-engagement.js",
     "assets/author-suiza-ixan.webp",
@@ -143,16 +144,42 @@ def add_article_blogroll(page: str, current: str, published: list[tuple[str, str
 
 
 
+def homepage_topic(slug: str) -> str:
+    if "pensiun" in slug or "gaji-pensiun" in slug:
+        return "pensiun"
+    if "pppk" in slug:
+        return "pppk"
+    if "wfh" in slug or "pemda" in slug:
+        return "pemda"
+    if "pbj" in slug or "pengadaan" in slug or "blud" in slug:
+        return "pengadaan"
+    return "lainnya"
+
+
+def format_indonesian_date(value: str | None) -> str:
+    match = re.match(r"(\d{4})-(\d{2})-(\d{2})", value or "")
+    if not match:
+        return ""
+    year, month, day = match.groups()
+    months = ("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember")
+    month_number = int(month)
+    if not 1 <= month_number <= 12:
+        return ""
+    return f"{int(day)} {months[month_number - 1]} {year}"
+
+
 def refresh_homepage_cards(home: str, articles: list[tuple[str, str | None, str | None]]) -> str:
-    """Only approved articles appear; sort by publication date, maximum six."""
+    """Only approved articles appear; align generated cards with the homepage card template."""
     approved = {Path(relative).stem: (relative, modified, hero) for relative, modified, hero in articles}
-    card_re = re.compile(r'<article class="article-card"[\s\S]*?</article>')
+    card_re = re.compile(r'<article class="article-card"[^>]*>[\s\S]*?</article>')
     cards = {}
     for match in card_re.finditer(home):
         card = match.group(0)
         found = re.search(r'href="/artikel/([a-z0-9-]+)\.html"', card)
         if found and found.group(1) in approved:
-            cards[found.group(1)] = card
+            slug = found.group(1)
+            card = re.sub(r'<article class="article-card"[^>]*>', '<article class="article-card" data-topic="' + homepage_topic(slug) + '">', card, count=1)
+            cards[slug] = card
     for slug, (relative, modified, hero) in approved.items():
         if slug in cards:
             continue
@@ -161,6 +188,16 @@ def refresh_homepage_cards(home: str, articles: list[tuple[str, str | None, str 
         title = html_utils.unescape(title_match.group(1).split(' — ASN Pemda')[0]) if title_match else slug.replace('-', ' ').title()
         description_match = re.search(r'<meta\s+name="description"\s+content="([^"]+)"', body, re.I)
         description = html_utils.unescape(description_match.group(1)) if description_match else 'Informasi terbaru untuk ASN dan pemerintah daerah.'
+        published_match = re.search(r'<meta\s+property="article:published_time"\s+content="([^"]+)"', body, re.I)
+        date = format_indonesian_date(published_match.group(1) if published_match else modified)
+        reading_match = re.search(r'Waktu baca:\s*(?:sekitar\s*)?(\d+)\s*menit', body, re.I)
+        reading = (reading_match.group(1) + ' menit baca') if reading_match else ''
+        kicker_match = re.search(r'<div class="article-kicker">([\s\S]*?)</div>', body, re.I)
+        category = ''
+        if kicker_match:
+            kicker_text = html_utils.unescape(re.sub(r'<[^>]+>', ' ', kicker_match.group(1)))
+            parts = [part.strip() for part in kicker_text.split('•') if part.strip()]
+            category = parts[-1].title() if parts else ''
         if not hero:
             hero_match = re.search(r'<figure[^>]*class="article-hero"[^>]*>[\s\S]*?<img[^>]*src="([^"]+)"', body, re.I)
             if hero_match:
@@ -168,8 +205,9 @@ def refresh_homepage_cards(home: str, articles: list[tuple[str, str | None, str 
                 if candidate.startswith('assets/') and (ROOT / candidate).is_file():
                     hero = candidate
         img = ('<img src="/' + html_utils.escape(hero, quote=True) + '" alt="" width="1200" height="675" loading="lazy">') if hero else '<span class="article-card-placeholder">ASN Pemda</span>'
-        date = (modified or '')[:10]
-        cards[slug] = '<article class="article-card"><a class="article-card-image" href="/' + relative + '">' + img + '</a><div class="article-card-body"><div class="article-card-meta"><span>' + html_utils.escape(date) + '</span></div><h3><a href="/' + relative + '">' + html_utils.escape(title) + '</a></h3><p>' + html_utils.escape(description[:150]) + '</p><a class="text-link" href="/' + relative + '">Baca artikel →</a></div></article>'
+        badge = '<span class="article-card-label">' + html_utils.escape(category) + '</span>' if category else ''
+        meta = '<span>' + html_utils.escape(date) + '</span>' + ('<span>' + html_utils.escape(reading) + '</span>' if reading else '')
+        cards[slug] = '<article class="article-card" data-topic="' + homepage_topic(slug) + '"><a class="article-card-image" href="/' + html_utils.escape(relative, quote=True) + '">' + img + badge + '</a><div class="article-card-body"><div class="article-card-meta">' + meta + '</div><h3><a href="/' + html_utils.escape(relative, quote=True) + '">' + html_utils.escape(title) + '</a></h3><p>' + html_utils.escape(description[:150]) + '</p><a class="text-link" href="/' + html_utils.escape(relative, quote=True) + '">Baca artikel →</a></div></article>'
     ordered = sorted(cards, key=lambda slug: ((approved[slug][1] or '')[:10], slug), reverse=True)[:6]
     start = home.find('<div class="article-grid">')
     if start < 0:
@@ -177,8 +215,8 @@ def refresh_homepage_cards(home: str, articles: list[tuple[str, str | None, str 
     end = home.find('</div>\n</section>\n<section class="home-topics"', start)
     if end < 0:
         raise SystemExit('ERROR: homepage grid boundary missing')
-    return home[:start] + '<div class="article-grid">\n' + '\n'.join(cards[slug] for slug in ordered) + '\n  ' + home[end:]
-
+    grid_class = 'article-grid article-grid-count-' + str(len(ordered))
+    return home[:start] + '<div class="' + grid_class + '" data-topic-filter-grid>\n' + '\n'.join(cards[slug] for slug in ordered) + '\n  ' + home[end:]
 
 def main() -> None:
     config = json.loads((ROOT / "site-config.json").read_text(encoding="utf-8"))

@@ -13,7 +13,7 @@ dist = root / "dist"
 required = {
     "index.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html",
     "404.html", "koreksi.html", "favicon.svg", "favicon.ico", "robots.txt", "sitemap.xml",
-    "assets/site.css", "assets/article-insights.css", "assets/author-suiza-ixan.webp", "google3aabce049d4a051c.html",
+    "assets/site.css", "assets/home-topic-filters.js", "assets/article-insights.css", "assets/author-suiza-ixan.webp", "google3aabce049d4a051c.html",
 }
 actual = {p.relative_to(dist).as_posix() for p in dist.rglob("*") if p.is_file()}
 missing = required - actual
@@ -58,6 +58,26 @@ for article_file in sorted(path for path in actual if path.startswith("artikel/"
         raise SystemExit("public build changed frozen article subheading count: " + article_file)
 if "/artikel/pppk-paruh-waktu-penuh-waktu-2027.html" not in (dist / "index.html").read_text(encoding="utf-8"):
     raise SystemExit("homepage does not link to the published PPPK article")
+home_html = (dist / "index.html").read_text(encoding="utf-8")
+if 'property="og:image"' not in home_html or 'name="twitter:card" content="summary_large_image"' not in home_html:
+    raise SystemExit("homepage social preview metadata missing")
+if "assets/hero-aturan-wfh-asn-pemda-2026.webp" not in actual:
+    raise SystemExit("homepage social preview image is not in the public build")
+if 'data-topic-filter-grid' not in home_html or 'article-grid-count-' not in home_html:
+    raise SystemExit("homepage topic filter grid metadata missing")
+if 'assets/home-topic-filters.js' not in home_html:
+    raise SystemExit("homepage topic filter script is not linked")
+if 'Semua</button>' not in home_html or 'Pensiun & kesejahteraan' not in home_html:
+    raise SystemExit("homepage topic filter controls missing or incomplete")
+home_cards = re.findall(r'<article class="article-card"[^>]*data-topic="([^"]+)"', home_html)
+if len(home_cards) != len(set(re.findall(r'href="/artikel/([a-z0-9-]+)\.html"', home_html))):
+    raise SystemExit("homepage card count does not match linked published article count")
+pension_card = re.search(r'<article class="article-card"[^>]*data-topic="pensiun"[\s\S]*?</article>', home_html)
+if not pension_card or "menit baca" not in pension_card.group(0) or "article-card-label" not in pension_card.group(0):
+    raise SystemExit("generated pension card is missing its reading time or category label")
+if not re.search(r'<span>\d{1,2} [A-Z][a-z]+ 2026</span>', pension_card.group(0)):
+    raise SystemExit("generated pension card date is not localized")
+
 for page in ("index.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "koreksi.html", "404.html"):
     html = (dist / page).read_text(encoding="utf-8")
     if '<img class="brand-icon" src="/favicon.svg?v=' not in html:

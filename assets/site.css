@@ -118,3 +118,16 @@
 .article-page .takeaways p{margin:0;color:#4d5b76;font-size:14px;line-height:1.6;text-align:left}
 .article-page .takeaways+.toc{margin-top:0}
 @media(max-width:680px){.article-page .takeaways{grid-template-columns:1fr;gap:10px;margin:20px 0 24px}.article-page .takeaways>div{padding:14px 16px}.article-page .takeaways strong{margin-bottom:4px}}
+
+/* Homepage article filters and balanced final row. */
+.topic-pills button{appearance:none;border:1px solid #e5e8f3;border-radius:99px;background:#fff;padding:8px 13px;color:#465373;font:700 12px/1.4 'DM Sans',system-ui,sans-serif;cursor:pointer;transition:background .16s,color .16s,border-color .16s}
+.topic-pills button:hover{border-color:#aebcff;color:#2748d8}
+.topic-pills button[aria-pressed="true"]{background:#355cf6;border-color:#355cf6;color:#fff}
+.topic-pills button:focus-visible{outline:3px solid #b7c5ff;outline-offset:3px}
+.topic-filter-status{min-height:1.4em;margin:12px 0 0;color:#66708b;font-size:13px}
+.article-card[hidden]{display:none!important}
+@media(min-width:901px){
+.article-grid:not(.is-filtered).article-grid-count-5>.article-card:nth-child(4){grid-column:2}
+.article-grid:not(.is-filtered).article-grid-count-5>.article-card:nth-child(5){grid-column:3}
+.article-grid:not(.is-filtered).article-grid-count-4>.article-card:nth-child(4){grid-column:2}
+}

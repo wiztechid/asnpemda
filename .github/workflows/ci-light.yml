@@ -1,10 +1,10 @@
 name: CI Light
 on:
   pull_request:
-    paths: ['data/**','docs/**','schemas/**,'scripts/**','.github/workflows/**','**/*.html','assets/**','robots.txt','site-config.json']
+    paths: ['data/**','docs/**','schemas/**','scripts/**','.github/workflows/**','**/*.html','assets/**','robots.txt','site-config.json']
   push:
     branches: [main]
-    paths: ['data/**','docs/**','schemas/**,'scripts/**','.github/workflows/**','**/*.html','assets/**','robots.txt','site-config.json']
+    paths: ['data/**','docs/**','schemas/**','scripts/**','.github/workflows/**','**/*.html','assets/**','robots.txt','site-config.json']
 permissions:
   contents: read
 concurrency:

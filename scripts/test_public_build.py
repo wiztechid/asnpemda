@@ -67,7 +67,7 @@ if 'data-topic-filter-grid' not in home_html or 'article-grid-count-' not in hom
     raise SystemExit("homepage topic filter grid metadata missing")
 if 'assets/home-topic-filters.js' not in home_html:
     raise SystemExit("homepage topic filter script is not linked")
-if 'Semua</button>' not in home_html or 'Pensiun &amp; kesejahteraan' not in home_html:
+if 'Semua</button>' not in home_html or 'Pensiun & kesejahteraan' not in home_html:
     raise SystemExit("homepage topic filter controls missing or incomplete")
 home_cards = re.findall(r'<article class="article-card"[^>]*data-topic="([^"]+)"', home_html)
 if len(home_cards) != len(set(re.findall(r'href="/artikel/([a-z0-9-]+)\.html"', home_html))):

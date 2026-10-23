@@ -30,6 +30,7 @@ BASE_FILES = (
     "assets/article-engagement.js",
     "assets/author-suiza-ixan.webp",
     "assets/hero-sertifikasi-pbj-lkpp-2026.svg",
+    "google3aabce049d4a051c.html",
 )
 SLUG_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 

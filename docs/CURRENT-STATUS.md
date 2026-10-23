@@ -3,12 +3,12 @@
 Updated: 2026-10-23
 
 ## Release state
-PUBLICATION_ACTIVE / TECHNICAL_RUNTIME_QA_PENDING. The Cloudflare Pages production deployment is live. Four article records are approved and published under the human publication gate; automatic publishing remains disabled.
+PUBLICATION_ACTIVE / HOMEPAGE_DEPLOYED / VISUAL_QA_PENDING. Homepage improvements are live on Cloudflare Pages. Five article records are approved and published under the human publication gate; automatic publishing remains disabled.
 
 ## Production deployment
 - Site: https://asnpemda.pages.dev
-- Git commit: `a0027409ddf6bd54d14c1ea6a784a8c70408c261`
-- Cloudflare Pages deployment: `b77cb590-010e-451f-9b33-3550a93a7007`
+- Git commit: `2da56e41d4a64a19151ca8cb899c3cd5d56dfb4f`
+- Cloudflare Pages deployment: `cf8deb79-5891-4a8d-93b9-7b1844b44b5d`
 - Cloudflare build and deploy stages: success
 - Browser-level HTTP verification of the stable URLs remains pending because the connected Opera browser was unavailable during this check.
 
@@ -22,6 +22,8 @@ Published article identity URLs are normalized in the public build so the canoni
 ## Technical validation
 - CI Light run 137 (`39888358080`) passed the sitemap and canonical regression gate.
 - CI Light run 139 (`39889056544`) passed canonical, Open Graph, Article JSON-LD, sitemap, public-build, and article-hero checks.
+- CI Light run 182 (`39926173331`) passed homepage filter, card consistency, social metadata, public-build, and existing regression checks.
+- Homepage now has accessible topic filters, localized generated-card metadata, balanced desktop card rows, and Open Graph/Twitter large-image preview metadata. SOP v1.5 records the reusable requirements.
 - Cloudflare Pages build and deploy completed successfully for the production commit above.
 - Automated local-link and indexability audits passed in CI.
 

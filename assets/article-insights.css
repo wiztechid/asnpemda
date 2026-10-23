@@ -1,0 +1,11 @@
+/* Article subheading highlights: scannable, consistent, and readable on mobile. */
+.article-page .article-body{counter-reset:article-section}
+.article-page .article-body h2{counter-increment:article-section;position:relative;margin:44px 0 18px;padding:34px 18px 15px 72px;min-height:82px;border:1px solid #e4e9f7;border-left:4px solid #526df3;border-radius:14px;background:linear-gradient(112deg,#f4f6ff 0%,#fff 78%);box-shadow:0 7px 22px #26396d0a;scroll-margin-top:110px}
+.article-page .article-body h2::before{content:counter(article-section,decimal-leading-zero);position:absolute;left:17px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:linear-gradient(145deg,#355cf6,#7754e8);color:#fff;font:800 14px/1 'Plus Jakarta Sans',system-ui,sans-serif;box-shadow:0 5px 12px #355cf62b}
+.article-page .article-body h2::after{content:"POIN PENTING";position:absolute;top:9px;left:72px;color:#6674b0;font:800 9px/1.2 'DM Sans',system-ui,sans-serif;letter-spacing:.13em}
+.article-page .article-body h3{position:relative;padding-left:14px}
+.article-page .article-body h3::before{content:"";position:absolute;left:0;top:.22em;bottom:.22em;width:3px;border-radius:3px;background:#f1b84b}
+.article-page .article-body .callout{box-shadow:0 7px 20px #26396d0a}
+.article-page .article-body .callout strong:first-child{color:#243b86}
+@media(max-width:650px){.article-page .article-body h2{margin:36px 0 15px;padding:32px 14px 14px 62px;min-height:76px;border-radius:12px;font-size:clamp(21px,6vw,24px);line-height:1.35}.article-page .article-body h2::before{left:13px;width:36px;height:36px;border-radius:11px;font-size:13px}.article-page .article-body h2::after{left:62px;top:8px;font-size:8px}.article-page .article-body h3{padding-left:12px}}
+@media(prefers-reduced-motion:reduce){.article-page .article-body h2{scroll-behavior:auto}}

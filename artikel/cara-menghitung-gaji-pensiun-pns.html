@@ -80,16 +80,16 @@
 <p>Secara ilustratif, persentase dihitung 2,5% × (tahun + bulan/12), dengan batas minimum 40% dan maksimum 75% sebagaimana diringkas KMS Manajemen ASN BKN. Hasil juga tidak boleh di bawah gaji pokok terendah menurut peraturan gaji yang berlaku. UU Nomor 11 Tahun 1969 Pasal 6 ayat (5) menyebut pecahan bulan dibulatkan ke atas menjadi sebulan penuh. Kalkulator memakai masa kerja pensiun yang sudah diverifikasi; ia tidak menentukan sendiri masa kerja yang diakui. Batas 75% tercapai pada 30 tahun. Nilai final mengikuti penetapan resmi dan pemeriksaan dokumen.</p>
 <section class="pension-calculator" id="kalkulator" aria-labelledby="calc-title">
 <h2 id="calc-title">Kalkulator simulasi pensiun pokok</h2>
-<p>Masukkan gaji pokok terakhir sebagai dasar pensiun dan masa kerja pensiun yang sudah diverifikasi. Kalkulator memakai batas 40%–75% serta pembanding gaji pokok terendah.</p>
+<p>Masukkan gaji pokok terakhir dan masa kerja yang sudah diverifikasi. Hasil dihitung dengan batas 40%–75%, lalu dibandingkan dengan batas gaji pokok terendah yang Anda masukkan.</p>
 <div class="calc-fields">
-<label for="pension-base">Dasar pensiun per bulan (Rp)
-<input id="pension-base" name="pension-base" type="number" inputmode="numeric" min="1" step="1" value="5000000" autocomplete="off"></label>
-<label for="pension-years">Masa kerja pensiun (tahun)
-<input id="pension-years" name="pension-years" type="number" inputmode="numeric" min="0" max="99" step="1" value="26" autocomplete="off"></label>
-<label for="pension-months">Masa kerja pensiun (bulan)
-<input id="pension-months" name="pension-months" type="number" inputmode="numeric" min="0" max="11" step="1" value="0" autocomplete="off"></label>
-<label for="pension-floor">Gaji pokok terendah pembanding (Rp)
-<input id="pension-floor" name="pension-floor" type="number" inputmode="numeric" min="1" step="1" value="1685700" autocomplete="off" aria-describedby="pension-floor-note"></label>
+<label for="pension-base">Gaji pokok terakhir per bulan (Rp)
+<input id="pension-base" name="pension-base" type="text" inputmode="numeric" value="5.000.000" autocomplete="off"></label>
+<label for="pension-years">Masa kerja yang diakui (tahun)
+<input id="pension-years" name="pension-years" type="text" inputmode="numeric" value="26" autocomplete="off"></label>
+<label for="pension-months">Tambahan masa kerja (bulan)
+<input id="pension-months" name="pension-months" type="text" inputmode="numeric" value="0" autocomplete="off"></label>
+<label for="pension-floor">Batas gaji pokok terendah (Rp)
+<input id="pension-floor" name="pension-floor" type="text" inputmode="numeric" value="1.685.700" autocomplete="off" aria-describedby="pension-floor-note"></label>
 </div>
 <p id="pension-floor-note" class="calc-caveat">Nilai awal mengikuti batas bawah tabel gaji PP 5/2024. Sesuaikan bila peraturan gaji yang berlaku saat penetapan berubah.</p>
 <button id="pension-calculate" type="button">Hitung perkiraan</button>
@@ -159,7 +159,34 @@
 </article></main>
 <footer class="site-footer"><div class="shell footer-grid"><div><a class="brand" href="../index.html" aria-label="ASN Pemda, beranda"><img class="brand-icon" src="../favicon.svg?v=20261020-6" alt="" aria-hidden="true"><span>ASN<span class="brand-blue">Pemda</span></span></a><p>Teman baca kebijakan ASN dan Pemda. Independen, bukan situs resmi pemerintah.</p></div><div><strong>Jelajahi</strong><a href="../index.html#artikel-terbaru">Artikel terbaru</a><a href="../editorial.html">Kebijakan editorial</a><a href="../about.html">Tentang penulis</a></div><div><strong>Informasi situs</strong><a href="../privacy.html">Privasi</a><a href="../disclaimer.html">Disclaimer</a><a href="../koreksi.html">Kirim koreksi</a></div></div><div class="shell footer-bottom">© 2026 ASN Pemda · Informasi independen, bukan situs resmi pemerintah.</div></footer>
 <script>
-(()=>{const base=document.getElementById("pension-base"),years=document.getElementById("pension-years"),months=document.getElementById("pension-months"),floor=document.getElementById("pension-floor"),result=document.getElementById("pension-result"),button=document.getElementById("pension-calculate");const rupiah=new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0});button.addEventListener("click",()=>{const salary=Number(base.value),y=Number(years.value),m=Number(months.value),minimum=Number(floor.value);if(!Number.isSafeInteger(salary)||salary<1){result.textContent="Masukkan gaji pokok terakhir berupa angka rupiah bulat yang lebih dari nol.";base.focus();return}if(!Number.isInteger(y)||y<0||y>99||!Number.isInteger(m)||m<0||m>11||y+m===0){result.textContent="Masukkan masa kerja pensiun dalam tahun dan bulan yang valid.";years.focus();return}if(!Number.isSafeInteger(minimum)||minimum<1){result.textContent="Masukkan gaji pokok terendah pembanding yang valid.";floor.focus();return}const service=y+m/12,rate=Math.min(75,Math.max(40,service*2.5)),formula=Math.round(salary*rate/100),estimate=Math.max(formula,minimum);result.textContent="Perkiraan pensiun pokok bruto: "+rupiah.format(estimate)+" per bulan ("+rate.toLocaleString("id-ID")+"% dari dasar pensiun)."+(formula<minimum?" Hasil disesuaikan ke batas gaji pokok terendah yang dimasukkan.":service>=30?" Batas maksimum 75% tercapai.":"");});})();
+(()=> {
+  const base=document.getElementById("pension-base");
+  const years=document.getElementById("pension-years");
+  const months=document.getElementById("pension-months");
+  const floor=document.getElementById("pension-floor");
+  const result=document.getElementById("pension-result");
+  const button=document.getElementById("pension-calculate");
+  const rupiah=new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0});
+  const ribuan=new Intl.NumberFormat("id-ID",{maximumFractionDigits:0});
+  const uang=[base,floor];
+  const ambilAngka=field=>Number(field.value.replace(/\\D/g,""));
+  uang.forEach(field=>{
+    field.value=field.value ? ribuan.format(ambilAngka(field)) : "";
+    field.addEventListener("focus",()=>{field.value=field.value.replace(/\\./g,"");});
+    field.addEventListener("blur",()=>{if(field.value)field.value=ribuan.format(ambilAngka(field));});
+  });
+  button.addEventListener("click",()=>{
+    const salary=ambilAngka(base),y=Number(years.value),m=Number(months.value),minimum=ambilAngka(floor);
+    if(!Number.isSafeInteger(salary)||salary<1){result.textContent="Isi gaji pokok terakhir dengan angka lebih dari nol.";base.focus();return;}
+    if(!Number.isInteger(y)||y<0||y>99||!Number.isInteger(m)||m<0||m>11||y+m===0){result.textContent="Isi masa kerja yang diakui dalam tahun dan bulan dengan benar.";years.focus();return;}
+    if(!Number.isSafeInteger(minimum)||minimum<1){result.textContent="Isi batas gaji pokok terendah dengan angka lebih dari nol.";floor.focus();return;}
+    const service=y+m/12;
+    const rate=Math.min(75,Math.max(40,service*2.5));
+    const formula=Math.round(salary*rate/100);
+    const estimate=Math.max(formula,minimum);
+    result.textContent="Perkiraan pensiun pokok per bulan: "+rupiah.format(estimate)+". Bagian perhitungan: "+rate.toLocaleString("id-ID")+"% dari gaji pokok terakhir."+(formula<minimum?" Hasil mengikuti batas gaji pokok terendah yang Anda masukkan.":service>=30?" Batas tertinggi 75% sudah tercapai.":"");
+  });
+})();
 </script>
 <script>
 (() => {

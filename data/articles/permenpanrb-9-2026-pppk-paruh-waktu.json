@@ -3,7 +3,7 @@
   "slug": "permenpanrb-9-2026-pppk-paruh-waktu",
   "approved": true,
   "publicationState": "PUBLISHED",
-  "dateModified": "2026-10-21",
+  "dateModified": "2026-10-23",
   "heroImage": "assets/hero-permenpanrb-9-2026.webp",
   "articlePath": "artikel/permenpanrb-9-2026-pppk-paruh-waktu.html",
   "evidencePath": "data/candidates/permenpanrb-9-2026-pppk-paruh-waktu.evidence.json",
@@ -12,7 +12,7 @@
     "authorizedBy": "wiztechid",
     "role": "human site owner and article author",
     "approvedAt": "2026-10-21T00:01:00+08:00",
-    "instruction": "User requested continuation of the article workflow with a winnable SERP target; earlier instruction authorized publication and removed independent-review requirement. User requested stricter enforcement of the frozen article template; this revision normalizes shared markup and CSS only, with article wording, claims, and sources unchanged."
+    "instruction": "Pemilik situs secara eksplisit meminta label ringkasan artikel diseragamkan menjadi “Versi Mudahnya” di seluruh artikel terbit. Perubahan hanya pada label heading; template beku, CSS, isi substantif, klaim, dan sumber tidak berubah."
   },
   "editorialAssessment": {
     "type": "AI_ASSISTED_EDITORIAL_REVIEW",
@@ -91,7 +91,7 @@
       "summary": "At the user's request, removed page-specific inline CSS, standardized the answer and three takeaway cards, and aligned the article with the FROZEN shared template. Article wording, claims, and sources were preserved."
     }
   ],
-  "articleSha256": "6c17973f0dea4f35c7e8676078b22564d801bf25bdde9b71d7f393ceca81b41b",
+  "articleSha256": "d519023f31f4c9d8f2cba6aee0119167fcb904aa16c8a5f5be067a7e09cff2b9",
   "evidenceGitBlobSha1": "4f256eed43efd63a8611d07133cea85ee4333611",
   "evidenceSha256": "7347f2bf9ccb5e205195b42ae2a280f5cf1fd7c1632259bcc29f1b3afc133379",
   "seo": {

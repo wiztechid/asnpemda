@@ -13,7 +13,7 @@ dist = root / "dist"
 required = {
     "index.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html",
     "404.html", "koreksi.html", "favicon.svg", "favicon.ico", "robots.txt", "sitemap.xml",
-    "assets/site.css", "assets/home-topic-filters.js", "assets/article-insights.css", "assets/author-suiza-ixan.webp", "google3aabce049d4a051c.html",
+    "assets/site.css", "assets/home-topic-filters.js", "assets/article-template.css", "assets/article-insights.css", "assets/author-suiza-ixan.webp", "google3aabce049d4a051c.html",
 }
 actual = {p.relative_to(dist).as_posix() for p in dist.rglob("*") if p.is_file()}
 missing = required - actual
@@ -54,6 +54,30 @@ for article_file in sorted(path for path in actual if path.startswith("artikel/"
     source_article = (root / article_file).read_text(encoding="utf-8")
     if insights_link not in built_article:
         raise SystemExit("article is missing the heading highlights stylesheet: " + article_file)
+    if built_article.count('href="../assets/article-template.css?v=20261023-1"') != 1 or "<style" in built_article.lower():
+        raise SystemExit("article does not use exactly one shared frozen stylesheet: " + article_file)
+    if "class=\"fact-grid\"" in built_article or len(re.findall(r'<section\\b[^>]*class=["\\'][^"\\']*quick-answer[^"\\']*["\\']', built_article, re.I)) != 1:
+        raise SystemExit("article uses a legacy summary or quick-answer structure: " + article_file)
+    if len(re.findall(r'class=["\\'][^"\\']*takeaways(?:\\s|["\\'])', built_article)) != 1:
+        raise SystemExit("article must contain exactly one frozen takeaways block: " + article_file)
+    module_order = ("article-page", "breadcrumbs", "article-content", "article-header", "article-hero", "status-card", "quick-answer", "takeaways", "toc", "article-body", "related-posts", "reader-engagement", "share-panel", "site-footer", "footer-grid")
+    module_positions = []
+    for module in module_order:
+        matches = list(re.finditer(r'class=["\\'][^"\\']*(?:^|\\\\s)' + re.escape(module) + r'(?:\\\\s|$)[^"\\']*["\\']', built_article))
+        if len(matches) != 1:
+            raise SystemExit("article must contain exactly one frozen module " + module + ": " + article_file)
+        module_positions.append(matches[0].start())
+    if module_positions != sorted(module_positions):
+        raise SystemExit("article modules do not follow the frozen master order: " + article_file)
+    ids = re.findall(r'\\bid=["\\']([^"\\']+)["\\']', built_article, re.I)
+    if len(ids) != len(set(ids)):
+        raise SystemExit("article contains duplicate ids: " + article_file)
+    toc = re.search(r'<nav\\b[^>]*class=["\\'][^"\\']*toc[^"\\']*["\\'][^>]*>([\\s\\S]*?)</nav>', built_article, re.I)
+    if not toc or any(target not in ids for target in re.findall(r'href=["\\']#([^"\\']+)["\\']', toc.group(1), re.I)):
+        raise SystemExit("article table of contents contains a broken section link: " + article_file)
+    takeaways = re.search(r'<div\\b[^>]*class=["\\'][^"\\']*takeaways[^"\\']*["\\'][^>]*>([\\s\\S]*?)</div>\\s*<nav\\b[^>]*class=["\\'][^"\\']*toc', built_article, re.I)
+    if not takeaways or len(re.findall(r'<div\\b[^>]*>\\s*<strong\\b', takeaways.group(1), re.I)) != 3:
+        raise SystemExit("article must have exactly three takeaway cards before the TOC: " + article_file)
     if len(re.findall(r"<h2\b", built_article, re.I)) != len(re.findall(r"<h2\b", source_article, re.I)):
         raise SystemExit("public build changed frozen article subheading count: " + article_file)
 if "/artikel/pppk-paruh-waktu-penuh-waktu-2027" not in (dist / "index.html").read_text(encoding="utf-8"):

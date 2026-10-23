@@ -1,6 +1,6 @@
 {
   "articleId": "cara-menghitung-gaji-pensiun-pns",
-  "reviewedAt": "2026-10-23T15:00:00+08:00",
+  "reviewedAt": "2026-10-23T16:20:00+08:00",
   "reviewer": "AI-assisted editorial review",
   "reviewerIsHuman": false,
   "outcome": "APPROVE_WITH_SCOPE_NOTES",
@@ -12,13 +12,20 @@
     "direct Article, BreadcrumbList and FAQPage JSON-LD",
     "hero WebP 1200x675 and responsive layout",
     "calculator scope and disclaimer",
-    "official legal source links and article dates"
+    "official legal source links and article dates",
+    "hero image now clearly depicts a retired ASN in low-poly style",
+    "WebP size, 1200x675 dimensions, alt text and schema caption aligned"
   ],
   "findings": [
     "Formula claims checked against UU 11/1969 and BKN KMS",
     "PP 5/2024 and PP 8/2024 are legal context; no claim of a new 2026 pension increase",
     "Google Ads workbook shows 500 average monthly searches but export geo is unverified; do not represent this as Indonesia-specific API volume",
-    "SERP observations are a sample, not a full top-10 competition study"
+    "SERP observations are a sample, not a full top-10 competition study",
+    "Hero image updated to better communicate ASN retirement planning while preserving the existing article template and facts."
   ],
-  "disposition": "APPROVE_WITH_SCOPE_NOTES"
+  "disposition": "APPROVE_WITH_SCOPE_NOTES",
+  "visualReview": {
+    "outcome": "PASS",
+    "notes": "Subject and article topic are aligned; illustration has no text or official insignia."
+  }
 }

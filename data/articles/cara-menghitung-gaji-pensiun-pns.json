@@ -12,32 +12,32 @@
   "materiality": "MEDIUM",
   "articlePath": "artikel/cara-menghitung-gaji-pensiun-pns.html",
   "heroImage": "assets/hero-pensiun-pns.webp",
-  "articleSha256": "8947ab5f3a42e5694b916211c4cedcdf45bd84f409e06a01a2c3c6de87f476ca",
+  "articleSha256": "fc256904e3fcce46f3fb0b77e8de5b623dd24a3838dbbc3e960e31ef6d336366",
   "evidencePath": "data/candidates/cara-menghitung-gaji-pensiun-pns.evidence.json",
   "humanApproval": {
     "decision": "GO",
     "authorizedBy": "wiztechid",
     "role": "human site owner and article author",
-    "approvedAt": "2026-10-23T15:00:00+08:00",
-    "instruction": "User explicitly instructed publication in this conversation."
+    "approvedAt": "2026-10-23T16:20:00+08:00",
+    "instruction": "User requested the hero image be more appealing while retaining the low-poly ASN retirement concept; publication remains subject to Quality Gate."
   },
   "publicationAuthorization": {
     "articleId": "cara-menghitung-gaji-pensiun-pns",
-    "articleSha256": "8947ab5f3a42e5694b916211c4cedcdf45bd84f409e06a01a2c3c6de87f476ca",
-    "evidenceFingerprint": "595513695620089465e3ca834412d60fee59516b5fb6cf0da0bb071d762cb1e3",
-    "reviewFingerprint": "24ecb5a93a377e7c60817a5615f9d49d7b2e9a199f0c004c912d601f7878330a",
+    "articleSha256": "fc256904e3fcce46f3fb0b77e8de5b623dd24a3838dbbc3e960e31ef6d336366",
+    "evidenceFingerprint": "6b16d1e62770ac9ee5d0736d1c04ff9ea37a1d91485c37d4c3fff6d2f302f8c0",
+    "reviewFingerprint": "b270744d3b3b677cc48e9ef0dadae75a2f54ad24218fb75101d382d77909c101",
     "reviewer": "wiztechid",
-    "approvedAt": "2026-10-23T15:00:00+08:00",
+    "approvedAt": "2026-10-23T16:20:00+08:00",
     "authorization": "APPROVED"
   },
   "editorialAssessment": {
     "type": "AI_ASSISTED_EDITORIAL_REVIEW",
-    "reviewedAt": "2026-10-23T15:00:00+08:00",
+    "reviewedAt": "2026-10-23T16:20:00+08:00",
     "outcome": "APPROVE_WITH_SCOPE_NOTES",
     "reviewerIsHuman": false,
     "reviewerIsASN": false,
     "score": 9.5,
-    "summary": "Template, reader utility, SEO structure, calculator and legal sources passed review. Workbook demand is not represented as Indonesia-specific; SERP findings remain a sample."
+    "summary": "Template, reader utility, SEO structure, calculator and legal sources passed review. Workbook demand is not represented as Indonesia-specific; SERP findings remain a sample. Hero diperbarui ke ilustrasi low-poly ASN pensiun; metadata alternatif diselaraskan."
   },
   "asnImpact": "Artikel memberi simulasi umum perhitungan pensiun pokok PNS dan mengarahkan pembaca memeriksa masa kerja serta dasar pensiun resmi. Kalkulator tidak menetapkan hak atau nilai pembayaran.",
   "pemdaImpact": "Materi membantu ASN dan pengelola kepegawaian memahami komponen dasar; penetapan tetap mengikuti dokumen dan proses resmi.",
@@ -96,6 +96,10 @@
   "revisionHistory": [
     {
       "date": "2026-10-23",
+      "summary": "Memperbarui hero menjadi ilustrasi low-poly ASN yang menyiapkan masa pensiun; alt text, caption, dan metadata gambar diselaraskan. Isi kalkulator dan klaim artikel tidak berubah."
+    },
+    {
+      "date": "2026-10-23",
       "summary": "Dipublikasikan setelah verifikasi ulang sumber hukum, audit template/SEO dan persetujuan GO pemilik situs. Volume pencarian geografis dan kompetisi SERP tetap diberi batasan."
     }
   ],
@@ -109,7 +113,7 @@
     "readinessScore": 9.5,
     "scoreMeaning": "internal readiness; not ranking prediction"
   },
-  "evidenceFingerprint": "595513695620089465e3ca834412d60fee59516b5fb6cf0da0bb071d762cb1e3",
-  "reviewFingerprint": "24ecb5a93a377e7c60817a5615f9d49d7b2e9a199f0c004c912d601f7878330a",
-  "evidenceSha256": "f0b1617a00ba9f1e9dd45c6f6c4c0bed89b3280fb030ef7e487f237329401358"
+  "evidenceFingerprint": "6b16d1e62770ac9ee5d0736d1c04ff9ea37a1d91485c37d4c3fff6d2f302f8c0",
+  "reviewFingerprint": "b270744d3b3b677cc48e9ef0dadae75a2f54ad24218fb75101d382d77909c101",
+  "evidenceSha256": "6bd9142ade7a0121f1b6c3b17caf96c4647847291ac501bcfafa3a0ac62bbf64"
 }

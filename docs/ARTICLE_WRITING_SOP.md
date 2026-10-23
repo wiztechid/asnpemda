@@ -1,8 +1,10 @@
-# SOP Penulisan dan Publikasi Artikel ASN Pemda v1.4
+# SOP Penulisan dan Publikasi Artikel ASN Pemda v1.5
 
 Status: **WAJIB untuk seluruh artikel baru dan revisi substansial**.
 
 Pembaruan v1.4 (21 Oktober 2026) menetapkan keterhubungan artikel, umpan balik pembaca, komentar tanpa akun dengan penyaringan anti-spam dan moderasi, serta pemeriksaan fitur setelah rilis.
+
+Pembaruan v1.5 (23 Oktober 2026) menambahkan standar konsistensi kartu artikel, filter topik homepage, dan pratinjau sosial homepage.
 
 ## Suara editorial
 Tulis seperti rekan ASN yang memahami aturan dan menjelaskannya dengan ramah, santai, jernih, dan profesional. Pembaca utama: ASN, PPPK, bendahara, PPTK, PPK-SKPD, PA/KPA, pejabat OPD, dan masyarakat yang mencari penjelasan kebijakan daerah.
@@ -47,6 +49,16 @@ Gunakan pola editorial situs ASN Pemda dan Design System v1.0. Susunan ini menja
 - Simpan hanya data yang diperlukan. Jangan simpan IP mentah untuk moderasi; gunakan hash berjangka pendek hanya untuk pembatasan kiriman dan bersihkan data pembatas lama. Jelaskan pemrosesan data di halaman Privasi.
 - Jelaskan retensi sesuai mekanisme pembersihan yang benar-benar berjalan. Jika pembersihan dipicu saat endpoint diakses, jangan menjanjikan penghapusan pada jadwal otomatis yang tidak tersedia.
 - Masukan kebijakan atau praktik dari pembaca tidak boleh dilabeli “terverifikasi” sebelum editor memeriksa sumber primer dan reproduksibilitasnya.
+
+## Integrasi artikel dengan homepage
+
+- Artikel baru hanya boleh masuk homepage melalui record yang berstatus approved dan PUBLISHED; jangan menambahkan kartu manual untuk artikel draft atau prototipe.
+- Gunakan gambar hero artikel yang sama pada kartu homepage. Jangan membuat atau mengarang kategori, tanggal, maupun waktu baca: tanggal ditampilkan dalam format Indonesia, waktu baca hanya ditampilkan bila ada datanya, dan label kategori diambil dari kicker artikel bila tersedia.
+- Pastikan kartu menampilkan judul dan ringkasan yang sesuai isi, tautannya menuju slug artikel yang benar, serta semua aset hero tersedia pada build publik.
+- Filter topik homepage harus menggunakan tombol yang dapat diakses keyboard, menunjukkan status aktif, dan hanya memfilter kartu yang benar-benar tampil. Tanpa JavaScript, kontrol filter harus tetap tersembunyi agar tidak tampak sebagai fitur yang rusak.
+- Jaga susunan kartu tetap seimbang pada desktop serta responsif di tablet dan ponsel. Bila jumlah kartu menghasilkan baris terakhir yang pendek, tata letaknya boleh diseimbangkan tanpa mengubah urutan editorial.
+- Homepage harus memiliki canonical, deskripsi, Open Graph termasuk og:image, serta Twitter Card summary_large_image. Gambar sosial wajib ada di build publik dan teks alternatifnya menjelaskan visual secara ringkas.
+- Uji kartu yang dibentuk otomatis, seluruh filter topik, metadata sosial, aset gambar, dan tampilan responsive melalui public-build regression test. Catat hasil quality gate sebelum rilis.
 
 ## SEO dan structured data
 

@@ -11,12 +11,15 @@ dist = root / "dist"
 required = {
     "index.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html",
     "404.html", "koreksi.html", "favicon.svg", "favicon.ico", "robots.txt", "sitemap.xml",
-    "assets/site.css", "assets/author-suiza-ixan.webp",
+    "assets/site.css", "assets/author-suiza-ixan.webp", "google3aabce049d4a051c.html",
 }
 actual = {p.relative_to(dist).as_posix() for p in dist.rglob("*") if p.is_file()}
 missing = required - actual
 if missing:
     raise SystemExit("missing public files: " + ", ".join(sorted(missing)))
+verification_file = dist / "google3aabce049d4a051c.html"
+if verification_file.read_text(encoding="utf-8") != "google-site-verification: google3aabce049d4a051c.html":
+    raise SystemExit("Google Search Console verification file missing or altered in public build")
 blocked = [p for p in actual if p.startswith(("docs/", "research/", "data/", "scripts/", "schemas/"))]
 if blocked:
     raise SystemExit("internal/source files leaked into dist: " + ", ".join(sorted(blocked)))

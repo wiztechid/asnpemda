@@ -113,6 +113,25 @@ def published_articles() -> list[tuple[str, str | None, str | None]]:
 
 
 
+
+def clean_public_route(route: str) -> str:
+    if route == "index.html":
+        return ""
+    return route[:-5] if route.endswith(".html") else route
+
+
+def normalize_public_urls(content: str, origin: str) -> str:
+    """Align published links and metadata with Cloudflare Pages clean URLs."""
+    def clean_match(match: re.Match[str]) -> str:
+        value = match.group(0)
+        if value.endswith("/index.html"):
+            return value[:-10]
+        return value[:-5]
+    # Only rewrite URL/path tokens, preserving source filenames and script text.
+    content = re.sub(r"(?:https://asnpemda\.pages\.dev)?(?:/|\.{1,2}/)[A-Za-z0-9_./-]+\.html(?=[#?\"'\s])", clean_match, content)
+    content = re.sub(re.escape(origin) + r"/([A-Za-z0-9_/-]+)\.html(?=[#?\"'\s])", lambda m: origin + "/" + m.group(1), content)
+    return content
+
 def add_article_blogroll(page: str, current: str, published: list[tuple[str, str | None, str | None]]) -> str:
     """Use one curated related-reading section with up to three published cards."""
     if 'class="related-posts"' not in page:
@@ -125,7 +144,7 @@ def add_article_blogroll(page: str, current: str, published: list[tuple[str, str
         title_match = re.search(r"<title>(.*?)</title>", source_html, re.I | re.S)
         title = html_utils.unescape(title_match.group(1).split(" — ASN Pemda")[0].strip()) if title_match else Path(relative).stem.replace("-", " ").title()
         picture = ('<img src="../' + html_utils.escape(hero, quote=True) + '" alt="" loading="lazy" decoding="async" width="360" height="203">') if hero else '<span class="blogroll-monogram" aria-hidden="true">ASN</span>'
-        candidates.append('<a class="blogroll-card" href="' + html_utils.escape(Path(relative).name, quote=True) + '">' + picture + '<span class="blogroll-copy"><strong>' + html_utils.escape(title) + '</strong><span>Informasi dan penjelasan untuk ASN dan pemerintah daerah.</span><b>Baca artikel →</b></span></a>')
+        candidates.append('<a class="blogroll-card" href="' + html_utils.escape(Path(relative).stem, quote=True) + '">' + picture + '<span class="blogroll-copy"><strong>' + html_utils.escape(title) + '</strong><span>Informasi dan penjelasan untuk ASN dan pemerintah daerah.</span><b>Baca artikel →</b></span></a>')
         if len(candidates) == 3:
             break
     if not candidates:
@@ -138,7 +157,7 @@ def add_article_blogroll(page: str, current: str, published: list[tuple[str, str
     if end < 0:
         return page
     end += len('</section>')
-    block = '<section class="related-posts asn-blogroll" aria-labelledby="related-title"><div class="blogroll-heading"><span class="kicker">LANJUTKAN MEMBACA</span><h2 id="related-title">Bacaan selanjutnya</h2><p>Artikel lain yang sudah terbit di ASN Pemda.</p></div><div class="blogroll-grid">' + ''.join(candidates) + '</div><a class="blogroll-all" href="../index.html#artikel-terbaru">Lihat semua artikel →</a></section>'
+    block = '<section class="related-posts asn-blogroll" aria-labelledby="related-title"><div class="blogroll-heading"><span class="kicker">LANJUTKAN MEMBACA</span><h2 id="related-title">Bacaan selanjutnya</h2><p>Artikel lain yang sudah terbit di ASN Pemda.</p></div><div class="blogroll-grid">' + ''.join(candidates) + '</div><a class="blogroll-all" href="/#artikel-terbaru">Lihat semua artikel →</a></section>'
     return page[:start] + block + page[end:]
 
 
@@ -175,7 +194,7 @@ def refresh_homepage_cards(home: str, articles: list[tuple[str, str | None, str 
     cards = {}
     for match in card_re.finditer(home):
         card = match.group(0)
-        found = re.search(r'href="/artikel/([a-z0-9-]+)\.html"', card)
+        found = re.search(r'href="/artikel/([a-z0-9-]+)(?:\.html)?"', card)
         if found and found.group(1) in approved:
             slug = found.group(1)
             card = re.sub(r'<article class="article-card"[^>]*>', '<article class="article-card" data-topic="' + homepage_topic(slug) + '">', card, count=1)
@@ -207,7 +226,7 @@ def refresh_homepage_cards(home: str, articles: list[tuple[str, str | None, str 
         img = ('<img src="/' + html_utils.escape(hero, quote=True) + '" alt="" width="1200" height="675" loading="lazy">') if hero else '<span class="article-card-placeholder">ASN Pemda</span>'
         badge = '<span class="article-card-label">' + html_utils.escape(category) + '</span>' if category else ''
         meta = '<span>' + html_utils.escape(date) + '</span>' + ('<span>' + html_utils.escape(reading) + '</span>' if reading else '')
-        cards[slug] = '<article class="article-card" data-topic="' + homepage_topic(slug) + '"><a class="article-card-image" href="/' + html_utils.escape(relative, quote=True) + '">' + img + badge + '</a><div class="article-card-body"><div class="article-card-meta">' + meta + '</div><h3><a href="/' + html_utils.escape(relative, quote=True) + '">' + html_utils.escape(title) + '</a></h3><p>' + html_utils.escape(description[:150]) + '</p><a class="text-link" href="/' + html_utils.escape(relative, quote=True) + '">Baca artikel →</a></div></article>'
+        cards[slug] = '<article class="article-card" data-topic="' + homepage_topic(slug) + '"><a class="article-card-image" href="/' + html_utils.escape(clean_public_route(relative), quote=True) + '">' + img + badge + '</a><div class="article-card-body"><div class="article-card-meta">' + meta + '</div><h3><a href="/' + html_utils.escape(clean_public_route(relative), quote=True) + '">' + html_utils.escape(title) + '</a></h3><p>' + html_utils.escape(description[:150]) + '</p><a class="text-link" href="/' + html_utils.escape(clean_public_route(relative), quote=True) + '">Baca artikel →</a></div></article>'
     ordered = sorted(cards, key=lambda slug: ((approved[slug][1] or '')[:10], slug), reverse=True)[:6]
     start = home.find('<div class="article-grid">')
     if start < 0:
@@ -247,6 +266,9 @@ def main() -> None:
     articles = published_articles()
     home_path = DIST / 'index.html'
     home_path.write_text(refresh_homepage_cards(home_path.read_text(encoding='utf-8'), articles), encoding='utf-8')
+    for page_name in ("index.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "koreksi.html"):
+        page_path = DIST / page_name
+        page_path.write_text(normalize_public_urls(page_path.read_text(encoding="utf-8"), origin), encoding="utf-8")
     for relative, _, hero_image in articles:
         target = DIST / relative
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -265,10 +287,10 @@ def main() -> None:
         source_href = re.search(r'\bhref=["\']([^"\']+)["\']', canonical_tag, re.I)
         if not source_href:
             raise SystemExit(f"ERROR: published article canonical href is missing: {relative}")
-        public_canonical = f"{origin}/{relative}"
+        public_canonical = f"{origin}/{clean_public_route(relative)}"
         if source_href.group(1) != public_canonical:
             public_html = public_html.replace(source_href.group(1), public_canonical)
-        target.write_text(public_html, encoding='utf-8')
+        target.write_text(normalize_public_urls(public_html, origin), encoding='utf-8')
         if hero_image:
             image_target = DIST / hero_image
             image_target.parent.mkdir(parents=True, exist_ok=True)
@@ -277,12 +299,12 @@ def main() -> None:
     ns = "http://www.sitemaps.org/schemas/sitemap/0.9"
     ET.register_namespace("", ns)
     urlset = ET.Element(f"{{{ns}}}urlset")
-    for route in ("", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "koreksi.html"):
+    for route in ("", "about", "editorial", "privacy", "disclaimer", "koreksi"):
         url = ET.SubElement(urlset, f"{{{ns}}}url")
         ET.SubElement(url, f"{{{ns}}}loc").text = f"{origin}/{route}"
     for relative, modified, _ in articles:
         url = ET.SubElement(urlset, f"{{{ns}}}url")
-        ET.SubElement(url, f"{{{ns}}}loc").text = f"{origin}/{relative}"
+        ET.SubElement(url, f"{{{ns}}}loc").text = f"{origin}/{clean_public_route(relative)}"
         if modified:
             ET.SubElement(url, f"{{{ns}}}lastmod").text = modified
     ET.ElementTree(urlset).write(DIST / "sitemap.xml", encoding="utf-8", xml_declaration=True)

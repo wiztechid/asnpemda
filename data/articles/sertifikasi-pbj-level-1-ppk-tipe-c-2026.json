@@ -65,7 +65,7 @@
   "approved": true,
   "publicationState": "PUBLISHED",
   "articlePath": "artikel/sertifikasi-pbj-level-1-ppk-tipe-c-2026.html",
-  "articleSha256": "09474c1cad02e7c9a9adb50ed2dede3971b04dc06b63adf30c11c25c57c375c82",
+  "articleSha256": "09474c1cad02e7c9aadb50ed2dede3971b04dc06b63adf30c11c25c57c375c82",
   "evidencePath": "data/candidates/sertifikasi-pbj-level-1-ppk-tipe-c-2026.evidence.json",
   "evidenceSha256": "bf842f7a5002fff5a6e1ecc8654719655d12798188a0257d6601832ccf2afa4e",
   "humanApproval": {
@@ -146,6 +146,6 @@
   "templateRevisionAuthorization": {
     "authorizedBy": "wiztechid",
     "instruction": "User requested stricter adherence to the frozen article template. Authorized scope: shared HTML structure and CSS normalization only; editorial copy, claims, and evidence remain unchanged.",
-    "articleSha256": "09474c1cad02e7c9a9adb50ed2dede3971b04dc06b63adf30c11c25c57c375c82"
+    "articleSha256": "09474c1cad02e7c9aadb50ed2dede3971b04dc06b63adf30c11c25c57c375c82"
   }
 }

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-23 — Homepage quality and SOP v1.5
+- Added working, accessible homepage topic filters; normalized generated article cards to Indonesian dates and data-backed reading-time/category labels; balanced short final rows on desktop.
+- Added homepage Open Graph/Twitter large-image metadata and regression checks for social assets, filter controls, and generated card details.
+- Updated `docs/ARTICLE_WRITING_SOP.md` to v1.5 with reusable homepage integration requirements. Article master content and FROZEN subheading template remain unchanged.
+- PR #23 merged as `2da56e41d4a64a19151ca8cb899c3cd5d56dfb4f`; CI Light run 182 passed.
+- Cloudflare Pages production deployment `cf8deb79-5891-4a8d-93b9-7b1844b44b5d` completed successfully. Browser visual verification remains pending because Opera Browser Connector was unavailable.
+
 ## 2026-10-23 — Sitemap and article identity URL QA
 - Generated the public `robots.txt` sitemap directive from `site-config.json` and added CI checks for unique, resolvable sitemap URLs, canonical consistency, noindex exclusion, Open Graph identity URLs, and Article JSON-LD URL consistency.
 - Normalized article canonical, Open Graph, and Article JSON-LD identity URLs only in the public build output; frozen article source, article master, and editorial SOP were not changed.

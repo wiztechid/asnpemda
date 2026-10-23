@@ -17,7 +17,7 @@ Cloudflare Pages builds with `python scripts/build_site.py` into `dist/`. The ex
 
 The builder generates the sitemap from six public information pages and the approved published articles. The sitemap excludes drafts and noindex pages. The public `robots.txt` sitemap directive is generated from `site-config.json`.
 
-Published article identity URLs are normalized in the public build so the canonical URL, Open Graph URL, Article JSON-LD `mainEntityOfPage`, and sitemap location agree. Frozen article source files, the article master, and editorial SOP remain unchanged.
+Published article identity URLs are normalized in the public build so the canonical URL, Open Graph URL, Article JSON-LD `mainEntityOfPage`, and sitemap location agree. Frozen article source files and the article master remain unchanged. The editorial SOP is now v1.5 and includes the homepage integration requirements.
 
 ## Technical validation
 - CI Light run 137 (`39888358080`) passed the sitemap and canonical regression gate.
@@ -33,8 +33,8 @@ Published article identity URLs are normalized in the public build so the canoni
 - Complete the remaining live mobile/accessibility review before closing deployment QA.
 
 ## Editorial readiness
-- Article structure and hero-image workflow follow `docs/ARTICLE_WRITING_SOP.md` v1.2.
+- Article structure and hero-image workflow follow `docs/ARTICLE_WRITING_SOP.md` v1.5.
 - Primary-source verification and a separate human publication authorization remain required for material legal, tax, payroll, personnel, and APBD claims.
 - Draft article pages and prototypes are omitted from the public build and sitemap.
 - No private operating playbook or keyword research is included in the Cloudflare artifact.
-- Design System v1.0, the article master, and editorial SOP remain frozen.
+- Design System v1.0 and the article master remain frozen. The editorial SOP is maintained separately and is updated to v1.5.

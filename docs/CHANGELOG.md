@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-23 — Sitemap and article identity URL QA
+- Generated the public `robots.txt` sitemap directive from `site-config.json` and added CI checks for unique, resolvable sitemap URLs, canonical consistency, noindex exclusion, Open Graph identity URLs, and Article JSON-LD URL consistency.
+- Normalized article canonical, Open Graph, and Article JSON-LD identity URLs only in the public build output; frozen article source, article master, and editorial SOP were not changed.
+- PR #12 merged as `ef34fced2e8fe6aa32dd0564925a92725f94894d`; CI Light run 137 passed.
+- PR #13 merged as `a0027409ddf6bd54d14c1ea6a784a8c70408c261`; CI Light run 139 passed; Cloudflare Pages deployment `b77cb590-010e-451f-9b33-3550a93a7007` completed successfully.
+- Browser-level fetch of the stable production URLs and Search Console sitemap submission remain pending; deployment is not marked fully verified.
+
 ## 2026-10-20 — Dampak kebijakan, koreksi publik, dan hero article build
 - Perjelas standar bahwa daftar persiapan tanpa dasar aturan resmi harus diberi label opsional, bukan kewajiban atau syarat.
 - Siapkan halaman koreksi publik dan formulir GitHub dengan peringatan privasi; kanal ini tetap memakai pelaporan publik, bukan mengumpulkan email/data pribadi di situs.

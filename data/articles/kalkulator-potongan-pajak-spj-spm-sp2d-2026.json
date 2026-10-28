@@ -47,14 +47,18 @@
   "revisionHistory": [
     {
       "date": "2026-10-28",
+      "summary": "Switched the original low-poly editorial hero to optimized 1200×675 WebP, keeping frozen article layout and SEO/social image metadata synchronized."
+    },
+    {
+      "date": "2026-10-28",
       "summary": "Created requested SEO guide and linked it to dedicated tax calculator. Legal claims limited to verified official provisions; frozen article layout preserved."
     }
   ],
   "approved": true,
   "publicationState": "PUBLISHED",
   "articlePath": "artikel/kalkulator-potongan-pajak-spj-spm-sp2d-2026.html",
-  "heroImage": "assets/hero-kalkulator-potongan-spj-2026.svg",
-  "articleSha256": "2c6ad4a2e57e7a91abcbb463cfd0df4c1b15a7a91df55399ad8d492b23066eaf",
+  "heroImage": "assets/hero-kalkulator-potongan-spj-2026.webp",
+  "articleSha256": "6c7cb1ba7e8491212457f623050782b81bbddb517e172a47024fadbb52a097cd",
   "evidencePath": "data/candidates/kalkulator-potongan-pajak-spj-spm-sp2d-2026.evidence.json",
   "evidenceSha256": "e1970d5482c9b7fb99b1770c3c069865a739937242a61491dc64b83f3f732aec",
   "humanApproval": {

@@ -36,7 +36,7 @@ export function calculate(raw = {}) {
   let pph = 0, taxName = '', taxBase = base, rateLabel = '', taxExplain = '', blocked = false;
   if (total <= 0) { warning(alerts,'Isi nilai pembayaran lebih dari Rp0.'); blocked = true; }
   if (a.vatMode === 'special') { warning(alerts,'PPN dengan DPP nilai lain/besaran tertentu khusus perlu verifikasi faktur. Kalkulasi belum bisa difinalisasi.'); blocked = true; }
-  if (a.recipientTaxId === 'unknown' && ['goods','services','honor'].includes(a.category)) {
+  if (a.recipientTaxId === 'unknown' && ['goods','services','honor','rentMovable'].includes(a.category)) {
     warning(alerts,'Status NPWP/NIK penerima belum terverifikasi. Hasil PPh ditahan sampai status pajaknya jelas.');
     blocked = true;
   }
@@ -45,10 +45,12 @@ export function calculate(raw = {}) {
       taxName = 'PPh Pasal 22'; rateLabel = '1,5% × nilai sebelum PPN';
       const ex = a.goodsException;
       if (base <= 2000000 && !a.splitContract) { pph = 0; taxExplain = 'Tidak dipungut: transaksi paling banyak Rp2 juta (tidak termasuk PPN), bukan pemecahan transaksi.'; }
-      else if (ex && ex !== 'none') { pph = 0; taxExplain = 'Tidak dipungut oleh instansi pada kondisi pengecualian yang dipilih; pastikan dokumen/bukti pemungutan pihak lain.'; }
-      else { pph = Math.round(base * RATES.goods.normal); taxExplain = 'PMK 51/2025: pembelian barang oleh instansi pemerintah (di luar pengecualian).'; }
+      else if (a.paymentMethod === 'kkpd' || a.paymentMethod === 'upMarketplace' || (ex && ex !== 'none')) { pph = 0; taxExplain = 'Tidak dipungut oleh instansi pada mekanisme/kondisi pengecualian yang dipilih; periksa bukti pemungutan pihak lain.'; }
+      else { const pct = a.recipientTaxId === 'no' ? 0.03 : RATES.goods.normal; pph = Math.round(base * pct); rateLabel = (pct * 100).toLocaleString('id-ID') + '% × nilai sebelum PPN'; taxExplain = 'PMK 51/2025: pembelian barang oleh instansi pemerintah (di luar pengecualian).'; }
       if (a.splitContract) warning(alerts,'Transaksi dipecah: ambang Rp2 juta harus diuji berdasarkan nilai transaksi sebenarnya.');
       if (ex === 'skb') warning(alerts,'Wajib verifikasi salinan SKB atau surat keterangan yang masih berlaku sebelum membebaskan PPh 22.');
+      if (ex === 'kkpd' && a.paymentMethod !== 'kkpd') { blocked = true; warning(alerts,'Pengecualian KKPD hanya bisa digunakan untuk mekanisme kartu kredit pemerintah.'); }
+      if (a.recipientTaxId === 'no') warning(alerts,'PPh 22 tanpa NPWP menggunakan tarif lebih tinggi 100% jika pemungutan berlaku; cek identitas pajak.');
       break;
     }
     case 'services':
@@ -127,7 +129,7 @@ export function calculate(raw = {}) {
   let collector = 'Tidak ada PPN', vatGov = 0;
   if (vat > 0) {
     const autoGov = base > 2000000 || !!a.splitContract;
-    const isGov = method === 'government' || (method === 'auto' && autoGov && a.paymentMethod !== 'kkpd');
+    const isGov = method === 'government' || (method === 'auto' && autoGov && !['kkpd','upMarketplace'].includes(a.paymentMethod));
     collector = isGov ? 'Instansi pemerintah' : method === 'thirdparty' ? 'Pihak lain' : 'Rekanan/pihak lain (bukan dipungut instansi)';
     if (isGov) vatGov = vat;
     if (method === 'government' && base <= 2000000 && !a.splitContract) warning(alerts,'PPN biasanya tidak dipungut instansi untuk transaksi ≤ Rp2 juta; periksa pengecualian.');

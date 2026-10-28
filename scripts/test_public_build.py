@@ -135,6 +135,9 @@ if 'data-topic-filter-grid' not in home_html or 'article-grid-count-' not in hom
     raise SystemExit("homepage topic filter grid metadata missing")
 if 'assets/home-topic-filters.js' not in home_html:
     raise SystemExit("homepage topic filter script is not linked")
+site_css = (dist / "assets" / "site.css").read_text(encoding="utf-8")
+if "@media(max-width:600px){.site-header .brand small{display:none}}" not in site_css:
+    raise SystemExit("mobile site header must hide the long brand tagline")
 if 'Semua</button>' not in home_html or 'Pensiun & kesejahteraan' not in home_html:
     raise SystemExit("homepage topic filter controls missing or incomplete")
 home_cards = re.findall(r'<article class="article-card"[^>]*data-topic="([^"]+)"', home_html)

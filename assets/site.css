@@ -131,3 +131,4 @@
 .article-grid:not(.is-filtered).article-grid-count-5>.article-card:nth-child(5){grid-column:3}
 .article-grid:not(.is-filtered).article-grid-count-4>.article-card:nth-child(4){grid-column:2}
 }
+@media(max-width:600px){.site-header .brand small{display:none}}

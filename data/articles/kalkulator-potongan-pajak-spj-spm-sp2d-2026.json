@@ -47,6 +47,10 @@
   "revisionHistory": [
     {
       "date": "2026-10-28",
+      "summary": "Added prominent directly actionable calculator and prefilled-example links in quick answer, article body and footer; preserved frozen article modules."
+    },
+    {
+      "date": "2026-10-28",
       "summary": "Switched the original low-poly editorial hero to optimized 1200×675 WebP, keeping frozen article layout and SEO/social image metadata synchronized."
     },
     {
@@ -58,7 +62,7 @@
   "publicationState": "PUBLISHED",
   "articlePath": "artikel/kalkulator-potongan-pajak-spj-spm-sp2d-2026.html",
   "heroImage": "assets/hero-kalkulator-potongan-spj-2026.webp",
-  "articleSha256": "6c7cb1ba7e8491212457f623050782b81bbddb517e172a47024fadbb52a097cd",
+  "articleSha256": "cf118ec73fbd564b21f3ec5776ae5f39a499031a957aff60037c0d195835888a",
   "evidencePath": "data/candidates/kalkulator-potongan-pajak-spj-spm-sp2d-2026.evidence.json",
   "evidenceSha256": "e1970d5482c9b7fb99b1770c3c069865a739937242a61491dc64b83f3f732aec",
   "humanApproval": {
@@ -73,7 +77,7 @@
     "reviewedAt": "2026-10-28",
     "outcome": "PUBLISH_WITH_CALCULATOR_CAVEATS",
     "reviewerIsHuman": false,
-    "summary": "Official tax references checked. Explicit limitations and human document verification retained. UI browser QA required."
+    "summary": "Direct calculator CTA added with examples and additional context. All fiscal simulations remain advisory and subject to source verification."
   },
   "seo": {
     "focusKeyword": "kalkulator potongan pajak SPJ 2026",

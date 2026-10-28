@@ -97,6 +97,7 @@
 <div class="calc-line"><span>Nilai tagihan termasuk PPN</span><strong id="outInvoice">—</strong></div>
 <div class="calc-line"><span>Nilai sebelum PPN</span><strong id="outBase">—</strong></div>
 <div class="calc-line"><span>PPN terutang</span><strong id="outVat">—</strong></div>
+<div class="calc-line" id="dppWrap" hidden><span>DPP PPh 21 (50% honor bruto)</span><strong id="outDpp">—</strong></div>
 <div class="calc-line"><span>PPh dipotong</span><strong id="outPph">—</strong></div>
 <div class="calc-line"><span>PPN dipungut instansi</span><strong id="outVatGov">—</strong></div>
 <div class="calc-line"><span>Potongan nonpajak</span><strong id="outOther">—</strong></div>
@@ -141,6 +142,8 @@ function render(){
  const put=(id,val)=>$(id).textContent=val;
  put('payout',r.ok?rupiah(r.payout):'Perlu verifikasi');put('status',r.ok?'Simulasi, bukan ketetapan pajak':'Perbaiki data / periksa syarat di bawah');
  put('outInvoice',rupiah(r.invoice));put('outBase',rupiah(r.base));put('outVat',rupiah(r.vat));
+ $('dppWrap').hidden = !(v.category==='honor' && v.honorType==='nonemployee') && !(v.category==='services' && v.payeeType==='person');
+ put('outDpp',rupiah(r.taxBase));
  put('outPph',r.ok?rupiah(r.pph):'—');put('outVatGov',r.ok?rupiah(r.vatGov):'—');put('outOther',rupiah(r.nonTax));
  put('outDeductions',r.ok?rupiah(r.pph+r.vatGov+r.nonTax):'—');put('outTaxName',r.taxName||'Perlu klasifikasi');
  put('outRate',r.rateLabel||'Periksa status');put('outExplain',r.taxExplain + ' Pemungut PPN: ' + r.collector + '.');

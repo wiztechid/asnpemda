@@ -4,7 +4,7 @@ Halaman: `/kalkulator-spm-sp2d.html`; mesin: `/assets/spm-tax-engine.js`.
 Tidak mengubah template artikel yang FROZEN.
 
 ## Cakupan
-1. PPh 21: Bukan Pegawai/profesional (DPP 50% bruto, Pasal 17), peserta kegiatan (bruto, Pasal 17), PNS honor final APBD (PP 80/2010).
+1. PPh 21: pegawai tetap (TER bulanan PP 58/2023; rekonsiliasi masa terakhir sesuai PMK 168/2023), pegawai tidak tetap harian, Bukan Pegawai/profesional (DPP 50% bruto, Pasal 17), peserta kegiatan (bruto, Pasal 17), PNS honor final APBD (PP 80/2010).
 2. PPh 22: belanja barang 1,5% (tanpa NPWP 3%) dengan ambang Rp2 juta dan pengecualian KKPD, pihak lain, SKB, barang tertentu.
 3. PPh 23: jasa badan, sewa selain tanah/bangunan (2% / 4% jika tidak ada NPWP).
 4. PPh final 4(2): pekerjaan konstruksi 1,75% / 2,65% / 4%; konsultansi 3,5% / 6%; sewa tanah/bangunan 10%.
@@ -26,6 +26,8 @@ Tidak mengubah template artikel yang FROZEN.
 | Fisik kualifikasi kecil Rp100.000.000 + PPN | Rp1.750.000 | Rp98.250.000 |
 | Konsultan konstruksi bersertifikat Rp100.000.000 | Rp3.500.000 | Rp96.500.000 |
 | Honor PNS golongan III Rp5.100.000 | Rp255.000 | Rp4.845.000 |
+| Pegawai tetap K/0 bruto Rp10.000.000 (masa biasa) | Rp200.000 | Rp9.800.000 |
+| Payroll tahunan: bruto Rp120.000.000, iuran Rp1.200.000, K/0, potongan sebelumnya Rp2.200.000 | Rp515.000 masa terakhir | Rp9.485.000 bulan terakhir pada bruto Rp10.000.000 |
 | Tanpa status pajak / DPP nilai lain khusus | Ditahan sampai verifikasi | — |
 
 ## Quality gates sebelum production
@@ -42,7 +44,7 @@ Tidak mengubah template artikel yang FROZEN.
 - [ ] End-to-end print-to-PDF dan salin hasil di perangkat nyata.
 
 ## Aturan keamanan penggunaan
-Kalkulator tidak boleh dianggap sebagai instruksi pemungutan otomatis. Untuk PPh final UMKM, PPh 26, 15, TER gaji/TPP, PPnBM, kontrak campuran, faktur dengan DPP khusus, withholding dari sistem pengadaan, perlakuan penerima luar negeri, dan termin/retensi kompleks, tampilkan batasan dan eskalasi manual. Jangan memaksa memilih jenis PPh hanya karena nama rekening/kegiatan.
+Kalkulator tidak boleh dianggap sebagai instruksi pemungutan otomatis. Untuk PPh final UMKM, PPh 26, 15, bagian tahun pegawai tetap, PPnBM, kontrak campuran, faktur dengan DPP khusus, withholding dari sistem pengadaan, perlakuan penerima luar negeri, dan termin/retensi kompleks, tampilkan batasan dan eskalasi manual. Jangan memaksa memilih jenis PPh hanya karena nama rekening/kegiatan.
 
 ## Dasar resmi
 - PMK 168 Tahun 2023 — https://pajak.go.id/id/peraturan/petunjuk-pelaksanaan-pemotongan-pajak-atas-penghasilan-sehubungan-dengan-pekerjaan-jasa-1

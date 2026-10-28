@@ -16,6 +16,10 @@ for record_path in sorted((root / "data" / "articles").glob("*.json")):
         errors.append(f"{record_path.relative_to(root)} invalid article record: {error}")
 
 for page in sorted(root.rglob("*.html")):
+    # The generated Cloudflare Pages artifact has clean extensionless routes;
+    # audit source links here and validate the built artifact in test_public_build.py.
+    if "dist" in page.relative_to(root).parts:
+        continue
     text = page.read_text(encoding="utf-8")
     # Google verification HTML files intentionally contain one exact plaintext token line.
     if page.parent == root and page.name.startswith("google") and text.strip() == f"google-site-verification: {page.name}":

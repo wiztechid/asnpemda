@@ -267,7 +267,7 @@ def refresh_homepage_cards(home: str, articles: list[tuple[str, str | None, str 
         badge = '<span class="article-card-label">' + html_utils.escape(category) + '</span>' if category else ''
         meta = '<span>' + html_utils.escape(date) + '</span>' + ('<span>' + html_utils.escape(reading) + '</span>' if reading else '')
         cards[slug] = '<article class="article-card" data-topic="' + homepage_topic(slug) + '"><a class="article-card-image" href="/' + html_utils.escape(clean_public_route(relative), quote=True) + '">' + img + badge + '</a><div class="article-card-body"><div class="article-card-meta">' + meta + '</div><h3><a href="/' + html_utils.escape(clean_public_route(relative), quote=True) + '">' + html_utils.escape(title) + '</a></h3><p>' + html_utils.escape(description[:150]) + '</p><a class="text-link" href="/' + html_utils.escape(clean_public_route(relative), quote=True) + '">Baca artikel →</a></div></article>'
-    ordered = sorted(cards, key=lambda slug: ((approved[slug][1] or '')[:10], slug), reverse=True)[:6]
+    ordered = sorted(cards, key=lambda slug: ((approved[slug][1] or '')[:10], slug), reverse=True)[:9]
     start = home.find('<div class="article-grid">')
     if start < 0:
         raise SystemExit('ERROR: homepage article grid missing')

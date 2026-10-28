@@ -55,7 +55,7 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:
 [hidden]{display:none!important}
 @media(max-width:870px){.layout{grid-template-columns:1fr}.result{position:static}}
 @media(max-width:490px){.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.panel{padding:17px}.hero{padding:32px 0}.hero h1{font-size:32px}.links{gap:10px}}
-@media print{nav.top,.hero,form,.examples,.actions,.sources,.inputpanel{display:none!important}.layout{display:block;margin:0;padding:0}.result{box-shadow:none;border:0}.wrap{max-width:none}@page{size:A4;margin:14mm}}
+.print-brand{display:none}
 
 /* Kalkulator mengikuti header/footer editorial FROZEN tanpa mengubah templatenya. */
 .tool-breadcrumbs{margin-top:17px;margin-bottom:17px;line-height:1.65}
@@ -67,7 +67,33 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:
 .site-header .navwrap{max-width:1160px}
 @media(max-width:650px){.tool-breadcrumbs{margin-top:13px;margin-bottom:13px}.tool-editorial{padding:16px 18px;margin-bottom:22px}}
 
-@media print{.site-header,.site-footer,.tool-breadcrumbs,.tool-editorial,.skip-link{display:none!important}}
+@media print{
+ @page{size:A4;margin:14mm}
+ html,body{background:#fff!important;color:#19314f!important}
+ body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .site-header,.site-footer,.tool-breadcrumbs,.tool-editorial,.skip-link,nav.top,.hero,form,.examples,.actions,.sources,.inputpanel{display:none!important}
+ .layout{display:block;margin:0;padding:0}
+ .result{position:relative;width:100%;max-width:182mm;margin:0 auto;padding:0;border:0;background:#fff;box-shadow:none;overflow:visible}
+ .result::after{content:"ASN PEMDA";position:fixed;z-index:0;top:43%;left:50%;transform:translate(-50%,-50%) rotate(-28deg);white-space:nowrap;font-size:62pt;font-weight:850;letter-spacing:.12em;color:#55738f;opacity:.075;pointer-events:none}
+ .result>*{position:relative;z-index:1}
+ .print-brand{display:flex!important;align-items:center;gap:12px;margin:0 0 16px;padding:11px 14px;border:1px solid #d6e2ed;border-bottom:3px solid #4e769b;border-radius:8px;background:#f2f6fa!important;color:#243f5b}
+ .print-brand .print-name{font-size:17px;font-weight:850;letter-spacing:.01em;color:#173c63}
+ .print-brand .print-name span{color:#4a78a2}
+ .print-brand .print-detail{flex:1;font-size:10px;line-height:1.45;color:#40566d}
+ .print-brand time{font-size:10px;color:#40566d;white-space:nowrap}
+ .result h2{margin:0 0 4px;color:#193b60;font-size:19px}
+ .result>.intro{margin:0 0 12px;color:#435a70;font-size:10px}
+ .result .summary{break-inside:avoid;background:#eaf5f1!important;border-color:#bfded3;color:#174b41}
+ .result .summary strong{color:#075f50}
+ .data-row,.info,.notes,.checklist{break-inside:avoid}
+ .data-row{border-color:#d8e1ea;color:#263c52}
+ .data-row.special{background:#f0f5fa!important;color:#173f68}
+ .tag{background:#eaf1fa!important;color:#244c75}
+ .info{background:#f1f5f9!important;color:#344d66}
+ .notes{background:#fff5df!important;border-color:#e8d39d;color:#634d20}
+ .checklist{background:#eaf5f1!important;color:#174b41}
+ a{color:#244d75;text-decoration:none}
+}
 </style></head><body><a class="skip-link" href="#form">Langsung ke formulir pajak E-Katalog</a>
 <header class="site-header"><div class="shell navwrap"><a class="brand" href="/index.html" aria-label="ASN Pemda, beranda"><img class="brand-icon" src="/favicon.svg?v=20261020-6" alt="" aria-hidden="true"><span>ASN<span class="brand-blue">Pemda</span><small>Ngerti aturan, nggak pakai ribet.</small></span></a><nav aria-label="Navigasi utama"><a href="/index.html">Beranda</a><a href="/editorial.html">Cara kami</a><a href="/about.html">Tentang</a></nav><a class="nav-cta" href="/editorial.html">Metode editorial ↗</a></div></header>
 <nav class="breadcrumbs shell tool-breadcrumbs" aria-label="Breadcrumb"><a href="/index.html">Beranda</a> › <a href="/index.html#topik">Kalkulator SPJ</a> › Kalkulator Pajak E-Katalog</nav>
@@ -129,7 +155,7 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:
 </div></div>
 </form>
 </section>
-<aside class="panel result" id="hasil" aria-live="polite"><h2>Simulasi dana diterima</h2><p class="intro">Dari harga pesanan sampai perkiraan dana yang diterima penyedia. <strong>Bukan penetapan pajak resmi.</strong></p>
+<aside class="panel result" id="hasil" aria-live="polite"><div class="print-brand"><span class="print-name">ASN<span>Pemda</span></span><span class="print-detail">Ringkasan simulasi pajak • E-Katalog / INAPROC</span><time data-print-date></time></div><h2>Simulasi dana diterima</h2><p class="intro">Dari harga pesanan sampai perkiraan dana yang diterima penyedia. <strong>Bukan penetapan pajak resmi.</strong></p>
 <span class="tag" id="routeTitle">Periksa transaksi</span>
 <div class="summary"><small>Perkiraan pembayaran masuk rekening penyedia</small><strong id="net">Perlu verifikasi</strong><small id="statusText">Lengkapi data di sebelah kiri.</small></div>
 <div class="data-row"><span>Harga sebelum PPN</span><b id="base">—</b></div>
@@ -228,5 +254,6 @@ $('copy').addEventListener('click',async()=>{
  catch(e){window.prompt('Salin ringkasan:',s)}
 });
 $('print').addEventListener('click',()=>window.print());
+const printToday=new Date();const printDate=new Intl.DateTimeFormat('id-ID',{dateStyle:'long'}).format(printToday);document.querySelectorAll('[data-print-date]').forEach(el=>{el.textContent=printDate;el.dateTime=printToday.toISOString().slice(0,10)});
 render();
 </script></body></html>

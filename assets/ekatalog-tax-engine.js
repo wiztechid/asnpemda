@@ -36,10 +36,12 @@ function baseChecklist() {
 export function calcEcatalog(incoming={}) {
  const i={...incoming}, notes=[];
  const amount=amt(i.amount);
- const rate=i.vatType==='standard'?.11:i.vatType==='luxury'?.12:0;
+ const rate=['standard','luxury'].includes(i.vatType)?0.12:0;
+ const dppFactor=i.vatType==='standard'?11/12:1;
+ const effectiveRate=rate*dppFactor;
  const mode=i.priceMode==='inclusive'?'inclusive':'exclusive';
- const base=round(rate&&mode==='inclusive'?amount/(1+rate):amount);
- const vat=round(mode==='inclusive'?amount-base:base*rate);
+ const base=round(rate&&mode==='inclusive'?amount/(1+effectiveRate):amount);
+ const vat=round(mode==='inclusive'?amount-base:base*effectiveRate);
  const invoice=mode==='inclusive'?round(amount):round(base+vat);
  const partial={base,vat,invoice};
  if(!amount) notes.push('Masukkan harga transaksi lebih dari nol.');
@@ -79,6 +81,7 @@ export function calcEcatalog(incoming={}) {
      finalGap=Math.max(0,finalTax-pph);
      notes.push('PPh 22 sebesar 0,5% yang dipungut Pihak Lain adalah bagian pelunasan PPh final; selisih kurang PPh final disetor sendiri oleh penyedia (PMK 58/2022 Pasal 6 ayat 6).');
    }
+   if(i.vatType==='standard') notes.push('PPN nonmewah dihitung 12% × DPP nilai lain 11/12 (efektif 11%); cocokkan jenis penyerahan dan faktur.');
    if(i.vatType==='luxury') notes.push('PPnBM barang mewah belum diperhitungkan; nominal tagihan bersih belum lengkap.');
    notes.push('Skema PMK 58/2022 berlaku hanya jika transaksi benar-benar melalui Pihak Lain yang ditunjuk dan dibayar melalui UP/KKP, bukan setiap katalog elektronik.');
    const net=invoice-pph-vat;

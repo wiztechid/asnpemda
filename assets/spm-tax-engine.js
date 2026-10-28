@@ -11,7 +11,8 @@ export const RATES = Object.freeze({
     consultantCert: 0.035, consultantNoCert: 0.06
   },
   rentBuilding: 0.10,
-  pnsHonor: {I_II: 0, III: 0.05, IV: 0.15}
+  pnsHonor: {I_II: 0, III: 0.05, IV: 0.15},
+  pph21Daily: {zeroUpTo: 450000, terUpTo: 2500000, terRate: 0.005}
 });
 const num = v => Number.isFinite(Number(v)) ? Math.max(0, Number(v)) : 0;
 export const rupiah = n => 'Rp' + Math.round(num(n)).toLocaleString('id-ID');
@@ -28,10 +29,12 @@ const warning = (alerts, message) => alerts.push(message);
 
 export function calculate(raw = {}) {
   const a = {...raw}, alerts = [], labels = [];
-  const total = num(a.amount), vatRate = a.vatMode === 'regular' ? 0.11 : a.vatMode === 'luxury' ? 0.12 : 0;
+  const total = num(a.amount), vatRate = a.vatMode === 'regular' || a.vatMode === 'luxury' ? 0.12 : 0;
+  const vatDppFactor = a.vatMode === 'regular' ? 11/12 : 1;
+  const vatEffectiveRate = vatRate * vatDppFactor;
   const included = a.amountMode === 'inclusive';
-  const base = included && vatRate ? Math.round(total / (1 + vatRate)) : Math.round(total);
-  const vat = vatRate ? (included ? Math.max(0, Math.round(total - base)) : Math.round(base * vatRate)) : 0;
+  const base = included && vatRate ? Math.round(total / (1 + vatEffectiveRate)) : Math.round(total);
+  const vat = vatRate ? (included ? Math.max(0, Math.round(total - base)) : Math.round(base * vatEffectiveRate)) : 0;
   const invoice = included ? Math.round(total) : Math.round(base + vat);
   let pph = 0, taxName = '', taxBase = base, rateLabel = '', taxExplain = '', blocked = false;
   if (total <= 0) { warning(alerts,'Isi nilai pembayaran lebih dari Rp0.'); blocked = true; }
@@ -46,6 +49,22 @@ export function calculate(raw = {}) {
     blocked = true;
   }
   switch (a.category) {
+    case 'temporaryDaily': {
+      taxName = 'PPh Pasal 21 — Pegawai Tidak Tetap Harian';
+      if (base <= RATES.pph21Daily.zeroUpTo) {
+        pph = 0; rateLabel = '0% untuk bruto harian sampai dengan Rp450.000';
+      } else if (base <= RATES.pph21Daily.terUpTo) {
+        pph = Math.round(base * RATES.pph21Daily.terRate);
+        rateLabel = 'TER harian 0,5% × bruto harian';
+      } else {
+        taxBase = Math.round(base * 0.5);
+        pph = tax17(taxBase);
+        rateLabel = '50% bruto × tarif progresif Pasal 17';
+      }
+      taxExplain = 'Pegawai tidak tetap yang menerima penghasilan harian: PP 58/2023 dan PMK 168/2023. Isi bruto untuk satu hari kerja. Skema pembayaran bulanan, borongan, atau satuan hasil tidak dicakup mode ini.';
+      if (a.vatMode !== 'none') { blocked = true; warning(alerts,'Penghasilan pegawai bukan tagihan PKP. Pilih PPN tidak terutang/tidak dihitung.'); }
+      break;
+    }
     case 'goods': {
       taxName = 'PPh Pasal 22'; rateLabel = '1,5% × nilai sebelum PPN';
       const ex = a.goodsException;
@@ -55,6 +74,8 @@ export function calculate(raw = {}) {
       if (a.splitContract) warning(alerts,'Transaksi dipecah: ambang Rp2 juta harus diuji berdasarkan nilai transaksi sebenarnya.');
       if (ex === 'skb') warning(alerts,'Wajib verifikasi salinan SKB atau surat keterangan yang masih berlaku sebelum membebaskan PPh 22.');
       if (ex === 'kkpd' && a.paymentMethod !== 'kkpd') { blocked = true; warning(alerts,'Pengecualian KKPD hanya bisa digunakan untuk mekanisme kartu kredit pemerintah.'); }
+      if (['bos','rice'].includes(ex)) warning(alerts,'PPh 22 tidak dipungut untuk objek yang dipilih. Simpan bukti penggunaan dana BOS atau dokumen pembelian gabah/beras.');
+      if (ex === 'sipdUP' && a.paymentMethod !== 'upMarketplace') { blocked = true; warning(alerts,'Pengecualian SIPD/UP memerlukan pemungutan oleh Pihak Lain yang ditunjuk dan bukti pemungutan transaksi.'); }
       if (a.recipientTaxId === 'no') warning(alerts,'PPh 22 tanpa NPWP menggunakan tarif lebih tinggi 100% jika pemungutan berlaku; cek identitas pajak.');
       break;
     }
@@ -71,6 +92,12 @@ export function calculate(raw = {}) {
         if (prior > 0) warning(alerts,'DPP terdahulu yang dimasukkan harus sesuai masa pajak dan ketentuan pemotongan relevan.');
       } else {
         taxName = 'PPh Pasal 23';
+        if (a.category === 'services' && a.serviceException && a.serviceException !== 'none') {
+          blocked = true;
+          warning(alerts, a.serviceException === 'pp55'
+            ? 'Suket PP 55 dapat mengubah perlakuan menjadi PPh Final UMKM, bukan otomatis bebas pajak. Pastikan dasar dan kewajiban yang berlaku sebelum menetapkan potongan.'
+            : 'SKB PPh 23 harus valid serta sesuai objek, penerima, dan masa berlaku. Kalkulator menahan hasil sampai dokumen diverifikasi.');
+        }
         const pct = a.recipientTaxId === 'no' ? RATES.service.noNpwp : RATES.service.npwp;
         rateLabel = (pct * 100).toLocaleString('id-ID') + '% × jumlah bruto sebelum PPN';
         pph = Math.round(base * pct);
@@ -132,7 +159,7 @@ export function calculate(raw = {}) {
       blocked = true; warning(alerts,'Pilih kategori pembayaran.');
   }
   if (a.recipientTaxId === 'no' && ((a.category === 'services' && a.payeeType === 'person') || (a.category === 'honor' && a.honorType !== 'pns'))) rateLabel += ' (+20% pemotongan tanpa NPWP/NIK valid)';
-  if (a.category === 'honor' && vatRate) { blocked = true; warning(alerts,'Honorarium orang pribadi bukan transaksi PKP biasa; hapus PPN atau verifikasi sifat pengadaannya.'); }
+  if (['honor','temporaryDaily'].includes(a.category) && vatRate) { blocked = true; warning(alerts,'Penghasilan orang pribadi bukan transaksi PKP biasa; hapus PPN atau verifikasi sifat pengadaannya.'); }
   if (a.category === 'goods' && a.payeeType === 'person') warning(alerts,'Pastikan pembelian benar-benar barang, bukan jasa orang pribadi, untuk memilih PPh 22.');
   const method = a.vatCollector || 'unknown';
   let collector = 'Tidak ada PPN', vatGov = 0;
@@ -166,7 +193,7 @@ export function calculate(raw = {}) {
   const payout = invoice - pph - vatGov - nonTax;
   if (nonTax > 0) warning(alerts,'Retensi, angsuran uang muka, denda dan potongan lain bersifat simulasi kas; dasar pengenaan pajaknya harus dicocokkan dengan kontrak dan bukti transaksi.');
   if (payout < 0) { blocked = true; warning(alerts,'Total potongan melebihi nilai tagihan. Periksa data.'); }
-  if (a.vatMode === 'regular') warning(alerts,'PPN nonmewah umumnya 12% × DPP nilai lain 11/12 (= 11% harga). Skema khusus PMK 11/2025 tidak dihitung otomatis.');
+  if (a.vatMode === 'regular') warning(alerts,'Tarif PPN 12% dikenakan atas DPP nilai lain 11/12 untuk BKP/JKP nonmewah yang memenuhi ketentuan (efektif 11% harga). Skema khusus PMK 11/2025 tidak dihitung otomatis.');
   if (a.vatMode === 'luxury') warning(alerts,'Tarif 12% penuh hanya pada penyerahan yang benar-benar memenuhi kategori barang mewah; PPnBM tidak dihitung.');
   if (blocked) { pph = null; vatGov = null; }
   return {

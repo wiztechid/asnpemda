@@ -58,6 +58,7 @@ export function calcEcatalog(incoming={}) {
    notes.push('Belum ada bukti bahwa platform adalah Pihak Lain yang ditunjuk sebagai pemungut menurut PMK 58/2022.');
  if(i.route==='marketplaceUP'&&i.pkp==='no'&&i.objectType!=='transport')
    notes.push('PMK 58/2022 pada umumnya mewajibkan status PKP rekanan melalui Pihak Lain; periksa pengecualian Pasal 3 sebelum simulasi.');
+ if(i.route==='ls'&&i.taxRegime==='unknown') notes.push('Konfirmasi apakah penyedia memakai PPh umum atau PPh Final UMKM; jangan memakai tarif biasa sebelum status diketahui.');
  if(i.route==='ls'&&i.taxRegime==='umkm')
    notes.push('Penggunaan fasilitas PPh Final UMKM 0,5% pada LS memerlukan konfirmasi kelayakan PP 55/2022 jo PP 20/2026 dan Surat Keterangan; tidak disubstitusikan otomatis untuk PPh 22/23.');
  if(i.objectType==='construction' && !Object.hasOwn(constRates,i.constructionType)) notes.push('Kualifikasi pekerjaan konstruksi dan dokumen SBU/SKK belum ditetapkan.');

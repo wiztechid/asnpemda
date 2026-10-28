@@ -48,17 +48,19 @@ for name, image in (
         '<header class="site-header">', '<footer class="site-footer">',
         'class="brand-icon"', 'class="shell footer-grid"', 'class="shell footer-bottom"',
         'class="skip-link"', 'class="breadcrumbs shell tool-breadcrumbs"',
-        'class="shell tool-editorial"', 'href="/about.html"',
-        'href="/editorial.html"', 'href="/privacy.html"',
-        'href="/disclaimer.html"', 'href="/koreksi.html"',
-        'href="/kalkulator-spm-sp2d.html"',
-        'href="/kalkulator-pajak-ekatalog.html"',
-        'href="/assets/article-template.css',
+        'class="shell tool-editorial"', 'href="/assets/article-template.css',
         '"@type":"WebApplication"',
         'name="twitter:card" content="summary_large_image"',
     ):
         if marker not in page:
             raise SystemExit(f"calculator site-shell missing {marker}: {name}")
+    for slug in (
+        "about", "editorial", "privacy", "disclaimer", "koreksi",
+        "kalkulator-spm-sp2d", "kalkulator-pajak-ekatalog",
+    ):
+        # The public builder rewrites source .html links to clean Cloudflare URLs.
+        if not re.search(r'href="/' + re.escape(slug) + r'(?:\\.html)?"', page):
+            raise SystemExit(f"calculator site-shell missing link to {slug}: {name}")
     if page.count('<header class="site-header">') != 1 or page.count('<footer class="site-footer">') != 1:
         raise SystemExit("duplicate site shell in calculator: " + name)
     if 'og:image' not in page or image not in page or ("assets/" + image) not in actual:

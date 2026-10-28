@@ -46,7 +46,7 @@ for name, image in (
     page = (dist / name).read_text(encoding="utf-8")
     for marker in (
         '<header class="site-header">', '<footer class="site-footer">',
-        'class="brand-icon"', 'class="footer-grid"', 'class="footer-bottom"',
+        'class="brand-icon"', 'class="shell footer-grid"', 'class="shell footer-bottom"',
         'class="skip-link"', 'class="breadcrumbs shell tool-breadcrumbs"',
         'class="shell tool-editorial"', 'href="/about.html"',
         'href="/editorial.html"', 'href="/privacy.html"',

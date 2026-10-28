@@ -47,14 +47,18 @@
   "revisionHistory": [
     {
       "date": "2026-10-28",
+      "summary": "Switched the original low-poly editorial hero to optimized 1200×675 WebP, keeping frozen article layout and SEO/social image metadata synchronized."
+    },
+    {
+      "date": "2026-10-28",
       "summary": "Created requested SEO guide and linked it to dedicated tax calculator. Legal claims limited to verified official provisions; frozen article layout preserved."
     }
   ],
   "approved": true,
   "publicationState": "PUBLISHED",
   "articlePath": "artikel/pajak-ekatalog-v6-penyedia-2026.html",
-  "heroImage": "assets/hero-pajak-ekatalog-penyedia-2026.svg",
-  "articleSha256": "294fc3984d750ec71fab538523d4ef917cb7289fd5fd6926e812489f680c0672",
+  "heroImage": "assets/hero-pajak-ekatalog-penyedia-2026.webp",
+  "articleSha256": "b57b116f827a0fba1dc5ff4563c3b21f3e47c34b06d41bc0b09aa60878caaa51",
   "evidencePath": "data/candidates/pajak-ekatalog-v6-penyedia-2026.evidence.json",
   "evidenceSha256": "beda5a949031f83b9aea584b4e68a3007d3caa016f52d843df368bec38acdeac",
   "humanApproval": {

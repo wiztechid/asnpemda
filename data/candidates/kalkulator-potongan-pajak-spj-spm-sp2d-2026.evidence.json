@@ -1,0 +1,38 @@
+{
+  "articleId": "kalkulator-potongan-pajak-spj-spm-sp2d-2026",
+  "kind": "primary-source review snapshot",
+  "verifiedAt": "2026-10-28",
+  "verification": "Checked regulations and DJP explanatory materials, including actual PMK 58/2022 Pasal 5–6 and PP 20/2026; different payment mechanisms and applicability conditions distinguished.",
+  "facts": [
+    "Cocokkan kontrak dan faktur sebelum memilih jenis pajak.",
+    "Pastikan status penerima dan pemungut.",
+    "Gunakan kalkulator hanya sebagai simulasi, bukan penetapan."
+  ],
+  "primarySources": [
+    {
+      "title": "PMK 168/2023 — PPh 21 Bukan Pegawai",
+      "url": "https://www.pajak.go.id/sites/default/files/lampiran/Lampiran%20PMK%20168%202023.pdf",
+      "date": "2023-12-29"
+    },
+    {
+      "title": "PMK 51 Tahun 2025 — PPh Pasal 22",
+      "url": "https://stats.pajak.go.id/id/peraturan/pemungutan-pajak-penghasilan-pasal-22-sehubungan-dengan-pembayaran-atas-penyerahan-1",
+      "date": "2025-07-25"
+    },
+    {
+      "title": "PMK 58 Tahun 2022 — pemungutan oleh Pihak Lain",
+      "url": "https://pajak.go.id/index.php/id/peraturan/penunjukan-pihak-lain-sebagai-pemungut-pajak-dan-tata-cara-pemungutan-penyetoran-dan-atau",
+      "date": "2022-03-30"
+    },
+    {
+      "title": "DJP — PPN PMK 131/2024",
+      "url": "https://pajak.go.id/node/113453",
+      "date": "2025-01-01"
+    }
+  ],
+  "limitations": [
+    "SEO intent chosen qualitatively; search volume and Google competition are not measured",
+    "Calculator is advisory, not official withholding determination",
+    "Human reviewer is the site owner who explicitly requested publication on 2026-10-28"
+  ]
+}

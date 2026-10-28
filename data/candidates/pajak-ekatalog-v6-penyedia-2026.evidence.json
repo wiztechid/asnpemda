@@ -1,0 +1,38 @@
+{
+  "articleId": "pajak-ekatalog-v6-penyedia-2026",
+  "kind": "primary-source review snapshot",
+  "verifiedAt": "2026-10-28",
+  "verification": "Checked regulations and DJP explanatory materials, including actual PMK 58/2022 Pasal 5–6 and PP 20/2026; different payment mechanisms and applicability conditions distinguished.",
+  "facts": [
+    "Cek apakah pembayaran LS atau UP/KKP melalui Pihak Lain ditunjuk.",
+    "Verifikasi NPWP/NIK, PKP, surat keterangan UMKM, SBU/SKK sesuai kasus.",
+    "Cocokkan bukti pemungutan PPh 22 dan PPN sebelum pencairan."
+  ],
+  "primarySources": [
+    {
+      "title": "PMK 58/PMK.03/2022 — Pasal 5 sampai 10",
+      "url": "https://pajak.go.id/index.php/id/peraturan/penunjukan-pihak-lain-sebagai-pemungut-pajak-dan-tata-cara-pemungutan-penyetoran-dan-atau",
+      "date": "2022-03-30"
+    },
+    {
+      "title": "PMK 51 Tahun 2025 — PPh Pasal 22 umum",
+      "url": "https://stats.pajak.go.id/id/peraturan/pemungutan-pajak-penghasilan-pasal-22-sehubungan-dengan-pembayaran-atas-penyerahan-1",
+      "date": "2025-07-25"
+    },
+    {
+      "title": "PP 20 Tahun 2026 — fasilitas UMKM",
+      "url": "https://pajak.go.id/id/peraturan/perubahan-atas-peraturan-pemerintah-nomor-55-tahun-2022-tentang-penyesuaian-pengaturan-di",
+      "date": "2026-04-22"
+    },
+    {
+      "title": "DJP — PPN PMK 131/2024",
+      "url": "https://pajak.go.id/node/113453",
+      "date": "2025-01-01"
+    }
+  ],
+  "limitations": [
+    "SEO intent chosen qualitatively; search volume and Google competition are not measured",
+    "Calculator is advisory, not official withholding determination",
+    "Human reviewer is the site owner who explicitly requested publication on 2026-10-28"
+  ]
+}

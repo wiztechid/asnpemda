@@ -17,6 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 BASE_FILES = (
     "index.html",
+    "kalkulator-spm-sp2d.html",
+    "kalkulator-pajak-ekatalog.html",
     "about.html",
     "editorial.html",
     "privacy.html",
@@ -28,6 +30,8 @@ BASE_FILES = (
     "robots.txt",
     "assets/site.css",
     "assets/home-topic-filters.js",
+    "assets/spm-tax-engine.js",
+    "assets/ekatalog-tax-engine.js",
     "assets/article-template.css",
     "assets/article-insights.css",
     "assets/article-engagement.js",
@@ -198,6 +202,8 @@ def add_article_blogroll(page: str, current: str, published: list[tuple[str, str
 
 
 def homepage_topic(slug: str) -> str:
+    if "kalkulator" in slug or "ekatalog" in slug:
+        return "kalkulator"
     if "pensiun" in slug or "gaji-pensiun" in slug:
         return "pensiun"
     if "pppk" in slug:
@@ -261,7 +267,7 @@ def refresh_homepage_cards(home: str, articles: list[tuple[str, str | None, str 
         badge = '<span class="article-card-label">' + html_utils.escape(category) + '</span>' if category else ''
         meta = '<span>' + html_utils.escape(date) + '</span>' + ('<span>' + html_utils.escape(reading) + '</span>' if reading else '')
         cards[slug] = '<article class="article-card" data-topic="' + homepage_topic(slug) + '"><a class="article-card-image" href="/' + html_utils.escape(clean_public_route(relative), quote=True) + '">' + img + badge + '</a><div class="article-card-body"><div class="article-card-meta">' + meta + '</div><h3><a href="/' + html_utils.escape(clean_public_route(relative), quote=True) + '">' + html_utils.escape(title) + '</a></h3><p>' + html_utils.escape(description[:150]) + '</p><a class="text-link" href="/' + html_utils.escape(clean_public_route(relative), quote=True) + '">Baca artikel →</a></div></article>'
-    ordered = sorted(cards, key=lambda slug: ((approved[slug][1] or '')[:10], slug), reverse=True)[:6]
+    ordered = sorted(cards, key=lambda slug: ((approved[slug][1] or '')[:10], slug), reverse=True)[:9]
     start = home.find('<div class="article-grid">')
     if start < 0:
         raise SystemExit('ERROR: homepage article grid missing')
@@ -300,7 +306,7 @@ def main() -> None:
     articles = published_articles()
     home_path = DIST / 'index.html'
     home_path.write_text(refresh_homepage_cards(home_path.read_text(encoding='utf-8'), articles), encoding='utf-8')
-    for page_name in ("index.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "koreksi.html"):
+    for page_name in ("index.html", "kalkulator-spm-sp2d.html", "kalkulator-pajak-ekatalog.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "koreksi.html"):
         page_path = DIST / page_name
         page_path.write_text(normalize_public_urls(page_path.read_text(encoding="utf-8"), origin), encoding="utf-8")
     for relative, _, hero_image in articles:
@@ -333,7 +339,7 @@ def main() -> None:
     ns = "http://www.sitemaps.org/schemas/sitemap/0.9"
     ET.register_namespace("", ns)
     urlset = ET.Element(f"{{{ns}}}urlset")
-    for route in ("", "about", "editorial", "privacy", "disclaimer", "koreksi"):
+    for route in ("", "about", "editorial", "privacy", "disclaimer", "koreksi", "kalkulator-spm-sp2d", "kalkulator-pajak-ekatalog"):
         url = ET.SubElement(urlset, f"{{{ns}}}url")
         ET.SubElement(url, f"{{{ns}}}loc").text = f"{origin}/{route}"
     for relative, modified, _ in articles:

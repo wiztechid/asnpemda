@@ -1,0 +1,92 @@
+{
+  "id": "pajak-ekatalog-v6-penyedia-2026",
+  "slug": "pajak-ekatalog-v6-penyedia-2026",
+  "title": "Pajak E-Katalog V6 2026 untuk Penyedia: PPh 22 0,5% atau 1,5%?",
+  "status": "BERLAKU",
+  "datePublished": "2026-10-28",
+  "dateModified": "2026-10-28",
+  "lastVerified": "2026-10-28",
+  "materiality": "MEDIUM",
+  "asnImpact": "Petugas pengadaan dan pemegang dana dapat menjelaskan kepada penyedia alasan pemungutan PPh 22 0,5% yang terbatas pada mekanisme tertentu.",
+  "pemdaImpact": "Mengurangi sengketa perhitungan pajak penyedia, pembengkakan harga penawaran, dan pemotongan PPh ganda dalam E-Katalog V6.",
+  "actionRequired": [
+    "Cek apakah pembayaran LS atau UP/KKP melalui Pihak Lain ditunjuk.",
+    "Verifikasi NPWP/NIK, PKP, surat keterangan UMKM, SBU/SKK sesuai kasus.",
+    "Cocokkan bukti pemungutan PPh 22 dan PPN sebelum pencairan."
+  ],
+  "sources": [
+    {
+      "title": "PMK 58/PMK.03/2022 — Pasal 5 sampai 10",
+      "url": "https://pajak.go.id/index.php/id/peraturan/penunjukan-pihak-lain-sebagai-pemungut-pajak-dan-tata-cara-pemungutan-penyetoran-dan-atau",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "2022-03-30"
+    },
+    {
+      "title": "PMK 51 Tahun 2025 — PPh Pasal 22 umum",
+      "url": "https://stats.pajak.go.id/id/peraturan/pemungutan-pajak-penghasilan-pasal-22-sehubungan-dengan-pembayaran-atas-penyerahan-1",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "2025-07-25"
+    },
+    {
+      "title": "PP 20 Tahun 2026 — fasilitas UMKM",
+      "url": "https://pajak.go.id/id/peraturan/perubahan-atas-peraturan-pemerintah-nomor-55-tahun-2022-tentang-penyesuaian-pengaturan-di",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "2026-04-22"
+    },
+    {
+      "title": "DJP — PPN PMK 131/2024",
+      "url": "https://pajak.go.id/node/113453",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "2025-01-01"
+    }
+  ],
+  "revisionHistory": [
+    {
+      "date": "2026-10-28",
+      "summary": "Created requested SEO guide and linked it to dedicated tax calculator. Legal claims limited to verified official provisions; frozen article layout preserved."
+    }
+  ],
+  "approved": true,
+  "publicationState": "PUBLISHED",
+  "articlePath": "artikel/pajak-ekatalog-v6-penyedia-2026.html",
+  "heroImage": "assets/hero-pajak-ekatalog-penyedia-2026.svg",
+  "articleSha256": "294fc3984d750ec71fab538523d4ef917cb7289fd5fd6926e812489f680c0672",
+  "evidencePath": "data/candidates/pajak-ekatalog-v6-penyedia-2026.evidence.json",
+  "evidenceSha256": "beda5a949031f83b9aea584b4e68a3007d3caa016f52d843df368bec38acdeac",
+  "humanApproval": {
+    "decision": "GO",
+    "authorizedBy": "wiztechid",
+    "role": "human site owner",
+    "approvedAt": "2026-10-28T13:45:00+08:00",
+    "instruction": "Owner requested: publish separate SEO-targeted articles for the SPM/SP2D tax calculator and E-Katalog vendor tax calculator and add a Kalkulator SPJ topic on homepage."
+  },
+  "editorialAssessment": {
+    "type": "AI_ASSISTED_EDITORIAL_REVIEW",
+    "reviewedAt": "2026-10-28",
+    "outcome": "PUBLISH_WITH_CALCULATOR_CAVEATS",
+    "reviewerIsHuman": false,
+    "summary": "Official tax references checked. Explicit limitations and human document verification retained. UI browser QA required."
+  },
+  "seo": {
+    "focusKeyword": "pajak e katalog v6 2026",
+    "secondaryKeywords": [
+      "kalkulator pajak e katalog penyedia",
+      "PPh 22 0,5% Pihak Lain",
+      "pajak e katalog pembayaran LS UP KKP",
+      "potongan pajak penyedia inaproC"
+    ],
+    "titleTag": "Pajak E-Katalog V6 2026 untuk Penyedia: PPh 22 0,5% atau 1,5%?",
+    "slug": "/artikel/pajak-ekatalog-v6-penyedia-2026.html",
+    "robots": "index,follow",
+    "structuredData": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "searchDemandNote": "No keyword-specific Google Ads volume or verified organic ranking supplied. Target chosen from search intent and prior keyword map; no demand figures or ranking claims assigned."
+  }
+}

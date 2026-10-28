@@ -36,6 +36,9 @@
 .calc-sources{margin:0 auto 45px;line-height:1.7}.calc-sources h2{margin:0 0 8px;font-size:20px}.calc-sources p{font-size:13px;color:#53667f}
 .calc-sources a{color:#2059af}.calc-sources ul{font-size:13px;padding-left:20px}
 .calc-footer{border-top:1px solid var(--line);padding:24px 0;font-size:12px;color:var(--muted)}
+.calc-steps{padding:14px 16px;background:#f1f6ff;border:1px solid #d8e6fc;border-radius:13px;margin:12px 0 17px}
+.calc-steps strong{font-size:14px;display:block;margin-bottom:7px}.calc-steps ol{display:grid;gap:6px;margin:0;padding-left:19px;color:#385373;font-size:13px;line-height:1.55}
+.calc-hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.calc-hero-actions a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;min-height:46px;border-radius:11px;background:white;color:#184781;font-weight:800;font-size:14px;text-decoration:none}.calc-hero-actions a.alt{background:transparent;border:1px solid #c7defb;color:white}
 .calc-warning{color:#8b4d0c;font-weight:700}.calc-hidden{display:none!important}
 @media(max-width:820px){.calc-main{grid-template-columns:1fr}.calc-results{position:static}.calc-hero{padding:32px 0}.calc-panel{padding:18px}.calc-fields{gap:12px}}
 @media(max-width:440px){.calc-fields{grid-template-columns:1fr}.calc-field.full{grid-column:auto}.calc-hero h1{font-size:31px}.calc-results .big{font-size:31px}}
@@ -45,11 +48,13 @@
 <section class="calc-hero"><div class="calc-shell"><span class="eyebrow">Alat bantu pengelola keuangan daerah • Simulasi 2026</span>
 <h1>Kalkulator Potongan<br>SPM / SP2D</h1>
 <p>Hitung dan pahami potongan PPh, pemungutan PPN, serta potongan pembayaran lainnya untuk belanja barang, jasa, konstruksi/fisik, honorarium, dan sewa. Setiap hasil dilengkapi dasar klasifikasi agar tidak salah memilih pajak.</p>
+<div class="calc-hero-actions"><a href="#taxForm">🧮 Mulai hitung potongan SPJ</a><a class="alt" href="/kalkulator-pajak-ekatalog.html">Saya penyedia E-Katalog →</a></div>
 <p style="margin-top:14px;color:#e2f4ff;font-size:14px">Penyedia yang berjualan melalui E-Katalog/INAPROC? <a href="/kalkulator-pajak-ekatalog.html" style="color:white;font-weight:850;text-decoration:underline">Gunakan kalkulator khusus E-Katalog →</a></p>
 <div class="calc-flags"><span>✓ Format Rupiah</span><span>✓ Responsif HP & desktop</span><span>✓ Ringkasan siap cetak</span><span>✓ Tidak mengirim data ke server</span></div></div></section>
 <main class="calc-shell calc-main">
 <section class="calc-panel calc-form" aria-labelledby="calc-form-title"><h2 id="calc-form-title">Detail pembayaran</h2><p>Masukkan nilai tagihan satu jenis objek. Jika satu kontrak berisi beberapa jenis belanja, hitung tiap objek secara terpisah.</p>
-<div class="calc-examples" aria-label="Contoh data"><button type="button" data-example="translator">Contoh: Penerjemah Rp5,1 juta</button><button type="button" data-example="goods">Barang Rp10 juta</button><button type="button" data-example="construction">Fisik Rp100 juta</button></div>
+<div class="calc-steps" role="note"><strong>3 langkah cepat supaya tidak salah potong</strong><ol><li>Tekan contoh pembayaran di bawah, atau pilih kategori sendiri.</li><li>Lengkapi status penerima, NPWP/NIK, PPN, dan pemungut.</li><li>Lihat <a href="#calcResults">rincian potongan dan jumlah ditransfer</a>; hasil yang belum valid akan ditahan.</li></ol></div>
+<div class="calc-examples" aria-label="Contoh data"><button type="button" data-example="translator">Coba honor penerjemah</button><button type="button" data-example="goods">Coba belanja barang</button><button type="button" data-example="construction">Coba pekerjaan fisik</button></div>
 <form id="taxForm">
 <div class="calc-fields">
 <div class="calc-field"><label for="paymentDoc">Dokumen</label><select id="paymentDoc"><option>SPM</option><option>SP2D</option><option>Bukti Kas/SPJ</option></select></div>
@@ -60,7 +65,7 @@
 <div class="calc-field"><label for="amountMode">Nilai yang diinput</label><select id="amountMode"><option value="exclusive">Belum termasuk PPN</option><option value="inclusive">Sudah termasuk PPN</option></select></div>
 <div class="calc-field"><label for="recipientTaxId">Identitas pajak penerima</label><select id="recipientTaxId"><option value="unknown">— Pilih status —</option><option value="yes">NPWP/NIK tervalidasi</option><option value="no">Tidak memiliki NPWP</option></select></div>
 <div class="calc-field"><label for="payeeType">Bentuk penerima</label><select id="payeeType"><option value="person">Orang pribadi</option><option value="company">Badan/perusahaan</option></select></div>
-<div class="calc-field"><label for="paymentMethod">Mekanisme belanja</label><select id="paymentMethod"><option value="ls">LS/GU/TU/UP biasa</option><option value="kkpd">Kartu kredit pemerintah</option><option value="upMarketplace">UP melalui pihak lain/platform</option></select></div>
+<div class="calc-field"><label for="paymentMethod">Mekanisme pembayaran</label><select id="paymentMethod"><option value="ls">Pembayaran biasa/LS (bukan pemungut Pihak Lain)</option><option value="kkpd">KKPD/KKP</option><option value="upMarketplace">UP melalui Pihak Lain</option></select><div class="calc-help">Untuk KKPD/UP melalui Pihak Lain, gunakan <a href="/kalkulator-pajak-ekatalog.html">kalkulator penyedia E-Katalog</a>.</div></div>
 </div>
 <div class="calc-section" id="categoryExtras"><h3>Penentuan jenis pajak</h3>
 <div class="calc-fields">
@@ -76,6 +81,7 @@
 <div class="calc-section"><h3>PPN dan siapa yang memungut</h3>
 <div class="calc-fields">
 <div class="calc-field"><label for="vatMode">Perlakuan PPN</label><select id="vatMode"><option value="unselected">— Pilih status PPN —</option><option value="none">Tidak terutang/tidak dihitung</option><option value="regular">BKP/JKP nonmewah (efektif 11%)</option><option value="luxury">BKP mewah (12% penuh)</option><option value="special">DPP nilai lain/besaran tertentu khusus — perlu telaah</option></select></div>
+<div class="calc-field"><label for="pkpStatus">Status PKP penyedia</label><select id="pkpStatus"><option value="unknown">— Periksa status —</option><option value="yes">PKP (boleh memungut PPN sesuai objek)</option><option value="no">Bukan PKP</option></select></div>
 <div class="calc-field"><label for="vatCollector">Pemungut PPN</label><select id="vatCollector"><option value="auto">Otomatis berdasar ambang umum</option><option value="government">Instansi pemerintah</option><option value="vendor">Rekanan</option><option value="thirdparty">Pihak lain/platform</option></select></div>
 </div><div class="calc-help">PPN hanya dihitung bila transaksi memang objek PPN dan rekanan memenuhi syarat. Pilihan pemungut tidak mengubah PPN terutang, melainkan pihak yang menyetorkannya. Pengecualian dan skema khusus wajib diverifikasi.</div></div>
 <div class="calc-section"><h3>Potongan nonpajak (opsional)</h3><div class="calc-fields">
@@ -86,7 +92,7 @@
 </div><div class="calc-help">Potongan nonpajak tidak otomatis mengurangi DPP pajak. Dasarnya harus mengacu kontrak, berita acara, dan dokumen tagihan.</div></div>
 </form></section>
 <aside class="calc-panel calc-results" id="calcResults" aria-live="polite"><h2>Hasil simulasi</h2><p>Rincian pajak dan dana yang diterima rekanan.</p>
-<div class="summary"><span class="small">Estimasi ditransfer ke penerima</span><div id="payout" class="big">—</div><span class="small" id="status">Menghitung…</span></div>
+<div class="summary"><span class="small">Estimasi ditransfer ke penerima</span><div id="payout" class="big">—</div><span class="small" id="status">Pilih contoh transaksi atau lengkapi data.</span></div>
 <div class="calc-list">
 <div class="calc-line"><span>Nilai tagihan termasuk PPN</span><strong id="outInvoice">—</strong></div>
 <div class="calc-line"><span>Nilai sebelum PPN</span><strong id="outBase">—</strong></div>
@@ -112,13 +118,13 @@
 <li><a href="https://www.pajak.go.id/index.php/id/peraturan/perlakuan-pajak-pertambahan-nilai-atas-impor-barang-kena-pajak-penyerahan-barang-kena" target="_blank" rel="noopener noreferrer">PMK 131/2024</a> dan <a href="https://pajak.go.id/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan" target="_blank" rel="noopener noreferrer">PMK 11/2025</a> — PPN umum dan nilai lain khusus.</li>
 <li><a href="https://jdih.bpkp.go.id/dokumen/data_dokumen/PP%2080%20Tahun%202010.pdf" target="_blank" rel="noopener noreferrer">PP 80/2010</a> — honorarium PNS tertentu dari APBD/APBN.</li>
 </ul>
-<p><b>Batasan v0.1:</b> tidak mencakup hitungan TER gaji/TPP pegawai tetap, PPh 26, PPh 15, PPh final UMKM khusus, PPnBM, pengadaan luar negeri, perhitungan terpisah faktur campuran, penyesuaian termin/retensi kompleks, serta pengecualian sektoral yang belum diverifikasi. Hasil bukan bukti potong, kode billing atau perintah pembayaran.</p>
+<p><b>Batasan simulasi:</b> tidak mencakup hitungan TER gaji/TPP pegawai tetap, PPh 26, PPh 15, PPh final UMKM khusus, PPnBM, pengadaan luar negeri, perhitungan terpisah faktur campuran, penyesuaian termin/retensi kompleks, serta pengecualian sektoral yang belum diverifikasi. Hasil bukan bukti potong, kode billing atau perintah pembayaran.</p>
 </section>
 <footer class="calc-footer"><div class="calc-shell">ASN Pemda — alat bantu independen, bukan sistem resmi SIPD/DJP/BPKAD. Tidak menyimpan nama, NPWP, atau transaksi Anda.</div></footer>
 <script type="module">
 import {calculate,rupiah} from '/assets/spm-tax-engine.js';
 const $ = id => document.getElementById(id);
-const fields = ['paymentDoc','category','amount','amountMode','recipientTaxId','payeeType','paymentMethod','honorType','pnsGroup','priorDpp','constructionType','goodsException','splitContract','vatMode','vatCollector','retention','advance','penalty','other'];
+const fields = ['paymentDoc','category','amount','amountMode','recipientTaxId','pkpStatus','payeeType','paymentMethod','honorType','pnsGroup','priorDpp','constructionType','goodsException','splitContract','vatMode','vatCollector','retention','advance','penalty','other'];
 const moneyFields = ['amount','priorDpp','retention','advance','penalty','other'];
 const toNum = s => Number(String(s||'0').replace(/[^0-9]/g,'')) || 0;
 moneyFields.forEach(id => { const e = $(id); e.addEventListener('blur', () => {e.value=toNum(e.value).toLocaleString('id-ID');}); e.addEventListener('focus',()=>e.select()); });
@@ -143,16 +149,21 @@ function render(){
  $('btnCopy').disabled=!r.ok;
 }
 $('taxForm').addEventListener('input',render);$('taxForm').addEventListener('change',render);
-document.querySelectorAll('[data-example]').forEach(b=>b.addEventListener('click',()=>{
- const kind=b.dataset.example;
+function fillExample(kind){
  ['priorDpp','retention','advance','penalty','other'].forEach(id=>$(id).value='0');
- $('recipientTaxId').value='yes';$('goodsException').value='none';$('splitContract').checked=false;
+ $('recipientTaxId').value='yes';$('pkpStatus').value='yes';$('goodsException').value='none';$('splitContract').checked=false;
  $('paymentMethod').value='ls';$('vatCollector').value='auto';$('amountMode').value='exclusive';
- if(kind==='translator'){$('category').value='honor';$('honorType').value='nonemployee';$('amount').value='5.100.000';$('vatMode').value='none';$('payeeType').value='person';}
+ if(kind==='translator'){$('pkpStatus').value='no';$('category').value='honor';$('honorType').value='nonemployee';$('amount').value='5.100.000';$('vatMode').value='none';$('payeeType').value='person';}
  if(kind==='goods'){$('category').value='goods';$('amount').value='10.000.000';$('vatMode').value='regular';$('payeeType').value='company';}
  if(kind==='construction'){$('category').value='construction';$('constructionType').value='worksSmall';$('amount').value='100.000.000';$('vatMode').value='regular';$('payeeType').value='company';}
- render();window.scrollTo({top:Math.min($('taxForm').getBoundingClientRect().top+window.scrollY-16,window.scrollY),behavior:'smooth'});
-}));
+ render();
+ document.querySelectorAll('[data-example]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.example===kind)));
+ const result=document.getElementById('calcResults');
+ result?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.querySelectorAll('[data-example]').forEach(b=>b.addEventListener('click',()=>fillExample(b.dataset.example)));
+const preset=new URLSearchParams(location.search).get('contoh');
+if(['translator','goods','construction'].includes(preset)) fillExample(preset);
 $('btnCopy').addEventListener('click',async()=>{
  const r=lastResult,v=lastInputs;if(!r.ok)return;
  const summary=['ASN PEMDA | SIMULASI POTONGAN SPM/SP2D (2026)',

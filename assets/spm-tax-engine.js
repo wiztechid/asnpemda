@@ -37,6 +37,10 @@ export function calculate(raw = {}) {
   if (total <= 0) { warning(alerts,'Isi nilai pembayaran lebih dari Rp0.'); blocked = true; }
   if (!a.vatMode || a.vatMode === 'unselected') { warning(alerts,'Tentukan apakah transaksi terutang PPN. Jangan menganggap otomatis tidak kena PPN.'); blocked = true; }
   if (a.vatMode === 'special') { warning(alerts,'PPN dengan DPP nilai lain/besaran tertentu khusus perlu verifikasi faktur. Kalkulasi belum bisa difinalisasi.'); blocked = true; }
+  if (a.vatMode === 'luxury') { warning(alerts,'BKP mewah/PPnBM memerlukan hitungan tambahan; kalkulator ini tidak menetapkan nominal akhir.'); blocked = true; }
+  if (['kkpd','upMarketplace'].includes(a.paymentMethod)) { warning(alerts,'Untuk belanja KKPD atau UP melalui Pihak Lain, gunakan kalkulator E-Katalog agar pemungut PPh 22/PPN tidak tertukar atau terpotong ganda.'); blocked = true; }
+  if (a.pkpStatus === 'unknown' && a.vatMode === 'regular') { warning(alerts,'Pastikan penyedia benar-benar PKP sebelum memasukkan PPN; pilih status PKP di formulir.'); blocked = true; }
+  if (a.pkpStatus === 'no' && a.vatMode === 'regular') { warning(alerts,'Penyedia non-PKP tidak boleh otomatis menagih PPN seperti PKP. Periksa faktur dan objek.'); blocked = true; }
   if (a.recipientTaxId === 'unknown' && ['goods','services','honor','rentMovable'].includes(a.category)) {
     warning(alerts,'Status NPWP/NIK penerima belum terverifikasi. Hasil PPh ditahan sampai status pajaknya jelas.');
     blocked = true;
@@ -61,6 +65,7 @@ export function calculate(raw = {}) {
         taxBase = Math.round(base * 0.5);
         const prior = num(a.priorDpp), priorTax = tax17(prior);
         pph = Math.max(0,tax17(prior + taxBase) - priorTax);
+        if (a.recipientTaxId === 'no') { pph = Math.round(pph * 1.2); warning(alerts,'PPh 21 nonfinal tanpa NPWP/NIK yang sah: tarif pemotongan 20% lebih tinggi dari hasil normal.'); }
         rateLabel = 'Tarif progresif Pasal 17 × DPP 50% bruto';
         taxExplain = 'Profesi/jasa orang pribadi (bukan pegawai), bukan PPh 23; bukan TER.';
         if (prior > 0) warning(alerts,'DPP terdahulu yang dimasukkan harus sesuai masa pajak dan ketentuan pemotongan relevan.');
@@ -98,12 +103,14 @@ export function calculate(raw = {}) {
         taxBase = Math.round(base * 0.5);
         const prior = num(a.priorDpp);
         pph = Math.max(0,tax17(prior + taxBase) - tax17(prior));
+        if (a.recipientTaxId === 'no') { pph = Math.round(pph * 1.2); warning(alerts,'PPh 21 nonfinal tanpa NPWP/NIK yang sah: tarif pemotongan 20% lebih tinggi dari hasil normal.'); }
         rateLabel = 'Tarif Pasal 17 × 50% bruto (bukan TER)';
         taxExplain = 'Narasumber, penerjemah, dan profesional orang pribadi yang bukan pegawai.';
       } else if (a.honorType === 'participant') {
         taxName = 'PPh Pasal 21 — Peserta Kegiatan';
         const prior = num(a.priorDpp);
         pph = Math.max(0,tax17(prior + base) - tax17(prior));
+        if (a.recipientTaxId === 'no') { pph = Math.round(pph * 1.2); warning(alerts,'PPh 21 nonfinal tanpa NPWP/NIK yang sah: tarif pemotongan 20% lebih tinggi dari hasil normal.'); }
         rateLabel = 'Tarif Pasal 17 × bruto (bukan TER)';
         taxExplain = 'Imbalan atas keikutsertaan kegiatan, bukan jasa profesional sebagai Bukan Pegawai.';
       } else if (a.honorType === 'pns') {

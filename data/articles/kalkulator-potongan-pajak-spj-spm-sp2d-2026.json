@@ -1,0 +1,92 @@
+{
+  "id": "kalkulator-potongan-pajak-spj-spm-sp2d-2026",
+  "slug": "kalkulator-potongan-pajak-spj-spm-sp2d-2026",
+  "title": "Kalkulator Potongan Pajak SPJ, SPM, dan SP2D 2026: Barang, Jasa, Fisik",
+  "status": "BERLAKU",
+  "datePublished": "2026-10-28",
+  "dateModified": "2026-10-28",
+  "lastVerified": "2026-10-28",
+  "materiality": "MEDIUM",
+  "asnImpact": "Bendahara pengeluaran, PPK, dan verifikator dapat memahami perbedaan kategori pajak, tetapi perhitungan akhir wajib berdasarkan dokumen transaksi.",
+  "pemdaImpact": "Membantu mengurangi kesalahan klasifikasi PPh dan PPN saat pengajuan SPM serta verifikasi SP2D.",
+  "actionRequired": [
+    "Cocokkan kontrak dan faktur sebelum memilih jenis pajak.",
+    "Pastikan status penerima dan pemungut.",
+    "Gunakan kalkulator hanya sebagai simulasi, bukan penetapan."
+  ],
+  "sources": [
+    {
+      "title": "PMK 168/2023 — PPh 21 Bukan Pegawai",
+      "url": "https://www.pajak.go.id/sites/default/files/lampiran/Lampiran%20PMK%20168%202023.pdf",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "2023-12-29"
+    },
+    {
+      "title": "PMK 51 Tahun 2025 — PPh Pasal 22",
+      "url": "https://stats.pajak.go.id/id/peraturan/pemungutan-pajak-penghasilan-pasal-22-sehubungan-dengan-pembayaran-atas-penyerahan-1",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "2025-07-25"
+    },
+    {
+      "title": "PMK 58 Tahun 2022 — pemungutan oleh Pihak Lain",
+      "url": "https://pajak.go.id/index.php/id/peraturan/penunjukan-pihak-lain-sebagai-pemungut-pajak-dan-tata-cara-pemungutan-penyetoran-dan-atau",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "2022-03-30"
+    },
+    {
+      "title": "DJP — PPN PMK 131/2024",
+      "url": "https://pajak.go.id/node/113453",
+      "sourceType": "REGULATION",
+      "isPrimary": true,
+      "publishedAt": "2025-01-01"
+    }
+  ],
+  "revisionHistory": [
+    {
+      "date": "2026-10-28",
+      "summary": "Created requested SEO guide and linked it to dedicated tax calculator. Legal claims limited to verified official provisions; frozen article layout preserved."
+    }
+  ],
+  "approved": true,
+  "publicationState": "PUBLISHED",
+  "articlePath": "artikel/kalkulator-potongan-pajak-spj-spm-sp2d-2026.html",
+  "heroImage": "assets/hero-kalkulator-potongan-spj-2026.svg",
+  "articleSha256": "2c6ad4a2e57e7a91abcbb463cfd0df4c1b15a7a91df55399ad8d492b23066eaf",
+  "evidencePath": "data/candidates/kalkulator-potongan-pajak-spj-spm-sp2d-2026.evidence.json",
+  "evidenceSha256": "e1970d5482c9b7fb99b1770c3c069865a739937242a61491dc64b83f3f732aec",
+  "humanApproval": {
+    "decision": "GO",
+    "authorizedBy": "wiztechid",
+    "role": "human site owner",
+    "approvedAt": "2026-10-28T13:45:00+08:00",
+    "instruction": "Owner requested: publish separate SEO-targeted articles for the SPM/SP2D tax calculator and E-Katalog vendor tax calculator and add a Kalkulator SPJ topic on homepage."
+  },
+  "editorialAssessment": {
+    "type": "AI_ASSISTED_EDITORIAL_REVIEW",
+    "reviewedAt": "2026-10-28",
+    "outcome": "PUBLISH_WITH_CALCULATOR_CAVEATS",
+    "reviewerIsHuman": false,
+    "summary": "Official tax references checked. Explicit limitations and human document verification retained. UI browser QA required."
+  },
+  "seo": {
+    "focusKeyword": "kalkulator potongan pajak SPJ 2026",
+    "secondaryKeywords": [
+      "kalkulator pajak SPM SP2D",
+      "contoh perhitungan pajak SPJ belanja",
+      "PPh 22 bendahara pemerintah",
+      "pajak honorarium penerjemah"
+    ],
+    "titleTag": "Kalkulator Potongan Pajak SPJ, SPM, dan SP2D 2026: Barang, Jasa, Fisik",
+    "slug": "/artikel/kalkulator-potongan-pajak-spj-spm-sp2d-2026.html",
+    "robots": "index,follow",
+    "structuredData": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "searchDemandNote": "No keyword-specific Google Ads volume or verified organic ranking supplied. Target chosen from search intent and prior keyword map; no demand figures or ranking claims assigned."
+  }
+}

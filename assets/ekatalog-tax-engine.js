@@ -52,6 +52,8 @@ export function calcEcatalog(incoming={}) {
  if(i.vatType==='special') notes.push('Skema PPN dengan DPP khusus, nilai lain/besaran tertentu belum didukung kalkulasi otomatis.');
  if(i.pkp==='no' && ['standard','luxury'].includes(i.vatType)) notes.push('Penyedia non-PKP tidak boleh otomatis memungut PPN seperti PKP.');
  if(i.objectType==='transport'&&i.route==='ls') notes.push('Jasa angkutan umum memiliki aturan khusus dan tidak dihitung otomatis pada LS.');
+ if(i.route==='marketplaceUP' && i.taxId==='no') notes.push('PMK 58/2022 Pasal 4 mensyaratkan penyampaian NPWP rekanan kepada Pihak Lain; data identitas pajak belum sesuai.');
+ if(i.objectType==='professional'&&i.payeeType!=='person') notes.push('Jasa profesional orang pribadi harus dipilih bersama bentuk penyedia Orang Pribadi.');
  if(i.route==='marketplaceUP' && i.collectorProof!=='yes')
    notes.push('Belum ada bukti bahwa platform adalah Pihak Lain yang ditunjuk sebagai pemungut menurut PMK 58/2022.');
  if(i.route==='marketplaceUP'&&i.pkp==='no'&&i.objectType!=='transport')
@@ -83,7 +85,7 @@ export function calcEcatalog(incoming={}) {
     vatCollector:vat?'Pihak Lain yang ditunjuk':'Tidak dipungut',
     pphCollector:specialTransport?'Tidak dipungut':'Pihak Lain yang ditunjuk',
     net:i.vatType==='luxury'?null:net,
-    finalTax,finalGap:i.vatType==='luxury'?null:finalGap,
+    finalTax,finalGap:i.vatType==='luxury'?null:finalGap,vatWithheld:i.vatType==='luxury'?null:vat,
     why:specialTransport?'Pengecualian angkutan umum orang pribadi pada Pasal 5 ayat (5).':
         'UP/KKP via Pihak Lain pemungut: PPh 22 0,5% berlaku untuk penjualan barang, jasa, sewa, dan konstruksi. Tidak ditambah PPh 21/23/4(2) oleh instansi atas pembayaran yang sama.',
     notes,checklist:baseChecklist().concat(['Bukti pemungutan PPh 22 0,5% oleh Pihak Lain','Jika PPh final: hitung selisih pelunasan sendiri'])};
@@ -106,7 +108,7 @@ export function calcEcatalog(incoming={}) {
  notes.push('Pembayaran LS melalui E-Katalog tetap mengikuti pemotongan PPh berdasarkan objek dan penerima; tarif PMK 58/2022 sebesar 0,5% tidak otomatis berlaku.');
  const net=invoice-g.pph-vatGov;
  return {ok:true,title:'Dipotong/dipungut instansi — LS',base,vat,invoice,pph:g.pph,
-   net,finalTax:null,finalGap:null,
+   net,finalTax:null,finalGap:null,vatWithheld:vatGov,
    taxType:g.taxName,taxRate:g.rateLabel,
    pphCollector:'Instansi pemerintah',
    vatCollector:vatGov?'Instansi pemerintah':vat?'Rekanan, sesuai ketentuan':'Tidak dipungut',

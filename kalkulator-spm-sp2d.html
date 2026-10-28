@@ -150,7 +150,6 @@ function render(){
 }
 $('taxForm').addEventListener('input',render);$('taxForm').addEventListener('change',render);
 function fillExample(kind){
- const kind=b.dataset.example;
  ['priorDpp','retention','advance','penalty','other'].forEach(id=>$(id).value='0');
  $('recipientTaxId').value='yes';$('pkpStatus').value='yes';$('goodsException').value='none';$('splitContract').checked=false;
  $('paymentMethod').value='ls';$('vatCollector').value='auto';$('amountMode').value='exclusive';

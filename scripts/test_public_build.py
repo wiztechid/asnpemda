@@ -67,6 +67,13 @@ for name, image in (
         raise SystemExit("calculator hero/social image missing: " + name)
     if 'name="viewport"' not in page or 'rel="canonical"' not in page:
         raise SystemExit("calculator mobile/SEO metadata missing: " + name)
+    print_tokens = (
+        'class="print-brand"', 'data-print-date', 'ASN<span>Pemda</span>',
+        'content:"ASNPEMDA"', 'print-color-adjust:exact',
+        'break-inside:avoid', 'background:#eaf5f1!important',
+    )
+    if any(token not in page.replace(" ", "") for token in print_tokens):
+        raise SystemExit("calculator print output must include branded watermark and readable soft color styles: " + name)
     if name == "kalkulator-spm-sp2d.html" and (
         'value="unknown">— Pilih sesuai invoice/dokumen —' not in page
         or 'Otomatis berdasar ambang umum' in page

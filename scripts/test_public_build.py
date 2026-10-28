@@ -59,7 +59,7 @@ for name, image in (
         "kalkulator-spm-sp2d", "kalkulator-pajak-ekatalog",
     ):
         # The public builder rewrites source .html links to clean Cloudflare URLs.
-        if not re.search(r'href="/' + re.escape(slug) + r'(?:\\.html)?"', page):
+        if f'href="/{slug}"' not in page and f'href="/{slug}.html"' not in page:
             raise SystemExit(f"calculator site-shell missing link to {slug}: {name}")
     if page.count('<header class="site-header">') != 1 or page.count('<footer class="site-footer">') != 1:
         raise SystemExit("duplicate site shell in calculator: " + name)

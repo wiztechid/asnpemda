@@ -120,7 +120,8 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:
 <option value="consultantCert">Konsultansi konstruksi — bersertifikat (3,5%)</option>
 <option value="consultantNoCert">Konsultansi konstruksi — tidak bersertifikat (6%)</option>
 </select></div>
-<div class="field"><label for="vatType">Perlakuan PPN</label><select id="vatType"><option value="unknown">— Pilih status —</option><option value="standard">Objek PPN nonmewah (efektif 11%)</option><option value="none">Tidak terutang/dibebaskan/non-PKP (verifikasi)</option><option value="luxury">Barang mewah (PPN 12%, PPnBM khusus)</option><option value="special">DPP khusus/nilai lain — telaah manual</option></select></div>
+<div class="field"><label for="vatType">Perlakuan PPN</label><select id="vatType"><option value="unknown">— Pilih status —</option><option value="standard">BKP/JKP nonmewah (12% × DPP nilai lain 11/12; efektif 11%)</option><option value="none">Tidak terutang/dibebaskan/non-PKP (verifikasi)</option><option value="luxury">Barang mewah (PPN 12%, PPnBM khusus)</option><option value="special">DPP khusus/nilai lain — telaah manual</option></select></div>
+<div class="field full" id="lsVatCollectorWrap" hidden><label for="lsVatCollector">Pemungut PPN pada invoice/dokumen LS</label><select id="lsVatCollector"><option value="unknown">— Pilih sesuai invoice/dokumen —</option><option value="government">Instansi pemerintah</option><option value="vendor">Rekanan/PKP</option></select><p class="mini">Jangan tentukan pemungut dari nilai saja. Kartu kredit pemerintah, transaksi paling banyak Rp2 juta, dan beberapa jenis penyerahan memiliki pengecualian.</p></div>
 <div class="field"><label for="priceMode">Harga penawaran/tagihan</label><select id="priceMode"><option value="exclusive">Belum termasuk PPN</option><option value="inclusive">Sudah termasuk PPN</option></select></div>
 <div class="field full"><label for="amount">Nilai harga penawaran/tagihan (Rp)</label><input id="amount" inputmode="numeric" value="10.000.000" autocomplete="off">
 <p class="mini">Masukkan angka Rupiah dengan titik pemisah ribuan. Perhitungan dilakukan di perangkat Anda.</p></div>
@@ -168,13 +169,14 @@ Ketentuan ini berlaku ketika Pihak Lain telah ditunjuk dan transaksi dibayar mel
 <script type="module">
 import {calcEcatalog,rupiah} from '/assets/ekatalog-tax-engine.js';
 const $=s=>document.getElementById(s);
-const ids=['amount','route','collectorProof','payeeType','taxId','pkp','taxRegime','objectType','constructionType','vatType','priceMode','splitContract'];
+const ids=['amount','route','collectorProof','payeeType','taxId','pkp','taxRegime','objectType','constructionType','vatType','lsVatCollector','priceMode','splitContract'];
 const read=()=>{const i={};for(const id of ids){const e=$(id);i[id]=e.type==='checkbox'?e.checked:id==='amount'?Number(e.value.replace(/[^0-9]/g,'')):e.value;}return i;};
 const text=(id,s)=>{$(id).textContent=s;};
 let last,inputs;
 function render(){
  const i=read(),res=calcEcatalog(i);last=res;inputs=i;
  $('proofWrap').hidden=i.route!=='marketplaceUP';
+ $('lsVatCollectorWrap').hidden=i.route!=='ls'||i.vatType!=='standard';
  $('constructionWrap').hidden=i.objectType!=='construction';
  $('splitWrap').hidden=i.objectType!=='goods';
  text('routeTitle',res.title);
@@ -204,6 +206,7 @@ function fillDemo(example){
  $('pkp').value='yes';$('taxRegime').value='regular';
  $('objectType').value=example==='upConstruction'?'construction':'goods';
  $('constructionType').value='worksSmall';$('vatType').value='standard';
+ $('lsVatCollector').value=example==='lsGoods'?'government':'unknown';
  $('priceMode').value='exclusive';$('splitContract').checked=false;render();
  document.querySelectorAll('[data-demo]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.demo===example)));
  document.getElementById('hasil')?.scrollIntoView({behavior:'smooth',block:'start'});

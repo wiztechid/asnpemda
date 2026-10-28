@@ -36,10 +36,12 @@ function baseChecklist() {
 export function calcEcatalog(incoming={}) {
  const i={...incoming}, notes=[];
  const amount=amt(i.amount);
- const rate=i.vatType==='standard'?.11:i.vatType==='luxury'?.12:0;
+ const rate=['standard','luxury'].includes(i.vatType)?0.12:0;
+ const dppFactor=i.vatType==='standard'?11/12:1;
+ const effectiveRate=rate*dppFactor;
  const mode=i.priceMode==='inclusive'?'inclusive':'exclusive';
- const base=round(rate&&mode==='inclusive'?amount/(1+rate):amount);
- const vat=round(mode==='inclusive'?amount-base:base*rate);
+ const base=round(rate&&mode==='inclusive'?amount/(1+effectiveRate):amount);
+ const vat=round(mode==='inclusive'?amount-base:base*effectiveRate);
  const invoice=mode==='inclusive'?round(amount):round(base+vat);
  const partial={base,vat,invoice};
  if(!amount) notes.push('Masukkan harga transaksi lebih dari nol.');
@@ -63,6 +65,8 @@ export function calcEcatalog(incoming={}) {
    notes.push('Penggunaan fasilitas PPh Final UMKM 0,5% pada LS memerlukan konfirmasi kelayakan PP 55/2022 jo PP 20/2026 dan Surat Keterangan; tidak disubstitusikan otomatis untuk PPh 22/23.');
  if(i.objectType==='construction' && !Object.hasOwn(constRates,i.constructionType)) notes.push('Kualifikasi pekerjaan konstruksi dan dokumen SBU/SKK belum ditetapkan.');
  if(i.pkp==='yes' && i.vatType==='none') notes.push('PPN nol hanya boleh dipilih bila objek memang tidak dikenai/dibebaskan/tidak dipungut dengan dasar yang jelas.');
+ if(i.route==='ls' && rate>0 && !['government','vendor'].includes(i.lsVatCollector))
+   notes.push('Pilih siapa yang memungut PPN pada invoice/dokumen. Ambang nilai memiliki pengecualian, sehingga pemungut tidak diasumsikan otomatis.');
  if(notes.length) return blocked(notes,partial);
  if(i.route==='marketplaceUP') {
    const specialTransport=i.objectType==='transport';
@@ -77,6 +81,7 @@ export function calcEcatalog(incoming={}) {
      finalGap=Math.max(0,finalTax-pph);
      notes.push('PPh 22 sebesar 0,5% yang dipungut Pihak Lain adalah bagian pelunasan PPh final; selisih kurang PPh final disetor sendiri oleh penyedia (PMK 58/2022 Pasal 6 ayat 6).');
    }
+   if(i.vatType==='standard') notes.push('PPN nonmewah dihitung 12% × DPP nilai lain 11/12 (efektif 11%); cocokkan jenis penyerahan dan faktur.');
    if(i.vatType==='luxury') notes.push('PPnBM barang mewah belum diperhitungkan; nominal tagihan bersih belum lengkap.');
    notes.push('Skema PMK 58/2022 berlaku hanya jika transaksi benar-benar melalui Pihak Lain yang ditunjuk dan dibayar melalui UP/KKP, bukan setiap katalog elektronik.');
    const net=invoice-pph-vat;
@@ -97,14 +102,14 @@ export function calcEcatalog(incoming={}) {
   recipientTaxId:i.taxId==='valid'?'yes':'no',
   payeeType:i.objectType==='professional'?'person':i.payeeType==='person'?'person':'company',
   vatMode:i.vatType==='none'?'none':i.vatType==='standard'?'regular':i.vatType==='luxury'?'luxury':'none',
-  vatCollector:vat?'government':'auto',paymentMethod:'ls',
+  vatCollector:vat?(i.lsVatCollector||'unknown'):'unknown',paymentMethod:'ls',
   constructionType:i.constructionType,
   goodsException:'none',splitContract:i.splitContract===true
  });
  if(!g.ok) return blocked(g.alerts,partial);
  if(i.vatType==='luxury') return blocked(['BKP mewah memerlukan PPnBM dan prosedur yang belum dihitung otomatis.'],partial);
- const vatGov=vat && base>2000000?vat:0;
- if(vat && base<=2000000) notes.push('PPN transaksi ≤Rp2 juta biasanya tidak dipungut oleh instansi; penyedia harus memeriksa mekanisme penyetoran/faktur.');
+ const vatGov=g.vatGov;
+ if(vat && base<=2000000 && !i.splitContract) notes.push('Pembayaran paling banyak Rp2 juta (bukan pecahan transaksi) termasuk pengecualian pemungutan PPN oleh instansi; cocokkan dengan invoice.');
  if(i.taxRegime==='unknown') notes.push('Status pajak usaha (termasuk kemungkinan fasilitas UMKM) belum diverifikasi; hasil hanya menggunakan klasifikasi objek biasa.');
  notes.push('Pembayaran LS melalui E-Katalog tetap mengikuti pemotongan PPh berdasarkan objek dan penerima; tarif PMK 58/2022 sebesar 0,5% tidak otomatis berlaku.');
  const net=invoice-g.pph-vatGov;
@@ -112,7 +117,7 @@ export function calcEcatalog(incoming={}) {
    net,finalTax:null,finalGap:null,vatWithheld:vatGov,
    taxType:g.taxName,taxRate:g.rateLabel,
    pphCollector:'Instansi pemerintah',
-   vatCollector:vatGov?'Instansi pemerintah':vat?'Rekanan, sesuai ketentuan':'Tidak dipungut',
+   vatCollector:g.collector,
    why:g.taxExplain,notes:notes.concat(g.alerts||[]),
    checklist:baseChecklist()};
 }

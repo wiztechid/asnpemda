@@ -67,6 +67,16 @@ for name, image in (
         raise SystemExit("calculator hero/social image missing: " + name)
     if 'name="viewport"' not in page or 'rel="canonical"' not in page:
         raise SystemExit("calculator mobile/SEO metadata missing: " + name)
+    if name == "kalkulator-spm-sp2d.html" and (
+        'value="unknown">— Pilih sesuai invoice/dokumen —' not in page
+        or 'Otomatis berdasar ambang umum' in page
+    ):
+        raise SystemExit("SPM calculator must require a document-confirmed PPN collector")
+    if name == "kalkulator-pajak-ekatalog.html" and (
+        'id="lsVatCollectorWrap"' not in page
+        or 'Pemungut PPN pada invoice/dokumen LS' not in page
+    ):
+        raise SystemExit("E-Katalog LS calculator must ask who collects PPN")
 print("CALCULATOR SHELL PASS: navigation, identity, policies, and footer match articles")
 
 pension_page = (dist / "artikel" / "cara-menghitung-gaji-pensiun-pns.html").read_text(encoding="utf-8")
@@ -125,6 +135,9 @@ if 'data-topic-filter-grid' not in home_html or 'article-grid-count-' not in hom
     raise SystemExit("homepage topic filter grid metadata missing")
 if 'assets/home-topic-filters.js' not in home_html:
     raise SystemExit("homepage topic filter script is not linked")
+site_css = (dist / "assets" / "site.css").read_text(encoding="utf-8")
+if "@media(max-width:600px){.site-header .brand small{display:none}}" not in site_css:
+    raise SystemExit("mobile site header must hide the long brand tagline")
 if 'Semua</button>' not in home_html or 'Pensiun & kesejahteraan' not in home_html:
     raise SystemExit("homepage topic filter controls missing or incomplete")
 home_cards = re.findall(r'<article class="article-card"[^>]*data-topic="([^"]+)"', home_html)

@@ -72,7 +72,7 @@
 <div class="calc-fields">
 <div class="calc-field"><label for="paymentDoc">Dokumen</label><select id="paymentDoc"><option>SPM</option><option>SP2D</option><option>Bukti Kas/SPJ</option></select></div>
 <div class="calc-field"><label for="category">Kategori belanja</label><select id="category">
-<option value="honor">Honorarium/narasumber</option><option value="goods">Belanja barang</option><option value="services">Jasa nonkonstruksi</option><option value="construction">Konstruksi/fisik</option><option value="rentBuilding">Sewa tanah/bangunan</option><option value="rentMovable">Sewa kendaraan/peralatan</option>
+<option value="honor">Honorarium/narasumber</option><option value="temporaryDaily">Pegawai tidak tetap — dibayar harian</option><option value="fixedEmployee">Pegawai tetap — gaji/TPP bulanan</option><option value="goods">Belanja barang</option><option value="services">Jasa nonkonstruksi</option><option value="construction">Konstruksi/fisik</option><option value="rentBuilding">Sewa tanah/bangunan</option><option value="rentMovable">Sewa kendaraan/peralatan</option>
 </select></div>
 <div class="calc-field full"><label for="amount">Nilai transaksi/tagihan (Rp)</label><input id="amount" inputmode="numeric" autocomplete="off" value="5.100.000" aria-describedby="amountHelp"><div id="amountHelp" class="calc-help">Isi sesuai mode nilai sebelum atau termasuk PPN.</div></div>
 <div class="calc-field"><label for="amountMode">Nilai yang diinput</label><select id="amountMode"><option value="exclusive">Belum termasuk PPN</option><option value="inclusive">Sudah termasuk PPN</option></select></div>
@@ -83,19 +83,29 @@
 <div class="calc-section" id="categoryExtras"><h3>Penentuan jenis pajak</h3>
 <div class="calc-fields">
 <div class="calc-field full" data-show="honor"><label for="honorType">Status penerima honorarium</label><select id="honorType"><option value="nonemployee">Bukan Pegawai — profesional/penerjemah/narasumber lepas</option><option value="participant">Peserta kegiatan (sesuai substansi)</option><option value="pns">PNS — honorarium APBD memenuhi PP 80/2010</option></select><div class="calc-help">Honorarium untuk pegawai tetap/PPPK yang masuk perhitungan gaji bulanan tidak dicakup oleh mode ini. TER tidak digunakan untuk Bukan Pegawai.</div></div>
+<div class="calc-field full" data-show="temporaryDaily"><label>Bruto harian pegawai tidak tetap</label><div class="calc-help">Nilai di atas diartikan sebagai bruto untuk satu hari kerja. Tarif DJP: sampai Rp450.000/hari 0%; di atas Rp450.000 sampai Rp2.500.000/hari TER 0,5%; di atas Rp2.500.000/hari, 50% bruto dikenai tarif progresif Pasal 17.</div></div>
+<div class="calc-field full" data-show="fixedEmployee"><label for="employeePeriod">Masa penghitungan pegawai tetap</label><select id="employeePeriod"><option value="regular">Masa selain pajak terakhir — TER bulanan</option><option value="last">Masa pajak terakhir — rekonsiliasi tahunan</option></select><div class="calc-help">Gunakan kategori ini untuk penghasilan pegawai tetap yang dihitung dalam payroll (termasuk gaji/TPP sesuai perlakuan pajaknya).</div></div>
+<div class="calc-field" data-show="fixedEmployee"><label for="ptkp">Status PTKP pada awal tahun</label><select id="ptkp"><option value="TK0">TK/0 — Rp54.000.000 (TER A)</option><option value="TK1">TK/1 — Rp58.500.000 (TER A)</option><option value="TK2">TK/2 — Rp63.000.000 (TER B)</option><option value="TK3">TK/3 — Rp67.500.000 (TER B)</option><option value="K0">K/0 — Rp58.500.000 (TER A)</option><option value="K1">K/1 — Rp63.000.000 (TER B)</option><option value="K2">K/2 — Rp67.500.000 (TER B)</option><option value="K3">K/3 — Rp72.000.000 (TER C)</option></select></div>
+<div class="calc-field" data-show="fixedEmployee,last"><label for="annualGross">Bruto pegawai selama tahun/bagian tahun (Rp)</label><input id="annualGross" inputmode="numeric" value="0"><div class="calc-help">Masukkan total bruto setahun menurut rekap payroll, termasuk komponen yang menjadi objek PPh 21.</div></div>
+<div class="calc-field" data-show="fixedEmployee,last"><label for="jobMonths">Bulan bekerja dalam tahun/bagian tahun</label><select id="jobMonths"><option value="12">12 bulan</option><option value="11">11 bulan</option><option value="10">10 bulan</option><option value="9">9 bulan</option><option value="8">8 bulan</option><option value="7">7 bulan</option><option value="6">6 bulan</option><option value="5">5 bulan</option><option value="4">4 bulan</option><option value="3">3 bulan</option><option value="2">2 bulan</option><option value="1">1 bulan</option></select><div class="calc-help">Dipakai untuk batas biaya jabatan Rp500.000 per bulan. Masa kerja bagian tahun perlu annualisasi/pro-rata terpisah.</div></div>
+<div class="calc-field" data-show="fixedEmployee,last"><label for="pensionYear">Iuran pensiun setahun yang dapat dikurangkan (Rp)</label><input id="pensionYear" inputmode="numeric" value="0"></div>
+<div class="calc-field" data-show="fixedEmployee,last"><label for="zakatYear">Zakat/sumbangan wajib melalui pemberi kerja setahun (Rp)</label><input id="zakatYear" inputmode="numeric" value="0"></div>
+<div class="calc-field" data-show="fixedEmployee,last"><label for="priorWithheld">PPh 21 sudah dipotong sebelum masa terakhir (Rp)</label><input id="priorWithheld" inputmode="numeric" value="0"></div>
+<div class="calc-field" data-show="fixedEmployee,last"><label for="partYear">Status masa pajak</label><select id="partYear"><option value="no">Tahun pajak penuh</option><option value="yes">Bagian tahun pajak / pegawai masuk atau berhenti</option></select><div class="calc-help">Bagian tahun diblokir dari hasil otomatis karena neto disetahunkan lalu pajaknya diprorata.</div></div>
 <div class="calc-field" data-show="honor" id="pnsGroupWrap"><label for="pnsGroup">Golongan PNS</label><select id="pnsGroup"><option value="">— Pilih golongan —</option><option value="I_II">I–II (0%)</option><option value="III">III (5%)</option><option value="IV">IV (15%)</option></select></div>
 <div class="calc-field" data-show="honor,services" id="priorDppWrap"><label for="priorDpp">DPP terdahulu dalam masa pajak (opsional)</label><input id="priorDpp" inputmode="numeric" value="0"><div class="calc-help">Hanya bila perlu penghitungan progresif kumulatif; nominal DPP, bukan bruto.</div></div>
 <div class="calc-field full" data-show="construction"><label for="constructionType">Kualifikasi pekerjaan & penyedia</label><select id="constructionType">
 <option value="">— Pilih klasifikasi/sertifikasi —</option><option value="worksSmall">Pekerjaan konstruksi — usaha kecil bersertifikat (1,75%)</option><option value="worksOther">Pekerjaan konstruksi — selain kecil bersertifikat (2,65%)</option><option value="worksNoCert">Pekerjaan konstruksi — tanpa sertifikat (4%)</option><option value="integratedCert">Pekerjaan terintegrasi — bersertifikat (2,65%)</option><option value="integratedNoCert">Pekerjaan terintegrasi — tanpa sertifikat (4%)</option><option value="consultantCert">Konsultansi konstruksi — bersertifikat (3,5%)</option><option value="consultantNoCert">Konsultansi konstruksi — tanpa sertifikat (6%)</option>
 </select></div>
-<div class="calc-field full" data-show="goods"><label for="goodsException">Pengecualian pemungutan PPh 22</label><select id="goodsException"><option value="none">Tidak ada — ketentuan umum</option><option value="kkpd">Pembayaran kartu kredit instansi pemerintah</option><option value="skb">SKB/surat keterangan pembebasan yang sah</option><option value="special">BBM/gas/pelumas/benda pos/air/listrik, atau pengecualian lain</option><option value="alreadyCollected">Sudah dipungut pihak lain pengadaan</option></select></div>
+<div class="calc-field full" data-show="goods"><label for="goodsException">Pengecualian pemungutan PPh 22</label><select id="goodsException"><option value="none">Tidak ada — ketentuan umum</option><option value="kkpd">Pembayaran kartu kredit instansi pemerintah</option><option value="bos">Belanja barang menggunakan dana BOS</option><option value="rice">Pembelian gabah dan/atau beras</option><option value="skb">SKB/surat keterangan PP 55 yang sah</option><option value="special">BBM/gas/pelumas/benda pos/air/listrik</option><option value="sipdUP">Pembelian di SIPD melalui UP/Pihak Lain</option><option value="alreadyCollected">Sudah dipungut pihak lain pengadaan</option></select></div>
+<div class="calc-field full" data-show="services"><label for="serviceException">Status pengecualian PPh 23</label><select id="serviceException"><option value="none">Tidak ada pengecualian yang dipilih</option><option value="pp55">Penerima menyerahkan Suket PP 55</option><option value="skb">Penerima menyerahkan SKB PPh 23</option></select><div class="calc-help">Suket PP 55 dapat berarti perlakuan PPh Final UMKM, bukan bebas pajak. SKB perlu diverifikasi; hasil ditahan agar tarif tidak otomatis dianggap nol.</div></div>
 <div class="calc-field full" data-show="goods"><label class="calc-check"><input type="checkbox" id="splitContract">Pembayaran merupakan bagian dari satu transaksi lebih besar (bukan transaksi Rp2 juta yang berdiri sendiri)</label></div>
 </div></div>
 <div class="calc-section"><h3>PPN dan siapa yang memungut</h3>
 <div class="calc-fields">
-<div class="calc-field"><label for="vatMode">Perlakuan PPN</label><select id="vatMode"><option value="unselected">— Pilih status PPN —</option><option value="none">Tidak terutang/tidak dihitung</option><option value="regular">BKP/JKP nonmewah (efektif 11%)</option><option value="luxury">BKP mewah (12% penuh)</option><option value="special">DPP nilai lain/besaran tertentu khusus — perlu telaah</option></select></div>
+<div class="calc-field"><label for="vatMode">Perlakuan PPN</label><select id="vatMode"><option value="unselected">— Pilih status PPN —</option><option value="none">Tidak terutang/tidak dihitung</option><option value="regular">BKP/JKP nonmewah (12% × DPP 11/12; efektif 11%)</option><option value="luxury">BKP mewah (12% penuh)</option><option value="special">DPP nilai lain/besaran tertentu khusus — perlu telaah</option></select></div>
 <div class="calc-field"><label for="pkpStatus">Status PKP penyedia</label><select id="pkpStatus"><option value="unknown">— Periksa status —</option><option value="yes">PKP (boleh memungut PPN sesuai objek)</option><option value="no">Bukan PKP</option></select></div>
-<div class="calc-field"><label for="vatCollector">Pemungut PPN</label><select id="vatCollector"><option value="auto">Otomatis berdasar ambang umum</option><option value="government">Instansi pemerintah</option><option value="vendor">Rekanan</option><option value="thirdparty">Pihak lain/platform</option></select></div>
+<div class="calc-field"><label for="vatCollector">Pemungut PPN pada dokumen transaksi</label><select id="vatCollector"><option value="unknown">— Pilih sesuai invoice/dokumen —</option><option value="government">Instansi pemerintah</option><option value="vendor">Rekanan/PKP</option><option value="thirdparty">Pihak lain/platform yang ditunjuk</option></select></div>
 </div><div class="calc-help">PPN hanya dihitung bila transaksi memang objek PPN dan rekanan memenuhi syarat. Pilihan pemungut tidak mengubah PPN terutang, melainkan pihak yang menyetorkannya. Pengecualian dan skema khusus wajib diverifikasi.</div></div>
 <div class="calc-section"><h3>Potongan nonpajak (opsional)</h3><div class="calc-fields">
 <div class="calc-field"><label for="retention">Retensi (Rp)</label><input id="retention" inputmode="numeric" value="0"></div>
@@ -110,7 +120,7 @@
 <div class="calc-line"><span>Nilai tagihan termasuk PPN</span><strong id="outInvoice">—</strong></div>
 <div class="calc-line"><span>Nilai sebelum PPN</span><strong id="outBase">—</strong></div>
 <div class="calc-line"><span>PPN terutang</span><strong id="outVat">—</strong></div>
-<div class="calc-line" id="dppWrap" hidden><span>DPP PPh 21 (50% honor bruto)</span><strong id="outDpp">—</strong></div>
+<div class="calc-line" id="dppWrap" hidden><span id="dppLabel">DPP PPh 21</span><strong id="outDpp">—</strong></div>
 <div class="calc-line"><span>PPh dipotong</span><strong id="outPph">—</strong></div>
 <div class="calc-line"><span>PPN dipungut instansi</span><strong id="outVatGov">—</strong></div>
 <div class="calc-line"><span>Potongan nonpajak</span><strong id="outOther">—</strong></div>
@@ -125,29 +135,38 @@
 <section class="calc-shell calc-panel calc-sources"><h2>Dasar hukum dan batasan kalkulator</h2>
 <p>Rujukan primer yang digunakan untuk menyusun aturan simulasi. Pembaruan dasar aturan terakhir pada <b>28 Oktober 2026</b>. Sebelum menerbitkan SPM/SP2D, cocokkan dengan peraturan terbaru, faktur, sertifikasi rekanan, dokumen pajak, kontrak, dan mekanisme pembayaran.</p>
 <ul>
-<li><a href="https://pajak.go.id/id/peraturan/petunjuk-pelaksanaan-pemotongan-pajak-atas-penghasilan-sehubungan-dengan-pekerjaan-jasa-1" target="_blank" rel="noopener noreferrer">PMK 168/2023</a> — PPh Pasal 21 orang pribadi (Bukan Pegawai, peserta kegiatan).</li>
+<li><a href="https://pajak.go.id/id/peraturan/petunjuk-pelaksanaan-pemotongan-pajak-atas-penghasilan-sehubungan-dengan-pekerjaan-jasa-1" target="_blank" rel="noopener noreferrer">PMK 168/2023</a> — PPh Pasal 21 pegawai tidak tetap, Bukan Pegawai, dan peserta kegiatan.</li>
+<li><a href="https://pajak.go.id/index.php/id/peraturan/tarif-pemotongan-pajak-penghasiian-pasal-21-atas-penghasilan-sehubungan-dengan-pekerjaan" target="_blank" rel="noopener noreferrer">PP 58/2023 dan lampiran TER</a> — tarif harian, TER bulanan A/B/C, dan pemetaan status PTKP.</li>
+<li><a href="https://pajak.go.id/id/penghasilan-tidak-kena-pajak" target="_blank" rel="noopener noreferrer">DJP — Penghasilan Tidak Kena Pajak</a> — daftar nilai PTKP tahunan.</li>
 <li><a href="https://pajak.go.id/id/peraturan/pemungutan-pajak-penghasilan-pasal-22-sehubungan-dengan-pembayaran-atas-penyerahan-1" target="_blank" rel="noopener noreferrer">PMK 51/2025</a> — PPh Pasal 22 belanja barang dan pengecualiannya.</li>
 <li><a href="https://www.pajak.go.id/sites/default/files/Lampiran%20PMK59PMK032022.pdf" target="_blank" rel="noopener noreferrer">PMK 231/2019 jo. PMK 59/2022</a> — pemotongan/pemungutan instansi pemerintah; PPh 23 dan PPN.</li>
 <li><a href="https://pajak.go.id/en/node/35073" target="_blank" rel="noopener noreferrer">PP 9/2022 dan aturan terkait</a> — PPh final jasa konstruksi; <a href="https://pajak.go.id/id/pajak-penghasilan-atas-penghasilan-dari-persewaan-tanah-danatau-bangunan" target="_blank" rel="noopener noreferrer">PP 34/2017</a> — sewa tanah dan bangunan.</li>
 <li><a href="https://www.pajak.go.id/index.php/id/peraturan/perlakuan-pajak-pertambahan-nilai-atas-impor-barang-kena-pajak-penyerahan-barang-kena" target="_blank" rel="noopener noreferrer">PMK 131/2024</a> dan <a href="https://pajak.go.id/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan" target="_blank" rel="noopener noreferrer">PMK 11/2025</a> — PPN umum dan nilai lain khusus.</li>
 <li><a href="https://jdih.bpkp.go.id/dokumen/data_dokumen/PP%2080%20Tahun%202010.pdf" target="_blank" rel="noopener noreferrer">PP 80/2010</a> — honorarium PNS tertentu dari APBD/APBN.</li>
 </ul>
-<p><b>Batasan simulasi:</b> tidak mencakup hitungan TER gaji/TPP pegawai tetap, PPh 26, PPh 15, PPh final UMKM khusus, PPnBM, pengadaan luar negeri, perhitungan terpisah faktur campuran, penyesuaian termin/retensi kompleks, serta pengecualian sektoral yang belum diverifikasi. Hasil bukan bukti potong, kode billing atau perintah pembayaran.</p>
+<p><b>PPh 21 pegawai tetap:</b> masa selain pajak terakhir memakai bruto bulanan × TER kategori A (TK/0, TK/1, K/0), B (TK/2, TK/3, K/1, K/2), atau C (K/3) sesuai Lampiran PP 58/2023. Masa pajak terakhir dihitung tahunan: bruto dikurangi biaya jabatan (5%, maksimal Rp500.000 per bulan), iuran pensiun, zakat/sumbangan wajib melalui pemberi kerja, dan PTKP; tarif Pasal 17 lalu dikurangi pemotongan masa sebelumnya. Masukkan angka dari rekap payroll. Bagian tahun pajak diblokir dan harus dihitung annualisasi/pro-rata secara manual.</p>
+<p><b>Batasan simulasi:</b> tidak mencakup PPh 26, PPh 15, PPh final UMKM khusus, PPnBM, pengadaan luar negeri, perhitungan terpisah faktur campuran, penyesuaian termin/retensi kompleks, serta pengecualian sektoral yang belum diverifikasi. Hasil bukan bukti potong, kode billing atau perintah pembayaran.</p>
 </section>
 <section class="shell tool-editorial" aria-labelledby="calculator-editorial-title"><h2 id="calculator-editorial-title">Tentang kalkulator ini</h2><p>Disusun oleh <a href="/about.html"><strong>Suiza Ixan Saputro, S.STP., M.A.P.</strong></a> untuk ASN Pemda sebagai alat bantu edukasi perpajakan. Terakhir diperiksa: <strong>28 Oktober 2026</strong>. Simulasi SPJ/SPM/SP2D bukan penetapan pajak, bukti potong, atau pengganti verifikasi dokumen asli.</p><p><a href="/artikel/kalkulator-potongan-pajak-spj-spm-sp2d-2026.html">Baca panduan dan contoh penerapan</a> · <a href="/editorial.html">Metode editorial</a> · <a href="/koreksi.html">Laporkan kesalahan atau perubahan aturan</a></p></section>
 <footer class="site-footer"><div class="shell footer-grid"><div><a class="brand" href="/index.html" aria-label="ASN Pemda, beranda"><img class="brand-icon" src="/favicon.svg?v=20261020-6" alt="" aria-hidden="true"><span>ASN<span class="brand-blue">Pemda</span></span></a><p>Teman baca kebijakan ASN dan Pemda. Independen, bukan situs resmi pemerintah.</p></div><div><strong>Jelajahi</strong><a href="/index.html#artikel-terbaru">Artikel terbaru</a><a href="/kalkulator-spm-sp2d.html">Kalkulator SPJ / SPM / SP2D</a><a href="/kalkulator-pajak-ekatalog.html">Pajak E-Katalog</a><a href="/editorial.html">Kebijakan editorial</a><a href="/about.html">Tentang penulis</a></div><div><strong>Informasi situs</strong><a href="/privacy.html">Privasi</a><a href="/disclaimer.html">Disclaimer</a><a href="/koreksi.html">Kirim koreksi</a></div></div><div class="shell footer-bottom">© 2026 ASN Pemda · Informasi independen, bukan situs resmi pemerintah.</div></footer>
 <script type="module">
 import {calculate,rupiah} from '/assets/spm-tax-engine.js';
 const $ = id => document.getElementById(id);
-const fields = ['paymentDoc','category','amount','amountMode','recipientTaxId','pkpStatus','payeeType','paymentMethod','honorType','pnsGroup','priorDpp','constructionType','goodsException','splitContract','vatMode','vatCollector','retention','advance','penalty','other'];
-const moneyFields = ['amount','priorDpp','retention','advance','penalty','other'];
+const fields = ['paymentDoc','category','amount','amountMode','recipientTaxId','pkpStatus','payeeType','paymentMethod','honorType','pnsGroup','priorDpp','constructionType','goodsException','serviceException','splitContract','vatMode','vatCollector','retention','advance','penalty','other','employeePeriod','ptkp','annualGross','jobMonths','pensionYear','zakatYear','priorWithheld','partYear'];
+const moneyFields = ['amount','priorDpp','retention','advance','penalty','other','annualGross','pensionYear','zakatYear','priorWithheld'];
 const toNum = s => Number(String(s||'0').replace(/[^0-9]/g,'')) || 0;
 moneyFields.forEach(id => { const e = $(id); e.addEventListener('blur', () => {e.value=toNum(e.value).toLocaleString('id-ID');}); e.addEventListener('focus',()=>e.select()); });
 function read(){let v={};for(const id of fields){const e=$(id); v[id]=e.type==='checkbox'?e.checked:moneyFields.includes(id)?toNum(e.value):e.value;}return v;}
 function showCategory(v){
- document.querySelectorAll('[data-show]').forEach(el=>el.classList.toggle('calc-hidden',!el.dataset.show.split(',').includes(v.category)));
+ document.querySelectorAll('[data-show]').forEach(el=>{
+  const rules=el.dataset.show.split(',');
+  const visible=rules.includes('last') ? v.category==='fixedEmployee'&&$('employeePeriod').value==='last' : rules.includes(v.category);
+  el.classList.toggle('calc-hidden',!visible);
+ });
  $('pnsGroupWrap').classList.toggle('calc-hidden',v.category!=='honor'||v.honorType!=='pns');
  $('priorDppWrap').classList.toggle('calc-hidden',!(v.category==='honor'&&v.honorType!=='pns')&&!(v.category==='services'&&v.payeeType==='person'));
+ $('amount').previousElementSibling.textContent=v.category==='fixedEmployee'?'Bruto bulanan pegawai (Rp)':'Nilai transaksi/tagihan (Rp)';
+ $('amountHelp').textContent=v.category==='fixedEmployee'?'Untuk TER isi bruto pegawai pada bulan yang dihitung. Untuk masa pajak terakhir, bruto tahunan diisi terpisah.':'Isi sesuai mode nilai sebelum atau termasuk PPN.';
  if(v.category==='honor' && v.vatMode!=='none' && v.vatMode!=='special'){} // PPN honor divalidasi mesin
 }
 let lastResult, lastInputs;
@@ -156,7 +175,8 @@ function render(){
  const put=(id,val)=>$(id).textContent=val;
  put('payout',r.ok?rupiah(r.payout):'Perlu verifikasi');put('status',r.ok?'Simulasi, bukan ketetapan pajak':'Perbaiki data / periksa syarat di bawah');
  put('outInvoice',rupiah(r.invoice));put('outBase',rupiah(r.base));put('outVat',rupiah(r.vat));
- $('dppWrap').hidden = !(v.category==='honor' && v.honorType==='nonemployee') && !(v.category==='services' && v.payeeType==='person');
+ $('dppWrap').hidden = !(v.category==='honor' && v.honorType==='nonemployee') && !(v.category==='services' && v.payeeType==='person') && v.category!=='temporaryDaily';
+ $('dppLabel').textContent = v.category==='temporaryDaily' ? 'Dasar pemotongan PPh 21' : 'DPP PPh 21 (50% bruto bila berlaku)';
  put('outDpp',rupiah(r.taxBase));
  put('outPph',r.ok?rupiah(r.pph):'—');put('outVatGov',r.ok?rupiah(r.vatGov):'—');put('outOther',rupiah(r.nonTax));
  put('outDeductions',r.ok?rupiah(r.pph+r.vatGov+r.nonTax):'—');put('outTaxName',r.taxName||'Perlu klasifikasi');
@@ -166,13 +186,14 @@ function render(){
  $('btnCopy').disabled=!r.ok;
 }
 $('taxForm').addEventListener('input',render);$('taxForm').addEventListener('change',render);
+$('category').addEventListener('change',()=>{if($('category').value==='fixedEmployee')$('vatMode').value='none';render();});
 function fillExample(kind){
  ['priorDpp','retention','advance','penalty','other'].forEach(id=>$(id).value='0');
  $('recipientTaxId').value='yes';$('pkpStatus').value='yes';$('goodsException').value='none';$('splitContract').checked=false;
- $('paymentMethod').value='ls';$('vatCollector').value='auto';$('amountMode').value='exclusive';
+ $('paymentMethod').value='ls';$('vatCollector').value='unknown';$('amountMode').value='exclusive';
  if(kind==='translator'){$('pkpStatus').value='no';$('category').value='honor';$('honorType').value='nonemployee';$('amount').value='5.100.000';$('vatMode').value='none';$('payeeType').value='person';}
- if(kind==='goods'){$('category').value='goods';$('amount').value='10.000.000';$('vatMode').value='regular';$('payeeType').value='company';}
- if(kind==='construction'){$('category').value='construction';$('constructionType').value='worksSmall';$('amount').value='100.000.000';$('vatMode').value='regular';$('payeeType').value='company';}
+ if(kind==='goods'){$('category').value='goods';$('amount').value='10.000.000';$('vatMode').value='regular';$('payeeType').value='company';$('vatCollector').value='government';}
+ if(kind==='construction'){$('category').value='construction';$('constructionType').value='worksSmall';$('amount').value='100.000.000';$('vatMode').value='regular';$('payeeType').value='company';$('vatCollector').value='government';}
  render();
  document.querySelectorAll('[data-example]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.example===kind)));
  const result=document.getElementById('calcResults');

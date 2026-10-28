@@ -158,7 +158,11 @@ const toNum = s => Number(String(s||'0').replace(/[^0-9]/g,'')) || 0;
 moneyFields.forEach(id => { const e = $(id); e.addEventListener('blur', () => {e.value=toNum(e.value).toLocaleString('id-ID');}); e.addEventListener('focus',()=>e.select()); });
 function read(){let v={};for(const id of fields){const e=$(id); v[id]=e.type==='checkbox'?e.checked:moneyFields.includes(id)?toNum(e.value):e.value;}return v;}
 function showCategory(v){
- document.querySelectorAll('[data-show]').forEach(el=>el.classList.toggle('calc-hidden',!el.dataset.show.split(',').some(rule=>rule===v.category||(rule==='last'&&v.category==='fixedEmployee'&&$('employeePeriod').value==='last'))));
+ document.querySelectorAll('[data-show]').forEach(el=>{
+  const rules=el.dataset.show.split(',');
+  const visible=rules.includes('last') ? v.category==='fixedEmployee'&&$('employeePeriod').value==='last' : rules.includes(v.category);
+  el.classList.toggle('calc-hidden',!visible);
+ });
  $('pnsGroupWrap').classList.toggle('calc-hidden',v.category!=='honor'||v.honorType!=='pns');
  $('priorDppWrap').classList.toggle('calc-hidden',!(v.category==='honor'&&v.honorType!=='pns')&&!(v.category==='services'&&v.payeeType==='person'));
  $('amount').previousElementSibling.textContent=v.category==='fixedEmployee'?'Bruto bulanan pegawai (Rp)':'Nilai transaksi/tagihan (Rp)';

@@ -33,6 +33,8 @@ assert.equal(calculateSpm(fixedWorker).ok,true);
 assert.equal(calculateSpm(fixedWorker).pph,200_000,'PP 58/2023 example: K/0 and Rp10m gross uses TER A 2%');
 assert.equal(calculateSpm({...fixedWorker,amount:5_400_000,ptkp:'TK0'}).pph,0,'TER A is 0% through Rp5.4m');
 assert.equal(calculateSpm({...fixedWorker,amount:5_400_001,ptkp:'TK0'}).pph,13_500,'TER A is 0.25% above Rp5.4m');
+assert.equal(calculateSpm({...fixedWorker,amount:10_000_000,ptkp:'TK2'}).pph,150_000,'TER B at Rp10m is 1.5%');
+assert.equal(calculateSpm({...fixedWorker,amount:10_000_000,ptkp:'K3'}).pph,150_000,'TER C at Rp10m is 1.5%');
 const finalPayroll = calculateSpm({...fixedWorker,amount:10_000_000,employeePeriod:'last',annualGross:120_000_000,jobMonths:12,pensionYear:1_200_000,zakatYear:0,priorWithheld:2_200_000,partYear:'no'});
 assert.equal(finalPayroll.ok,true);
 assert.equal(finalPayroll.taxBase,54_300_000,'annual PKP includes capped job expense, pension and K/0 PTKP');

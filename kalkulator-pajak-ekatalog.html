@@ -2,8 +2,8 @@
 <html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kalkulator Pajak E-Katalog untuk Penyedia — ASN Pemda</title>
 <meta name="description" content="Simulasi pajak penyedia E-Katalog dan INAPROC 2026: PPh 22 platform UP/KKP 0,5%, pajak LS, PPN, konstruksi, status PKP, dan estimasi dana diterima.">
-<meta name="theme-color" content="#f7faff"><link rel="canonical" href="https://asnpemda.pages.dev/kalkulator-pajak-ekatalog.html"><meta property="og:type" content="website"><meta property="og:url" content="https://asnpemda.pages.dev/kalkulator-pajak-ekatalog.html"><meta property="og:title" content="Kalkulator Pajak E-Katalog V6 untuk Penyedia"><meta property="og:site_name" content="ASN Pemda">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/assets/site.css">
+<meta name="theme-color" content="#f7faff"><link rel="canonical" href="https://asnpemda.pages.dev/kalkulator-pajak-ekatalog.html"><meta property="og:type" content="website"><meta property="og:url" content="https://asnpemda.pages.dev/kalkulator-pajak-ekatalog.html"><meta property="og:title" content="Kalkulator Pajak E-Katalog V6 untuk Penyedia"><meta property="og:site_name" content="ASN Pemda"><meta property="og:description" content="Cek PPh 22, PPN, LS dan UP/KKP melalui Pihak Lain untuk penyedia E-Katalog pemerintah."><meta property="og:image" content="https://asnpemda.pages.dev/assets/hero-pajak-ekatalog-penyedia-2026.webp"><meta property="og:image:type" content="image/webp"><meta property="og:image:alt" content="Kalkulator Pajak E-Katalog V6 untuk Penyedia"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Kalkulator Pajak E-Katalog V6 untuk Penyedia"><meta name="twitter:description" content="Cek PPh 22, PPN, LS dan UP/KKP melalui Pihak Lain untuk penyedia E-Katalog pemerintah."><meta name="twitter:image" content="https://asnpemda.pages.dev/assets/hero-pajak-ekatalog-penyedia-2026.webp"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Kalkulator Pajak E-Katalog V6 untuk Penyedia","url":"https://asnpemda.pages.dev/kalkulator-pajak-ekatalog","applicationCategory":"FinanceApplication","operatingSystem":"Web","inLanguage":"id-ID","isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"ASN Pemda","url":"https://asnpemda.pages.dev/"},"description":"Cek PPh 22, PPN, LS dan UP/KKP melalui Pihak Lain untuk penyedia E-Katalog pemerintah."}</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20261020-6"><link rel="icon" href="/favicon.ico?v=20261020-6" sizes="16x16 32x32 48x48"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/article-template.css?v=20261023-1">
 <style>
 :root{--ink:#193253;--muted:#566a83;--br:#dce7f4;--sea:#106c65;--light:#f4f8fe}
 body{background:#f6f9fe;color:var(--ink);font-family:"DM Sans",system-ui,sans-serif}
@@ -13,8 +13,8 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:
 .logo{font-size:20px;font-weight:900;letter-spacing:-.04em}.logo b{color:#3159e2}
 .links{display:flex;flex-wrap:wrap;gap:16px;font-weight:750;font-size:13px}.links a{color:#34598d}
 .hero{background:linear-gradient(125deg,#143354,#194a77 70%,#226888);color:#fff;padding:40px 0}
-.hero .eyebrow{font-size:12px;font-weight:850;letter-spacing:.12em;color:#b1e0ed;text-transform:uppercase}
-.hero h1{font-size:clamp(31px,4.4vw,47px);line-height:1.16;letter-spacing:-.05em;max-width:750px;margin:9px 0 12px}
+.hero .eyebrow{background:transparent;border:0;border-radius:0;padding:0;font-size:12px;font-weight:850;letter-spacing:.12em;color:#b1e0ed;text-transform:uppercase}
+.hero h1{color:#fff;font-size:clamp(31px,4.4vw,47px);line-height:1.16;letter-spacing:-.05em;max-width:750px;margin:9px 0 12px}
 .hero p{color:#deedf7;max-width:780px;font-size:15px;line-height:1.7;margin:0}
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .pills span{font-size:12px;border:1px solid #89b0c9;background:#ffffff16;border-radius:99px;padding:6px 11px}
@@ -56,9 +56,21 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:
 @media(max-width:870px){.layout{grid-template-columns:1fr}.result{position:static}}
 @media(max-width:490px){.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.panel{padding:17px}.hero{padding:32px 0}.hero h1{font-size:32px}.links{gap:10px}}
 @media print{nav.top,.hero,form,.examples,.actions,.sources,.inputpanel{display:none!important}.layout{display:block;margin:0;padding:0}.result{box-shadow:none;border:0}.wrap{max-width:none}@page{size:A4;margin:14mm}}
-</style></head><body>
-<nav class="top"><div class="wrap"><a class="logo" href="/">ASN<b>Pemda</b></a>
-<div class="links"><a href="/kalkulator-spm-sp2d.html">Kalkulator SPM/SP2D</a><a href="/">Beranda</a></div></div></nav>
+
+/* Kalkulator mengikuti header/footer editorial FROZEN tanpa mengubah templatenya. */
+.tool-breadcrumbs{margin-top:17px;margin-bottom:17px;line-height:1.65}
+.tool-editorial{background:#f5f8ff;border:1px solid #dfe8f8;border-radius:14px;padding:20px 24px;margin:10px auto 32px;color:#435774;line-height:1.7}
+.tool-editorial h2{font-size:19px;margin:0 0 8px;color:#1a3458}
+.tool-editorial p{font-size:13px;margin:8px 0}
+.tool-editorial a{color:#275abb;text-decoration:underline;text-underline-offset:2px}
+.site-footer .footer-grid a:hover,.site-header nav a:hover{color:#355cf6}
+.site-header .navwrap{max-width:1160px}
+@media(max-width:650px){.tool-breadcrumbs{margin-top:13px;margin-bottom:13px}.tool-editorial{padding:16px 18px;margin-bottom:22px}}
+
+@media print{.site-header,.site-footer,.tool-breadcrumbs,.tool-editorial,.skip-link{display:none!important}}
+</style></head><body><a class="skip-link" href="#form">Langsung ke formulir pajak E-Katalog</a>
+<header class="site-header"><div class="shell navwrap"><a class="brand" href="/index.html" aria-label="ASN Pemda, beranda"><img class="brand-icon" src="/favicon.svg?v=20261020-6" alt="" aria-hidden="true"><span>ASN<span class="brand-blue">Pemda</span><small>Ngerti aturan, nggak pakai ribet.</small></span></a><nav aria-label="Navigasi utama"><a href="/index.html">Beranda</a><a href="/editorial.html">Cara kami</a><a href="/about.html">Tentang</a></nav><a class="nav-cta" href="/editorial.html">Metode editorial ↗</a></div></header>
+<nav class="breadcrumbs shell tool-breadcrumbs" aria-label="Breadcrumb"><a href="/index.html">Beranda</a> › <a href="/index.html#topik">Kalkulator SPJ</a> › Kalkulator Pajak E-Katalog</nav>
 <header class="hero"><div class="wrap"><span class="eyebrow">Panduan pajak untuk penyedia pemerintah • 2026</span>
 <h1>Kalkulator Pajak E-Katalog &amp; INAPROC</h1>
 <p>Jangan salah pasang harga penawaran atau menghitung potongan. Tentukan dulu mekanisme pembayaran, siapa pemungut pajak, jenis barang/jasa, dan status pajak penyedia—baru hitung jumlah yang masuk rekening.</p>
@@ -151,6 +163,8 @@ Ketentuan ini berlaku ketika Pihak Lain telah ditunjuk dan transaksi dibayar mel
 </ul>
 <p><b>Batasan kalkulator:</b> PPh final UMKM LS yang mensyaratkan surat keterangan, PPN besaran tertentu, PPnBM, jasa angkutan khusus LS, serta kontrak campuran perlu telaah manusia. Biaya platform, denda, retensi, dan pajak tahunan perusahaan tidak dimasukkan ke angka bersih. Ini alat bantu edukasi; dokumen dan ketentuan perpajakan tetap menjadi acuan.</p>
 </div></section>
+<section class="shell tool-editorial" aria-labelledby="calculator-editorial-title"><h2 id="calculator-editorial-title">Tentang kalkulator ini</h2><p>Disusun oleh <a href="/about.html"><strong>Suiza Ixan Saputro, S.STP., M.A.P.</strong></a> untuk ASN Pemda sebagai alat bantu edukasi perpajakan. Terakhir diperiksa: <strong>28 Oktober 2026</strong>. Simulasi E-Katalog/INAPROC bukan penetapan pajak, bukti potong, atau pengganti verifikasi dokumen asli.</p><p><a href="/artikel/pajak-ekatalog-v6-penyedia-2026.html">Baca panduan dan contoh penerapan</a> · <a href="/editorial.html">Metode editorial</a> · <a href="/koreksi.html">Laporkan kesalahan atau perubahan aturan</a></p></section>
+<footer class="site-footer"><div class="shell footer-grid"><div><a class="brand" href="/index.html" aria-label="ASN Pemda, beranda"><img class="brand-icon" src="/favicon.svg?v=20261020-6" alt="" aria-hidden="true"><span>ASN<span class="brand-blue">Pemda</span></span></a><p>Teman baca kebijakan ASN dan Pemda. Independen, bukan situs resmi pemerintah.</p></div><div><strong>Jelajahi</strong><a href="/index.html#artikel-terbaru">Artikel terbaru</a><a href="/kalkulator-spm-sp2d.html">Kalkulator SPJ / SPM / SP2D</a><a href="/kalkulator-pajak-ekatalog.html">Pajak E-Katalog</a><a href="/editorial.html">Kebijakan editorial</a><a href="/about.html">Tentang penulis</a></div><div><strong>Informasi situs</strong><a href="/privacy.html">Privasi</a><a href="/disclaimer.html">Disclaimer</a><a href="/koreksi.html">Kirim koreksi</a></div></div><div class="shell footer-bottom">© 2026 ASN Pemda · Informasi independen, bukan situs resmi pemerintah.</div></footer>
 <script type="module">
 import {calcEcatalog,rupiah} from '/assets/ekatalog-tax-engine.js';
 const $=s=>document.getElementById(s);

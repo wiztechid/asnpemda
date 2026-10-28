@@ -103,14 +103,14 @@ export function calculate(raw = {}) {
         taxBase = Math.round(base * 0.5);
         const prior = num(a.priorDpp);
         pph = Math.max(0,tax17(prior + taxBase) - tax17(prior));
-        if (a.recipientTaxId === 'no') { pph = Math.round(pph * 1.2); warning(alerts,'PPh 21 nonfinal tanpa NPWP/NIK yang sah: tarif pemotongan 20% lebih tinggi dari hasil normal.'); }
+        if (a.recipientTaxId === 'no') { pph = Math.round(pph * 1.2); rateLabel += ' (+20% jika tanpa NPWP)'; warning(alerts,'PPh 21 nonfinal tanpa NPWP/NIK yang sah: tarif pemotongan 20% lebih tinggi dari hasil normal.'); }
         rateLabel = prior + taxBase <= 60000000 ? 'Tarif 5% (Pasal 17) × DPP 50% bruto, bukan TER' : 'Tarif progresif Pasal 17 × DPP 50% bruto, bukan TER';
         taxExplain = 'Narasumber, penerjemah, dan profesional orang pribadi yang bukan pegawai.';
       } else if (a.honorType === 'participant') {
         taxName = 'PPh Pasal 21 — Peserta Kegiatan';
         const prior = num(a.priorDpp);
         pph = Math.max(0,tax17(prior + base) - tax17(prior));
-        if (a.recipientTaxId === 'no') { pph = Math.round(pph * 1.2); warning(alerts,'PPh 21 nonfinal tanpa NPWP/NIK yang sah: tarif pemotongan 20% lebih tinggi dari hasil normal.'); }
+        if (a.recipientTaxId === 'no') { pph = Math.round(pph * 1.2); rateLabel += ' (+20% jika tanpa NPWP)'; warning(alerts,'PPh 21 nonfinal tanpa NPWP/NIK yang sah: tarif pemotongan 20% lebih tinggi dari hasil normal.'); }
         rateLabel = 'Tarif Pasal 17 × bruto (bukan TER)';
         taxExplain = 'Imbalan atas keikutsertaan kegiatan, bukan jasa profesional sebagai Bukan Pegawai.';
       } else if (a.honorType === 'pns') {

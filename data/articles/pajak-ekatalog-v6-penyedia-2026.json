@@ -47,6 +47,10 @@
   "revisionHistory": [
     {
       "date": "2026-10-28",
+      "summary": "Added prominent directly actionable calculator and prefilled-example links in quick answer, article body and footer; preserved frozen article modules."
+    },
+    {
+      "date": "2026-10-28",
       "summary": "Switched the original low-poly editorial hero to optimized 1200×675 WebP, keeping frozen article layout and SEO/social image metadata synchronized."
     },
     {
@@ -58,7 +62,7 @@
   "publicationState": "PUBLISHED",
   "articlePath": "artikel/pajak-ekatalog-v6-penyedia-2026.html",
   "heroImage": "assets/hero-pajak-ekatalog-penyedia-2026.webp",
-  "articleSha256": "b57b116f827a0fba1dc5ff4563c3b21f3e47c34b06d41bc0b09aa60878caaa51",
+  "articleSha256": "b19a5fdf77149517e1da8a4c92ec829ad33c82da3373933121ad852d90e6a2c2",
   "evidencePath": "data/candidates/pajak-ekatalog-v6-penyedia-2026.evidence.json",
   "evidenceSha256": "beda5a949031f83b9aea584b4e68a3007d3caa016f52d843df368bec38acdeac",
   "humanApproval": {
@@ -73,7 +77,7 @@
     "reviewedAt": "2026-10-28",
     "outcome": "PUBLISH_WITH_CALCULATOR_CAVEATS",
     "reviewerIsHuman": false,
-    "summary": "Official tax references checked. Explicit limitations and human document verification retained. UI browser QA required."
+    "summary": "Direct calculator CTA added with examples and additional context. All fiscal simulations remain advisory and subject to source verification."
   },
   "seo": {
     "focusKeyword": "pajak e katalog v6 2026",

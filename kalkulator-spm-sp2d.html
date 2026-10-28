@@ -95,7 +95,7 @@
 <div class="calc-fields">
 <div class="calc-field"><label for="vatMode">Perlakuan PPN</label><select id="vatMode"><option value="unselected">— Pilih status PPN —</option><option value="none">Tidak terutang/tidak dihitung</option><option value="regular">BKP/JKP nonmewah (efektif 11%)</option><option value="luxury">BKP mewah (12% penuh)</option><option value="special">DPP nilai lain/besaran tertentu khusus — perlu telaah</option></select></div>
 <div class="calc-field"><label for="pkpStatus">Status PKP penyedia</label><select id="pkpStatus"><option value="unknown">— Periksa status —</option><option value="yes">PKP (boleh memungut PPN sesuai objek)</option><option value="no">Bukan PKP</option></select></div>
-<div class="calc-field"><label for="vatCollector">Pemungut PPN</label><select id="vatCollector"><option value="auto">Otomatis berdasar ambang umum</option><option value="government">Instansi pemerintah</option><option value="vendor">Rekanan</option><option value="thirdparty">Pihak lain/platform</option></select></div>
+<div class="calc-field"><label for="vatCollector">Pemungut PPN pada dokumen transaksi</label><select id="vatCollector"><option value="unknown">— Pilih sesuai invoice/dokumen —</option><option value="government">Instansi pemerintah</option><option value="vendor">Rekanan/PKP</option><option value="thirdparty">Pihak lain/platform yang ditunjuk</option></select></div>
 </div><div class="calc-help">PPN hanya dihitung bila transaksi memang objek PPN dan rekanan memenuhi syarat. Pilihan pemungut tidak mengubah PPN terutang, melainkan pihak yang menyetorkannya. Pengecualian dan skema khusus wajib diverifikasi.</div></div>
 <div class="calc-section"><h3>Potongan nonpajak (opsional)</h3><div class="calc-fields">
 <div class="calc-field"><label for="retention">Retensi (Rp)</label><input id="retention" inputmode="numeric" value="0"></div>
@@ -169,10 +169,10 @@ $('taxForm').addEventListener('input',render);$('taxForm').addEventListener('cha
 function fillExample(kind){
  ['priorDpp','retention','advance','penalty','other'].forEach(id=>$(id).value='0');
  $('recipientTaxId').value='yes';$('pkpStatus').value='yes';$('goodsException').value='none';$('splitContract').checked=false;
- $('paymentMethod').value='ls';$('vatCollector').value='auto';$('amountMode').value='exclusive';
+ $('paymentMethod').value='ls';$('vatCollector').value='unknown';$('amountMode').value='exclusive';
  if(kind==='translator'){$('pkpStatus').value='no';$('category').value='honor';$('honorType').value='nonemployee';$('amount').value='5.100.000';$('vatMode').value='none';$('payeeType').value='person';}
- if(kind==='goods'){$('category').value='goods';$('amount').value='10.000.000';$('vatMode').value='regular';$('payeeType').value='company';}
- if(kind==='construction'){$('category').value='construction';$('constructionType').value='worksSmall';$('amount').value='100.000.000';$('vatMode').value='regular';$('payeeType').value='company';}
+ if(kind==='goods'){$('category').value='goods';$('amount').value='10.000.000';$('vatMode').value='regular';$('payeeType').value='company';$('vatCollector').value='government';}
+ if(kind==='construction'){$('category').value='construction';$('constructionType').value='worksSmall';$('amount').value='100.000.000';$('vatMode').value='regular';$('payeeType').value='company';$('vatCollector').value='government';}
  render();
  document.querySelectorAll('[data-example]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.example===kind)));
  const result=document.getElementById('calcResults');

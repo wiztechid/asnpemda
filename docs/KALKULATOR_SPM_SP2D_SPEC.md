@@ -8,7 +8,7 @@ Tidak mengubah template artikel yang FROZEN.
 2. PPh 22: belanja barang 1,5% (tanpa NPWP 3%) dengan ambang Rp2 juta dan pengecualian KKPD, pihak lain, SKB, barang tertentu.
 3. PPh 23: jasa badan, sewa selain tanah/bangunan (2% / 4% jika tidak ada NPWP).
 4. PPh final 4(2): pekerjaan konstruksi 1,75% / 2,65% / 4%; konsultansi 3,5% / 6%; sewa tanah/bangunan 10%.
-5. PPN: nonmewah 12% × 11/12 (efektif 11%), barang mewah 12% (PPnBM belum dihitung), nilai invoice termasuk/belum termasuk PPN, pilihan instansi/rekanan/pihak lain.
+5. PPN: nonmewah 12% × 11/12 (efektif 11%), barang mewah 12% (PPnBM belum dihitung), nilai invoice termasuk/belum termasuk PPN, dan pemungut dipilih dari invoice/dokumen. Nilai transaksi saja tidak cukup untuk menentukan pemungut karena ada pengecualian sektoral dan mekanisme.
 6. Potongan nonpajak: retensi, uang muka, denda, lain-lain (tidak otomatis mengurangi DPP pajak).
 7. Ringkasan nilai pembayaran, potongan PPh, PPN dipungut instansi, dan estimasi transfer; salin/cetak.
 
@@ -33,6 +33,8 @@ Tidak mengubah template artikel yang FROZEN.
 - [x] Hitungan uji independen 17/17 sesuai ekspektasi.
 - [x] Tidak memodifikasi template artikel FROZEN.
 - [x] Tidak ada penyimpanan PII: input dihitung di browser.
+- [x] Pemungut PPN tidak lagi diasumsikan dari ambang saja; data yang belum jelas menahan estimasi bersih.
+- [x] Pembayaran standalone sampai dengan Rp2 juta tidak dapat memilih instansi sebagai pemungut PPN.
 - [ ] Verifikasi tampilan HP dan desktop di URL Cloudflare Pages preview.
 - [ ] Review pajak oleh petugas yang kompeten (Bendahara/BPKAD/konsultan pajak).
 - [ ] Review peraturan khusus dan potongan SP2D OPD sesuai praktik setempat.

@@ -134,16 +134,30 @@ export function calculate(raw = {}) {
   if (a.recipientTaxId === 'no' && ((a.category === 'services' && a.payeeType === 'person') || (a.category === 'honor' && a.honorType !== 'pns'))) rateLabel += ' (+20% pemotongan tanpa NPWP/NIK valid)';
   if (a.category === 'honor' && vatRate) { blocked = true; warning(alerts,'Honorarium orang pribadi bukan transaksi PKP biasa; hapus PPN atau verifikasi sifat pengadaannya.'); }
   if (a.category === 'goods' && a.payeeType === 'person') warning(alerts,'Pastikan pembelian benar-benar barang, bukan jasa orang pribadi, untuk memilih PPh 22.');
-  const method = a.vatCollector || 'auto';
+  const method = a.vatCollector || 'unknown';
   let collector = 'Tidak ada PPN', vatGov = 0;
   if (vat > 0) {
-    const autoGov = base > 2000000 || !!a.splitContract;
-    const isGov = method === 'government' || (method === 'auto' && autoGov && !['kkpd','upMarketplace'].includes(a.paymentMethod));
-    collector = isGov ? 'Instansi pemerintah' : method === 'thirdparty' ? 'Pihak lain' : 'Rekanan/pihak lain (bukan dipungut instansi)';
+    const knownCollectors = ['government','vendor','thirdparty'];
+    if (!knownCollectors.includes(method)) {
+      blocked = true;
+      warning(alerts,'Pilih pemungut PPN sesuai faktur dan mekanisme transaksi. Ambang Rp2 juta memiliki pengecualian, jadi pemungut tidak ditentukan otomatis.');
+    }
+    const smallNonSplit = base <= 2000000 && !a.splitContract;
+    const isGov = method === 'government';
+    collector = isGov ? 'Instansi pemerintah' : method === 'vendor' ? 'Rekanan/PKP' : method === 'thirdparty' ? 'Pihak lain' : 'Belum ditentukan';
     if (isGov) vatGov = vat;
-    if (method === 'government' && base <= 2000000 && !a.splitContract) warning(alerts,'PPN biasanya tidak dipungut instansi untuk transaksi ≤ Rp2 juta; periksa pengecualian.');
-    if (method === 'auto' && a.paymentMethod === 'kkpd') warning(alerts,'Kartu kredit pemerintah: perlakuan pemungutan PPN/PPh oleh instansi dapat dikecualikan; periksa mekanisme platform.');
-    if (method === 'auto' && a.paymentMethod === 'upMarketplace') warning(alerts,'Belanja UP melalui pihak lain/platform dapat memiliki pemungut PPN/PPh sendiri: verifikasi bukti.');
+    if (isGov && smallNonSplit) {
+      blocked = true;
+      warning(alerts,'Transaksi paling banyak Rp2 juta (bukan pemecahan transaksi) termasuk pengecualian pemungutan PPN oleh instansi. Cocokkan invoice dan gunakan pemungut yang tercantum pada dokumen.');
+    }
+    if (method === 'government' && a.paymentMethod === 'kkpd') {
+      blocked = true;
+      warning(alerts,'Pembayaran kartu kredit pemerintah termasuk pengecualian pemungutan PPN oleh instansi; verifikasi pihak yang memungut pada dokumen transaksi.');
+    }
+    if (method === 'government' && a.paymentMethod === 'upMarketplace') {
+      blocked = true;
+      warning(alerts,'Untuk UP melalui Pihak Lain, pastikan pemungut PPN sesuai bukti transaksi dan hindari pungutan ganda.');
+    }
   }
   if (a.paymentMethod === 'upMarketplace' && a.category === 'goods' && a.goodsException !== 'alreadyCollected')
     warning(alerts,'Bila PPh 22 sudah dipungut Pihak Lain, pilih pengecualian khusus agar tidak memungut dua kali.');

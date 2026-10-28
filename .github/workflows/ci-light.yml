@@ -27,6 +27,7 @@ jobs:
           python scripts/test_editorial_gate.py
           python scripts/test_publication_approval.py
           python scripts/test_tax_decision.py
+          node scripts/test_calculators.mjs
           python scripts/test_spj_web.py
           node scripts/test_spj_browser.cjs
           python scripts/test_spj_parity.py

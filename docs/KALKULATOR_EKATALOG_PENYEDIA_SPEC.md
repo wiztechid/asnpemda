@@ -17,7 +17,7 @@ Penyedia dan petugas SPM/SP2D kerap menyamakan E-Katalog, platform pengadaan Pih
 - Mekanisme: LS, UP/KKP via Pihak Lain dengan bukti penunjukan, atau belum terverifikasi.
 - Bentuk penyedia, identitas NPWP/NIK, PKP/non-PKP, rezim PPh umum/UMKM.
 - Objek: barang, jasa badan, jasa profesional OP, pekerjaan/konsultansi konstruksi, sewa tanah/bangunan, sewa kendaraan/peralatan, angkutan umum OP.
-- Kualifikasi konstruksi sesuai SBU/SKK; harga termasuk atau belum termasuk PPN; status PPN terutang (efektif 11%), tidak terutang, mewah/PPnBM, DPP khusus.
+- Kualifikasi konstruksi sesuai SBU/SKK; harga termasuk atau belum termasuk PPN; status PPN terutang (efektif 11%), tidak terutang, mewah/PPnBM, DPP khusus. Untuk LS, pemungut PPN harus dipilih sesuai invoice/dokumen dan tidak ditentukan hanya dari ambang nilai.
 - Hasil: bruto, PPN, pungutan PPh, pemungut PPh dan PPN, net transfer, estimasi selisih PPh final, dan dokumen verifikasi.
 
 ## 13 pengujian deterministik DEV
@@ -41,6 +41,7 @@ Penyedia dan petugas SPM/SP2D kerap menyamakan E-Katalog, platform pengadaan Pih
 - [x] 13 skenario inti lulus saat pengujian engine 28 Okt 2026.
 - [x] Data yang belum lengkap memblokir hasil.
 - [x] Tidak menyimpan data rekening, NPWP, atau identitas pribadi di backend.
+- [x] Jalur LS menahan hasil sampai pemungut PPN dikonfirmasi dari dokumen dan melarang pemungutan instansi untuk transaksi standalone paling banyak Rp2 juta.
 - [x] Halaman terpisah untuk penyedia dengan link dari kalkulator utama dan homepage DEV.
 - [ ] Uji langsung perangkat HP/desktop pada URL preview Cloudflare Pages dan export PDF.
 - [ ] Audit pajak independen terhadap semua kategori dan pengecualian (termasuk nilai transaksi, PKP/non-PKP, jasa profesional berulang, PPh final UMKM).

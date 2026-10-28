@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kalkulator Pajak E-Katalog untuk Penyedia — ASN Pemda</title>
+<meta name="description" content="Simulasi pajak penyedia E-Katalog dan INAPROC 2026: PPh 22 platform UP/KKP 0,5%, pajak LS, PPN, konstruksi, status PKP, dan estimasi dana diterima.">
+<meta name="theme-color" content="#f7faff"><link rel="canonical" href="https://asnpemda.pages.dev/kalkulator-pajak-ekatalog.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/assets/site.css">
+<style>
+:root{--ink:#193253;--muted:#566a83;--br:#dce7f4;--sea:#106c65;--light:#f4f8fe}
+body{background:#f6f9fe;color:var(--ink);font-family:"DM Sans",system-ui,sans-serif}
+*{box-sizing:border-box}.wrap{max-width:1140px;padding:0 20px;margin:auto}
+nav.top{padding:16px 0;background:white;border-bottom:1px solid var(--br)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{font-size:20px;font-weight:900;letter-spacing:-.04em}.logo b{color:#3159e2}
+.links{display:flex;flex-wrap:wrap;gap:16px;font-weight:750;font-size:13px}.links a{color:#34598d}
+.hero{background:linear-gradient(125deg,#143354,#194a77 70%,#226888);color:#fff;padding:40px 0}
+.hero .eyebrow{font-size:12px;font-weight:850;letter-spacing:.12em;color:#b1e0ed;text-transform:uppercase}
+.hero h1{font-size:clamp(31px,4.4vw,47px);line-height:1.16;letter-spacing:-.05em;max-width:750px;margin:9px 0 12px}
+.hero p{color:#deedf7;max-width:780px;font-size:15px;line-height:1.7;margin:0}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pills span{font-size:12px;border:1px solid #89b0c9;background:#ffffff16;border-radius:99px;padding:6px 11px}
+.layout{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr);gap:20px;padding-top:26px;padding-bottom:30px;align-items:start}
+.panel{background:white;border:1px solid var(--br);border-radius:17px;padding:24px;box-shadow:0 6px 24px #1c4d8210}
+.panel h2{font-size:22px;letter-spacing:-.035em;margin:0 0 5px}.intro{font-size:13px;color:var(--muted);margin:0 0 20px;line-height:1.65}
+.section{border-top:1px solid #e8eef5;margin-top:18px;padding-top:17px}
+.section h3{font-size:15px;font-weight:850;margin:0 0 12px;color:#234e77}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.field{min-width:0}.field.full{grid-column:1/-1}
+.field label{display:block;font-size:12px;font-weight:850;margin-bottom:5px}
+.field select,.field input{display:block;width:100%;min-height:46px;border:1px solid #c9d8e9;border-radius:10px;background:#fff;color:#263f5d;font:inherit;padding:9px 10px}
+.field select:focus,.field input:focus{outline:3px solid #b5dbff;outline-offset:1px}
+.mini{font-size:11px;color:#697f98;line-height:1.5;margin:5px 0 0}
+.field.check label{display:flex;gap:9px;align-items:flex-start;line-height:1.5;font-size:12px;font-weight:650}
+.field.check input{min-height:unset;width:18px;height:18px;flex:none;margin:0}
+.examples{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:17px}
+.examples button{border:1px solid #cadcef;background:#edf5ff;color:#205b9a;border-radius:99px;padding:9px 12px;font-size:12px;font-weight:800;cursor:pointer}
+.result{position:sticky;top:15px}
+.summary{background:#e6f5f0;border:1px solid #c5e3d8;border-radius:15px;padding:20px;margin-top:17px}
+.summary small{color:#32675e;font-size:12px}.summary strong{font-size:clamp(26px,3.2vw,34px);letter-spacing:-.04em;color:#0b6858;display:block;margin:6px 0}
+.tag{display:inline-block;font-size:11px;font-weight:850;background:#e9f0ff;color:#224d89;border-radius:7px;padding:6px 9px}
+.data-row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #e6edf6;padding:10px 0;font-size:13px;line-height:1.4}
+.data-row b{white-space:nowrap;text-align:right}.data-row:last-child{border-bottom:none}
+.data-row.special{background:#f7faff;border-radius:8px;padding-left:9px;padding-right:9px;font-weight:850}
+.info{font-size:12px;line-height:1.65;color:#415b76;background:#f1f6fb;border-radius:10px;padding:13px;margin-top:15px}
+.notes{background:#fff8ec;border:1px solid #f3dfb4;border-radius:11px;padding:14px;margin-top:12px;font-size:12px;line-height:1.6;color:#604b28}
+.notes ul,.checklist ul{padding-left:19px;margin:7px 0 0}.notes li,.checklist li{margin:5px 0}
+.checklist{background:#eff8f5;border-radius:11px;padding:14px;font-size:12px;line-height:1.6;color:#24594e;margin-top:13px}
+.actions{display:flex;gap:9px;margin-top:17px}
+.actions button{flex:1;min-height:44px;font:inherit;font-size:13px;font-weight:850;cursor:pointer;border-radius:10px;border:1px solid #d0e0ee;background:#ebf3fa;color:#27547e}
+.actions button.primary{border-color:#2860ca;background:#2860ca;color:white}
+.actions button:disabled{opacity:.55;cursor:not-allowed}
+.sources{margin-bottom:34px}.sources h2{font-size:20px;margin:0 0 12px}.sources p,.sources li{font-size:13px;color:#4a5f78;line-height:1.7}.sources ul{padding-left:20px}.sources a{color:#2459aa;text-decoration:underline}
+[hidden]{display:none!important}
+@media(max-width:870px){.layout{grid-template-columns:1fr}.result{position:static}}
+@media(max-width:490px){.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.panel{padding:17px}.hero{padding:32px 0}.hero h1{font-size:32px}.links{gap:10px}}
+@media print{nav.top,.hero,form,.examples,.actions,.sources,.inputpanel{display:none!important}.layout{display:block;margin:0;padding:0}.result{box-shadow:none;border:0}.wrap{max-width:none}@page{size:A4;margin:14mm}}
+</style></head><body>
+<nav class="top"><div class="wrap"><a class="logo" href="/">ASN<b>Pemda</b></a>
+<div class="links"><a href="/kalkulator-spm-sp2d.html">Kalkulator SPM/SP2D</a><a href="/">Beranda</a></div></div></nav>
+<header class="hero"><div class="wrap"><span class="eyebrow">Panduan pajak untuk penyedia pemerintah • 2026</span>
+<h1>Kalkulator Pajak E-Katalog &amp; INAPROC</h1>
+<p>Jangan salah pasang harga penawaran atau menghitung potongan. Tentukan dulu mekanisme pembayaran, siapa pemungut pajak, jenis barang/jasa, dan status pajak penyedia—baru hitung jumlah yang masuk rekening.</p>
+<div class="pills"><span>Barang &amp; jasa</span><span>Konstruksi/fisik</span><span>LS vs UP/KKP</span><span>PPN &amp; PPh</span><span>Anti potong ganda</span></div>
+</div></header>
+<main class="wrap layout">
+<section class="panel inputpanel"><h2>Isi detail penawaran</h2>
+<p class="intro">Gunakan informasi pesanan dan tagihan yang sebenarnya. Pilihan yang belum jelas akan menahan perhitungan agar penyedia tidak memperoleh angka pajak yang menyesatkan.</p>
+<div class="examples"><button type="button" data-demo="lsGoods">Contoh: Barang LS</button>
+<button type="button" data-demo="upGoods">Contoh: UP melalui Pihak Lain</button>
+<button type="button" data-demo="upConstruction">Contoh: Konstruksi UP</button></div>
+<form id="form">
+<div class="section" style="border-top:0;margin-top:0;padding-top:0"><h3>1. Sistem pembayaran dan pemungut</h3>
+<div class="fields">
+<div class="field full"><label for="route">Mekanisme pembayaran pada pesanan</label>
+<select id="route"><option value="unverified">— Belum dikonfirmasi —</option>
+<option value="ls">Pembayaran Langsung (LS) ke penyedia</option>
+<option value="marketplaceUP">UP/KKP melalui Pihak Lain yang ditunjuk (PMK 58/2022)</option></select>
+<p class="mini">Berada di E-Katalog tidak otomatis berarti pembayaran dipungut oleh platform.</p></div>
+<div class="field full" id="proofWrap" hidden><label for="collectorProof">Apakah ada bukti platform merupakan Pihak Lain pemungut yang ditunjuk?</label>
+<select id="collectorProof"><option value="unknown">— Belum diketahui —</option><option value="yes">Ya, sudah terverifikasi dari dokumen transaksi</option><option value="no">Belum ada bukti penunjukan/pemungutan</option></select></div>
+</div></div>
+<div class="section"><h3>2. Identitas dan status penyedia</h3><div class="fields">
+<div class="field"><label for="payeeType">Bentuk penyedia</label><select id="payeeType"><option value="company">Badan usaha</option><option value="person">Orang pribadi</option></select></div>
+<div class="field"><label for="taxId">Identitas pajak</label><select id="taxId"><option value="unknown">— Pilih status —</option><option value="valid">NPWP/NIK valid</option><option value="no">Tidak punya NPWP</option></select></div>
+<div class="field"><label for="pkp">Status PKP</label><select id="pkp"><option value="unknown">— Pilih status —</option><option value="yes">Sudah dikukuhkan PKP</option><option value="no">Bukan PKP</option></select></div>
+<div class="field"><label for="taxRegime">PPh usaha penyedia</label><select id="taxRegime"><option value="regular">Ketentuan umum/bukan final UMKM</option><option value="umkm">Menggunakan fasilitas PPh Final UMKM</option><option value="unknown">Belum pasti</option></select></div>
+</div></div>
+<div class="section"><h3>3. Jenis barang/jasa dan pajak</h3><div class="fields">
+<div class="field full"><label for="objectType">Objek transaksi</label><select id="objectType">
+<option value="">— Pilih jenis transaksi —</option><option value="goods">Barang (misalnya ATK, komputer, meja)</option>
+<option value="services">Jasa badan nonkonstruksi (misalnya jasa kebersihan)</option>
+<option value="professional">Jasa profesional orang pribadi (misalnya penerjemah lepas)</option>
+<option value="construction">Pekerjaan konstruksi/fisik atau konsultansi konstruksi</option>
+<option value="rentMovable">Sewa kendaraan/peralatan</option><option value="rentBuilding">Sewa tanah/bangunan</option>
+<option value="transport">Jasa angkutan umum orang pribadi (pengecualian khusus)</option>
+</select></div>
+<div class="field full" id="constructionWrap" hidden><label for="constructionType">Klasifikasi &amp; sertifikasi konstruksi</label><select id="constructionType">
+<option value="">— Pilih sesuai SBU/SKK —</option>
+<option value="worksSmall">Pekerjaan konstruksi — kecil bersertifikat (1,75%)</option>
+<option value="worksOther">Pekerjaan konstruksi — selain kecil bersertifikat (2,65%)</option>
+<option value="worksNoCert">Pekerjaan konstruksi — tidak bersertifikat (4%)</option>
+<option value="integratedCert">Pekerjaan terintegrasi — bersertifikat (2,65%)</option>
+<option value="integratedNoCert">Pekerjaan terintegrasi — tidak bersertifikat (4%)</option>
+<option value="consultantCert">Konsultansi konstruksi — bersertifikat (3,5%)</option>
+<option value="consultantNoCert">Konsultansi konstruksi — tidak bersertifikat (6%)</option>
+</select></div>
+<div class="field"><label for="vatType">Perlakuan PPN</label><select id="vatType"><option value="unknown">— Pilih status —</option><option value="standard">Objek PPN nonmewah (efektif 11%)</option><option value="none">Tidak terutang/dibebaskan/non-PKP (verifikasi)</option><option value="luxury">Barang mewah (PPN 12%, PPnBM khusus)</option><option value="special">DPP khusus/nilai lain — telaah manual</option></select></div>
+<div class="field"><label for="priceMode">Harga penawaran/tagihan</label><select id="priceMode"><option value="exclusive">Belum termasuk PPN</option><option value="inclusive">Sudah termasuk PPN</option></select></div>
+<div class="field full"><label for="amount">Nilai harga penawaran/tagihan (Rp)</label><input id="amount" inputmode="numeric" value="10.000.000" autocomplete="off">
+<p class="mini">Masukkan angka Rupiah dengan titik pemisah ribuan. Perhitungan dilakukan di perangkat Anda.</p></div>
+<div class="field full check" id="splitWrap" hidden><label><input id="splitContract" type="checkbox">Ini bagian dari satu transaksi/pesanan yang lebih besar (tidak memenuhi pengecualian nilai kecil)</label></div>
+</div></div>
+</form>
+</section>
+<aside class="panel result" aria-live="polite"><h2>Simulasi dana diterima</h2><p class="intro">Dari harga pesanan sampai perkiraan dana yang diterima penyedia. <strong>Bukan penetapan pajak resmi.</strong></p>
+<span class="tag" id="routeTitle">Periksa transaksi</span>
+<div class="summary"><small>Perkiraan pembayaran masuk rekening penyedia</small><strong id="net">Perlu verifikasi</strong><small id="statusText">Lengkapi data di sebelah kiri.</small></div>
+<div class="data-row"><span>Harga sebelum PPN</span><b id="base">—</b></div>
+<div class="data-row"><span>PPN terutang</span><b id="vat">—</b></div>
+<div class="data-row special"><span>Nilai tagihan termasuk PPN</span><b id="invoice">—</b></div>
+<div class="data-row"><span>Jenis PPh</span><b id="taxType">—</b></div>
+<div class="data-row"><span>Potongan PPh</span><b id="pph">—</b></div>
+<div class="data-row"><span>PPN dipungut dari tagihan</span><b id="vatCut">—</b></div>
+<div class="data-row"><span>Siapa memotong PPh?</span><b id="pphCollector">—</b></div>
+<div class="data-row"><span>Siapa memungut PPN?</span><b id="vatCollector">—</b></div>
+<div id="finalWrap" hidden><div class="data-row"><span>Perkiraan PPh final terkait objek</span><b id="finalTax">—</b></div>
+<div class="data-row special"><span>Perkiraan selisih pajak final disetor sendiri</span><b id="finalGap">—</b></div></div>
+<div class="info"><strong id="taxRate">Perlu klasifikasi</strong><p id="why" style="margin:5px 0 0">Tentukan mekanisme, penyedia, dan jenis transaksi.</p></div>
+<div class="notes"><b>Catatan &amp; validasi</b><ul id="notesList"><li>Lengkapi informasi pembayaran dan status pemungut.</li></ul></div>
+<div class="checklist"><b>Checklist sebelum pembayaran</b><ul id="checklist"></ul></div>
+<div class="actions"><button class="primary" type="button" id="copy" disabled>Salin rincian</button><button type="button" id="print">Cetak / PDF</button></div>
+</aside>
+</main>
+<section class="wrap"><div class="panel sources">
+<h2>⚠️ Perbedaan yang harus dipahami penyedia</h2>
+<p><b>PPh 22 0,5% bukan tarif yang otomatis berlaku pada semua transaksi E-Katalog.</b>
+Ketentuan ini berlaku ketika Pihak Lain telah ditunjuk dan transaksi dibayar melalui UP/KKP. Dalam pembayaran langsung (LS), pengecualian pemungutan oleh Pihak Lain mengharuskan pemeriksaan ketentuan pemotongan instansi berdasarkan objek belanja. Jika PPh 22 telah dipungut oleh Pihak Lain, jangan melakukan pemotongan PPh tambahan atas penghasilan yang sama oleh instansi.</p>
+<p><b>PPN tidak selalu masuk rekening penyedia.</b> Jika dipungut instansi atau Pihak Lain, PPN tersebut dipisahkan dari pembayaran yang masuk ke rekanan. Jika objek bukan PPN atau penyedia non-PKP sesuai ketentuan, jangan memasukkan PPN seperti transaksi PKP. Untuk PPh final jasa konstruksi atau sewa tanah/bangunan, pemungutan PPh 22 oleh Pihak Lain mungkin masih menyisakan pajak final yang wajib disetor sendiri.</p>
+<h2>Dasar hukum resmi</h2>
+<ul>
+<li><a href="https://www.pajak.go.id/id/peraturan/penunjukan-pihak-lain-sebagai-pemungut-pajak-dan-tata-cara-pemungutan-penyetoran-dan-atau" target="_blank" rel="noopener noreferrer">PMK 58/PMK.03/2022 Pasal 5–10</a> — pengadaan melalui Pihak Lain.</li>
+<li><a href="https://www.pajak.go.id/sites/default/files/Lampiran%20PMK59PMK032022.pdf" target="_blank" rel="noopener noreferrer">PMK 231/2019 jo. PMK 59/2022</a> — pemotongan/pemungutan instansi pemerintah.</li>
+<li><a href="https://stats.pajak.go.id/id/peraturan/pemungutan-pajak-penghasilan-pasal-22-sehubungan-dengan-pembayaran-atas-penyerahan-1" target="_blank" rel="noopener noreferrer">PMK 51 Tahun 2025</a> — PPh 22 barang.</li>
+<li><a href="https://www.pajak.go.id/id/peraturan/perubahan-atas-peraturan-pemerintah-nomor-55-tahun-2022-tentang-penyesuaian-pengaturan-0" target="_blank" rel="noopener noreferrer">PP 20 Tahun 2026 jo. PP 55/2022</a> — fasilitas PPh final UMKM dengan syarat tertentu.</li>
+<li><a href="https://jdih.lkpp.go.id/regulation/surat-edaran-bersama/surat-edaran-bersama-nomor-1-tahun-2025" target="_blank" rel="noopener noreferrer">SEB LKPP–Kemendagri Nomor 1 Tahun 2025</a> — pengadaan E-Katalog versi 6 pada pemerintah daerah.</li>
+</ul>
+<p><b>Batasan versi DEV:</b> PPh final UMKM LS yang mensyaratkan surat keterangan, PPN besaran tertentu, PPnBM, jasa angkutan khusus LS, serta kontrak campuran perlu telaah manusia. Biaya platform, denda, retensi, dan pajak tahunan perusahaan tidak dimasukkan ke angka bersih. Ini alat bantu edukasi; dokumen dan ketentuan perpajakan tetap menjadi acuan.</p>
+</div></section>
+<script type="module">
+import {calcEcatalog,rupiah} from '/assets/ekatalog-tax-engine.js';
+const $=s=>document.getElementById(s);
+const ids=['amount','route','collectorProof','payeeType','taxId','pkp','taxRegime','objectType','constructionType','vatType','priceMode','splitContract'];
+const read=()=>{const i={};for(const id of ids){const e=$(id);i[id]=e.type==='checkbox'?e.checked:id==='amount'?Number(e.value.replace(/[^0-9]/g,'')):e.value;}return i;};
+const text=(id,s)=>{$(id).textContent=s;};
+let last,inputs;
+function render(){
+ const i=read(),res=calcEcatalog(i);last=res;inputs=i;
+ $('proofWrap').hidden=i.route!=='marketplaceUP';
+ $('constructionWrap').hidden=i.objectType!=='construction';
+ $('splitWrap').hidden=i.objectType!=='goods';
+ text('routeTitle',res.title);
+ text('net',res.ok?rupiah(res.net):'Perlu verifikasi');
+ text('statusText',res.ok?'Perkiraan bersih sebelum biaya lain':'Perhitungan ditahan sampai data sesuai');
+ text('base',rupiah(res.base));text('vat',rupiah(res.vat));text('invoice',rupiah(res.invoice));
+ text('taxType',res.taxType||'—');text('pph',res.pph===null?'—':rupiah(res.pph));
+ text('vatCut',res.ok?rupiah(res.vat):'—');
+ text('pphCollector',res.pphCollector||'—');text('vatCollector',res.vatCollector||'—');
+ text('taxRate',res.taxRate||'Perlu verifikasi');
+ text('why',res.why||'Periksa dokumen pesanan');
+ $('finalWrap').hidden=res.finalTax===null||res.finalTax===undefined;
+ text('finalTax',res.finalTax==null?'—':rupiah(res.finalTax));
+ text('finalGap',res.finalGap==null?'—':rupiah(res.finalGap));
+ const ul=$('notesList');ul.replaceChildren();
+ (res.notes.length?res.notes:['Cocokkan data dan bukti potong/pungut sebelum pembayaran.']).forEach(s=>{const li=document.createElement('li');li.textContent=s;ul.append(li)});
+ const check=$('checklist');check.replaceChildren();
+ for(const s of res.checklist){const li=document.createElement('li');li.textContent=s;check.append(li);}
+ $('copy').disabled=!res.ok;
+}
+$('form').addEventListener('input',render);$('form').addEventListener('change',render);
+$('amount').addEventListener('blur',e=>{const n=Number(e.target.value.replace(/[^0-9]/g,''))||0;e.target.value=n.toLocaleString('id-ID');render()});
+document.querySelectorAll('[data-demo]').forEach(b=>b.addEventListener('click',()=>{
+ const example=b.dataset.demo;
+ $('amount').value=example==='upConstruction'?'100.000.000':'10.000.000';
+ $('route').value=example==='lsGoods'?'ls':'marketplaceUP';
+ $('collectorProof').value='yes';$('payeeType').value='company';$('taxId').value='valid';
+ $('pkp').value='yes';$('taxRegime').value='regular';
+ $('objectType').value=example==='upConstruction'?'construction':'goods';
+ $('constructionType').value='worksSmall';$('vatType').value='standard';
+ $('priceMode').value='exclusive';$('splitContract').checked=false;render();
+}));
+$('copy').addEventListener('click',async()=>{
+ if(!last?.ok)return;
+ const r=last;
+ const s=['ASN PEMDA — SIMULASI PAJAK E-KATALOG (2026)',
+ 'Mekanisme: '+r.title,'Harga dasar: '+rupiah(r.base),
+ 'PPN: '+rupiah(r.vat),'Total tagihan: '+rupiah(r.invoice),
+ 'PPh: '+r.taxType+' — '+rupiah(r.pph),'Pemungut PPh: '+r.pphCollector,
+ 'Pemungut PPN: '+r.vatCollector,'Bersih rekening: '+rupiah(r.net),
+ ...(r.finalGap!==null&&r.finalGap!==undefined?['Perkiraan PPh final tambahan disetor sendiri: '+rupiah(r.finalGap)]:[]),
+ 'Dasar klasifikasi: '+r.why,'Catatan: Simulasi bukan penetapan pajak atau bukti potong.'].join('\n');
+ try{await navigator.clipboard.writeText(s);$('copy').textContent='Tersalin ✓';setTimeout(()=>$('copy').textContent='Salin rincian',1800)}
+ catch(e){window.prompt('Salin ringkasan:',s)}
+});
+$('print').addEventListener('click',()=>window.print());
+render();
+</script></body></html>

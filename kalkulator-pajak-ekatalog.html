@@ -162,7 +162,7 @@ function render(){
  text('statusText',res.ok?'Perkiraan bersih sebelum biaya lain':'Perhitungan ditahan sampai data sesuai');
  text('base',rupiah(res.base));text('vat',rupiah(res.vat));text('invoice',rupiah(res.invoice));
  text('taxType',res.taxType||'—');text('pph',res.pph===null?'—':rupiah(res.pph));
- text('vatCut',res.ok?rupiah(res.vat):'—');
+ text('vatCut',res.ok?rupiah(res.vatWithheld):'—');
  text('pphCollector',res.pphCollector||'—');text('vatCollector',res.vatCollector||'—');
  text('taxRate',res.taxRate||'Perlu verifikasi');
  text('why',res.why||'Periksa dokumen pesanan');

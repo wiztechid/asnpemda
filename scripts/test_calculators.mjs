@@ -39,6 +39,7 @@ const finalPayroll = calculateSpm({...fixedWorker,amount:10_000_000,employeePeri
 assert.equal(finalPayroll.ok,true);
 assert.equal(finalPayroll.taxBase,54_300_000,'annual PKP includes capped job expense, pension and K/0 PTKP');
 assert.equal(finalPayroll.pph,515_000,'annual PPh less prior withholding');
+assert.equal(calculateSpm({...fixedWorker,employeePeriod:'last',annualGross:0,jobMonths:12,partYear:'no'}).ok,false,'missing annual gross must hold final-period estimate');
 assert.equal(calculateSpm({...fixedWorker,employeePeriod:'last',annualGross:120_000_000,jobMonths:12,priorWithheld:2_200_000,partYear:'yes'}).ok,false,'part-year reconciliation requires annualization and proration');
 const bosGoods = calculateSpm({...spm,goodsException:'bos',vatCollector:'government'});
 assert.equal(bosGoods.ok,true); assert.equal(bosGoods.pph,0,'BOS-funded goods are excluded from PPh 22 collection');

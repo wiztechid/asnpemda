@@ -70,6 +70,7 @@ export function calculate(raw = {}) {
         if (!Number.isInteger(months) || months < 1 || months > 12) { blocked = true; warning(alerts,'Isi jumlah bulan bekerja yang benar (1–12).'); }
         if (a.partYear === 'yes') { blocked = true; warning(alerts,'Masa pajak bagian tahun memerlukan annualisasi dan prorata. Rekonsiliasi manual payroll diperlukan.'); }
         const grossYear = num(a.annualGross);
+        if (grossYear <= 0) { blocked = true; warning(alerts,'Isi bruto setahun dari rekap payroll sebelum menghitung masa pajak terakhir.'); }
         const jobCost = Math.min(Math.round(grossYear * 0.05), 500000 * months);
         const otherDeduct = num(a.pensionYear) + num(a.zakatYear);
         const pkp = Math.max(0, grossYear - jobCost - otherDeduct - PTKP[a.ptkp]);

@@ -37,6 +37,36 @@ if "/assets/hero-pppk-paruh-waktu-2027.webp" not in published_html:
     raise SystemExit("published PPPK article hero reference missing")
 if "assets/hero-pppk-paruh-waktu-2027.webp" not in actual:
     raise SystemExit("published PPPK article hero missing from public build")
+# Public calculators must match the frozen article navigation/footer shell while
+# retaining their own calculation modules and print-friendly standalone UI.
+for name, image in (
+    ("kalkulator-spm-sp2d.html", "hero-kalkulator-potongan-spj-2026.webp"),
+    ("kalkulator-pajak-ekatalog.html", "hero-pajak-ekatalog-penyedia-2026.webp"),
+):
+    page = (dist / name).read_text(encoding="utf-8")
+    for marker in (
+        '<header class="site-header">', '<footer class="site-footer">',
+        'class="brand-icon"', 'class="footer-grid"', 'class="footer-bottom"',
+        'class="skip-link"', 'class="breadcrumbs shell tool-breadcrumbs"',
+        'class="shell tool-editorial"', 'href="/about.html"',
+        'href="/editorial.html"', 'href="/privacy.html"',
+        'href="/disclaimer.html"', 'href="/koreksi.html"',
+        'href="/kalkulator-spm-sp2d.html"',
+        'href="/kalkulator-pajak-ekatalog.html"',
+        'href="/assets/article-template.css',
+        '"@type":"WebApplication"',
+        'name="twitter:card" content="summary_large_image"',
+    ):
+        if marker not in page:
+            raise SystemExit(f"calculator site-shell missing {marker}: {name}")
+    if page.count('<header class="site-header">') != 1 or page.count('<footer class="site-footer">') != 1:
+        raise SystemExit("duplicate site shell in calculator: " + name)
+    if 'og:image' not in page or image not in page or ("assets/" + image) not in actual:
+        raise SystemExit("calculator hero/social image missing: " + name)
+    if 'name="viewport"' not in page or 'rel="canonical"' not in page:
+        raise SystemExit("calculator mobile/SEO metadata missing: " + name)
+print("CALCULATOR SHELL PASS: navigation, identity, policies, and footer match articles")
+
 pension_page = (dist / "artikel" / "cara-menghitung-gaji-pensiun-pns.html").read_text(encoding="utf-8")
 if '<a class="blogroll-card" href="sertifikasi-pbj-level-1-ppk-tipe-c-2026"><img src="../assets/hero-sertifikasi-pbj-lkpp-2026.svg"' not in pension_page:
     raise SystemExit("related PBJ article card does not use its matching hero image")

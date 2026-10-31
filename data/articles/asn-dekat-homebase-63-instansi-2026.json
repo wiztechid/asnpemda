@@ -1,0 +1,43 @@
+{
+  "articleId": "asn-dekat-homebase-63-instansi-2026",
+  "id": "asn-dekat-homebase-63-instansi-2026",
+  "slug": "asn-dekat-homebase-63-instansi-2026",
+  "title": "ASN Dekat Homebase 2026: 63 Instansi Terapkan, Bisa Ajukan Mutasi?",
+  "approved": true,
+  "publicationState": "PUBLISHED",
+  "status": "TERBIT",
+  "datePublished": "2026-10-31",
+  "dateModified": "2026-10-31",
+  "lastVerified": "2026-10-31",
+  "materiality": "HIGH",
+  "articlePath": "artikel/asn-dekat-homebase-63-instansi-2026.html",
+  "heroImage": "assets/hero-asn-dekat-homebase-2026.svg",
+  "humanApproval": {
+    "decision": "GO",
+    "authorizedBy": "wiztechid",
+    "role": "site owner",
+    "instruction": "Publish after editorial and quality gate pass, 31 October 2026"
+  },
+  "sources": [
+    {
+      "title": "BKN — 101 pegawai dan 63+ instansi, 30 Oktober 2026",
+      "url": "https://www.bkn.go.id/prof-zudan-lanjutkan-program-asn-dekat-keluarga-101-pegawai-bkn-sudah-rasakan-manfaat-bekerja-dekat-keluarga-dan-domisili/",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true,
+      "publishedAt": "2026-10-30"
+    },
+    {
+      "title": "BKN — Si Zona Bondowoso, 23 Oktober 2026",
+      "url": "https://www.bkn.go.id/kepala-bkn-berikan-humanis-leader-award-kepada-bupati-bondowoso-yang-gercep-terapkan-kebijakan-asn-dekat-keluarga-dan-domisili/",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true,
+      "publishedAt": "2026-10-23"
+    }
+  ],
+  "actionRequired": [
+    "Periksa mekanisme penataan penempatan di BKPSDM",
+    "Bedakan penempatan internal dan mutasi antarinstansi"
+  ],
+  "asnImpact": "Memahami bahwa program penempatan ASN dekat keluarga telah diterapkan oleh 63+ instansi, tetapi tidak memberikan hak mutasi otomatis.",
+  "pemdaImpact": "BKPSDM dapat mengevaluasi penataan penempatan internal berdasarkan kebutuhan formasi, kompetensi, dan kesinambungan pelayanan."
+}

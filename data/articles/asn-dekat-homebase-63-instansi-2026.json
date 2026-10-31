@@ -5,7 +5,7 @@
   "title": "ASN Dekat Homebase 2026: 63 Instansi Terapkan, Bisa Ajukan Mutasi?",
   "approved": true,
   "publicationState": "PUBLISHED",
-  "status": "INFORMASI/ARAH KEBIJAKAN",
+  "status": "ARAH_KEBIJAKAN",
   "datePublished": "2026-10-31",
   "dateModified": "2026-10-31",
   "lastVerified": "2026-10-31",
@@ -37,5 +37,7 @@
   "actionRequired": [
     "Periksa mekanisme penataan penempatan di BKPSDM",
     "Bedakan penempatan internal dan mutasi antarinstansi"
-  ]
+  ],
+  "asnImpact": "Memahami bahwa program penempatan ASN dekat keluarga telah diterapkan oleh 63+ instansi, tetapi tidak memberikan hak mutasi otomatis.",
+  "pemdaImpact": "BKPSDM dapat mengevaluasi penataan penempatan internal berdasarkan kebutuhan formasi, kompetensi, dan kesinambungan pelayanan."
 }

@@ -1,0 +1,16 @@
+{
+  "articleId": "kuliah-s3-asn-prosedur-tugas-belajar",
+  "reviewedAt": "2026-11-21",
+  "reviewer": "AI-assisted editorial review",
+  "reviewerIsHuman": false,
+  "outcome": "APPROVE_WITH_SCOPE_NOTES",
+  "checks": [
+    "Tidak menyebut nama, instansi, atau rincian personal.",
+    "Aturan tugas belajar merujuk JDIH PANRB dan dokumen resmi BKN.",
+    "PP 94/2021 dan PP 79/2021 dipakai sebagai konteks umum tanpa kesimpulan sanksi untuk kasus tertentu.",
+    "Nada santai, tidak menghakimi, dan suportif."
+  ],
+  "findings": [
+    "Fakta kasus individual tidak diverifikasi dan tidak dinyatakan sebagai fakta artikel."
+  ]
+}

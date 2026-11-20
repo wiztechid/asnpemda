@@ -49,13 +49,28 @@ async function verifyTurnstile(request, env, token) {
   }
 }
 
+function removeRepeatedParagraphs(text) {
+  const seen = new Set();
+  const result = [];
+  for (const paragraph of text.split(/\n\s*\n+/)) {
+    const normalized = paragraph.toLocaleLowerCase("id-ID").replace(/\s+/g, " ").trim();
+    if (!normalized) continue;
+    const shortClosing = /^(demikian\.|terima kasih\.)$/.test(normalized);
+    if (seen.has(normalized) && (normalized.length >= 50 || shortClosing)) continue;
+    seen.add(normalized);
+    result.push(paragraph.trim());
+  }
+  return result.join("\n\n");
+}
+
 function makePrompt(topic) {
   const instructions = [
     "Anda membantu ASN pemerintah daerah menyusun draf awal naskah dinas dalam Bahasa Indonesia formal dan jelas.",
     "Berdasarkan topik pengguna, tentukan sendiri bentuk naskah yang paling sesuai. Pilih satu: surat dinas, nota dinas, surat undangan, surat tugas, atau telaahan staf. Jika topik meminta telaahan kepada pimpinan, gunakan struktur telaahan staf: Persoalan, Praanggapan, Fakta-fakta yang Mempengaruhi, Analisis, Kesimpulan, Saran.",
-    "Tulis draf yang praktis, runtut, dan siap disunting. Gunakan hanya fakta yang dinyatakan pengguna. Jangan mengarang nama orang/instansi, tanggal, nomor surat, jumlah, kejadian, kewenangan, dasar hukum, pasal, atau keputusan. Untuk informasi yang belum tersedia, gunakan penanda [LENGKAPI: uraian singkat]. Jangan menyatakan dasar hukum spesifik kecuali disebut jelas oleh pengguna; jika diperlukan, tulis [PERIKSA DAN TAMBAHKAN DASAR HUKUM YANG BERLAKU]. Jangan membuat seolah-olah draf sudah ditandatangani atau disahkan.",
-    "Berikan judul jenis naskah di bagian paling atas, lalu susun format naskah yang lazim untuk bentuk tersebut. Untuk surat dinas/undangan, sertakan bagian penerima, hal, isi, penutup, dan blok penandatangan dengan penanda yang diperlukan. Untuk surat tugas, sertakan dasar, nama/jabatan yang ditugaskan, uraian tugas, waktu/tempat, dan penandatangan dengan penanda yang diperlukan. Akhiri dengan satu baris: CATATAN PEMERIKSAAN: daftar singkat bagian yang wajib dilengkapi atau diverifikasi.",
-    "Jangan memberi penjelasan di luar draf dan catatan pemeriksaan. Maksimal sekitar 900 kata.",
+    "Susun draf yang ringkas, formal, jelas, dan siap disunting. Gunakan fakta dari topik saja. Jangan mengarang nama, jabatan, instansi, tanggal, nomor, lokasi, jumlah, kewenangan, dasar hukum, pasal, atau keputusan. Data yang tidak disebut tulis sebagai [LENGKAPI: ...]. Dasar hukum yang belum diberikan tulis [PERIKSA DASAR HUKUM YANG BERLAKU]. Jangan menulis seolah-olah naskah sudah ditandatangani atau disahkan.",
+    "Untuk SURAT TUGAS gunakan urutan: judul SURAT TUGAS; Nomor; Dasar; frasa MEMERINTAHKAN; Kepada; Untuk; waktu dan tempat; kalimat penutup satu kali; blok penandatangan. Buat 1–3 butir tugas yang spesifik terhadap topik, tanpa mengulang kalimat penutup.",
+    "Untuk SURAT UNDANGAN gunakan: nomor, sifat/lampiran bila relevan, hal, penerima, satu paragraf maksud, waktu/tempat/agenda, penutup satu kali, blok penandatangan. Untuk NOTA DINAS atau TELAAHAN STAF gunakan heading yang sesuai dan isi yang ringkas. Pilih hanya format yang paling cocok.",
+    "Akhiri seluruh keluaran setelah satu blok penandatangan dan satu baris CATATAN PEMERIKSAAN. Jangan mengulang salam, paragraf, kalimat terima kasih, kata Demikian, atau blok penandatangan. Maksimal 350 kata. Keluarkan draf saja, tanpa pengantar atau komentar lain.",
     "Topik pengguna:",
     topic,
   ];
@@ -86,10 +101,13 @@ export async function onRequest({ request, env }) {
   try {
     const result = await env.AI.run("@cf/meta/llama-3.1-8b-instruct-fp8-fast", {
       prompt: makePrompt(topic),
-      max_tokens: 1400,
-      temperature: 0.2,
+      max_tokens: 900,
+      temperature: 0.15,
+      top_p: 0.85,
+      repetition_penalty: 1.15,
+      frequency_penalty: 0.25,
     });
-    const draft = cleanText(result?.response || result?.output_text || "");
+    const draft = removeRepeatedParagraphs(cleanText(result?.response || result?.output_text || ""));
     if (!draft) return reply({ error: "AI belum menghasilkan draft. Coba jelaskan topik dengan lebih spesifik." }, 502);
     return reply({
       draft: draft.slice(0, MAX_DRAFT_CHARS),

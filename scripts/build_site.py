@@ -19,7 +19,7 @@ BASE_FILES = (
     "index.html",
     "kalkulator-spm-sp2d.html",
     "kalkulator-pajak-ekatalog.html",
-    "kalkulator-pppk-2027.html",
+    "kalkulator-pppk-2027.html",\n    "draft-surat-srikandi.html",
     "about.html",
     "editorial.html",
     "privacy.html",
@@ -307,7 +307,7 @@ def main() -> None:
     articles = published_articles()
     home_path = DIST / 'index.html'
     home_path.write_text(refresh_homepage_cards(home_path.read_text(encoding='utf-8'), articles), encoding='utf-8')
-    for page_name in ("index.html", "kalkulator-spm-sp2d.html", "kalkulator-pajak-ekatalog.html", "kalkulator-pppk-2027.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "koreksi.html"):
+    for page_name in ("index.html", "kalkulator-spm-sp2d.html", "kalkulator-pajak-ekatalog.html", "kalkulator-pppk-2027.html",\n    "draft-surat-srikandi.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "koreksi.html"):
         page_path = DIST / page_name
         page_path.write_text(normalize_public_urls(page_path.read_text(encoding="utf-8"), origin), encoding="utf-8")
     for relative, _, hero_image in articles:
@@ -340,7 +340,7 @@ def main() -> None:
     ns = "http://www.sitemaps.org/schemas/sitemap/0.9"
     ET.register_namespace("", ns)
     urlset = ET.Element(f"{{{ns}}}urlset")
-    for route in ("", "about", "editorial", "privacy", "disclaimer", "koreksi", "kalkulator-spm-sp2d", "kalkulator-pajak-ekatalog", "kalkulator-pppk-2027"):
+    for route in ("", "about", "editorial", "privacy", "disclaimer", "koreksi", "kalkulator-spm-sp2d", "kalkulator-pajak-ekatalog", "kalkulator-pppk-2027", "draft-surat-srikandi"):
         url = ET.SubElement(urlset, f"{{{ns}}}url")
         ET.SubElement(url, f"{{{ns}}}loc").text = f"{origin}/{route}"
     for relative, modified, _ in articles:

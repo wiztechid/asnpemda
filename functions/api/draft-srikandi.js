@@ -91,7 +91,7 @@ function makePrompt(topic) {
     "Topik pengguna:",
     topic,
   ];
-  return instructions.join("\\n\\n");
+  return instructions.join("\n\n");
 }
 
 export async function onRequest({ request, env }) {

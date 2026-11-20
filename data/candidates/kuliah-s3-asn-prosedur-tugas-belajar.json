@@ -1,0 +1,63 @@
+{
+  "id": "kuliah-s3-asn-prosedur-tugas-belajar",
+  "slug": "kuliah-s3-asn-prosedur-tugas-belajar",
+  "title": "Kuliah S3 bagi ASN: Semangat Belajarnya, Bereskan Juga Izin Kedinasan",
+  "discoveredAt": "2026-11-21",
+  "classification": "asn-competency-development",
+  "materiality": "MEDIUM",
+  "dedupeKey": "pns-study-permission-doctoral-study-general",
+  "state": "PUBLISHED",
+  "verification": "PRIMARY_RULES_VERIFIED; CASE_FACTS_NOT_ASSESSED",
+  "approved": true,
+  "articlePath": "artikel/kuliah-s3-asn-prosedur-tugas-belajar.html",
+  "evidenceSnapshot": [
+    {
+      "title": "SE Menteri PANRB No. 28 Tahun 2021 — JDIH Kementerian PANRB",
+      "url": "https://jdih.menpan.go.id/dokumen-hukum/pengembangan-kompetensi-bagi-pegawai-negeri-sipil-melalui-jalur-pendidikan-1670",
+      "issuer": "Kementerian PANRB",
+      "publishedAt": "2021-12-29",
+      "sourceType": "JDIH",
+      "isPrimary": true
+    },
+    {
+      "title": "Naskah SE Menteri PANRB Nomor 28 Tahun 2021",
+      "url": "https://www.bkn.go.id/wp-content/uploads/2022/01/SE-Nomor-28-Tahun-2021.pdf",
+      "issuer": "Badan Kepegawaian Negara",
+      "publishedAt": "2021-12-29",
+      "sourceType": "REGULATION",
+      "isPrimary": true
+    },
+    {
+      "title": "PP Nomor 94 Tahun 2021 tentang Disiplin PNS",
+      "url": "https://peraturan.bpk.go.id/Details/177031/pp-no-94-tahun-2021",
+      "issuer": "Pemerintah Pusat/JDIH BPK",
+      "publishedAt": "2021-08-31",
+      "sourceType": "JDIH",
+      "isPrimary": true
+    },
+    {
+      "title": "PP Nomor 79 Tahun 2021 tentang Upaya Administratif dan BPASN",
+      "url": "https://peraturan.bpk.go.id/Details/175828/pp-no-79-tahun-2021",
+      "issuer": "Pemerintah Pusat/JDIH BPK",
+      "publishedAt": "2021-08-10",
+      "sourceType": "JDIH",
+      "isPrimary": true
+    },
+    {
+      "title": "Penjelasan BKN tentang prosedur tugas belajar dan izin belajar PNS",
+      "url": "https://www.bkn.go.id/syarat-dan-prosedur-pengajuan-tugas-belajar-dan-izin-belajar-bagi-pns/",
+      "issuer": "Badan Kepegawaian Negara",
+      "publishedAt": "2021-08-16",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true
+    }
+  ],
+  "editorialAngle": "Catatan santai tentang semangat menempuh studi doktoral dan pentingnya prosedur kedinasan.",
+  "editorialBoundary": "Tidak mengidentifikasi atau menilai individu dari kabar yang beredar; membahas aturan umum berdasarkan sumber resmi.",
+  "publicationAuthorization": {
+    "decision": "GO",
+    "authorizedBy": "wiztechid",
+    "authorizedDate": "2026-11-21",
+    "scope": "Samarkan nama dan bahas regulasi serta semangat belajar secara santai dan lugas."
+  }
+}

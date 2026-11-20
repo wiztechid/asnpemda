@@ -71,7 +71,7 @@ body{background:#f5f8fd;color:var(--ink)}
 <div class="field"><label for="subject">Hal / perihal</label><input id="subject" placeholder="Pokok isi naskah"></div>
 <div class="field full" data-show="surat nota undangan"><label for="recipient">Tujuan / penerima</label><textarea id="recipient" placeholder="Nama/jabatan penerima atau daftar penerima"></textarea></div>
 <div class="field" data-show="nota"><label for="sender">Dari</label><input id="sender" placeholder="Nama/jabatan pengirim"></div>
-<div class="field" data-show="surat nota undangan"><label for="greeting">Salam pembuka (opsional)</label><input id="greeting" placeholder="Dengan hormat,"></div>
+<div class="field" data-show="surat undangan"><label for="greeting">Salam pembuka (opsional)</label><input id="greeting" placeholder="Dengan hormat,"></div>
 <div class="field full" data-show="surat"><label for="body">Isi pokok surat</label><textarea id="body" placeholder="Tuliskan maksud, uraian penting, dan tindak lanjut."></textarea></div>
 <div class="field full" data-show="nota"><label for="problem">I. Persoalan</label><textarea id="problem" placeholder="Uraikan persoalan yang memerlukan perhatian/keputusan."></textarea></div>
 <div class="field full" data-show="nota"><label for="assumption">II. Praanggapan</label><textarea id="assumption" placeholder="Tuliskan asumsi atau kondisi yang digunakan."></textarea></div>
@@ -148,7 +148,7 @@ function makeDraft(){
  return out.join("\n").replace(/\n{4,}/g,"\n\n\n");
 }
 function refresh(){const kind=value("kind");document.querySelectorAll("[data-show]").forEach(el=>{el.hidden=!el.dataset.show.split(/\s+/).includes(kind);});$("output").value=makeDraft();}
-document.querySelectorAll("input,select,textarea").forEach(el=>{if(el.id!=="output")el.addEventListener("input",refresh);el.addEventListener("change",refresh);});
+document.querySelectorAll("input,select,textarea").forEach(el=>{if(el.id!=="output"){el.addEventListener("input",refresh);el.addEventListener("change",refresh);}});
 if(!$("date").value){const now=new Date(),local=new Date(now.getTime()-now.getTimezoneOffset()*60000);$("date").value=local.toISOString().slice(0,10);}
 refresh();
 $("copy").addEventListener("click",async()=>{try{await navigator.clipboard.writeText($("output").value);$("status").textContent="Draft berhasil disalin.";}catch(e){$("output").select();document.execCommand("copy");$("status").textContent="Draft disalin. Jika belum, pilih teks lalu salin."; }});

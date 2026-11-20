@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f9ff">
+<title>Kalkulator Proyeksi Belanja PPPK 2027 — ASN Pemda</title>
+<meta name="description" content="Simulasi kebutuhan gaji, tunjangan, iuran, TPP, THR dan gaji ke-13 PPPK berdasarkan asumsi yang dapat diubah.">
+<link rel="canonical" href="https://asnpemda.pages.dev/kalkulator-pppk-2027.html">
+<meta property="og:type" content="website"><meta property="og:url" content="https://asnpemda.pages.dev/kalkulator-pppk-2027.html"><meta property="og:title" content="Kalkulator Proyeksi Belanja PPPK 2027"><meta property="og:site_name" content="ASN Pemda"><meta property="og:description" content="Simulasikan kebutuhan anggaran PPPK 2027 dengan komponen dan asumsi yang transparan.">
+<meta property="og:image" content="https://asnpemda.pages.dev/assets/hero-pppk-paruh-waktu-2027.webp"><meta property="og:image:type" content="image/webp"><meta property="og:image:alt" content="Ilustrasi PPPK Pemda untuk simulasi perencanaan anggaran.">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Kalkulator Proyeksi Belanja PPPK 2027"><meta name="twitter:description" content="Simulasikan kebutuhan anggaran PPPK dengan asumsi yang transparan dan dapat diubah."><meta name="twitter:image" content="https://asnpemda.pages.dev/assets/hero-pppk-paruh-waktu-2027.webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Kalkulator Proyeksi Belanja PPPK 2027","url":"https://asnpemda.pages.dev/kalkulator-pppk-2027","applicationCategory":"FinanceApplication","operatingSystem":"Web","inLanguage":"id-ID","isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"ASN Pemda","url":"https://asnpemda.pages.dev/"},"description":"Simulasi kebutuhan anggaran PPPK 2027 dengan asumsi yang dapat diubah."}</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20261020-6"><link rel="icon" href="/favicon.ico?v=20261020-6" sizes="16x16 32x32 48x48">
+<link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/article-template.css?v=20261023-1">
+<style>
+:root{--ink:#19314f;--blue:#2160d9;--soft:#eef5ff;--muted:#5f7187;--line:#dce5f1;--good:#086f5d}
+body{background:#f5f8fd;color:var(--ink)}
+.skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:12px;top:12px;z-index:20;background:#fff;padding:12px}
+.tool-breadcrumbs{margin:17px auto;line-height:1.65}
+.tool-hero{background:linear-gradient(125deg,#183b74,#224f97 65%,#3771ba);color:white;padding:39px 0}
+.tool-hero .eyebrow{color:#bcddff;font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.tool-hero h1{font-size:clamp(30px,4.3vw,48px);line-height:1.12;letter-spacing:-.045em;margin:10px 0 13px}
+.tool-hero p{max-width:850px;color:#e2ecff;margin:0;line-height:1.65}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.hero-tags span{border:1px solid #7297cf;background:#ffffff13;padding:6px 11px;border-radius:999px;font-size:12px}
+.calc-shell{max-width:1160px;margin:auto;padding-left:20px;padding-right:20px}
+.calc-main{margin:23px auto 34px}
+.panel{border:1px solid var(--line);background:white;border-radius:17px;padding:22px;box-shadow:0 8px 28px #163b7410;margin-bottom:20px}
+.panel h2{font-size:21px;margin:0 0 6px;letter-spacing:-.02em}.panel>p{font-size:14px;color:var(--muted);line-height:1.6;margin:0 0 16px}
+.notice{border:1px solid #f0d59a;background:#fff8e8;border-radius:12px;padding:14px 16px;color:#684d17;font-size:13px;line-height:1.65;margin:16px 0}
+.notice strong{color:#533800}.steps{border:1px solid #d8e6fc;background:#f1f6ff;border-radius:13px;padding:13px 16px;margin:0 0 17px;color:#385373;font-size:13px}
+.steps strong{display:block;color:#233f63;margin-bottom:5px}.steps ol{margin:0;padding-left:19px}.steps li{margin:4px 0}
+.controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:14px 0}
+.field{min-width:0}.field label{font-size:13px;font-weight:800;color:#34465d;display:block;margin:0 0 6px}
+.field input{width:100%;min-height:43px;border:1px solid #cbd8e8;background:white;border-radius:9px;color:#173354;font:inherit;padding:9px 11px}
+.field input:focus,.rates input:focus{outline:3px solid #9bbefb77;border-color:#2b6bcb}
+.help{font-size:12px;line-height:1.5;color:var(--muted);margin-top:5px}
+.rate-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.rates{width:100%;min-width:1080px;border-collapse:collapse;font-size:12px}
+.rates th{background:#f1f5fb;color:#314b6b;text-align:left;padding:10px 8px;white-space:nowrap}
+.rates td{border-top:1px solid #e4eaf2;padding:8px;white-space:nowrap}
+.rates td:first-child{font-weight:850;color:#213f66}
+.rates input{width:94px;min-height:37px;padding:6px 7px;border:1px solid #ccd8e8;border-radius:7px;font:inherit;color:#173354}
+.rates input.count{width:76px}.rates input.jf{width:62px}
+.total-foot{font-weight:850;background:#f5f8fc}
+.details{border-top:1px solid var(--line);margin-top:18px;padding-top:15px}
+.details summary{font-weight:800;color:#244a78;cursor:pointer}
+.details-body{padding-top:14px}
+.result-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:20px;align-items:start}
+.result-card{border:1px solid var(--line);background:white;border-radius:17px;padding:20px;box-shadow:0 8px 28px #163b7410}
+.result-card h2{font-size:20px;margin:0 0 4px}.result-card>p{font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 14px}
+.big-box{background:#eaf6f2;border:1px solid #cde9e0;border-radius:14px;padding:15px}
+.big-box small{font-size:12px;color:#315b56}.big-box strong{display:block;font-size:clamp(26px,3vw,36px);line-height:1.2;color:#086957;letter-spacing:-.04em;margin:5px 0}
+.line{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #e5ebf3;font-size:13px}
+.line b{text-align:right;white-space:nowrap;font-weight:800}
+.line.total{font-size:15px;color:#124375}
+.breakdown{margin-top:12px}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+.actions button{min-height:43px;border:0;border-radius:9px;background:#2158b8;color:white;font:inherit;font-size:13px;font-weight:800;padding:10px 14px;cursor:pointer}
+.actions button.secondary{background:#edf3fc;color:#214775;border:1px solid #cfdbeb}
+.small-note{font-size:12px;color:#596d84;line-height:1.6;margin:12px 0 0}
+.component-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px}
+.component-table th,.component-table td{text-align:right;border-bottom:1px solid #e5ebf3;padding:9px 6px}
+.component-table th:first-child,.component-table td:first-child{text-align:left}
+.component-table th{color:#53667f;font-size:11px}
+.sources{margin:22px auto 40px;line-height:1.7}
+.sources h2{font-size:20px;margin:0 0 8px}.sources p,.sources li{font-size:13px;color:#53667f}
+.sources a{color:#2059af;text-decoration:underline;text-underline-offset:2px}
+footer.tool-footer{border-top:1px solid var(--line);padding:22px 0;font-size:12px;color:var(--muted)}
+@media(max-width:900px){.result-grid{grid-template-columns:1fr}.controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.calc-shell{padding-left:17px;padding-right:17px}.tool-hero{padding:30px 0}.tool-hero h1{font-size:32px}.panel{padding:17px}.controls{grid-template-columns:1fr}.result-card{padding:17px}.line{font-size:12px}}
+@media print{
+ @page{size:A4;margin:14mm}
+ html,body{background:#fff!important;color:#19314f!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .site-header,.tool-breadcrumbs,.tool-hero,.calc-form,.sources,.tool-footer,.actions,.skip-link{display:none!important}
+ .calc-shell{max-width:none;padding:0}.calc-main{margin:0}.result-grid{display:block}.result-card{box-shadow:none;border:0;padding:0;margin:0 0 15px}.result-card::after{content:"ASN PEMDA";position:fixed;z-index:0;top:43%;left:50%;transform:translate(-50%,-50%) rotate(-28deg);white-space:nowrap;font-size:62pt;font-weight:850;letter-spacing:.12em;color:#55738f;opacity:.075;pointer-events:none}.result-card>*{position:relative;z-index:1}.big-box{background:#eaf6f2!important}.rate-wrap{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#proyeksi">Langsung ke formulir proyeksi</a>
+<header class="site-header"><div class="shell navwrap"><a class="brand" href="/" aria-label="ASN Pemda, beranda"><img class="brand-icon" src="/favicon.svg?v=20261020-6" alt="" aria-hidden="true"><span>ASN<span class="brand-blue">Pemda</span><small>Ngerti aturan, nggak pakai ribet.</small></span></a><nav aria-label="Navigasi utama"><a href="/">Beranda</a><a href="/#tools-asn">Tools ASN</a><a href="/editorial.html">Cara kami</a></nav><a class="nav-cta" href="/editorial.html">Metode editorial</a></div></header>
+<nav class="breadcrumbs shell tool-breadcrumbs" aria-label="Breadcrumb"><a href="/">Beranda</a> › <a href="/#tools-asn">Tools ASN Pemda</a> › Kalkulator PPPK 2027</nav>
+<section class="tool-hero"><div class="calc-shell"><span class="eyebrow">Tools ASN Pemda • Perencanaan anggaran</span><h1>Kalkulator Proyeksi<br>Belanja PPPK 2027</h1><p>Simulasikan kebutuhan gaji rutin, tunjangan, iuran, TPP, THR, dan gaji ke-13. Ubah jumlah pegawai atau asumsi komponen untuk melihat dampak anggaran secara langsung.</p><div class="hero-tags"><span>Data berjalan hanya di browser</span><span>Angka awal berbasis workbook proyeksi Bontang</span><span>Asumsi bisa diedit</span></div></div></section>
+<main class="calc-shell calc-main" id="proyeksi">
+<section class="panel calc-form" aria-labelledby="form-title">
+<h2 id="form-title">Atur skenario proyeksi</h2><p>Mulai dari baseline 1.396 PPPK paruh waktu pada workbook proyeksi 2027. Jumlah dan rata-rata komponen dapat diubah; tidak ada data yang dikirim ke server.</p>
+<div class="steps"><strong>Alur singkat</strong><ol><li>Periksa jumlah pegawai serta asumsi golongan dan masa kerja.</li><li>Sesuaikan rata-rata komponen payroll atau tambahkan TPP bila diperlukan.</li><li>Baca kebutuhan bruto, estimasi potongan, dan selisih setelah biaya PWT berjalan.</li></ol></div>
+<div class="controls">
+<div class="field"><label for="months">Bulan gaji rutin</label><input id="months" type="number" min="0" max="12" step="1" value="12"><div class="help">Baseline Januari–Desember 2027.</div></div>
+<div class="field"><label for="thrUnits">THR (ekuivalen bulan)</label><input id="thrUnits" type="number" min="0" step="0.01" value="1"><div class="help">Asumsi awal 1 pembayaran penuh; ubah untuk prorata.</div></div>
+<div class="field"><label for="thirteenUnits">Gaji ke-13 (ekuivalen bulan)</label><input id="thirteenUnits" type="number" min="0" step="0.01" value="1"><div class="help">Asumsi awal 1 pembayaran penuh; ubah untuk prorata.</div></div>
+<div class="field"><label for="tppAverage">TPP rata-rata per pegawai/bulan (Rp)</label><input id="tppAverage" type="number" min="0" step="10000" value="0"><div class="help">Isi 0 jika TPP belum dimasukkan. Nilai ini rata-rata untuk semua pegawai.</div></div>
+<div class="field"><label for="tppThrUnits">TPP dalam THR (ekuivalen bulan)</label><input id="tppThrUnits" type="number" min="0" step="0.01" value="0"><div class="help">Aturan khusus 2027 belum tersedia; default 0.</div></div>
+<div class="field"><label for="tpp13Units">TPP dalam gaji ke-13 (ekuivalen bulan)</label><input id="tpp13Units" type="number" min="0" step="0.01" value="0"><div class="help">Aturan khusus 2027 belum tersedia; default 0.</div></div>
+<div class="field"><label for="pwtMonthly">Belanja/upah PWT berjalan per bulan (Rp)</label><input id="pwtMonthly" type="number" min="0" step="1000000" value="0"><div class="help">Opsional, untuk melihat tambahan bersih setelah biaya yang digantikan.</div></div>
+<div class="field"><label for="piwp1Average">PIWP 1 rata-rata per pegawai/bulan (Rp)</label><input id="piwp1Average" type="number" min="0" step="100" value="32878.52"><div class="help">Acuan awal dari rata-rata backup SIMGAJI; hanya untuk rekonsiliasi potongan.</div></div>
+</div>
+<div class="field" style="max-width:290px;margin:0 0 17px"><label for="piwp8Average">PIWP 8 rata-rata per pegawai/bulan (Rp)</label><input id="piwp8Average" type="number" min="0" step="100" value="97532.18"><div class="help">Acuan awal dari rata-rata backup SIMGAJI; bukan tambahan kebutuhan bruto.</div></div>
+<h3 style="font-size:16px;margin:17px 0 8px">Komposisi pegawai dan rata-rata komponen per bulan</h3>
+<p class="small-note" style="margin:0 0 10px">Nilai keluarga, beras, dan iuran mengikuti rata-rata payroll pembanding. Golongan/MKG serta hak tunjangan harus diverifikasi per orang. Golongan II memakai rata-rata tunjangan payroll golongan I. Untuk golongan VII/IX, kolom JF memisahkan penerima tunjangan fungsional dari jabatan pelaksana.</p>
+<div class="rate-wrap"><table class="rates"><thead><tr><th>Gol.</th><th>Pegawai</th><th>JF*</th><th>Gaji pokok</th><th>Pasangan</th><th>Anak</th><th>Beras</th><th>Askes</th><th>Umum</th><th>Fungsi/JF</th><th>JKK</th><th>JKM</th><th>Pembulatan</th></tr></thead><tbody id="rateRows"></tbody><tfoot><tr class="total-foot"><td>Total</td><td id="headcountTotal">—</td><td id="jfTotal">—</td><td colspan="11">Penerima tunjangan fungsional dikurangkan dari penerima tunjangan umum untuk golongan VII/IX.</td></tr></tfoot></table></div>
+<div class="notice"><strong>Catatan pemetaan:</strong> workbook mengelompokkan data pendidikan/jabatan ke golongan dan MKG asumsi untuk simulasi, bukan penetapan gaji individu. Dua pemetaan (satu PUM SLTA dan satu OLO D1) perlu validasi. Ubah input setelah data resmi tersedia.</div>
+</section>
+<section class="result-grid" aria-label="Hasil proyeksi">
+<div class="result-card" aria-live="polite">
+<h2>Ringkasan kebutuhan anggaran</h2><p id="scenarioLabel">Proyeksi untuk skenario yang dipilih.</p>
+<div class="big-box"><small>Total indikatif tahun 2027, sebelum dikurangi biaya PWT berjalan</small><strong id="grandTotal">—</strong><small id="grandCaption">—</small></div>
+<div class="breakdown">
+<div class="line"><span>Jumlah pegawai pada skenario</span><b id="outHeadcount">—</b></div>
+<div class="line"><span>Kebutuhan payroll bruto per bulan</span><b id="monthlyGross">—</b></div>
+<div class="line"><span>Gaji rutin bruto sesuai jumlah bulan</span><b id="regularTotal">—</b></div>
+<div class="line"><span>Tambahan TPP rutin</span><b id="tppTotal">—</b></div>
+<div class="line"><span>THR (proxy komponen 2026)</span><b id="thrTotal">—</b></div>
+<div class="line"><span>Gaji ke-13 (proxy komponen 2026)</span><b id="thirteenTotal">—</b></div>
+<div class="line total"><span>Tambahan bersih setelah PWT berjalan</span><b id="netAdditional">—</b></div>
+</div>
+<div class="actions"><button type="button" id="printBtn">Cetak ringkasan</button><button type="button" class="secondary" id="csvBtn">Unduh CSV</button></div>
+<p class="small-note">“Tambahan bersih” adalah simulasi total indikatif dikurangi angka belanja PWT berjalan yang Anda masukkan; bukan proyeksi resmi atau rekomendasi pagu.</p>
+</div>
+<div class="result-card">
+<h2>Rincian komponen payroll bulanan</h2><p>Askes, JKK, dan JKM mengikuti komponen pada backup SIMGAJI. Nilainya tidak ditambahkan sekali lagi di bagian potongan.</p>
+<table class="component-table"><thead><tr><th>Komponen</th><th>Nilai/bulan</th><th>12 bulan</th></tr></thead><tbody id="componentRows"></tbody></table>
+<div class="details"><strong>Rekonsiliasi potongan indikatif/bulan</strong>
+<div class="line"><span>PIWP 1 (rata-rata input)</span><b id="dedPIWP1">—</b></div>
+<div class="line"><span>PIWP 8 (rata-rata input)</span><b id="dedPIWP8">—</b></div>
+<div class="line"><span>PASKES (sama dengan tunjangan askes)</span><b id="dedPaskes">—</b></div>
+<div class="line"><span>PJKK (sama dengan komponen JKK)</span><b id="dedPJKK">—</b></div>
+<div class="line"><span>PJKM (sama dengan komponen JKM)</span><b id="dedPJKM">—</b></div>
+<div class="line total"><span>Total potongan indikatif</span><b id="dedTotal">—</b></div>
+<p class="small-note">Potongan memengaruhi estimasi gaji bersih, bukan kebutuhan anggaran bruto. Klasifikasi akun dan perlakuan iuran final perlu mengikuti payroll serta kebijakan Pemkot.</p>
+</div>
+</div>
+</section>
+<section class="shell tool-editorial"><h2>Cara membaca hasil simulasi</h2><p>Proyeksi memakai jumlah pegawai dan rata-rata komponen payroll pembanding. Kebutuhan bruto ditampilkan sebelum potongan; input biaya PWT berjalan dipakai hanya untuk menghitung selisih indikatif.</p><p>Gunakan hasil untuk menelaah skenario dan menyiapkan data. Validasi jumlah pegawai, kelas jabatan, masa kerja, kelayakan tunjangan, Perkada, serta kode rekening sebelum menetapkan kebutuhan anggaran.</p></section>
+<section class="panel" style="margin-top:20px">
+<h2>Asumsi dan keterbatasan</h2>
+<ul style="padding-left:20px;color:#53667f;font-size:13px;line-height:1.7">
+<li>Jumlah awal 1.396 orang, tarif gaji pokok dan rata-rata komponen diambil dari workbook proyeksi PPPK Bontang 2027, berbasis backup SIMGAJI November 2026.</li>
+<li>Gaji rutin memakai tarif golongan dari Perpres 98/2020 jo. Perpres 11/2024 dengan asumsi tidak berubah pada 2027.</li>
+<li>THR dan gaji ke-13 memakai komponen dalam simulasi workbook yang merujuk PP 9/2026 sebagai proxy. Aturan khusus tahun 2027 belum terbit; nilai aktual, masa kerja, prorata, komponen TPP, dan teknis APBD dapat berbeda.</li>
+<li>TPP default Rp0 karena tidak ada dalam backup payroll pembanding. Jika dimasukkan, nilainya diperlakukan sebagai rata-rata per pegawai; pengguna mengatur sendiri apakah TPP masuk skenario THR/gaji ke-13.</li>
+<li>Data tunjangan keluarga dan jumlah anak yang berhak tidak tersedia per individu. Rata-rata workbook hanya untuk perencanaan awal dan tidak menetapkan hak penerima.</li>
+<li>Angka adalah simulasi kotor setelah konversi; belum mengurangi belanja/upah PWT yang berjalan kecuali pengguna mengisi input tersebut.</li>
+</ul>
+</section>
+<section class="panel sources">
+<h2>Sumber dan dasar perhitungan</h2>
+<ul>
+<li><a href="https://peraturan.bpk.go.id/Details/147306/perpres-no-98-tahun-2020" target="_blank" rel="noopener">Perpres 98 Tahun 2020 tentang Gaji dan Tunjangan PPPK</a>, sebagaimana diubah dengan <a href="https://peraturan.bpk.go.id/Details/276756/perpres-no-11-tahun-2024" target="_blank" rel="noopener">Perpres 11 Tahun 2024</a>.</li>
+<li><a href="https://peraturan.bpk.go.id/Details/345732/pp-no-9-tahun-2026" target="_blank" rel="noopener">PP 9 Tahun 2026</a> hanya menjadi proxy sementara komponen THR/gaji ke-13; peraturan tersebut mengatur pembayaran tahun 2026, bukan penetapan hak 2027.</li>
+<li>Basis payroll: rata-rata backup SIMGAJI Web Taspen periode gaji 1 November 2026, 1.094 pegawai; rekap asumsi, distribusi, dan pemetaan dari workbook proyeksi 2027.</li>
+</ul>
+<p><strong>Informasi ini bersifat alat bantu perencanaan.</strong> Periksa dokumen payroll dan aturan yang berlaku sebelum menyusun kebutuhan resmi APBD.</p>
+</section>
+</main>
+<footer class="site-footer"><div class="shell footer-grid"><div><a class="brand" href="/"><img class="brand-icon" src="/favicon.svg?v=20261020-6" alt="" aria-hidden="true"><span>ASN<span class="brand-blue">Pemda</span></span></a><p>Teman baca kebijakan ASN dan Pemda. Independen, bukan situs resmi pemerintah.</p></div><div><strong>Jelajahi</strong><a href="/#tools-asn">Tools ASN Pemda</a><a href="/editorial.html">Kebijakan editorial</a><a href="/about.html">Tentang penulis</a></div><div><strong>Informasi situs</strong><a href="/privacy.html">Privasi</a><a href="/disclaimer.html">Disclaimer</a><p>Untuk keputusan administratif, rujuk aturan asli dan instansi berwenang.</p></div></div><div class="shell footer-bottom">© 2026 ASN Pemda · Informasi independen, bukan situs resmi pemerintah.</div></footer>
+<script>
+"use strict";
+const payroll = [
+ {g:"I",n:29,jf:0,base:1938500,spouse:145387.5,child:38770,rice:199155,health:91906.5,common:175000,functional:0,jkk:4652,jkm:13957,rounding:25.25},
+ {g:"II",n:23,jf:0,base:2116900,spouse:145387.5,child:38770,rice:199155,health:91906.5,common:175000,functional:0,jkk:4652,jkm:13957,rounding:25.25},
+ {g:"V",n:945,jf:0,base:2511500,spouse:188912.20532319392,child:53343.58174904943,rice:199912.2433460076,health:123544.78707224334,common:180000,functional:0,jkk:6202.9505703422055,jkm:18608.695817490494,rounding:28.973384030418252},
+ {g:"VII",n:38,jf:20,base:2858800,spouse:186833.13609467456,child:54839.53846153846,rice:185549.4674556213,health:138851.40828402367,common:180000,functional:286188.679245283,jkk:7079.189349112426,jkm:21237.568047337278,rounding:39.650887573964496},
+ {g:"IX",n:361,jf:8,base:3203600,spouse:202697.52052545155,child:56232.91297208539,rice:178255.46798029557,health:157303.86535303778,common:185000,functional:383114.8409893993,jkk:7931.152709359606,jkm:23792.842364532018,rounding:39.78489326765189}
+];
+const ratesEl=document.getElementById("rateRows");
+const money=new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0});
+const num=new Intl.NumberFormat("id-ID");
+const fmt=n=>money.format(Math.round(Number(n)||0));
+const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function rowInput(g,key,val,label,klass=""){
+ return '<input type="number" min="0" step="any" class="'+klass+'" data-g="'+g.g+'" data-k="'+key+'" aria-label="'+escapeHtml(g.g+" "+label)+'" value="'+val+'">';
+}
+function renderInputs(){
+ ratesEl.innerHTML=payroll.map(g=>'<tr><td>Gol. '+g.g+'</td>'+
+ '<td>'+rowInput(g,"n",g.n,"jumlah pegawai","count")+'</td>'+
+ '<td>'+rowInput(g,"jf",g.jf,"jumlah penerima tunjangan fungsional","jf")+'</td>'+
+ '<td>'+rowInput(g,"base",g.base,"gaji pokok rata-rata")+'</td>'+
+ '<td>'+rowInput(g,"spouse",g.spouse.toFixed(2), "tunjangan pasangan rata-rata")+'</td>'+
+ '<td>'+rowInput(g,"child",g.child.toFixed(2),"tunjangan anak rata-rata")+'</td>'+
+ '<td>'+rowInput(g,"rice",g.rice.toFixed(2),"tunjangan beras rata-rata")+'</td>'+
+ '<td>'+rowInput(g,"health",g.health.toFixed(2),"tunjangan askes rata-rata")+'</td>'+
+ '<td>'+rowInput(g,"common",g.common,"tunjangan umum rata-rata")+'</td>'+
+ '<td>'+rowInput(g,"functional",g.functional.toFixed(2),"tunjangan fungsional per penerima")+'</td>'+
+ '<td>'+rowInput(g,"jkk",g.jkk.toFixed(2),"komponen JKK rata-rata")+'</td>'+
+ '<td>'+rowInput(g,"jkm",g.jkm.toFixed(2),"komponen JKM rata-rata")+'</td>'+
+ '<td>'+rowInput(g,"rounding",g.rounding.toFixed(2),"pembulatan payroll rata-rata")+'</td></tr>').join("");
+}
+function value(id){return Math.max(0,Number(document.getElementById(id).value)||0)}
+function update(){
+ const gs=payroll.map(g=>{
+  const row={g:g.g};
+  document.querySelectorAll('[data-g="'+g.g+'"]').forEach(el=>row[el.dataset.k]=Math.max(0,Number(el.value)||0));
+  row.n=Math.floor(row.n||0);
+  row.jf=Math.min(Math.floor(row.jf||0),row.n);
+  if(!["VII","IX"].includes(row.g)) row.jf=0;
+  return row;
+ });
+ let totals={n:0,jf:0,base:0,spouse:0,child:0,rice:0,health:0,common:0,functional:0,jkk:0,jkm:0,rounding:0};
+ let thrBase=0;
+ gs.forEach(g=>{
+  totals.n+=g.n;totals.jf+=g.jf;
+  const nonJf=g.n-g.jf;
+  totals.base+=g.n*g.base;totals.spouse+=g.n*g.spouse;totals.child+=g.n*g.child;totals.rice+=g.n*g.rice;
+  totals.health+=g.n*g.health;totals.common+=nonJf*g.common;totals.functional+=g.jf*g.functional;
+  totals.jkk+=g.n*g.jkk;totals.jkm+=g.n*g.jkm;totals.rounding+=g.n*g.rounding;
+  thrBase+=g.n*(g.base+g.spouse+g.child+g.rice)+nonJf*g.common+g.jf*g.functional;
+ });
+ const monthlyGross=totals.base+totals.spouse+totals.child+totals.rice+totals.health+totals.common+totals.functional+totals.jkk+totals.jkm+totals.rounding;
+ const months=value("months"),tpp=value("tppAverage"),tppMonthly=totals.n*tpp;
+ const regular=monthlyGross*months, tppTotal=tppMonthly*months;
+ const thr=thrBase*value("thrUnits")+tppMonthly*value("tppThrUnits");
+ const thirteen=thrBase*value("thirteenUnits")+tppMonthly*value("tpp13Units");
+ const total=regular+tppTotal+thr+thirteen;
+ const existing=value("pwtMonthly")*months;
+ const deductions={piwp1:totals.n*value("piwp1Average"),piwp8:totals.n*value("piwp8Average"),paskes:totals.health,pjkk:totals.jkk,pjkm:totals.jkm};
+ const dedTotal=Object.values(deductions).reduce((a,b)=>a+b,0);
+ document.getElementById("headcountTotal").textContent=num.format(totals.n);
+ document.getElementById("jfTotal").textContent=num.format(totals.jf);
+ document.getElementById("outHeadcount").textContent=num.format(totals.n)+" orang";
+ document.getElementById("scenarioLabel").textContent="Skenario "+num.format(totals.n)+" pegawai • "+months+" bulan gaji rutin";
+ document.getElementById("monthlyGross").textContent=fmt(monthlyGross);
+ document.getElementById("regularTotal").textContent=fmt(regular);
+ document.getElementById("tppTotal").textContent=fmt(tppTotal);
+ document.getElementById("thrTotal").textContent=fmt(thr);
+ document.getElementById("thirteenTotal").textContent=fmt(thirteen);
+ document.getElementById("grandTotal").textContent=fmt(total);
+ document.getElementById("grandCaption").textContent="Rutin + TPP + THR + gaji ke-13 sesuai parameter.";
+ document.getElementById("netAdditional").textContent=fmt(total-existing);
+ const rows=[
+  ["Gaji pokok",totals.base],["Tunjangan pasangan",totals.spouse],["Tunjangan anak",totals.child],
+  ["Tunjangan beras",totals.rice],["Tunjangan fungsional",totals.functional],["Tunjangan umum",totals.common],
+  ["Tunjangan askes",totals.health],["JKK",totals.jkk],["JKM",totals.jkm],["Pembulatan",totals.rounding]
+ ];
+ document.getElementById("componentRows").innerHTML=rows.map(([name,amount])=>'<tr><td>'+name+'</td><td>'+fmt(amount)+'</td><td>'+fmt(amount*12)+'</td></tr>').join("")+
+ '<tr><th>Total payroll bruto</th><th>'+fmt(monthlyGross)+'</th><th>'+fmt(monthlyGross*12)+'</th></tr>';
+ document.getElementById("dedPIWP1").textContent=fmt(deductions.piwp1);
+ document.getElementById("dedPIWP8").textContent=fmt(deductions.piwp8);
+ document.getElementById("dedPaskes").textContent=fmt(deductions.paskes);
+ document.getElementById("dedPJKK").textContent=fmt(deductions.pjkk);
+ document.getElementById("dedPJKM").textContent=fmt(deductions.pjkm);
+ document.getElementById("dedTotal").textContent=fmt(dedTotal);
+ window.currentProjection={gs,totals,monthlyGross,regular,tppTotal,thr,thirteen,total,existing,netAdditional:total-existing,deductions,thrBase,months};
+}
+function csvEscape(v){return '"'+String(v).replaceAll('"','""')+'"'}
+function exportCsv(){
+ const p=window.currentProjection,lines=[
+  ["Kalkulator Proyeksi Belanja PPPK 2027"],
+  ["Jumlah pegawai",p.totals.n],["Pegawai fungsional",p.totals.jf],["Payroll bruto/bulan",Math.round(p.monthlyGross)],
+  ["Gaji rutin",Math.round(p.regular)],["TPP rutin",Math.round(p.tppTotal)],["THR proxy",Math.round(p.thr)],
+  ["Gaji ke-13 proxy",Math.round(p.thirteen)],["Total indikatif",Math.round(p.total)],
+  ["Biaya PWT berjalan",Math.round(p.existing)],["Tambahan bersih indikatif",Math.round(p.netAdditional)],[],
+  ["Komponen","Jumlah/bulan"],
+  ["Gaji pokok",p.totals.base],["Tunjangan pasangan",p.totals.spouse],["Tunjangan anak",p.totals.child],
+  ["Tunjangan beras",p.totals.rice],["Tunjangan fungsional",p.totals.functional],["Tunjangan umum",p.totals.common],
+  ["Tunjangan askes",p.totals.health],["JKK",p.totals.jkk],["JKM",p.totals.jkm],["Pembulatan",p.totals.rounding],
+  [],["Asumsi","THR/gaji ke-13 memakai proxy komponen 2026; aturan khusus 2027 belum terbit."]
+ ];
+ const blob=new Blob(["\ufeff"+lines.map(row=>row.map(csvEscape).join(",")).join("\r\n")],{type:"text/csv;charset=utf-8"});
+ const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="Proyeksi_Belanja_PPPK_2027.csv";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+renderInputs();document.querySelectorAll("#proyeksi input").forEach(el=>el.addEventListener("input",update));
+document.getElementById("printBtn").addEventListener("click",()=>window.print());
+document.getElementById("csvBtn").addEventListener("click",exportCsv);
+update();
+</script>
+</body>
+</html>

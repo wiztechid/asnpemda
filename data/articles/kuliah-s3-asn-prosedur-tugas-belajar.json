@@ -1,0 +1,84 @@
+{
+  "articleId": "kuliah-s3-asn-prosedur-tugas-belajar",
+  "slug": "kuliah-s3-asn-prosedur-tugas-belajar",
+  "approved": true,
+  "publicationState": "PUBLISHED",
+  "datePublished": "2026-11-21",
+  "dateModified": "2026-11-21",
+  "lastVerified": "2026-11-21",
+  "heroImage": "assets/hero-belajar-s3-asn.svg",
+  "articlePath": "artikel/kuliah-s3-asn-prosedur-tugas-belajar.html",
+  "evidencePath": "data/candidates/kuliah-s3-asn-prosedur-tugas-belajar.evidence.json",
+  "id": "kuliah-s3-asn-prosedur-tugas-belajar",
+  "title": "Kuliah S3 bagi ASN: Semangat Belajarnya, Bereskan Juga Izin Kedinasan",
+  "status": "BERLAKU",
+  "materiality": "MEDIUM",
+  "asnImpact": "Mengingatkan PNS untuk memastikan persetujuan dan skema pengembangan kompetensi melalui pendidikan sebelum memulai studi.",
+  "pemdaImpact": "Mendorong instansi memberi prosedur belajar yang jelas serta menghubungkan pengembangan kompetensi dengan kebutuhan organisasi.",
+  "actionRequired": [],
+  "sources": [
+    {
+      "title": "SE Menteri PANRB No. 28 Tahun 2021 — JDIH Kementerian PANRB",
+      "url": "https://jdih.menpan.go.id/dokumen-hukum/pengembangan-kompetensi-bagi-pegawai-negeri-sipil-melalui-jalur-pendidikan-1670",
+      "issuer": "Kementerian PANRB",
+      "publishedAt": "2021-12-29",
+      "sourceType": "JDIH",
+      "isPrimary": true
+    },
+    {
+      "title": "Naskah SE Menteri PANRB Nomor 28 Tahun 2021",
+      "url": "https://www.bkn.go.id/wp-content/uploads/2022/01/SE-Nomor-28-Tahun-2021.pdf",
+      "issuer": "Badan Kepegawaian Negara",
+      "publishedAt": "2021-12-29",
+      "sourceType": "REGULATION",
+      "isPrimary": true
+    },
+    {
+      "title": "PP Nomor 94 Tahun 2021 tentang Disiplin PNS",
+      "url": "https://peraturan.bpk.go.id/Details/177031/pp-no-94-tahun-2021",
+      "issuer": "Pemerintah Pusat/JDIH BPK",
+      "publishedAt": "2021-08-31",
+      "sourceType": "JDIH",
+      "isPrimary": true
+    },
+    {
+      "title": "PP Nomor 79 Tahun 2021 tentang Upaya Administratif dan BPASN",
+      "url": "https://peraturan.bpk.go.id/Details/175828/pp-no-79-tahun-2021",
+      "issuer": "Pemerintah Pusat/JDIH BPK",
+      "publishedAt": "2021-08-10",
+      "sourceType": "JDIH",
+      "isPrimary": true
+    },
+    {
+      "title": "Penjelasan BKN tentang prosedur tugas belajar dan izin belajar PNS",
+      "url": "https://www.bkn.go.id/syarat-dan-prosedur-pengajuan-tugas-belajar-dan-izin-belajar-bagi-pns/",
+      "issuer": "Badan Kepegawaian Negara",
+      "publishedAt": "2021-08-16",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true
+    }
+  ],
+  "editorialAngle": "Catatan santai tentang semangat menempuh studi doktoral dan pentingnya prosedur kedinasan.",
+  "editorialBoundary": "Tidak mengidentifikasi atau menilai individu dari kabar yang beredar; membahas aturan umum berdasarkan sumber resmi.",
+  "humanApproval": {
+    "decision": "GO",
+    "authorizedBy": "wiztechid",
+    "role": "human site owner and article author",
+    "authorizedDate": "2026-11-21",
+    "instruction": "Samarkan nama dan bahas regulasi serta semangat belajar secara santai dan lugas."
+  },
+  "editorialAssessment": {
+    "type": "AI_ASSISTED_EDITORIAL_REVIEW",
+    "reviewedAt": "2026-11-21",
+    "outcome": "APPROVE_WITH_SCOPE_NOTES",
+    "reviewerIsHuman": false,
+    "reviewerIsASN": false,
+    "summary": "Memisahkan kabar kasus individual dari aturan yang dapat diverifikasi; tidak menyimpulkan hasil perkara; fokus edukasi dengan nada suportif."
+  },
+  "revisionHistory": [
+    {
+      "date": "2026-11-21",
+      "summary": "Artikel edukatif tentang pengembangan kompetensi PNS diterbitkan tanpa nama atau rincian personal, dengan rujukan JDIH dan dokumen resmi."
+    }
+  ]
+}

@@ -5,5 +5,12 @@
   "compatibility_date": "2026-10-20",
   "ai": {
     "binding": "AI"
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "COMMENTS_DB",
+      "database_name": "asnpemda-reader-comments",
+      "database_id": "4eba477a-c9e3-40bd-be6f-e49524fe94e2"
+    }
+  ]
 }

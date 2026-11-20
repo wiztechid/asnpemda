@@ -19,7 +19,8 @@ BASE_FILES = (
     "index.html",
     "kalkulator-spm-sp2d.html",
     "kalkulator-pajak-ekatalog.html",
-    "kalkulator-pppk-2027.html",\n    "draft-surat-srikandi.html",
+    "kalkulator-pppk-2027.html",
+    "draft-surat-srikandi.html",
     "about.html",
     "editorial.html",
     "privacy.html",
@@ -307,7 +308,8 @@ def main() -> None:
     articles = published_articles()
     home_path = DIST / 'index.html'
     home_path.write_text(refresh_homepage_cards(home_path.read_text(encoding='utf-8'), articles), encoding='utf-8')
-    for page_name in ("index.html", "kalkulator-spm-sp2d.html", "kalkulator-pajak-ekatalog.html", "kalkulator-pppk-2027.html",\n    "draft-surat-srikandi.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "koreksi.html"):
+    for page_name in ("index.html", "kalkulator-spm-sp2d.html", "kalkulator-pajak-ekatalog.html", "kalkulator-pppk-2027.html",
+    "draft-surat-srikandi.html", "about.html", "editorial.html", "privacy.html", "disclaimer.html", "koreksi.html"):
         page_path = DIST / page_name
         page_path.write_text(normalize_public_urls(page_path.read_text(encoding="utf-8"), origin), encoding="utf-8")
     for relative, _, hero_image in articles:

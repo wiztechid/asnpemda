@@ -3,7 +3,6 @@ const TURNSTILE_ACTION = "draft-srikandi";
 const MAX_BODY_BYTES = 6000;
 const MAX_TOPIC_CHARS = 700;
 const MAX_DRAFT_CHARS = 14000;
-const RATE_LIMIT = 20;
 
 function reply(data, status = 200) {
   return Response.json(data, {
@@ -50,37 +49,6 @@ async function verifyTurnstile(request, env, token) {
   }
 }
 
-async function requestHash(request, env, bucket) {
-  const ip = request.headers.get("CF-Connecting-IP");
-  if (!ip || !env.IP_HASH_SECRET) return null;
-  const key = await crypto.subtle.importKey(
-    "raw", new TextEncoder().encode(env.IP_HASH_SECRET),
-    { name: "HMAC", hash: "SHA-256" }, false, ["sign"],
-  );
-  const signature = await crypto.subtle.sign(
-    "HMAC", key, new TextEncoder().encode("srikandi:" + bucket + ":" + ip),
-  );
-  return [...new Uint8Array(signature)]
-    .map((byte) => byte.toString(16).padStart(2, "0")).join("");
-}
-
-async function consumeRateLimit(request, env) {
-  if (!env.COMMENTS_DB) return false;
-  const bucket = Math.floor(Date.now() / 3600000);
-  const ipHash = await requestHash(request, env, bucket);
-  if (!ipHash) return false;
-  await env.COMMENTS_DB.prepare(
-    "CREATE TABLE IF NOT EXISTS srikandi_ai_rate_limits (ip_hash TEXT NOT NULL, bucket INTEGER NOT NULL, count INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (ip_hash, bucket))",
-  ).run();
-  await env.COMMENTS_DB.prepare(
-    "DELETE FROM srikandi_ai_rate_limits WHERE bucket < ?",
-  ).bind(bucket - 1).run();
-  const row = await env.COMMENTS_DB.prepare(
-    "INSERT INTO srikandi_ai_rate_limits (ip_hash, bucket, count) VALUES (?, ?, 1) ON CONFLICT(ip_hash, bucket) DO UPDATE SET count = count + 1 WHERE count < ? RETURNING count",
-  ).bind(ipHash, bucket, RATE_LIMIT).first();
-  return Boolean(row);
-}
-
 function makePrompt(topic) {
   const instructions = [
     "Anda membantu ASN pemerintah daerah menyusun draf awal naskah dinas dalam Bahasa Indonesia formal dan jelas.",
@@ -110,9 +78,6 @@ export async function onRequest({ request, env }) {
   }
   if (!(await verifyTurnstile(request, env, cleanText(input.turnstile)))) {
     return reply({ error: "Verifikasi anti-spam belum berhasil. Silakan coba lagi." }, 403);
-  }
-  if (!(await consumeRateLimit(request, env))) {
-    return reply({ error: "Batas penggunaan tercapai atau layanan keamanan belum siap. Coba lagi nanti." }, 429);
   }
   if (!env.AI || typeof env.AI.run !== "function") {
     return reply({ error: "Layanan AI belum siap. Silakan coba lagi nanti." }, 503);

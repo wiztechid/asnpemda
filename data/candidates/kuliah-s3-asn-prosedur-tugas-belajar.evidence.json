@@ -1,0 +1,57 @@
+{
+  "candidateId": "kuliah-s3-asn-prosedur-tugas-belajar",
+  "capturedAt": "2026-11-21",
+  "evidenceState": "PRIMARY_RULES_VERIFIED; INDIVIDUAL_CASE_NOT_ASSESSED",
+  "sources": [
+    {
+      "title": "SE Menteri PANRB No. 28 Tahun 2021 — JDIH Kementerian PANRB",
+      "url": "https://jdih.menpan.go.id/dokumen-hukum/pengembangan-kompetensi-bagi-pegawai-negeri-sipil-melalui-jalur-pendidikan-1670",
+      "issuer": "Kementerian PANRB",
+      "publishedAt": "2021-12-29",
+      "sourceType": "JDIH",
+      "isPrimary": true
+    },
+    {
+      "title": "Naskah SE Menteri PANRB Nomor 28 Tahun 2021",
+      "url": "https://www.bkn.go.id/wp-content/uploads/2022/01/SE-Nomor-28-Tahun-2021.pdf",
+      "issuer": "Badan Kepegawaian Negara",
+      "publishedAt": "2021-12-29",
+      "sourceType": "REGULATION",
+      "isPrimary": true
+    },
+    {
+      "title": "PP Nomor 94 Tahun 2021 tentang Disiplin PNS",
+      "url": "https://peraturan.bpk.go.id/Details/177031/pp-no-94-tahun-2021",
+      "issuer": "Pemerintah Pusat/JDIH BPK",
+      "publishedAt": "2021-08-31",
+      "sourceType": "JDIH",
+      "isPrimary": true
+    },
+    {
+      "title": "PP Nomor 79 Tahun 2021 tentang Upaya Administratif dan BPASN",
+      "url": "https://peraturan.bpk.go.id/Details/175828/pp-no-79-tahun-2021",
+      "issuer": "Pemerintah Pusat/JDIH BPK",
+      "publishedAt": "2021-08-10",
+      "sourceType": "JDIH",
+      "isPrimary": true
+    },
+    {
+      "title": "Penjelasan BKN tentang prosedur tugas belajar dan izin belajar PNS",
+      "url": "https://www.bkn.go.id/syarat-dan-prosedur-pengajuan-tugas-belajar-dan-izin-belajar-bagi-pns/",
+      "issuer": "Badan Kepegawaian Negara",
+      "publishedAt": "2021-08-16",
+      "sourceType": "OFFICIAL_NEWS",
+      "isPrimary": true
+    }
+  ],
+  "keyClaims": [
+    "SE Menteri PANRB Nomor 28 Tahun 2021 tercatat berlaku pada JDIH PANRB.",
+    "Tugas belajar PNS mengikuti rencana kebutuhan instansi dan ketentuan persetujuan yang berlaku.",
+    "PP Nomor 94 Tahun 2021 mengatur disiplin PNS dan hak upaya administratif; artikel tidak menilai fakta kasus individu."
+  ],
+  "limitations": [
+    "Tidak memuat identitas atau fakta personal dari kasus yang ramai dibahas.",
+    "Ketentuan teknis instansi dan status studi perlu dikonfirmasi tertulis kepada unit kepegawaian.",
+    "Artikel ini bersifat umum, bukan pendapat hukum atas perkara individu."
+  ]
+}

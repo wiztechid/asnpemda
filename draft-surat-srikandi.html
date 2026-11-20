@@ -22,14 +22,14 @@ body{background:#f5f8fd;color:var(--ink)}
 .panel{border:1px solid var(--line);background:#fff;border-radius:17px;padding:22px;box-shadow:0 8px 28px #163b7410;margin-bottom:18px}
 .panel h2{font-size:20px;line-height:1.35;margin:0 0 7px;letter-spacing:-.02em}
 .panel>p{font-size:13px;color:var(--muted);line-height:1.65;margin:0 0 15px}
-.topic{width:100%;min-height:190px;border:1px solid #cbd8e8;background:#fff;border-radius:11px;color:#173354;font:15px/1.65 inherit;padding:13px 14px;resize:vertical}
+.topic{width:100%;min-height:190px;border:1px solid #cbd8e8;background:#fff;border-radius:11px;color:#173354;font:inherit;font-size:15px;line-height:1.65;padding:13px 14px;resize:vertical}
 .topic:focus,.output:focus{outline:3px solid #9bbefb77;border-color:#2b6bcb}
 .label{font-size:13px;font-weight:800;color:#34465d;display:block;margin:0 0 7px}
 .help{font-size:12px;line-height:1.55;color:var(--muted);margin-top:6px}
 .examples{display:grid;gap:8px;margin:14px 0 17px}
-.examples button{text-align:left;border:1px solid #e0e8f3;background:#f8faff;color:#294a73;border-radius:9px;padding:9px 11px;font:600 12px/1.5 inherit;cursor:pointer}
+.examples button{text-align:left;border:1px solid #e0e8f3;background:#f8faff;color:#294a73;border-radius:9px;padding:9px 11px;font:inherit;font-size:12px;line-height:1.5;font-weight:600;cursor:pointer}
 .examples button:hover{border-color:#9bbcf0;background:#f0f6ff}
-.primary,.secondary{border:0;border-radius:10px;min-height:44px;padding:11px 15px;font:800 13px inherit;cursor:pointer}
+.primary,.secondary{border:0;border-radius:10px;min-height:44px;padding:11px 15px;font:inherit;font-size:13px;font-weight:800;cursor:pointer}
 .primary{background:#2160d9;color:white;width:100%;box-shadow:0 5px 12px #2160d925}
 .primary:hover{filter:brightness(.96)}.primary:disabled{opacity:.65;cursor:wait}
 .secondary{background:#edf2fb;color:#284a75;border:1px solid #d8e2ef}
@@ -67,7 +67,7 @@ body{background:#f5f8fd;color:var(--ink)}
 <button type="button" data-example="Buatkan surat tugas untuk tim melakukan verifikasi dokumen pertanggungjawaban kegiatan pada perangkat daerah. Nama petugas, tanggal, dan dasar penugasan belum ditetapkan.">Surat tugas verifikasi dokumen</button>
 </div>
 <button type="button" class="primary" id="generate">✨ Buatkan draft dengan AI</button>
-<p class="privacy">Topik dikirim ke Cloudflare Workers AI untuk membuat draf dan tidak disimpan oleh fitur ini. Penggunaan dilindungi verifikasi anti-spam.</p>
+<p class="privacy">Topik dikirim ke Cloudflare Workers AI untuk membuat draf. Jangan masukkan data pribadi atau informasi rahasia. Penggunaan dilindungi verifikasi anti-spam.</p>
 <div class="notice"><strong>Periksa sebelum digunakan.</strong> AI dapat keliru. Pastikan fakta, dasar hukum, nama/jabatan, format, klasifikasi, kewenangan penandatangan, dan kelengkapan naskah sesuai pedoman instansi sebelum dipindahkan ke SRIKANDI. Draf ini bukan integrasi langsung ke aplikasi SRIKANDI.</div>
 <div id="turnstile-container" aria-hidden="true"></div>
 </section>

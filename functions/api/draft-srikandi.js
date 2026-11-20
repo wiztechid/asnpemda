@@ -3,7 +3,7 @@ const TURNSTILE_ACTION = "draft-srikandi";
 const MAX_BODY_BYTES = 6000;
 const MAX_TOPIC_CHARS = 700;
 const MAX_DRAFT_CHARS = 14000;
-const RATE_LIMIT = 4;
+const RATE_LIMIT = 20;
 
 function reply(data, status = 200) {
   return Response.json(data, {

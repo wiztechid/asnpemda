@@ -38,6 +38,8 @@ BASE_FILES = (
     "assets/article-insights.css",
     "assets/article-engagement.js",
     "assets/author-suiza-ixan.webp",
+    "assets/ilustrasi-konsultasi-studi.webp",
+    "assets/ilustrasi-keseimbangan-kerja-studi.webp",
     "assets/hero-sertifikasi-pbj-lkpp-2026.svg",
     "google3aabce049d4a051c.html",
 )

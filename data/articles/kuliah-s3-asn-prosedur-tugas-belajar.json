@@ -6,7 +6,7 @@
   "datePublished": "2026-11-21",
   "dateModified": "2026-11-21",
   "lastVerified": "2026-11-21",
-  "heroImage": "assets/hero-belajar-s3-asn.svg",
+  "heroImage": "assets/hero-kuliah-s3-asn.webp",
   "articlePath": "artikel/kuliah-s3-asn-prosedur-tugas-belajar.html",
   "evidencePath": "data/candidates/kuliah-s3-asn-prosedur-tugas-belajar.evidence.json",
   "id": "kuliah-s3-asn-prosedur-tugas-belajar",
@@ -58,14 +58,14 @@
       "isPrimary": true
     }
   ],
-  "editorialAngle": "Catatan santai tentang semangat menempuh studi doktoral dan pentingnya prosedur kedinasan.",
+  "editorialAngle": "Artikel panduan yang mengapresiasi studi lanjut ASN, menjelaskan aturan tugas belajar, dan memberi langkah komunikasi kedinasan tanpa menilai individu dari kabar yang beredar.",
   "editorialBoundary": "Tidak mengidentifikasi atau menilai individu dari kabar yang beredar; membahas aturan umum berdasarkan sumber resmi.",
   "humanApproval": {
     "decision": "GO",
     "authorizedBy": "wiztechid",
     "role": "human site owner and article author",
     "authorizedDate": "2026-11-21",
-    "instruction": "Samarkan nama dan bahas regulasi serta semangat belajar secara santai dan lugas."
+    "instruction": "Samarkan identitas, bahas regulasi dan semangat belajar secara santai dan lugas, serta perbaiki hero, panjang naskah, dan ilustrasi pendukung."
   },
   "editorialAssessment": {
     "type": "AI_ASSISTED_EDITORIAL_REVIEW",
@@ -73,12 +73,16 @@
     "outcome": "APPROVE_WITH_SCOPE_NOTES",
     "reviewerIsHuman": false,
     "reviewerIsASN": false,
-    "summary": "Memisahkan kabar kasus individual dari aturan yang dapat diverifikasi; tidak menyimpulkan hasil perkara; fokus edukasi dengan nada suportif."
+    "summary": "Naskah diperluas menjadi panduan umum dengan rujukan primer; tidak menyebut atau menilai individu; memperjelas batas checklist sebagai persiapan praktis, bukan syarat baru; visual editorial tidak mengklaim sebagai dokumentasi kasus."
   },
   "revisionHistory": [
     {
       "date": "2026-11-21",
       "summary": "Artikel edukatif tentang pengembangan kompetensi PNS diterbitkan tanpa nama atau rincian personal, dengan rujukan JDIH dan dokumen resmi."
+    },
+    {
+      "date": "2026-11-21",
+      "summary": "Hero diganti ke WebP 1200×675 dengan metadata XMP; artikel diperluas dan dilengkapi dua ilustrasi low-poly pendukung, alt/caption, metadata sosial, serta schema yang diselaraskan."
     }
   ]
 }

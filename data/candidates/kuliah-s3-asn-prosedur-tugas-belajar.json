@@ -52,12 +52,62 @@
       "isPrimary": true
     }
   ],
-  "editorialAngle": "Catatan santai tentang semangat menempuh studi doktoral dan pentingnya prosedur kedinasan.",
+  "editorialAngle": "Artikel panduan yang mengapresiasi studi lanjut ASN, menjelaskan aturan tugas belajar, dan memberi langkah komunikasi kedinasan tanpa menilai individu dari kabar yang beredar.",
   "editorialBoundary": "Tidak mengidentifikasi atau menilai individu dari kabar yang beredar; membahas aturan umum berdasarkan sumber resmi.",
   "publicationAuthorization": {
     "decision": "GO",
     "authorizedBy": "wiztechid",
     "authorizedDate": "2026-11-21",
-    "scope": "Samarkan nama dan bahas regulasi serta semangat belajar secara santai dan lugas."
-  }
+    "scope": "Samarkan identitas, bahas regulasi dan semangat belajar secara santai dan lugas, serta perbaiki hero, panjang naskah, dan ilustrasi pendukung."
+  },
+  "visualAssets": [
+    {
+      "path": "assets/hero-kuliah-s3-asn.webp",
+      "role": "hero",
+      "format": "WebP",
+      "width": 1200,
+      "height": 675,
+      "alt": "Ilustrasi low-poly seorang ASN merencanakan studi doktoral dengan laptop, buku, kalender, dan jalur menuju kampus.",
+      "description": "Ilustrasi editorial low-poly tentang ASN yang merencanakan studi doktoral dengan tertib.",
+      "credit": "ASN Pemda / OpenAI Image Generation",
+      "keywords": [
+        "ASN",
+        "studi doktoral",
+        "tugas belajar",
+        "pengembangan kompetensi"
+      ]
+    },
+    {
+      "path": "assets/ilustrasi-konsultasi-studi.webp",
+      "role": "supporting illustration",
+      "format": "WebP",
+      "width": 1200,
+      "height": 675,
+      "alt": "Ilustrasi low-poly percakapan ASN dengan petugas kepegawaian untuk membahas rencana studi dan jadwal.",
+      "description": "Ilustrasi editorial low-poly konsultasi rencana studi kepada unit kepegawaian.",
+      "credit": "ASN Pemda / OpenAI Image Generation",
+      "keywords": [
+        "ASN",
+        "studi doktoral",
+        "tugas belajar",
+        "pengembangan kompetensi"
+      ]
+    },
+    {
+      "path": "assets/ilustrasi-keseimbangan-kerja-studi.webp",
+      "role": "supporting illustration",
+      "format": "WebP",
+      "width": 1200,
+      "height": 675,
+      "alt": "Ilustrasi low-poly ASN menyeimbangkan pelayanan publik dan studi doktoral melalui rencana waktu yang realistis.",
+      "description": "Ilustrasi editorial low-poly tentang keseimbangan pelayanan publik dan pendidikan doktoral ASN.",
+      "credit": "ASN Pemda / OpenAI Image Generation",
+      "keywords": [
+        "ASN",
+        "studi doktoral",
+        "tugas belajar",
+        "pengembangan kompetensi"
+      ]
+    }
+  ]
 }

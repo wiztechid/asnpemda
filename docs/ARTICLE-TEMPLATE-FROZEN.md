@@ -23,7 +23,7 @@ Urutan modul halaman harus tetap seperti berikut:
 13. Panel berbagi
 14. Footer situs
 
-Komponen khusus seperti kalkulator tetap boleh ada di isi artikel. Komponen tersebut harus memakai kelas yang spesifik, tidak mengubah urutan modul utama, dan tidak membawa CSS inline sendiri.
+Komponen khusus seperti kalkulator tetap boleh ada di isi artikel. Komponen tersebut harus memakai kelas yang spesifik, tidak mengubah urutan modul utama, dan tidak membawa CSS inline sendiri. Ilustrasi pendukung di dalam isi boleh memakai `<figure class="article-illustration">` dengan alt, dimensi eksplisit, caption kontekstual, dan lazy loading; komponen ini bukan pengganti atau penghitungan ulang hero.
 
 ## Aturan visual dan HTML
 

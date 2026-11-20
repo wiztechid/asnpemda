@@ -127,3 +127,8 @@
 @media(max-width:650px){.calc-fields{grid-template-columns:1fr}}
 @media(max-width:650px){.pension-calculator{padding:18px}}
 /* Content widgets remain scoped to their component classes. */
+
+/* Optional supporting illustrations inside article body; not part of the frozen hero module. */
+.article-body .article-illustration{margin:24px 0 30px;border:1px solid #e7eaf4;border-radius:16px;overflow:hidden;background:#f7f8fe}
+.article-body .article-illustration img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.article-body .article-illustration figcaption{padding:10px 14px;color:#66708b;font-size:13px;line-height:1.55}

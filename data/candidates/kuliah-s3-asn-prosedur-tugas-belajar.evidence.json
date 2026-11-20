@@ -52,6 +52,57 @@
   "limitations": [
     "Tidak memuat identitas atau fakta personal dari kasus yang ramai dibahas.",
     "Ketentuan teknis instansi dan status studi perlu dikonfirmasi tertulis kepada unit kepegawaian.",
-    "Artikel ini bersifat umum, bukan pendapat hukum atas perkara individu."
+    "Artikel ini bersifat umum, bukan pendapat hukum atas perkara individu.",
+    "Ilustrasi dibuat untuk konteks editorial; bukan foto atau dokumentasi kasus maupun bukti kejadian."
+  ],
+  "visualAssets": [
+    {
+      "path": "assets/hero-kuliah-s3-asn.webp",
+      "role": "hero",
+      "format": "WebP",
+      "width": 1200,
+      "height": 675,
+      "alt": "Ilustrasi low-poly seorang ASN merencanakan studi doktoral dengan laptop, buku, kalender, dan jalur menuju kampus.",
+      "description": "Ilustrasi editorial low-poly tentang ASN yang merencanakan studi doktoral dengan tertib.",
+      "credit": "ASN Pemda / OpenAI Image Generation",
+      "keywords": [
+        "ASN",
+        "studi doktoral",
+        "tugas belajar",
+        "pengembangan kompetensi"
+      ]
+    },
+    {
+      "path": "assets/ilustrasi-konsultasi-studi.webp",
+      "role": "supporting illustration",
+      "format": "WebP",
+      "width": 1200,
+      "height": 675,
+      "alt": "Ilustrasi low-poly percakapan ASN dengan petugas kepegawaian untuk membahas rencana studi dan jadwal.",
+      "description": "Ilustrasi editorial low-poly konsultasi rencana studi kepada unit kepegawaian.",
+      "credit": "ASN Pemda / OpenAI Image Generation",
+      "keywords": [
+        "ASN",
+        "studi doktoral",
+        "tugas belajar",
+        "pengembangan kompetensi"
+      ]
+    },
+    {
+      "path": "assets/ilustrasi-keseimbangan-kerja-studi.webp",
+      "role": "supporting illustration",
+      "format": "WebP",
+      "width": 1200,
+      "height": 675,
+      "alt": "Ilustrasi low-poly ASN menyeimbangkan pelayanan publik dan studi doktoral melalui rencana waktu yang realistis.",
+      "description": "Ilustrasi editorial low-poly tentang keseimbangan pelayanan publik dan pendidikan doktoral ASN.",
+      "credit": "ASN Pemda / OpenAI Image Generation",
+      "keywords": [
+        "ASN",
+        "studi doktoral",
+        "tugas belajar",
+        "pengembangan kompetensi"
+      ]
+    }
   ]
 }
